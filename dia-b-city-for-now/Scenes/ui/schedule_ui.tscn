@@ -1,0 +1,50 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://ch3n5ur37hb4x" path="res://scripts/ui/schedule_ui.gd" id="1_lj8gx"]
+
+[node name="ScheduleUI" type="CanvasLayer"]
+script = ExtResource("1_lj8gx")
+
+[node name="Panel" type="PanelContainer" parent="."]
+offset_left = 560.0
+offset_top = 210.0
+offset_right = 1360.0
+offset_bottom = 870.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 34
+text = "Home Schedule"
+horizontal_alignment = 1
+
+[node name="Line1" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+text = "- Monday: Work shift, 9:00 AM"
+
+[node name="Line2" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+text = "- Tuesday: Stock check, 10:00 AM"
+
+[node name="Line3" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+text = "- Wednesday: Rest day"
+
+[node name="Line4" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+text = "- Thursday: Supplier visit, 1:00 PM"
+
+[node name="Line5" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+text = "- Friday: Evening shift, 4:00 PM"
+
+[node name="CloseHint" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 20
+text = "Press E or Esc to close"
+horizontal_alignment = 1

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ue4xvv6lxfmw"]
+
+[ext_resource type="Script" uid="uid://dflc1k34sqsjy" path="res://Scenes/convenienceStoreMiniGame/Scripts/store_manager.gd" id="1_433qs"]
+
+[node name="Cardmain" type="Node2D" unique_id=950191713]
+script = ExtResource("1_433qs")

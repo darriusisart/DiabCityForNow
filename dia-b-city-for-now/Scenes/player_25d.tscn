@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d1c7f55wuphh0"]
+
+[ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://scripts/player_25d.gd" id="1_r3w8g"]
+[ext_resource type="Texture2D" uid="uid://0wi3gvk4ee8n" path="res://player/main_basic.png" id="2_l3ywy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1pv86"]
+radius = 0.48
+height = 2.1
+
+[node name="player" type="CharacterBody3D" unique_id=191318121]
+collision_layer = 2
+script = ExtResource("1_r3w8g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=739067368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_1pv86")
+
+[node name="SpriteRoot" type="Node3D" parent="." unique_id=1943845498]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0.8, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="SpriteRoot" unique_id=111494650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.124396, 0)
+pixel_size = 0.05
+billboard = 1
+double_sided = false
+no_depth_test = true
+texture = ExtResource("2_l3ywy")
+hframes = 33
+vframes = 4
+
+[node name="InteractUI" type="CanvasLayer" parent="." unique_id=1557309974]
+
+[node name="PromptPanel" type="PanelContainer" parent="InteractUI" unique_id=1620516508]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -116.0
+offset_right = 210.0
+offset_bottom = -46.0
+
+[node name="PromptLabel" type="Label" parent="InteractUI/PromptPanel" unique_id=591825767]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fade" type="ColorRect" parent="." unique_id=590140937]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

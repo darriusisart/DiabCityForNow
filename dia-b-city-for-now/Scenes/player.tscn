@@ -1,32 +1,30 @@
-[gd_scene format=3 uid="uid://dr88ctdpbwdkm"]
+[gd_scene format=3 uid="uid://bisx6wb2o2u4i"]
 
-[ext_resource type="Script" uid="uid://cnjo7p2q2a38a" path="res://Scenes/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dyc0te0xpc1u8" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://cj7hn1v5w3frh" path="res://DiabWorld/scripts/player.gd" id="1_iet5u"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v0iea"]
-size = Vector3(1.1655273, 1.1787109, 0.12017822)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tt3pr"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6t5aa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cop54"]
+albedo_color = Color(0.352941, 0.65098, 0.878431, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=271441315]
-script = ExtResource("1_cvnsp")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_isonk"]
+material = SubResource("StandardMaterial3D_cop54")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1964511826]
-texture = ExtResource("1_v0iea")
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_iet5u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1167874683]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010986328, 0.05517578, 0.019134521)
-shape = SubResource("BoxShape3D_v0iea")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_tt3pr")
 
-[node name="Animation" type="Node" parent="." unique_id=631208335]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_isonk")
 
-[node name="AnimationTree" type="AnimationTree" parent="Animation" unique_id=993782599]
-root_node = NodePath(".")
-tree_root = SubResource("AnimationNodeBlendTree_6t5aa")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=917885958]
-root_node = NodePath("../AnimationTree")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1511500466]
-transform = Transform3D(1, 0, 0, 0, 0.81732595, 0.5761756, 0, -0.5761756, 0.81732595, 0, 0.8833891, 1.862182)
+[node name="fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

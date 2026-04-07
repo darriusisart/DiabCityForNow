@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dogail6rwt1c7"]
+
+[ext_resource type="PackedScene" uid="uid://cnp5hdjat18dr" path="res://Isabella_UI.tscn" id="1_3njae"]
+
+[node name="Control" type="Control" unique_id=464768661]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2019082423]
+
+[node name="Control" parent="Node2D" unique_id=1120541432 instance=ExtResource("1_3njae")]

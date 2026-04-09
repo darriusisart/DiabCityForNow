@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cnp5hdjat18dr"]
+[gd_scene format=3 uid="uid://du6fnr66h2yl8"]
 
-[ext_resource type="Texture2D" uid="uid://i6mhsvf4hi2s" path="res://Assets/Brain_Icon.png" id="1_i8qs1"]
+[ext_resource type="Texture2D" uid="uid://i6mhsvf4hi2s" path="res://Assets/Brain_Icon.png" id="1_e0onf"]
 
 [node name="HUD" type="Control" unique_id=1120541432]
 layout_mode = 3
@@ -23,4 +23,4 @@ text = "0"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=676837461]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_i8qs1")
+texture = ExtResource("1_e0onf")

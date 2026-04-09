@@ -19,6 +19,15 @@ config/icon="res://icon.svg"
 
 StageManager="*uid://corwwcs7s843g"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://8bti3o6p2sdu"
+
 [input]
 
 interact={

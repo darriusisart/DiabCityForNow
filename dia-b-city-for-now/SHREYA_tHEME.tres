@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://8bti3o6p2sdu"]
+
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="1_atbkg"]
+[ext_resource type="Texture2D" uid="uid://b0srkf78scsa5" path="res://assets_Shreya/bg.png" id="1_t8ygn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdusv"]
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+texture = ExtResource("1_t8ygn")
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_xdusv")
+Label/fonts/font = ExtResource("1_atbkg")
+PrimaryButton/base_type = &"Button"
+PrimaryButton/font_sizes/font_size = 20

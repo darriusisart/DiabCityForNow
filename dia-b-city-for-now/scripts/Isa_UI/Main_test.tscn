@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dogail6rwt1c7"]
 
 [ext_resource type="PackedScene" uid="uid://cnp5hdjat18dr" path="res://Isabella_UI.tscn" id="1_qxkfv"]
-[ext_resource type="PackedScene" uid="uid://du6fnr66h2yl8" path="res://scripts/ui/brain.tscn" id="2_km7q3"]
-[ext_resource type="PackedScene" uid="uid://ck3ap1bg8iy08" path="res://scripts/ui/Nutrition.tscn" id="3_ybdfa"]
-[ext_resource type="PackedScene" uid="uid://cpe7vi1pubnih" path="res://scripts/ui/Strength.tscn" id="4_58pao"]
+[ext_resource type="PackedScene" uid="uid://du6fnr66h2yl8" path="res://scripts/Isa_UI/brain.tscn" id="2_km7q3"]
+[ext_resource type="PackedScene" uid="uid://ck3ap1bg8iy08" path="res://scripts/Isa_UI/Nutrition.tscn" id="3_ybdfa"]
+[ext_resource type="PackedScene" uid="uid://cpe7vi1pubnih" path="res://scripts/Isa_UI/Strength.tscn" id="4_58pao"]
 
 [node name="Control" type="Control" unique_id=464768661]
 visible = false

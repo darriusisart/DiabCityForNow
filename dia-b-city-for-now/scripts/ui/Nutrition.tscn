@@ -8,32 +8,26 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control" type="Control" parent="." unique_id=101698510]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=266465088]
+[node name="TextEdit" type="TextEdit" parent="." unique_id=913404745]
 layout_mode = 0
-offset_left = 6.999878
-offset_top = -24.999878
-offset_right = 46.999878
-offset_bottom = 15.000122
+offset_right = 8.0
+offset_bottom = 8.0
 
-[node name="Label" type="Label" parent="TextureRect" unique_id=361983680]
+[node name="Label" type="Label" parent="TextEdit" unique_id=361983680]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 23.35
 anchor_right = 33.325
 anchor_bottom = 11.150001
-offset_left = -842.9999
-offset_top = -6.000122
-offset_right = -1217.9999
-offset_bottom = -401.00015
+offset_left = -88.8
+offset_top = -31.0
+offset_right = -150.6
+offset_bottom = -75.200005
 theme_override_font_sizes/font_size = 32
 text = "0"
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676837461]
-position = Vector2(6.999878, -24.999878)
+[node name="Sprite2D" type="Sprite2D" parent="TextEdit/Label" unique_id=676837461]
+position = Vector2(-91.00012, 6.000122)
 scale = Vector2(0.15343349, 0.15343352)
 texture = ExtResource("1_5bct6")

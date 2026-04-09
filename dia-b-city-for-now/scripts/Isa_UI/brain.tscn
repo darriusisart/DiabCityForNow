@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://du6fnr66h2yl8"]
+
+[ext_resource type="Texture2D" uid="uid://i6mhsvf4hi2s" path="res://Assets/Brain_Icon.png" id="1_a5cen"]
+
+[node name="Stength" type="Control" unique_id=1120541432]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="." unique_id=1515313890]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="Control" unique_id=540699482]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Control/TextEdit" unique_id=361983680]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.575001
+anchor_top = -6.4890003
+anchor_right = 25.047
+anchor_bottom = 7.9500003
+offset_left = -32.600006
+offset_top = 21.912003
+offset_right = -106.37601
+offset_bottom = -48.600002
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/TextEdit" unique_id=676837461]
+position = Vector2(-10, -5.999998)
+scale = Vector2(0.16421993, 0.16421996)
+texture = ExtResource("1_a5cen")

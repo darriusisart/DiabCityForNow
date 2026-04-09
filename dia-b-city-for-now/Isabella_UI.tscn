@@ -1,21 +1,26 @@
 [gd_scene format=3 uid="uid://cnp5hdjat18dr"]
 
-[node name="Control" type="Control" unique_id=1120541432]
+[ext_resource type="Texture2D" uid="uid://i6mhsvf4hi2s" path="res://Assets/Brain_Icon.png" id="1_i8qs1"]
+
+[node name="HUD" type="Control" unique_id=1120541432]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=633951407]
-custom_minimum_size = Vector2(500, 500)
+[node name="Label" type="Label" parent="." unique_id=361983680]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -211.325
-anchor_top = -17.55
-anchor_right = 212.325
-anchor_bottom = 18.55
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 23.35
+anchor_right = 33.325
+anchor_bottom = 11.150001
+offset_left = 376.0
+offset_top = -376.0
+offset_right = 376.0
+offset_bottom = -140.00003
 theme_override_font_sizes/font_size = 500
-text = "SUKI"
-metadata/_edit_use_anchors_ = true
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676837461]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_i8qs1")

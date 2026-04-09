@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cpe7vi1pubnih"]
+
+[ext_resource type="Texture2D" uid="uid://c7x6nhgb2uwum" path="res://Assets/Stength_Icon.png" id="1_5781l"]
+
+[node name="HUD" type="Control" unique_id=1120541432]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="." unique_id=1427754147]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1353368247]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/TextureRect" unique_id=361983680]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4280001
+anchor_top = -1.2770001
+anchor_right = 3.45
+anchor_bottom = 1.0
+offset_left = 26.880005
+offset_top = 28.080002
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676837461]
+position = Vector2(-25.999878, -12)
+scale = Vector2(0.17526166, 0.17526168)
+texture = ExtResource("1_5781l")

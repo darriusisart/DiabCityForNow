@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dogail6rwt1c7"]
+
+[ext_resource type="PackedScene" uid="uid://cnp5hdjat18dr" path="res://Isabella_UI.tscn" id="1_qxkfv"]
+[ext_resource type="PackedScene" uid="uid://du6fnr66h2yl8" path="res://scripts/ui/brain.tscn" id="2_km7q3"]
+[ext_resource type="PackedScene" uid="uid://ck3ap1bg8iy08" path="res://scripts/ui/Nutrition.tscn" id="3_ybdfa"]
+[ext_resource type="PackedScene" uid="uid://cpe7vi1pubnih" path="res://scripts/ui/Strength.tscn" id="4_58pao"]
+
+[node name="Control" type="Control" unique_id=464768661]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2019082423]
+
+[node name="Control" parent="Node2D" unique_id=1120541432 instance=ExtResource("1_qxkfv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1919292170]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1885447985]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=919003577]
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -10.410001
+anchor_right = 107.725006
+anchor_bottom = 284.725
+offset_left = -166.0
+offset_top = 284.40002
+offset_right = 151.0
+offset_bottom = 102.0
+theme_override_constants/separation = 50
+
+[node name="Stength" parent="CanvasLayer/Control" unique_id=132865129 instance=ExtResource("2_km7q3")]
+layout_mode = 0
+
+[node name="HUD" parent="CanvasLayer/Control" unique_id=309981367 instance=ExtResource("3_ybdfa")]
+layout_mode = 0
+
+[node name="HUD2" parent="CanvasLayer/Control" unique_id=429966527 instance=ExtResource("4_58pao")]
+layout_mode = 0

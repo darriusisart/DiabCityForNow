@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ck3ap1bg8iy08"]
+
+[ext_resource type="Texture2D" uid="uid://dqwomsja4p46l" path="res://Assets/Fuel_Icon.png" id="1_5bct6"]
+
+[node name="HUD" type="Control" unique_id=1120541432]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="." unique_id=101698510]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=266465088]
+layout_mode = 0
+offset_left = 6.999878
+offset_top = -24.999878
+offset_right = 46.999878
+offset_bottom = 15.000122
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=361983680]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 23.35
+anchor_right = 33.325
+anchor_bottom = 11.150001
+offset_left = -842.9999
+offset_top = -6.000122
+offset_right = -1217.9999
+offset_bottom = -401.00015
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676837461]
+position = Vector2(6.999878, -24.999878)
+scale = Vector2(0.15343349, 0.15343352)
+texture = ExtResource("1_5bct6")

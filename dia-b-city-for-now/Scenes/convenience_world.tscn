@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_cam"]
 [ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_portal"]
 [ext_resource type="PackedScene" path="res://Scenes/player_25d.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="5_door"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://DiabWorld/scripts/door_to_scene.gd" id="5_door"]
 [ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="6_interact_area"]
 [ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="7_location_label"]
 

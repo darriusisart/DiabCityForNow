@@ -40,35 +40,47 @@ func _play_bus_cutscene(player: Node) -> void:
 
 	var layer := CanvasLayer.new()
 	layer.layer = 120
+	layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(layer)
+
+	var vp := get_viewport()
+	var vp_size: Vector2 = vp.get_visible_rect().size
+	if vp_size.length_squared() < 1.0:
+		vp_size = Vector2(1920, 1080)
 
 	var bus := TextureRect.new()
 	bus.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bus.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bus.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	var bus_tex := load(school_bus_image_path)
+	var bus_tex: Resource = load(school_bus_image_path)
+	if bus_tex == null:
+		bus_tex = load("res://DiabWorld/scenes/video/SchoolBus.jpg")
 	if bus_tex is Texture2D:
 		bus.texture = bus_tex
 	layer.add_child(bus)
 
-	if not _add_spine_cutscene_character(layer):
+	if not _add_spine_cutscene_character(layer, vp_size):
 		var player_tex := TextureRect.new()
 		player_tex.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		player_tex.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		player_tex.custom_minimum_size = Vector2(260, 260)
-		player_tex.position = Vector2(800, 360)
+		player_tex.set_anchors_preset(Control.PRESET_TOP_LEFT)
+		player_tex.position = Vector2(vp_size.x * 0.5 - 130.0, vp_size.y * 0.52)
 		_assign_player_texture(player, player_tex)
 		layer.add_child(player_tex)
 
 	var fade := ColorRect.new()
 	fade.set_anchors_preset(Control.PRESET_FULL_RECT)
 	fade.color = Color(0, 0, 0, 0)
+	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	layer.add_child(fade)
 
 	await get_tree().create_timer(maxf(0.1, bus_cutscene_seconds)).timeout
 	var tw := create_tween()
 	tw.tween_property(fade, "color", Color(0, 0, 0, 1), 0.6)
 	await tw.finished
+	if is_instance_valid(layer):
+		layer.queue_free()
 
 func _assign_player_texture(player: Node, target: TextureRect) -> void:
 	if player == null:
@@ -93,7 +105,7 @@ func _assign_player_texture(player: Node, target: TextureRect) -> void:
 	at.region = Rect2((frame % hframes) * frame_w, int(frame / hframes) * frame_h, frame_w, frame_h)
 	target.texture = at
 
-func _add_spine_cutscene_character(layer: CanvasLayer) -> bool:
+func _add_spine_cutscene_character(layer: CanvasLayer, vp_size: Vector2) -> bool:
 	if bus_spine_scene_path == "":
 		return false
 	var scene_res := load(bus_spine_scene_path)
@@ -108,8 +120,9 @@ func _add_spine_cutscene_character(layer: CanvasLayer) -> bool:
 	layer.add_child(canvas)
 	if canvas is Node2D:
 		var n2d := canvas as Node2D
-		n2d.position = Vector2(900, 640)
-		n2d.scale = Vector2(0.22, 0.22)
+		var scale_mul := clampf(vp_size.x / 1920.0, 0.45, 1.2)
+		n2d.position = Vector2(vp_size.x * 0.5, vp_size.y * 0.68)
+		n2d.scale = Vector2(0.22, 0.22) * scale_mul
 	if bus_spine_animation != "":
 		if canvas.has_method("set_animation"):
 			var argc := _method_arg_count(canvas, "set_animation")

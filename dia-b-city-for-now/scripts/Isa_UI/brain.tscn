@@ -21,18 +21,18 @@ offset_bottom = 8.0
 [node name="Label" type="Label" parent="Control/TextEdit" unique_id=361983680]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.575001
+anchor_left = -1.332
 anchor_top = -6.4890003
-anchor_right = 25.047
-anchor_bottom = 7.9500003
-offset_left = -32.600006
-offset_top = 21.912003
-offset_right = -106.37601
-offset_bottom = -48.600002
+anchor_right = 9.142
+anchor_bottom = 5.82
+offset_left = 57.656
+offset_top = 17.912003
+offset_right = -8.136002
+offset_bottom = -35.56
 theme_override_font_sizes/font_size = 32
 text = "0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/TextEdit" unique_id=676837461]
-position = Vector2(-10, -5.999998)
-scale = Vector2(0.16421993, 0.16421996)
+position = Vector2(-1, -1)
+scale = Vector2(0.07380629, 0.07380631)
 texture = ExtResource("1_a5cen")

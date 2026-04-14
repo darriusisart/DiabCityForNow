@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cttpi31ej1si0"
+path="res://.godot/imported/MainCharacterSideViewPSD.atlas-65d373ca489ee1961980268553284199.spatlas"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/NewestSpinee/madinew/MainCharacterSideViewPSD.atlas"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD.atlas-65d373ca489ee1961980268553284199.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

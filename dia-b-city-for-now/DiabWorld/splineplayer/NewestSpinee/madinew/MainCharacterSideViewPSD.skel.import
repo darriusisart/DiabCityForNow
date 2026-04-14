@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://boenwrb6d3h7s"
+path="res://.godot/imported/MainCharacterSideViewPSD.skel-4690b09914a474290a3a8551430058e5.spskel"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/NewestSpinee/madinew/MainCharacterSideViewPSD.skel"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD.skel-4690b09914a474290a3a8551430058e5.spskel"]
+
+[params]
+

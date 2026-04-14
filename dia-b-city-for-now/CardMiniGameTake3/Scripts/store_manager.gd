@@ -25,8 +25,8 @@ var cart_y := 100.0
 var cart_w := 1500.0
 var cart_h := 2000.0
 
-const CARD_W := 200
-const CARD_H := 200
+const CARD_W := 100
+const CARD_H := 100
 const GREEN_TIER_MULT := 1.35
 const YELLOW_TIER_MULT := 1.0
 const RED_TIER_MULT := 0.45
@@ -356,7 +356,7 @@ func _populate_shelves():
 func _spawn_row(parent: Node2D, foods: Array, tier: String, shelf_y: float):
 	for i in range(foods.size()):
 		var card = _create_food_card(foods[i], tier)
-		card.position = Vector2(shelf_x + 200 + i * (CARD_W + 48), _shelf_line_y(shelf_y + 100))
+		card.position = Vector2(shelf_x + 200 + i * (CARD_W + 24), _shelf_line_y(shelf_y + 50))
 		parent.add_child(card)
 
 func _create_food_card(info: Dictionary, tier: String) -> Node2D:
@@ -372,7 +372,11 @@ func _create_food_card(info: Dictionary, tier: String) -> Node2D:
 	card.set_meta("dropped", false)
 	card.set_meta("flipped", false)
 	card.set_meta("quality", _quality_from_tier(tier))
-	card.set_meta("ingredients_text", _ingredients_for_food(str(info["name"]), tier))
+	var base_ing := _ingredients_for_food(str(info["name"]), tier)
+	var ing_for_label := base_ing
+	if randf() < 0.5:
+		ing_for_label = _misleading_ingredient_line(str(info["name"]), tier)
+	card.set_meta("ingredients_text", ing_for_label)
 	card.set_meta("nutrition_value", _weighted_nutrition_value(int(info["nutrition"]), tier))
 
 	# Tier colour
@@ -833,6 +837,10 @@ func _ingredients_for_food(food_name: String, tier: String) -> String:
 	if FOOD_INGREDIENTS.has(food_name):
 		return str(FOOD_INGREDIENTS[food_name])
 	return _ingredients_for_tier(tier)
+
+func _misleading_ingredient_line(food_name: String, _tier: String) -> String:
+	# Looks like junk food — 50/50 the label lies; minigame answer still uses true tier quality.
+	return "high fructose corn syrup, artificial %s flavor, palm oil, TBHQ, red 40, corn starch" % food_name.replace(" ", "_").to_lower()
 
 func _ingredients_for_tier(tier: String) -> String:
 	var out := PackedStringArray()

@@ -8,13 +8,13 @@
 [node name="PEClassroom" type="Node2D" unique_id=1032977856]
 script = ExtResource("2_lesson")
 lesson_title = "PE Class - Exercise & Wellbeing"
-teacher_name = "Coach Morgan (Placeholder)"
-lesson_chat = PackedStringArray("Welcome! Today we're focusing on moving safely and having fun.", "Listen to your body—go at a pace that feels right for you.", "We'll start with a short follow-along warm-up. When you're ready, press Continue to play the video.")
-skip_lesson_quiz = true
+teacher_name = "Coach Morgan"
+randomized_convo_mode = false
 reward_points = 10
 reward_pillar = "exercise"
 completion_step_id = "pe"
 reveal_on_quiz_complete_path = NodePath("CanvasLayer/Main")
+skip_lesson_quiz = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=707414701]
 
@@ -156,5 +156,5 @@ theme_override_font_sizes/font_size = 30
 text = "Back to School"
 
 [node name="Main" parent="CanvasLayer" unique_id=115591616 instance=ExtResource("3_2c4xo")]
-visible = false
-position = Vector2(955, 540)
+position = Vector2(950, 550)
+scale = Vector2(0.77, 0.77)

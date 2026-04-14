@@ -26,6 +26,7 @@ var _player: Node = null
 var _inventory_keys: Array[String] = []
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	panel.visible = false
 	inventory_panel.visible = false
 	_disable_keyboard_focus()
@@ -36,11 +37,36 @@ func _ready() -> void:
 	eat_button.pressed.connect(_eat_selected_inventory_item)
 
 func _input(event: InputEvent) -> void:
-	if not is_open():
+	if not (event is InputEventKey):
 		return
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_TAB:
+	var ke := event as InputEventKey
+	if not ke.pressed or ke.echo:
+		return
+	if ke.keycode != KEY_TAB:
+		return
+	var vp := get_viewport()
+	if vp != null:
+		var focus := vp.gui_get_focus_owner()
+		if focus is LineEdit or focus is TextEdit:
+			return
+	if is_open():
 		hide_menu()
-		get_viewport().set_input_as_handled()
+	else:
+		var p := _find_player_for_pause()
+		if p != null:
+			show_menu(p)
+	get_viewport().set_input_as_handled()
+
+func _find_player_for_pause() -> Node:
+	var nodes := get_tree().get_nodes_in_group("player_avatar")
+	if not nodes.is_empty():
+		return nodes[0] as Node
+	var scene := get_tree().current_scene
+	if scene != null:
+		var n := scene.get_node_or_null("Player")
+		if n != null:
+			return n
+	return null
 
 func _disable_keyboard_focus() -> void:
 	for ctrl in [close_button, notebook_button, inventory_button, inventory_close_button, eat_button, inventory_list]:
@@ -50,6 +76,7 @@ func _disable_keyboard_focus() -> void:
 func show_menu(player: Node) -> void:
 	_player = player
 	panel.visible = true
+	get_tree().paused = true
 	if _player != null and _player.has_method("set_ui_locked"):
 		_player.set_ui_locked(true)
 	_refresh_stats()
@@ -57,6 +84,7 @@ func show_menu(player: Node) -> void:
 func hide_menu() -> void:
 	panel.visible = false
 	inventory_panel.visible = false
+	get_tree().paused = false
 	if _player != null and _player.has_method("set_ui_locked"):
 		_player.set_ui_locked(false)
 
@@ -105,6 +133,7 @@ func _open_notebook() -> void:
 	var notebook := get_tree().current_scene.get_node_or_null("TravelerNotebook")
 	if notebook == null:
 		return
+	get_tree().paused = false
 	panel.visible = false
 	inventory_panel.visible = false
 	if notebook.has_method("show_panel_from_pause"):

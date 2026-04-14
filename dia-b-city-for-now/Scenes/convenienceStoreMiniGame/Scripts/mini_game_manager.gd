@@ -47,6 +47,12 @@ var _match_idx := 0
 func _ready():
 	_screen = get_viewport_rect().size
 	_build_panel()
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+
+func _on_viewport_size_changed() -> void:
+	_screen = get_viewport_rect().size
+	if _panel:
+		_layout_panel()
 
 func _build_panel():
 	var layer = CanvasLayer.new()
@@ -56,8 +62,7 @@ func _build_panel():
 
 	_panel = Panel.new()
 	_panel.name = "MGPanel"
-	_panel.size = Vector2(520, 370)
-	_panel.position = Vector2(_screen.x / 2 - 260, _screen.y / 2 - 185)
+	_layout_panel()
 	_panel.visible = false
 
 	var style = StyleBoxFlat.new()
@@ -71,6 +76,12 @@ func _build_panel():
 	_panel.add_theme_stylebox_override("panel", style)
 	_panel.focus_mode = Control.FOCUS_NONE   # Don't steal keyboard focus
 	layer.add_child(_panel)
+
+func _layout_panel() -> void:
+	var max_w := minf(520.0, _screen.x * 0.78)
+	var max_h := minf(380.0, _screen.y * 0.62)
+	_panel.size = Vector2(max_w, max_h)
+	_panel.position = (_screen - _panel.size) * 0.5
 
 # ──────────────────────────────────────────────
 #  PUBLIC — called by store_manager
@@ -96,6 +107,7 @@ func start_random(difficulty: String):
 		"simon_says":  _setup_simon_says()
 		"food_match":  _setup_food_match()
 
+	_layout_panel()
 	_panel.visible = true
 
 # ──────────────────────────────────────────────

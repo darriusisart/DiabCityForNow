@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://byo8wyiuy4s0u"]
+
+[ext_resource type="Script" uid="uid://bxurs36f2f4lp" path="res://DiabWorld/scenes/video/video_stream_player.gd" id="1_8txrq"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_pgm71"]
+file = "res://videos/adverstisement/testvideo.ogg"
+
+[node name="Main" type="Node2D" unique_id=115591616]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1624346653]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=64814785]
+offset_left = -960.0
+offset_top = -542.0
+offset_right = 1906.0
+offset_bottom = 1082.0
+stream = SubResource("VideoStreamTheora_pgm71")
+autoplay = true
+script = ExtResource("1_8txrq")
+
+[node name="Pause" type="Button" parent="." unique_id=1789763156]
+offset_left = -141.0
+offset_top = 421.0
+offset_right = 136.0
+offset_bottom = 535.0
+text = "Pause
+"
+
+[node name="Loop" type="Button" parent="." unique_id=1099607580]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Pause" to="VideoStreamPlayer" method="_on_pause_button_down"]
+[connection signal="button_down" from="Loop" to="VideoStreamPlayer" method="_on_loop_button_down"]

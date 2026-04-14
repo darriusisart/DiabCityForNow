@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://v40wsih8b36w"]
+
+[sub_resource type="OScript" id="OScript_hifjs"]
+
+[node name="Test" type="Node" unique_id=815674260]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1406551228]
+script = SubResource("OScript_hifjs")

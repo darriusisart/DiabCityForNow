@@ -1,0 +1,289 @@
+{
+"skeleton": {
+	"hash": "u6HuI5qUXss",
+	"spine": "4.2.43",
+	"x": -840.9,
+	"y": -18.26,
+	"width": 1560,
+	"height": 2604,
+	"images": "./images/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "dark torso", "parent": "root", "x": -29.72, "y": 850.87 },
+	{ "name": "dark torso2", "parent": "dark torso", "length": 497.99, "rotation": 89.48, "x": 2, "y": 26.64 },
+	{ "name": "dark head", "parent": "dark torso2", "length": 1186.89, "rotation": -0.37, "x": 443.82, "y": 3.31 },
+	{ "name": "dark front upper", "parent": "dark torso", "length": 386.92, "rotation": -152.94, "x": -98.36, "y": 375.68 },
+	{ "name": "dark Front lower arm", "parent": "dark front upper", "length": 218.21, "rotation": 0.93, "x": 372.98, "y": -1.54 },
+	{ "name": "dark front hand l", "parent": "dark Front lower arm", "length": 183.68, "rotation": -1.27, "x": 209.47, "y": -4.08 },
+	{ "name": "back upper arm", "parent": "dark torso", "length": 400.11, "rotation": -22.3, "x": 24.01, "y": 399.4 },
+	{ "name": "back dark lower arm", "parent": "back upper arm", "length": 193.93, "rotation": -5.57, "x": 396.61, "y": 5.65 },
+	{ "name": "back dark hand", "parent": "back dark lower arm", "length": 190.61, "rotation": -0.9, "x": 168.23, "y": -4.94 },
+	{ "name": "dark front thigh", "parent": "dark torso", "length": 353.97, "rotation": -88.41, "x": -138.23, "y": -96.89 },
+	{ "name": "dark front shin", "parent": "dark front thigh", "length": 203.78, "rotation": -6.2, "x": 322.86, "y": 0.86 },
+	{ "name": "back dark thigh", "parent": "dark torso", "length": 365.21, "rotation": -74.65, "x": 23.95, "y": -113.27 },
+	{ "name": "back dark shin", "parent": "back dark thigh", "length": 215.74, "rotation": -1.73, "x": 321.82, "y": -3.38 },
+	{ "name": "back blue shoe", "parent": "back dark shin", "length": 234.31, "rotation": 0.14, "x": 170.98, "y": 3.65 },
+	{ "name": "front blue shoe", "parent": "dark front shin", "length": 261.32, "rotation": 7.4, "x": 153.29, "y": -0.89 },
+	{ "name": "dark head2", "parent": "dark head", "length": 696.99, "rotation": 0.01, "x": 530.1, "y": 0.35 },
+	{ "name": "dark head3", "parent": "dark head", "x": 304.39, "y": -540.7 },
+	{ "name": "eyebrow", "parent": "dark head3", "length": 128.49, "rotation": 73.49, "x": 275.85, "y": 48.32 },
+	{ "name": "eyebrow2", "parent": "eyebrow", "length": 145.12, "rotation": 6.28, "x": 128.22, "y": 0.78 },
+	{ "name": "eye", "parent": "dark head3", "x": 75.74, "y": 216.7 },
+	{ "name": "blue mask", "parent": "dark head3", "length": 400.05, "rotation": 89.41, "x": 98.11, "y": -27.16 },
+	{ "name": "blue mask2", "parent": "blue mask", "length": 285.81, "rotation": 14.7, "x": 399.79, "y": 2.75 },
+	{ "name": "dark front shin2", "parent": "dark front shin", "x": 7.39, "y": 56.9 },
+	{ "name": "back dark shin2", "parent": "back dark shin", "x": 27.09, "y": 78.51 },
+	{ "name": "dark front thigh2", "parent": "dark front thigh", "x": 52.85, "y": -4.28 },
+	{ "name": "back dark thigh2", "parent": "back dark thigh", "x": 61.16, "y": -1.57 },
+	{ "name": "blue_eyelid", "parent": "dark head3", "x": 267.09, "y": 209.88 },
+	{ "name": "blue_eyelid2", "parent": "blue_eyelid", "length": 67.83, "rotation": -179.93, "x": 0.98, "y": -0.95 }
+],
+"slots": [
+	{ "name": "back dark lower arm", "bone": "back dark lower arm", "attachment": "darkSkin_back_lowerArm" },
+	{ "name": "back dark hand", "bone": "back dark hand", "attachment": "darkSkin_back_hand" },
+	{ "name": "back upper arm", "bone": "back upper arm", "attachment": "darkSkin_back_upperArm" },
+	{ "name": "back dark shin", "bone": "back dark shin2", "attachment": "darkSkin_back_shin" },
+	{ "name": "back dark thigh", "bone": "back dark thigh2", "attachment": "darkSkin_back_thigh" },
+	{ "name": "back blue shoe", "bone": "back blue shoe", "attachment": "blue_back_shoe" },
+	{ "name": "dark torso", "bone": "dark torso2", "attachment": "darkSkin_torso" },
+	{ "name": "dark front shin", "bone": "dark front shin2", "attachment": "darkSkin_front_shin" },
+	{ "name": "front blue shoe", "bone": "front blue shoe", "attachment": "front blue shoe" },
+	{ "name": "dark front thigh", "bone": "dark front thigh2", "attachment": "darkSkin_front_thigh" },
+	{ "name": "dark front hand l", "bone": "dark front hand l", "attachment": "darkSkin_front_hand" },
+	{ "name": "dark Front lower arm", "bone": "dark Front lower arm", "attachment": "darkSkin_front_lowerArm" },
+	{ "name": "dark front upper", "bone": "dark front upper", "attachment": "darkSkin_front_upperArm" },
+	{ "name": "dark head", "bone": "dark head3", "attachment": "darkSkin_head" },
+	{ "name": "blue mask", "bone": "blue mask", "attachment": "blue_mask" },
+	{ "name": "eye", "bone": "eye", "attachment": "eye" },
+	{ "name": "blue_eyelid", "bone": "blue_eyelid", "attachment": "blue_eyelid" },
+	{ "name": "eyebrow", "bone": "eyebrow", "attachment": "blue_eyebrow" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"back blue shoe": {
+				"blue_back_shoe": { "x": 89.36, "y": 23.09, "rotation": 76.25, "width": 501, "height": 354 }
+			},
+			"back dark hand": {
+				"darkSkin_back_hand": { "x": 98.46, "y": -7.31, "rotation": 28.77, "width": 253, "height": 201 }
+			},
+			"back dark lower arm": {
+				"darkSkin_back_lowerArm": { "x": 80.07, "y": 4.11, "rotation": 27.86, "width": 252, "height": 195 }
+			},
+			"back dark shin": {
+				"darkSkin_back_shin": { "x": 68.82, "y": -78.11, "rotation": 76.39, "width": 194, "height": 279 }
+			},
+			"back dark thigh": {
+				"darkSkin_back_thigh": { "x": 130.57, "y": 1.71, "rotation": 74.65, "width": 278, "height": 392 }
+			},
+			"back upper arm": {
+				"darkSkin_back_upperArm": { "x": 200.72, "y": 5.53, "rotation": 22.3, "width": 444, "height": 307 }
+			},
+			"blue mask": {
+				"blue_mask": { "x": 350.36, "y": 6.28, "rotation": -178.52, "width": 729, "height": 516 }
+			},
+			"blue_eyelid": {
+				"blue_eyelid": { "x": -4.46, "y": 3.63, "rotation": -89.11, "width": 219, "height": 118 }
+			},
+			"dark front hand l": {
+				"darkSkin_front_hand": { "x": 78.05, "y": 5.86, "rotation": 153.28, "width": 252, "height": 199 }
+			},
+			"dark Front lower arm": {
+				"darkSkin_front_lowerArm": { "x": 105.9, "y": -4.16, "rotation": 152.01, "width": 247, "height": 205 }
+			},
+			"dark front shin": {
+				"darkSkin_front_shin": { "x": 83.95, "y": -69.38, "rotation": 94.61, "width": 192, "height": 275 }
+			},
+			"dark front thigh": {
+				"darkSkin_front_thigh": { "x": 131.31, "y": -1.29, "rotation": 88.41, "width": 231, "height": 404 }
+			},
+			"dark front upper": {
+				"darkSkin_front_upperArm": { "x": 207.7, "y": -1.87, "rotation": 152.94, "width": 437, "height": 335 }
+			},
+			"dark head": {
+				"darkSkin_head": { "x": 311.11, "y": 635.62, "rotation": -89.11, "width": 1389, "height": 1295 }
+			},
+			"dark torso": {
+				"darkSkin_torso": { "x": 108.95, "y": 31.16, "rotation": -89.48, "width": 548, "height": 826 }
+			},
+			"eye": {
+				"eye": { "x": 0.3, "y": 2.73, "rotation": -89.11, "width": 196, "height": 250 }
+			},
+			"eyebrow": {
+				"blue_eyebrow": { "x": 143, "y": 12.47, "rotation": -162.6, "width": 332, "height": 160 }
+			},
+			"front blue shoe": {
+				"front blue shoe": { "x": 128.3, "y": 37.72, "rotation": 87.21, "width": 505, "height": 341 }
+			}
+		}
+	}
+],
+"animations": {
+	"DarkMale_IdleAnimation": {
+		"bones": {
+			"dark torso2": {
+				"rotate": [
+					{},
+					{ "time": 1, "value": 0.49 },
+					{ "time": 2 }
+				],
+				"translate": [
+					{ "y": -34.57 },
+					{ "time": 1, "y": 37.99 },
+					{ "time": 2, "y": -34.57 }
+				]
+			},
+			"dark head": {
+				"rotate": [
+					{},
+					{ "time": 1, "value": -3.15 },
+					{ "time": 2 }
+				]
+			},
+			"dark front upper": {
+				"rotate": [
+					{ "value": 21.29 },
+					{ "time": 1, "value": 35.45 },
+					{ "time": 2, "value": 21.29 }
+				],
+				"translate": [
+					{},
+					{ "time": 1, "y": 78.53 },
+					{ "time": 2 }
+				]
+			},
+			"dark Front lower arm": {
+				"rotate": [
+					{ "value": 35.5 },
+					{ "time": 1, "value": 25.45 },
+					{ "time": 2, "value": 35.5 }
+				]
+			},
+			"back upper arm": {
+				"rotate": [
+					{ "value": -33.3 },
+					{ "time": 1, "value": -41.42 },
+					{ "time": 2, "value": -33.3 }
+				],
+				"translate": [
+					{},
+					{ "time": 1, "y": 81.19 },
+					{ "time": 2 }
+				]
+			},
+			"back dark lower arm": {
+				"rotate": [
+					{ "value": -22.19 },
+					{ "time": 1, "value": -12.87 },
+					{ "time": 2, "value": -22.19 }
+				]
+			},
+			"eyebrow": {
+				"rotate": [
+					{ "value": 5.27 },
+					{ "time": 1, "value": -3.25 },
+					{ "time": 2, "value": 5.27 }
+				],
+				"translate": [
+					{ "x": 28.23, "y": 0.44 },
+					{ "time": 1, "x": 62.02, "y": -2.06 },
+					{ "time": 2, "x": 28.23, "y": 0.44 }
+				]
+			},
+			"dark front thigh": {
+				"rotate": [
+					{ "value": -15.77 }
+				],
+				"translate": [
+					{ "x": 35.55 }
+				]
+			},
+			"front blue shoe": {
+				"rotate": [
+					{ "value": 15.68 }
+				],
+				"translate": [
+					{ "x": -0.13, "y": 19.53 }
+				]
+			},
+			"dark front shin2": {
+				"rotate": [
+					{ "value": -15.51 },
+					{ "time": 1, "value": -3.89 },
+					{ "time": 2, "value": -15.51 }
+				],
+				"translate": [
+					{ "x": 16.12, "y": 78.83 },
+					{ "time": 1, "x": -5.06, "y": 35.59 },
+					{ "time": 2, "x": 16.12, "y": 78.83 }
+				],
+				"scale": [
+					{ "x": 1.267 }
+				]
+			},
+			"dark front thigh2": {
+				"rotate": [
+					{ "value": 20.86 },
+					{ "time": 1, "value": 11.82 },
+					{ "time": 2, "value": 20.86 }
+				],
+				"translate": [
+					{ "x": 28.54, "y": -28.11 },
+					{ "time": 1, "x": -4.43, "y": -36.44 },
+					{ "time": 2, "x": 28.54, "y": -28.11 }
+				]
+			},
+			"back dark thigh2": {
+				"rotate": [
+					{ "value": 12.15 },
+					{ "time": 1, "value": -2.12 },
+					{ "time": 2, "value": 12.15 }
+				],
+				"translate": [
+					{ "x": 22.87, "y": -6.28 },
+					{ "time": 1, "x": -18.37, "y": 5.04 },
+					{ "time": 2, "x": 22.87, "y": -6.28 }
+				]
+			},
+			"back dark shin2": {
+				"rotate": [
+					{ "value": -33.64 },
+					{ "time": 1, "value": -13.84 },
+					{ "time": 2, "value": -33.64 }
+				],
+				"translate": [
+					{ "x": 36.22, "y": 41.63 },
+					{ "time": 1, "x": 9.55, "y": -7.92 },
+					{ "time": 2, "x": 36.22, "y": 41.63 }
+				],
+				"scale": [
+					{ "x": 1.37 }
+				]
+			},
+			"back blue shoe": {
+				"rotate": [
+					{ "value": -1.82 }
+				],
+				"translate": [
+					{ "x": 1.7, "y": -18.52 }
+				]
+			},
+			"blue_eyelid": {
+				"translate": [
+					{ "time": 0.4667 },
+					{ "time": 0.6333, "x": -117.86, "y": 25.45 },
+					{ "time": 0.8 }
+				],
+				"scale": [
+					{ "time": 0.4667 },
+					{ "time": 0.6333, "x": 3.044, "y": 1.232 },
+					{ "time": 0.8 }
+				]
+			}
+		}
+	}
+}
+}

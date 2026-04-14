@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://darute7h6t8jn"]
+
+[ext_resource type="Script" uid="uid://bk2v6q8xxkj6o" path="res://DiabWorld/scripts/ui/begin_quiz.gd" id="1_begin"]
+
+[node name="BeginQuiz" type="CanvasLayer" unique_id=6147507]
+script = ExtResource("1_begin")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=293436551]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -220.0
+offset_right = 320.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=427260487]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin" unique_id=1595472618]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox" unique_id=445115516]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start Day Quiz"
+horizontal_alignment = 1
+
+[node name="Question" type="Label" parent="Panel/Margin/VBox" unique_id=1279663613]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Question"
+autowrap_mode = 3
+
+[node name="Answers" type="VBoxContainer" parent="Panel/Margin/VBox" unique_id=157014302]
+layout_mode = 2
+theme_override_constants/separation = 8

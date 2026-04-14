@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://30ydci2nwskf"]
+
+[ext_resource type="Texture2D" uid="uid://dtky2sbkj6ouc" path="res://CardMiniGame/cardBacks.png" id="2_73yj8"]
+
+[node name="Card" type="Container" unique_id=1414116610]
+custom_minimum_size = Vector2(105, 136)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cardbacks" type="Sprite2D" parent="." unique_id=1907498925]
+texture_filter = 1
+position = Vector2(41, 0)
+texture = ExtResource("2_73yj8")
+hframes = 4
+vframes = 5

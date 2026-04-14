@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://bhkt1yqnmnppa"]
+
+[ext_resource type="Script" uid="uid://vfworcdtmy04" path="res://DiabWorld/scripts/ui/pause_menu.gd" id="1_pause"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1272926360]
+script = ExtResource("1_pause")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=2009709043]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -260.0
+offset_right = 340.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=1118596791]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin" unique_id=1857913368]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox" unique_id=1298740671]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pause - Pillars"
+horizontal_alignment = 1
+
+[node name="Objective" type="Label" parent="Panel/Margin/VBox" unique_id=39275945]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Current Objective"
+
+[node name="Wellbeing" type="Label" parent="Panel/Margin/VBox" unique_id=1937104404]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wellbeing"
+
+[node name="WellbeingBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="Social" type="Label" parent="Panel/Margin/VBox" unique_id=735162859]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Social"
+
+[node name="SocialBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="Exercise" type="Label" parent="Panel/Margin/VBox" unique_id=1475584910]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Exercise"
+
+[node name="ExerciseBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="Nutrition" type="Label" parent="Panel/Margin/VBox" unique_id=982047131]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Nutrition"
+
+[node name="NutritionBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="Sleep" type="Label" parent="Panel/Margin/VBox" unique_id=965544577]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Sleep"
+
+[node name="SleepBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="GlobalStats" type="Label" parent="Panel/Margin/VBox" unique_id=1745884510]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Totals"
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin/VBox" unique_id=1093223938]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ResumeButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=510638339]
+layout_mode = 2
+text = "Resume"
+
+[node name="NotebookButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=222452337]
+layout_mode = 2
+text = "Traveler Notebook"
+
+[node name="InventoryButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=1130245899]
+layout_mode = 2
+text = "Inventory"
+
+[node name="InventoryPanel" type="PanelContainer" parent="." unique_id=1517115379]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -170.0
+offset_right = 240.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="InventoryPanel" unique_id=296501274]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="InventoryPanel/Margin" unique_id=2056670629]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="InventoryPanel/Margin/VBox" unique_id=282859979]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Convenience Ingredients"
+horizontal_alignment = 1
+
+[node name="InventoryList" type="ItemList" parent="InventoryPanel/Margin/VBox" unique_id=610235889]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+
+[node name="EatButton" type="Button" parent="InventoryPanel/Margin/VBox" unique_id=328918415]
+layout_mode = 2
+text = "Eat Selected Item"
+
+[node name="EatHint" type="Label" parent="InventoryPanel/Margin/VBox" unique_id=1976913296]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Select an ingredient, then eat it for a boost."
+horizontal_alignment = 1
+
+[node name="CloseInventoryButton" type="Button" parent="InventoryPanel/Margin/VBox" unique_id=1121833310]
+layout_mode = 2
+text = "Close"

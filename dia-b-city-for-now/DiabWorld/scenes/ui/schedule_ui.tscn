@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://deu3u1y42xnjy"]
+
+[ext_resource type="Script" uid="uid://ch3n5ur37hb4x" path="res://DiabWorld/scripts/ui/schedule_ui.gd" id="1_lj8gx"]
+
+[node name="ScheduleUI" type="CanvasLayer" unique_id=432271714]
+script = ExtResource("1_lj8gx")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=318320907]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -330.0
+offset_right = 400.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1402261106]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1646394576]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1572687387]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "My Week (Middle School)"
+horizontal_alignment = 1
+
+[node name="Line1" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=997132562]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- Monday: School 8–3, soccer practice"
+
+[node name="Line2" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=84747808]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- Tuesday: School 8–3, homework + games"
+
+[node name="Line3" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1171272073]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- Wednesday: School 8–3, hang out with friends"
+
+[node name="Line4" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1967387196]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- Thursday: School 8–3, club after school"
+
+[node name="Line5" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=481733963]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- Friday: School 8–3, movie or chill night"
+
+[node name="CloseHint" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=945514053]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Press E or Esc to close"
+horizontal_alignment = 1

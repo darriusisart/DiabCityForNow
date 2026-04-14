@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5ntbahp076vt"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_76h14"]
+file = "res://videos/adverstisement/testvid2.ogg"
+
+[node name="PE_Video" type="Node2D" unique_id=1465151765]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1106398590]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D" unique_id=1561741385]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_76h14")
+
+[node name="Button" type="Button" parent="Camera2D/VideoStreamPlayer" unique_id=677892726]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

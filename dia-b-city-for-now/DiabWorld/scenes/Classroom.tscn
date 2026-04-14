@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://injmv70eeirs"]
+
+[ext_resource type="Texture2D" uid="uid://ccqgvy81ama4s" path="res://DiabWorld/scenes/ui/pictures/classroom.jpg" id="1_3jiko"]
+[ext_resource type="Script" uid="uid://bebjuvgqtsnou" path="res://DiabWorld/scripts/class_lesson_scene.gd" id="2_lesson"]
+[ext_resource type="Texture2D" uid="uid://4s8wne3ulnxe" path="res://videos/chibi_main_character.png" id="3_3un1s"]
+
+[node name="Classroom" type="Node2D" unique_id=1993162856]
+script = ExtResource("2_lesson")
+lesson_title = "Classroom - Compost Basics"
+teacher_name = "Ms. Rivera"
+lesson_question = "Which item is best to put in a basic classroom compost bin?"
+answer_choices = ["Banana peel", "Starburst wrapper", "Chewed gum", "Old Water"]
+reward_points = 10
+next_scene_path = "res://DiabWorld/scenes/PE_Classroom.tscn"
+completion_step_id = "class"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1700129690]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1028615682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/Control" unique_id=334466233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3jiko")
+stretch_mode = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control" unique_id=1522893875]
+light_mask = 0
+visibility_layer = 16
+position = Vector2(940, 277)
+scale = Vector2(0.5751953, 0.36848956)
+texture = ExtResource("3_3un1s")
+
+[node name="TopPanel" type="PanelContainer" parent="CanvasLayer/Control" unique_id=1918613142]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TopPanel" unique_id=1955420758]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TopPanel/MarginContainer" unique_id=495824172]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/TopPanel/MarginContainer/VBoxContainer" unique_id=1962959386]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Classroom Lesson"
+
+[node name="Points" type="Label" parent="CanvasLayer/Control/TopPanel/MarginContainer/VBoxContainer" unique_id=1397843397]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Knowledge Points: 0"
+
+[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer/Control" unique_id=1155195716]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -360.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/BottomPanel" unique_id=98969773]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/BottomPanel/MarginContainer" unique_id=896427705]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TeacherName" type="Label" parent="CanvasLayer/Control/BottomPanel/MarginContainer/VBoxContainer" unique_id=324913735]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Teacher"
+
+[node name="ChatBody" type="RichTextLabel" parent="CanvasLayer/Control/BottomPanel/MarginContainer/VBoxContainer" unique_id=272672043]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Chat text"
+scroll_active = false
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/Control/BottomPanel/MarginContainer/VBoxContainer" unique_id=1288561928]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="QuestionPanel" type="PanelContainer" parent="CanvasLayer/Control" unique_id=564361537]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -280.0
+offset_right = 460.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/QuestionPanel" unique_id=1877422955]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/QuestionPanel/MarginContainer" unique_id=704315736]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Question" type="Label" parent="CanvasLayer/Control/QuestionPanel/MarginContainer/VBoxContainer" unique_id=1524988329]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Question"
+autowrap_mode = 3
+
+[node name="Answers" type="VBoxContainer" parent="CanvasLayer/Control/QuestionPanel/MarginContainer/VBoxContainer" unique_id=1032899180]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Feedback" type="Label" parent="CanvasLayer/Control/QuestionPanel/MarginContainer/VBoxContainer" unique_id=98275977]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Control/QuestionPanel/MarginContainer/VBoxContainer" unique_id=210126641]
+visible = false
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Continue to PE"

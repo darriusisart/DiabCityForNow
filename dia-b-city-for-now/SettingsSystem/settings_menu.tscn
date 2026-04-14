@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://SettingsSystem/settings_ui.gd" id="1_settings_ui"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings_ui")
+master_slider = NodePath("PanelContainer/MarginContainer/VBox/MasterRow/MasterSlider")
+music_slider = NodePath("PanelContainer/MarginContainer/VBox/MusicRow/MusicSlider")
+sfx_slider = NodePath("PanelContainer/MarginContainer/VBox/SFXRow/SFXSlider")
+fullscreen_toggle = NodePath("PanelContainer/MarginContainer/VBox/FullscreenRow/FullscreenToggle")
+vsync_toggle = NodePath("PanelContainer/MarginContainer/VBox/VsyncRow/VsyncToggle")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.15, 0.9)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="AudioHeader" type="Label" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+text = "── Audio ──"
+horizontal_alignment = 1
+
+[node name="MasterRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBox/MasterRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBox/MasterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBox/MusicRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBox/MusicRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="SFXRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="PanelContainer/MarginContainer/VBox/SFXRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBox/SFXRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="VideoHeader" type="Label" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+text = "── Video ──"
+horizontal_alignment = 1
+
+[node name="FullscreenRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="PanelContainer/MarginContainer/VBox/FullscreenRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="FullscreenToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBox/FullscreenRow"]
+layout_mode = 2
+
+[node name="VsyncRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="PanelContainer/MarginContainer/VBox/VsyncRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "V-Sync"
+
+[node name="VsyncToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBox/VsyncRow"]
+layout_mode = 2
+button_pressed = true

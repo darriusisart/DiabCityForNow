@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cnq8kv824my86"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://5ffi8bgmfbux" path="res://DiabWorld/splineplayer/JumpSpline/MainCharacterSideViewPSD.atlas" id="1_mjaxc"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://dfkm4vognap5q" path="res://DiabWorld/splineplayer/JumpSpline/MainCharacterSideViewPSD.skel" id="2_7ucc2"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_226ie"]
+atlas_res = ExtResource("1_mjaxc")
+skeleton_file_res = ExtResource("2_7ucc2")
+
+[node name="JumpSpine" type="SpineSprite" unique_id=1190587220]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_226ie")
+preview_skin = "Default"
+preview_animation = "DarkMale_ShortJump"
+preview_frame = false
+preview_time = 0.0

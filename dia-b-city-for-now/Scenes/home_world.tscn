@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_stage"]
 [ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_cam"]
 [ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_portal"]
-[ext_resource type="PackedScene" path="res://Scenes/player_25d.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="4_player"]
 [ext_resource type="Script" uid="uid://bddt1vybk6iyg" path="res://scripts/calendar_interactable.gd" id="5_calendar"]
 [ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="6_interact_area"]
 [ext_resource type="PackedScene" path="res://Scenes/ui/schedule_ui.tscn" id="7_schedule_ui"]
@@ -40,11 +40,11 @@ size = Vector3(30, 5, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_calendar"]
 size = Vector3(1.2, 1.4, 0.15)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_calendar"]
-size = Vector3(1.6, 2, 1.6)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_calendar_solid"]
 size = Vector3(1.1, 1.6, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_calendar"]
+size = Vector3(1.6, 2, 1.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_portal"]
 size = Vector3(3.5, 3.5, 3.5)
@@ -104,6 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_floor")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1424705065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09509277, 0, -0.17407227)
 mesh = SubResource("BoxMesh_floor")
 
 [node name="player" parent="." unique_id=2083000066 instance=ExtResource("4_player")]
@@ -130,53 +131,52 @@ transform = Transform3D(1, 0, 0, 0, 0.857886, 0.513841, 0, -0.513841, 0.857886, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.5)
 mesh = SubResource("BoxMesh_wall")
 
-[node name="wall_back_body" type="StaticBody3D" parent="room"]
+[node name="wall_back_body" type="StaticBody3D" parent="room" unique_id=1244892124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_back_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_back_body" unique_id=279543871]
 shape = SubResource("BoxShape3D_wall")
 
 [node name="wall_front" type="MeshInstance3D" parent="room" unique_id=1319808900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 14.5)
 mesh = SubResource("BoxMesh_wall")
 
-[node name="wall_front_body" type="StaticBody3D" parent="room"]
+[node name="wall_front_body" type="StaticBody3D" parent="room" unique_id=997211859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 14.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_front_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_front_body" unique_id=1858485733]
 shape = SubResource("BoxShape3D_wall")
 
 [node name="wall_left" type="MeshInstance3D" parent="room" unique_id=761163466]
 transform = Transform3D(0.0333333, 0, -0.999444, 0, 1, 0, 0.999444, 0, 0.0333333, -14.5, 2, 0)
 mesh = SubResource("BoxMesh_wall")
 
-[node name="wall_left_body" type="StaticBody3D" parent="room"]
+[node name="wall_left_body" type="StaticBody3D" parent="room" unique_id=1621258523]
 transform = Transform3D(0.0333333, 0, -0.999444, 0, 1, 0, 0.999444, 0, 0.0333333, -14.5, 2, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_left_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_left_body" unique_id=1706567896]
 shape = SubResource("BoxShape3D_wall")
 
 [node name="wall_right" type="MeshInstance3D" parent="room" unique_id=382944950]
 transform = Transform3D(0.0333333, 0, -0.999444, 0, 1, 0, 0.999444, 0, 0.0333333, 14.5, 2, 0)
 mesh = SubResource("BoxMesh_wall")
 
-[node name="wall_right_body" type="StaticBody3D" parent="room"]
+[node name="wall_right_body" type="StaticBody3D" parent="room" unique_id=1972701671]
 transform = Transform3D(0.0333333, 0, -0.999444, 0, 1, 0, 0.999444, 0, 0.0333333, 14.5, 2, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_right_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall_right_body" unique_id=1203583167]
 shape = SubResource("BoxShape3D_wall")
 
-[node name="Calendar" type="Node3D" parent="." unique_id=351808885 node_paths=PackedStringArray("schedule_ui_path")]
+[node name="Calendar" type="Node3D" parent="." unique_id=351808885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.3, -8)
 script = ExtResource("5_calendar")
-schedule_ui_path = NodePath("../ScheduleUI")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Calendar" unique_id=1434703506]
 mesh = SubResource("BoxMesh_calendar")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Calendar"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Calendar" unique_id=1859934170]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Calendar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Calendar/StaticBody3D" unique_id=1864970614]
 shape = SubResource("BoxShape3D_calendar_solid")
 
 [node name="Area3D" type="Area3D" parent="Calendar" unique_id=2047218707]
@@ -207,9 +207,9 @@ script = ExtResource("8_location_label")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -459.5
+offset_left = -75.5
 offset_top = -100.0
-offset_right = -308.5
+offset_right = 75.5
 offset_bottom = -60.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 0.647059)

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dia1juku81af3"]
+
+[ext_resource type="Script" uid="uid://biq255i2oakjn" path="res://DiabWorld/scripts/pe_video_controller.gd" id="1_pe_ctrl"]
+[ext_resource type="Script" uid="uid://bxurs36f2f4lp" path="res://DiabWorld/scenes/video/video_stream_player.gd" id="1_su8fj"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_esv31"]
+file = "res://videos/adverstisement/WarnestInteracterasda.ogg"
+
+[node name="Main" type="Node2D" unique_id=115591616]
+script = ExtResource("1_pe_ctrl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1624346653]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=64814785]
+offset_left = -960.0
+offset_top = -542.0
+offset_right = 1906.0
+offset_bottom = 1082.0
+stream = SubResource("VideoStreamTheora_esv31")
+autoplay = true
+script = ExtResource("1_su8fj")
+
+[node name="Pause" type="Button" parent="." unique_id=1789763156]
+offset_left = -141.0
+offset_top = 421.0
+offset_right = 136.0
+offset_bottom = 535.0
+text = "Pause
+"
+
+[node name="Loop" type="Button" parent="." unique_id=1099607580]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Pause" to="VideoStreamPlayer" method="_on_pause_button_down"]
+[connection signal="button_down" from="Loop" to="VideoStreamPlayer" method="_on_loop_button_down"]

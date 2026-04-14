@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://scripts/player_25d.gd" id="1_r3w8g"]
 [ext_resource type="Texture2D" uid="uid://0wi3gvk4ee8n" path="res://player/main_basic.png" id="2_l3ywy"]
+[ext_resource type="PackedScene" uid="uid://svhckceu8tn6" path="res://DiabWorld/splineplayer/newestspine/spineplayer.tscn" id="3_spine_player"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1pv86"]
 radius = 0.48
@@ -27,6 +28,14 @@ no_depth_test = true
 texture = ExtResource("2_l3ywy")
 hframes = 33
 vframes = 4
+
+[node name="SpineRoot" type="Node3D" parent="SpriteRoot" unique_id=1206931591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="SpinePlayer" parent="SpriteRoot/SpineRoot" unique_id=453505890 instance=ExtResource("3_spine_player")]
+z_index = 1
+position = Vector2(250, 500)
+scale = Vector2(0.05, 0.05)
 
 [node name="InteractUI" type="CanvasLayer" parent="." unique_id=1557309974]
 

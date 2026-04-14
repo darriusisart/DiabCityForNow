@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c6cxrs28imk2q"]
+
+[ext_resource type="Script" uid="uid://c4dk4rn0kqhfy" path="res://DiabWorld/scripts/intro_quiz_scene.gd" id="1_intro"]
+[ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/begin_quiz.tscn" id="2_quiz"]
+
+[node name="IntroQuizScene" type="Control" unique_id=945830275]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_intro")
+
+[node name="Background" type="ColorRect" parent="." unique_id=376733000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.14, 0.2, 1)
+
+[node name="BeginQuiz" parent="." unique_id=521488180 instance=ExtResource("2_quiz")]

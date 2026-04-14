@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://br4roqlscyo5j"]
+
+[ext_resource type="Script" uid="uid://1ojpc2uqaflb" path="res://CardMiniGameTake2/Scripts/cardManger.gd" id="1_27mie"]
+[ext_resource type="Script" uid="uid://bgqfkcynmav17" path="res://CardMiniGameTake2/Scripts/playerHand.gd" id="3_m8bb2"]
+[ext_resource type="PackedScene" uid="uid://dd65cune5xo2h" path="res://CardMiniGameTake2/Scenes/cardSlot.tscn" id="3_mq014"]
+
+[node name="CardMain" type="Node2D" unique_id=491706583]
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1093849926]
+script = ExtResource("1_27mie")
+
+[node name="CardSlot" parent="." unique_id=1777100545 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(134, 114)
+
+[node name="CardSlot4" parent="." unique_id=1912914108 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(593, 265)
+
+[node name="CardSlot2" parent="." unique_id=1791203090 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(595, 119)
+
+[node name="CardSlot3" parent="." unique_id=1679649454 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(133, 257)
+
+[node name="CardSlot5" parent="." unique_id=2139375090 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(134, 402)
+
+[node name="CardSlot6" parent="." unique_id=1206340336 instance=ExtResource("3_mq014")]
+light_mask = 1
+position = Vector2(592, 410)
+
+[node name="PlayerHand" type="Node2D" parent="." unique_id=516236009]
+script = ExtResource("3_m8bb2")

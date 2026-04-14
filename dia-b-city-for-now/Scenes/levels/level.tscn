@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dkaf0otbgtrp5"]
+
+[ext_resource type="Script" uid="uid://8e4xx2ujtvll" path="res://scenes/levels/level.gd" id="1_b2cq8"]
+[ext_resource type="Texture2D" uid="uid://bxiv8s4m617na" path="res://icon.svg" id="1_bovvr"]
+[ext_resource type="PackedScene" path="res://scenes/characters/2.5player.tscn" id="2_b2cq8"]
+
+[sub_resource type="Gradient" id="Gradient_xb4v1"]
+offsets = PackedFloat32Array(0, 0.39378238, 0.54093266, 1)
+colors = PackedColorArray(0.92941177, 0.8627451, 0.8156863, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.36862746, 0.46666667, 1, 1)
+
+[node name="Level" type="Node2D" unique_id=237077238]
+script = ExtResource("1_b2cq8")
+daytime_color = SubResource("Gradient_xb4v1")
+
+[node name="Layers" type="Node2D" parent="." unique_id=64195895]
+
+[node name="Icon" type="Sprite2D" parent="Layers" unique_id=1201373829]
+position = Vector2(187, 341)
+texture = ExtResource("1_bovvr")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1444120729]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" unique_id=732540633 instance=ExtResource("2_b2cq8")]
+position = Vector2(186, 342)
+
+[node name="Overlay" type="Node2D" parent="." unique_id=1909472556]
+
+[node name="DayTimeColor" type="CanvasModulate" parent="Overlay" unique_id=871185844]
+
+[node name="Timers" type="Node" parent="." unique_id=1056127560]
+
+[node name="DayTimer" type="Timer" parent="Timers" unique_id=1321503846]
+wait_time = 5.0
+one_shot = true
+autostart = true

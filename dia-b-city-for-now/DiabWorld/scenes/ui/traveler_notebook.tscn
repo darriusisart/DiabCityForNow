@@ -1,0 +1,66 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://ch3n5ur37hb4x" path="res://DiabWorld/scripts/ui/schedule_ui.gd" id="1_schedule"]
+
+[node name="TravelerNotebook" type="CanvasLayer"]
+script = ExtResource("1_schedule")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -330.0
+offset_right = 430.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Traveler Notebook"
+horizontal_alignment = 1
+
+[node name="Map" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "School-Day Plan: Home -> School -> PE -> Lunch -> Recess -> Store -> Home"
+
+[node name="Bullet1" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "- Morning (7:00-8:00): Tai Chi stretch + get ready"
+
+[node name="Bullet2" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "- School block (8:00-11:30): class + PE dance-along"
+
+[node name="Bullet3" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "- Lunch (11:30-12:00): check in with Maddie + balance game"
+
+[node name="Bullet4" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "- Recess/After school: talk, race, or snack + evening yoga at home"
+
+[node name="CloseHint" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Press E or Esc to close"
+horizontal_alignment = 1

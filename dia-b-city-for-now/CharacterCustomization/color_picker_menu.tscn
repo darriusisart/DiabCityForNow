@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://io5xkd2av6u6"]
+
+[ext_resource type="PackedScene" uid="uid://b0mnopqlx5dix" path="res://scenes/characters/2.5player.tscn" id="1_1vdmu"]
+[ext_resource type="Script" uid="uid://bkat5iaf73kgj" path="res://CharacterCustomization/canvas_layer.gd" id="2_k7kur"]
+
+[node name="ColorPickerMenu" type="Node2D" unique_id=282668523]
+
+[node name="Player" parent="." unique_id=918541242 instance=ExtResource("1_1vdmu")]
+z_index = 10
+position = Vector2(752.99994, 389.99997)
+scale = Vector2(10, 10)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=360864375]
+layer = -1
+script = ExtResource("2_k7kur")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1933674153]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=422470517]
+offset_left = 106.0
+offset_top = 44.0
+offset_right = 997.0
+offset_bottom = 1052.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/PanelContainer" unique_id=1268280787]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/NinePatchRect" unique_id=562098857]
+layout_mode = 0
+offset_right = 891.0
+offset_bottom = 607.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer" unique_id=1520228839]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer" unique_id=1486155755]
+layout_mode = 2
+text = "EyeColor
+"
+
+[node name="EyeColorPicker" type="ColorPickerButton" parent="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer" unique_id=587938388]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer" unique_id=body_label]
+layout_mode = 2
+text = "Skin/Body"
+
+[node name="BodyColorPicker" type="ColorPickerButton" parent="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer" unique_id=body_picker]
+layout_mode = 2
+
+[connection signal="color_changed" from="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer/BodyColorPicker" to="Player" method="_on_body_color_picker_color_changed"]
+[connection signal="color_changed" from="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer/EyeColorPicker" to="Player" method="_on_eye_color_picker_color_changed"]
+[connection signal="picker_created" from="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer/EyeColorPicker" to="CanvasLayer" method="_on_eye_color_picker_picker_created"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/NinePatchRect/MarginContainer/HBoxContainer/EyeColorPicker" to="Player" method="_on_eye_color_picker_pressed"]

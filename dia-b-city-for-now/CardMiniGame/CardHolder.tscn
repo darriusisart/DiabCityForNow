@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://coml0lwac6wa3"]
+
+[ext_resource type="Texture2D" uid="uid://dtky2sbkj6ouc" path="res://CardMiniGame/cardBacks.png" id="2_5ij3a"]
+
+[sub_resource type="GDScript" id="GDScript_k5k6l"]
+script/source = "extends Container
+
+var cardHeld = \"\"
+
+func _process(delta):
+	#makes the card held = to the position of the mouse
+	self.global_position = get_global_mouse_position()
+"
+
+[node name="Card" type="Container" unique_id=1414116610]
+custom_minimum_size = Vector2(105, 136)
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_k5k6l")
+
+[node name="Cardbacks" type="Sprite2D" parent="." unique_id=1907498925]
+texture_filter = 1
+position = Vector2(41, 58)
+texture = ExtResource("2_5ij3a")
+hframes = 4
+vframes = 5

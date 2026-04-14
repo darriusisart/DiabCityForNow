@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b7t83cch3yq81"]
+
+[ext_resource type="Texture2D" uid="uid://dtky2sbkj6ouc" path="res://CardMiniGame/cardBacks.png" id="1_6kche"]
+[ext_resource type="Script" uid="uid://cjusxgp6egwpm" path="res://CardMiniGame/Scripts/card.gd" id="1_i5mdq"]
+
+[sub_resource type="Animation" id="Animation_w0tsg"]
+resource_name = "Deselect"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cardbacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(41, 0), Vector2(41, 58)]
+}
+
+[sub_resource type="Animation" id="Animation_26sdt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cardbacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(41, 58)]
+}
+
+[sub_resource type="Animation" id="Animation_5rkct"]
+resource_name = "Select"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cardbacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(41, 58), Vector2(41, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ibntt"]
+_data = {
+&"Deselect": SubResource("Animation_w0tsg"),
+&"RESET": SubResource("Animation_26sdt"),
+&"Select": SubResource("Animation_5rkct")
+}
+
+[node name="Card" type="Container" unique_id=1414116610]
+custom_minimum_size = Vector2(105, 136)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i5mdq")
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=1838498017]
+libraries/ = SubResource("AnimationLibrary_ibntt")
+
+[node name="Cardbacks" type="Sprite2D" parent="." unique_id=1907498925]
+texture_filter = 1
+position = Vector2(41, 58)
+texture = ExtResource("1_6kche")
+hframes = 4
+vframes = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

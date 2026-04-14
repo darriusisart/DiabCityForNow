@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://v6lysbgr72op"]
+
+[ext_resource type="Script" uid="uid://frd83xj1xn8f" path="res://CardMiniGame/Scripts/card_placement.gd" id="1_wp5te"]
+
+[node name="CardPlacement" type="Control" unique_id=224782761]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 15.0
+offset_bottom = -747.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wp5te")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

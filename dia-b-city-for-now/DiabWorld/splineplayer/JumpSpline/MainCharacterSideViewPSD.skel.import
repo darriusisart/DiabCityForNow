@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://dfkm4vognap5q"
+path="res://.godot/imported/MainCharacterSideViewPSD.skel-f1c119a59ab7d55296aee6a701e2cf27.spskel"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/JumpSpline/MainCharacterSideViewPSD.skel"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD.skel-f1c119a59ab7d55296aee6a701e2cf27.spskel"]
+
+[params]
+

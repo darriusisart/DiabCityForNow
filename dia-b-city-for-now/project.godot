@@ -26,6 +26,8 @@ DayFlow="*uid://diw7h3ndnjurg"
 
 [display]
 
+window/size/viewport_width=3840
+window/size/viewport_height=2400
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

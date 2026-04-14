@@ -26,8 +26,13 @@ DayFlow="*uid://diw7h3ndnjurg"
 
 [display]
 
+<<<<<<< HEAD
+window/size/viewport_width=3840
+window/size/viewport_height=2400
+=======
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+>>>>>>> e2302e97f2859c0c104365e17ce80c5da37a09d2
 window/stretch/mode="canvas_items"
 
 [gui]

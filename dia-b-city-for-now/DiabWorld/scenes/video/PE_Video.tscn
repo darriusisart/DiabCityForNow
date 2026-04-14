@@ -28,9 +28,4 @@ offset_bottom = 535.0
 text = "Pause
 "
 
-[node name="Loop" type="Button" parent="." unique_id=1099607580]
-offset_right = 8.0
-offset_bottom = 8.0
-
 [connection signal="button_down" from="Pause" to="VideoStreamPlayer" method="_on_pause_button_down"]
-[connection signal="button_down" from="Loop" to="VideoStreamPlayer" method="_on_loop_button_down"]

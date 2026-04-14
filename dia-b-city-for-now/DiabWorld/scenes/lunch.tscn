@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctwdvjwkye5mm" path="res://DiabWorld/scenes/video/oldbrick.jpg" id="2_1nkm4"]
 [ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="2_player"]
 [ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="4_cam"]
-[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="5_door"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://DiabWorld/scripts/door_to_scene.gd" id="5_door"]
 [ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="6_door_tex"]
 [ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="7_interact"]
 [ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="8_location"]

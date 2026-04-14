@@ -46,6 +46,8 @@ extends Node2D
 var _chat_index := 0
 var _answered := false
 var _convo_is_good := true
+## Set in randomized mode: "teacher" | "student" | "distracted"
+var _lesson_style := "teacher"
 
 func _ready() -> void:
 	_build_randomized_convo_if_needed()
@@ -89,34 +91,71 @@ func _style_convo_ui() -> void:
 	bottom_style.set_corner_radius_all(14)
 	bottom_panel.add_theme_stylebox_override("panel", bottom_style)
 
-	chat_name_label.text = "[%s] %s" % ["Good Thread" if _convo_is_good else "Distraction News", teacher_name]
-	if _convo_is_good:
-		chat_name_label.add_theme_color_override("font_color", Color(0.45, 1.0, 0.66))
+	var tag := "Class"
+	if randomized_convo_mode:
+		match _lesson_style:
+			"teacher":
+				tag = "Teacher-led"
+			"student":
+				tag = "Student topic"
+			_:
+				tag = "Distracted Class"
 	else:
+		tag = "Attentive Class" if _convo_is_good else "Distracted Class"
+
+	chat_name_label.text = "[%s] %s" % [tag, teacher_name]
+	if _lesson_style == "distracted" or (not randomized_convo_mode and not _convo_is_good):
 		chat_name_label.add_theme_color_override("font_color", Color(1.0, 0.58, 0.48))
+	elif _lesson_style == "student":
+		chat_name_label.add_theme_color_override("font_color", Color(0.75, 0.85, 1.0))
+	else:
+		chat_name_label.add_theme_color_override("font_color", Color(0.45, 1.0, 0.66))
 
 func _build_randomized_convo_if_needed() -> void:
 	if not randomized_convo_mode:
 		return
-	var pick_good := randf() < 0.7
-	_convo_is_good = pick_good
-	var source := good_convo_topics if pick_good else distraction_convo_topics
-	if source.is_empty():
-		return
-	lesson_chat = PackedStringArray()
-	var picked_idx := randi() % source.size()
-	lesson_chat.append(source[picked_idx])
-	lesson_chat.append("Class reacts and the discussion shifts.")
-	if pick_good:
-		lesson_chat.append("You stay engaged and build strong class momentum.")
-		_apply_good_topic_quiz(picked_idx)
+	var roll := randf()
+	if roll < 0.38:
+		_lesson_style = "teacher"
+	elif roll < 0.72:
+		_lesson_style = "student"
 	else:
+		_lesson_style = "distracted"
+
+	_convo_is_good = _lesson_style != "distracted"
+	lesson_chat = PackedStringArray()
+
+	if _lesson_style == "distracted":
+		var source_bad := distraction_convo_topics
+		if source_bad.is_empty():
+			return
+		var picked_idx := randi() % source_bad.size()
+		lesson_chat.append(source_bad[picked_idx])
+		lesson_chat.append("Side chatter spreads; the lesson thread frays.")
 		lesson_chat.append("Focus drops and key points get missed.")
 		lesson_question = "What hurt the class learning here?"
 		answer_choices = PackedStringArray(["Careful note-taking", "Thoughtful questions", "Off-topic distraction"])
 		correct_choice_index = 2
+		lesson_title = "Class Conversation"
+		teacher_name = "Class Feed"
+		return
+
+	if good_convo_topics.is_empty():
+		return
+	var picked_idx := randi() % good_convo_topics.size()
+	var topic_line := str(good_convo_topics[picked_idx])
+	if _lesson_style == "teacher":
+		lesson_chat.append("%s leads: %s" % [teacher_name, topic_line])
+		lesson_chat.append("The class follows along and adds quick examples.")
+		lesson_chat.append("You take notes and connect the idea to your day.")
+	elif _lesson_style == "student":
+		lesson_chat.append("A student raises a hand and brings up: %s" % topic_line)
+		lesson_chat.append("%s steers the room back on track without shutting people down." % teacher_name)
+		lesson_chat.append("The class turns it into a short, useful discussion.")
+	_apply_good_topic_quiz(picked_idx)
 	lesson_title = "Class Conversation"
-	teacher_name = "Class Feed"
+	if _lesson_style == "student":
+		teacher_name = "Class + " + teacher_name
 
 func _apply_good_topic_quiz(topic_idx: int) -> void:
 	match topic_idx:
@@ -173,11 +212,12 @@ func _on_continue_pressed() -> void:
 		_show_chat_line()
 	else:
 		if skip_lesson_quiz:
-			_finish_chat_without_quiz()
+			await _finish_chat_without_quiz()
 		else:
 			_open_question()
 
 func _finish_chat_without_quiz() -> void:
+	await get_tree().create_timer(0.18).timeout
 	_reveal_completion_node()
 	bottom_panel.visible = false
 	continue_button.visible = false

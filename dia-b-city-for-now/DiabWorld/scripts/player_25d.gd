@@ -12,6 +12,8 @@ const CUSTOM_META_SKELETON_PATH := "res://DiabWorld/scenes/ui/pictures/player/sk
 @export var spine_jump_duration := 0.45
 @export var spine_flip_horizontal := true
 @export var keep_spine_scale_constant := true
+## When using orthographic cameras, nudge Spine screen scale so character size stays stable if zoom (camera size) changes.
+@export var compensate_orthographic_zoom := true
 
 #var gravity := ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_input_dir := Vector2.ZERO
@@ -23,7 +25,7 @@ var active_interactable: Node = null
 @onready var prompt_panel: PanelContainer = $InteractUI/PromptPanel
 @onready var prompt_label: Label = $InteractUI/PromptPanel/PromptLabel
 @onready var sprite_3d: Sprite3D = $SpriteRoot/Sprite3D
-@onready var pause_menu: CanvasLayer = $PauseMenu
+var pause_menu: CanvasLayer = null
 
 var _walk_time := 0.0
 var _spine_visual: Node = null
@@ -37,8 +39,11 @@ var _spine_ref_distance := 1.0
 var _jump_anim_end_msec: int = 0
 var _stretch_session_active := false
 var _stretch_anim_name := ""
+var _spine_ref_ortho_camera_size := -1.0
 
 func _ready() -> void:
+	pause_menu = get_node_or_null("PauseMenu") as CanvasLayer
+	add_to_group("player_avatar")
 	_try_bind_spine_visual()
 	_try_apply_custom_sprite()
 
@@ -71,7 +76,7 @@ func _physics_process(delta: float) -> void:
 		_trigger_jump_animation()
 
 	if not portal_locked and not ui_locked:
-		current_input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		current_input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	elif ui_locked:
 		current_input_dir = Vector2.ZERO
 
@@ -88,15 +93,6 @@ func _physics_process(delta: float) -> void:
 	_sync_spine_visual_position()
 	_update_sprite_animation(delta)
 	_handle_interaction_input()
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_TAB:
-		if pause_menu != null and pause_menu.has_method("is_open"):
-			if pause_menu.is_open():
-				pause_menu.hide_menu()
-			else:
-				pause_menu.show_menu(self)
-		get_viewport().set_input_as_handled()
 
 func _update_sprite_animation(delta: float) -> void:
 	if _using_spine:
@@ -505,6 +501,11 @@ func _sync_spine_visual_position() -> void:
 		if not keep_spine_scale_constant:
 			var dist := maxf(0.1, camera.global_position.distance_to(world_pos))
 			factor = clampf(_spine_ref_distance / dist, 0.55, 1.8)
+			if compensate_orthographic_zoom and camera.projection == Camera3D.PROJECTION_ORTHOGONAL:
+				var sz := camera.size
+				if _spine_ref_ortho_camera_size <= 0.0:
+					_spine_ref_ortho_camera_size = sz
+				factor *= clampf(_spine_ref_ortho_camera_size / maxf(0.01, sz), 0.4, 2.5)
 		item.scale = Vector2(
 			absf(_spine_base_scale_2d.x) * _spine_flip_sign * factor,
 			_spine_base_scale_2d.y * factor

@@ -54,6 +54,12 @@ var _last_ingredient_bonus := 0
 func _ready():
 	_screen = get_viewport_rect().size
 	_build_panel()
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+
+func _on_viewport_size_changed() -> void:
+	_screen = get_viewport_rect().size
+	if _panel:
+		_layout_panel()
 
 func _build_panel():
 	var layer = CanvasLayer.new()
@@ -64,8 +70,7 @@ func _build_panel():
 	_panel = Panel.new()
 	_panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
 	_panel.name = "MGPanel"
-	_panel.size = Vector2(1040, 740)
-	_panel.position = (_screen - _panel.size) * 0.5
+	_layout_panel()
 	_panel.visible = false
 
 	var style = StyleBoxFlat.new()
@@ -79,6 +84,12 @@ func _build_panel():
 	_panel.add_theme_stylebox_override("panel", style)
 	_panel.focus_mode = Control.FOCUS_NONE   # Don't steal keyboard focus
 	layer.add_child(_panel)
+
+func _layout_panel() -> void:
+	var max_w := minf(720.0, _screen.x * 0.82)
+	var max_h := minf(520.0, _screen.y * 0.72)
+	_panel.size = Vector2(max_w, max_h)
+	_panel.position = (_screen - _panel.size) * 0.5
 
 # ──────────────────────────────────────────────
 #  PUBLIC — called by store_manager
@@ -107,6 +118,7 @@ func start_random(difficulty: String, card_data: Dictionary = {}):
 		"food_match":  _setup_food_match()
 		"ingredient_check": _setup_ingredient_check(card_data)
 
+	_layout_panel()
 	_panel.visible = true
 
 func consume_last_ingredient_bonus() -> int:
@@ -143,8 +155,6 @@ func _process(delta):
 func _input(event):
 	if not active or _resolved:
 		return
-	if event is InputEventKey and event.pressed:
-		_print_key_press(event)
 	match _current_game:
 		"timing_bar":  _input_timing_bar(event)
 		"button_spam": _input_button_spam(event)
@@ -476,7 +486,7 @@ func _setup_ingredient_check(card_data: Dictionary) -> void:
 	_timer = 0.0
 
 	_add_label("Title", "INGREDIENT CHECK", Vector2(150, 18), 22, Color(0.55, 0.9, 1.0))
-	_add_label("Instr", "Press F to flip. Then pick quality: 1 Natural, 2 Moderate, 3 Bad", Vector2(40, 52), 14, Color(0.78, 0.78, 0.78))
+	_add_label("Instr", "F: flip label. Then W Natural / A Moderate / S Bad (or 1 / 2 / 3)", Vector2(40, 52), 14, Color(0.78, 0.78, 0.78))
 	_add_label("Item", _ing_item_name, Vector2(180, 108), 30, Color(1, 1, 1))
 	_add_rich_label("Ingredients", "[i]Label is face-down... press F to reveal[/i]", Vector2(80, 170), Vector2(880, 180), 26, Color(0.85, 0.85, 0.85))
 	_add_label("Result", "", Vector2(165, 390), 24, Color.WHITE)
@@ -502,11 +512,11 @@ func _input_ingredient_check(event: InputEvent) -> void:
 		return
 	var chosen := ""
 	match key_event.keycode:
-		KEY_1:
+		KEY_1, KEY_W:
 			chosen = "natural"
-		KEY_2:
+		KEY_2, KEY_A:
 			chosen = "moderate"
-		KEY_3:
+		KEY_3, KEY_S:
 			chosen = "bad"
 	if chosen == "":
 		return

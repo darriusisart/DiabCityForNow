@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bpu5hqys1pxr1"]
 
-[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://DiabWorld/scripts/stage.gd" id="1_ahas7"]
-[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://DiabWorld/scenes/player_25d.tscn" id="2_bdq4a"]
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_ahas7"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="2_bdq4a"]
 [ext_resource type="Texture2D" uid="uid://b4ahwht480sn" path="res://DiabWorld/scenes/video/dirtground.jpg" id="2_x4405"]
-[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://DiabWorld/scripts/camera_rig.gd" id="3_jyldm"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="3_jyldm"]
 [ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://DiabWorld/scripts/door_to_scene.gd" id="4_ctxuo"]
 [ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="5_ctxuo"]
-[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://DiabWorld/scripts/interactable_area.gd" id="5_x4405"]
-[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://DiabWorld/scripts/portal.gd" id="6_irhhj"]
-[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://DiabWorld/scripts/location_label.gd" id="7_dj7f0"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="5_x4405"]
+[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="6_irhhj"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="7_dj7f0"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="8_notebook"]
 [ext_resource type="Texture2D" uid="uid://cg65370naj0wc" path="res://DiabWorld/scenes/video/schoolwood.jpg" id="9_jyldm"]
 
@@ -166,8 +166,6 @@ transform = Transform3D(1, 0, 0, 0, 0.857886, 0.513841, 0, -0.513841, 0.857886, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24877167, 1.4486642, -5.9185286)
 script = ExtResource("4_ctxuo")
 scene_path = "res://DiabWorld/scenes/Classroom.tscn"
-required_step_id = "class"
-day_flow_step_on_enter = "go_to_school"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SchoolDoor" unique_id=1013713585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0097157955, 0, -23.285843)
@@ -200,7 +198,6 @@ shape = SubResource("BoxShape3D_door")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.714252, 1.4486642, -5.9185286)
 script = ExtResource("4_ctxuo")
 scene_path = "res://DiabWorld/scenes/PE_Classroom.tscn"
-required_step_id = "pe"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PEDoor" unique_id=1288525776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7280326)
@@ -218,7 +215,6 @@ prompt_text = "Press E to enter PE class"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 1.4486642, -5.9185286)
 script = ExtResource("4_ctxuo")
 scene_path = "res://DiabWorld/scenes/Recess_World.tscn"
-required_step_id = "recess"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RecessDoor" unique_id=799030114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7280326)
@@ -258,9 +254,9 @@ script = ExtResource("7_dj7f0")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -459.5
+offset_left = -75.5
 offset_top = -100.0
-offset_right = -308.5
+offset_right = 75.5
 offset_bottom = -60.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 0.647059)
@@ -272,7 +268,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Convenience"
+text = "School"
 horizontal_alignment = 1
 vertical_alignment = 1
 

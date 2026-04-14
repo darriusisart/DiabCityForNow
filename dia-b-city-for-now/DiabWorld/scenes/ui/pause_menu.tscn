@@ -46,7 +46,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Wellbeing"
 
-[node name="WellbeingBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+[node name="WellbeingBar" type="ProgressBar" parent="Panel/Margin/VBox" unique_id=1642845849]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 max_value = 5.0
@@ -58,7 +58,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Social"
 
-[node name="SocialBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+[node name="SocialBar" type="ProgressBar" parent="Panel/Margin/VBox" unique_id=2053189855]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 max_value = 5.0
@@ -70,7 +70,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Exercise"
 
-[node name="ExerciseBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+[node name="ExerciseBar" type="ProgressBar" parent="Panel/Margin/VBox" unique_id=592368235]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 max_value = 5.0
@@ -82,7 +82,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Nutrition"
 
-[node name="NutritionBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+[node name="NutritionBar" type="ProgressBar" parent="Panel/Margin/VBox" unique_id=1191028025]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 max_value = 5.0
@@ -94,7 +94,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Sleep"
 
-[node name="SleepBar" type="ProgressBar" parent="Panel/Margin/VBox"]
+[node name="SleepBar" type="ProgressBar" parent="Panel/Margin/VBox" unique_id=433501284]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 max_value = 5.0

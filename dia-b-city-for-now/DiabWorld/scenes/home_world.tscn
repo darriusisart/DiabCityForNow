@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cu8rqmep6b478"]
 
-[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://DiabWorld/scripts/stage.gd" id="1_stage"]
-[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://DiabWorld/scripts/camera_rig.gd" id="2_cam"]
-[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://DiabWorld/scripts/portal.gd" id="3_portal"]
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_stage"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_cam"]
+[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_portal"]
 [ext_resource type="Texture2D" uid="uid://cg65370naj0wc" path="res://DiabWorld/scenes/video/schoolwood.jpg" id="4_0dlyx"]
-[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://DiabWorld/scenes/player_25d.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://bddt1vybk6iyg" path="res://DiabWorld/scripts/calendar_interactable.gd" id="5_calendar"]
-[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://DiabWorld/scripts/interactable_area.gd" id="6_interact_area"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="4_player"]
+[ext_resource type="Script" uid="uid://bddt1vybk6iyg" path="res://scripts/calendar_interactable.gd" id="5_calendar"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="6_interact_area"]
 [ext_resource type="PackedScene" uid="uid://deu3u1y42xnjy" path="res://DiabWorld/scenes/ui/schedule_ui.tscn" id="7_schedule_ui"]
-[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://DiabWorld/scripts/location_label.gd" id="8_location_label"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="8_location_label"]
 [ext_resource type="Script" uid="uid://brinyjsgc4qwo" path="res://DiabWorld/scripts/bed_interactable.gd" id="9_bed"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="10_notebook"]
 [ext_resource type="Script" uid="uid://dlhhv667yhtbt" path="res://DiabWorld/scripts/home_stretch_zone.gd" id="11_stretch"]
@@ -82,7 +82,7 @@ size = Vector3(1.1, 1.6, 0.35)
 size = Vector3(1.6, 2, 1.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_stretch"]
-size = Vector3(4.5, 0.25, 4.5)
+size = Vector3(5.0356445, 0.25, 4.189209)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_portal"]
 size = Vector3(3.5, 3.5, 3.5)
@@ -261,11 +261,9 @@ shape = SubResource("BoxShape3D_calendar")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
 collision_mask = 2
 script = ExtResource("11_stretch")
-morning_anim = "DarkMale_ShortJump"
-evening_anim = "DarkMale_ShortJump"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StretchMat" unique_id=1888800102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.755, 0, 0.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.755, -0.26782227, 0.12, 1.1897113)
 shape = SubResource("BoxShape3D_stretch")
 
 [node name="portal" type="Node3D" parent="." unique_id=1177902742 node_paths=PackedStringArray("spawn_point")]
@@ -290,9 +288,9 @@ script = ExtResource("8_location_label")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -459.5
+offset_left = -75.5
 offset_top = -100.0
-offset_right = -308.5
+offset_right = 75.5
 offset_bottom = -60.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 0.647059)

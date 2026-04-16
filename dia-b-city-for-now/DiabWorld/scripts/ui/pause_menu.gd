@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var panel: PanelContainer = $Panel
+@onready var title_label: Label = $Panel/Margin/VBox/Title
 @onready var objective_label: Label = $Panel/Margin/VBox/Objective
 @onready var wellbeing_label: Label = $Panel/Margin/VBox/Wellbeing
 @onready var wellbeing_bar: ProgressBar = $Panel/Margin/VBox/WellbeingBar
@@ -92,6 +93,12 @@ func is_open() -> bool:
 	return panel.visible or inventory_panel.visible
 
 func _refresh_stats() -> void:
+	var username := "Student"
+	if Data != null and "player_username" in Data:
+		var candidate := String(Data.player_username).strip_edges()
+		if candidate != "":
+			username = candidate
+	title_label.text = "Pause - Pillars (%s)" % username
 	var df: Node = Data.day_flow()
 	if df != null and df.has_method("objective_text"):
 		objective_label.text = df.objective_text()
@@ -129,8 +136,22 @@ func _set_label(label: Label, bar: ProgressBar, title: String, pillar: Dictionar
 	if bar != null:
 		bar.value = float(filled_points)
 
+func _find_traveler_notebook() -> Node:
+	var scene := get_tree().current_scene
+	if scene != null:
+		var n := scene.get_node_or_null("TravelerNotebook")
+		if n != null:
+			return n
+		n = scene.find_child("TravelerNotebook", true, false)
+		if n != null:
+			return n
+	var from_group := get_tree().get_first_node_in_group("traveler_notebook")
+	if from_group != null:
+		return from_group
+	return null
+
 func _open_notebook() -> void:
-	var notebook := get_tree().current_scene.get_node_or_null("TravelerNotebook")
+	var notebook := _find_traveler_notebook()
 	if notebook == null:
 		return
 	get_tree().paused = false

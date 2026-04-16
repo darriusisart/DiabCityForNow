@@ -51,6 +51,7 @@ var _lesson_style := "teacher"
 
 func _ready() -> void:
 	_build_randomized_convo_if_needed()
+	_log_lesson_summary()
 	title_label.text = lesson_title
 	chat_name_label.text = teacher_name
 	continue_button.pressed.connect(_on_continue_pressed)
@@ -60,6 +61,14 @@ func _ready() -> void:
 	_setup_question()
 	_show_chat_line()
 	_update_points_label()
+
+func _log_lesson_summary() -> void:
+	if Data == null or not Data.has_method("add_learning_note"):
+		return
+	if lesson_chat.is_empty():
+		return
+	var summary := "Class with %s: %s" % [teacher_name, str(lesson_chat[0])]
+	Data.add_learning_note(summary)
 
 func _apply_large_ui_text() -> void:
 	const TITLE_SZ := 48

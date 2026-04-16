@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ccqgvy81ama4s" path="res://DiabWorld/scenes/ui/pictures/classroom.jpg" id="1_3jiko"]
 [ext_resource type="Script" uid="uid://bebjuvgqtsnou" path="res://DiabWorld/scripts/class_lesson_scene.gd" id="2_lesson"]
 [ext_resource type="PackedScene" uid="uid://dia1juku81af3" path="res://DiabWorld/scenes/video/PE_Video.tscn" id="3_2c4xo"]
-[ext_resource type="Texture2D" uid="uid://cufccts2vhufa" path="res://graphics/icons/goldfish.png" id="4_u2rrd"]
+[ext_resource type="Texture2D" uid="uid://cufccts2vhufa" path="res://PlaceholderGraphics/icons/goldfish.png" id="4_u2rrd"]
 
 [node name="PEClassroom" type="Node2D" unique_id=1032977856]
 script = ExtResource("2_lesson")

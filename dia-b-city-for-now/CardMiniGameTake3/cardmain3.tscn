@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dgxrgbnvrd0fj"]
-
-[ext_resource type="Script" uid="uid://dflc1k34sqsjy" path="res://CardMiniGameTake3/Scripts/store_manager.gd" id="1_uhg5w"]
-
-[node name="Cardmain3" type="Node2D" unique_id=418703918]
-script = ExtResource("1_uhg5w")

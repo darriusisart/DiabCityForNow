@@ -1,25 +1,25 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cu6jtdqmle1kr"]
 
-[ext_resource type="Shader" path="res://AdvancedStatSystem/character_color_advanced.gdshader" id="1_shader"]
-[ext_resource type="Script" path="res://AdvancedStatSystem/character_customizer.gd" id="2_customizer"]
-[ext_resource type="Script" path="res://AdvancedStatSystem/customization_ui.gd" id="3_ui"]
-[ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://graphics/characters/main/main_basic.png" id="4_sprite"]
+[ext_resource type="Shader" uid="uid://blmxfta847ayk" path="res://AdvancedStatSystem/character_color_advanced.gdshader" id="1_shader"]
+[ext_resource type="Script" uid="uid://bsev46qy8xvee" path="res://AdvancedStatSystem/character_customizer.gd" id="2_customizer"]
+[ext_resource type="Script" uid="uid://dga4x5uh5x0ht" path="res://AdvancedStatSystem/customization_ui.gd" id="3_ui"]
+[ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://PlaceholderGraphics/characters/main/main_basic.png" id="4_sprite"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_demo"]
 shader = ExtResource("1_shader")
-shader_parameter/precision = 0.15
 shader_parameter/oldColorBody = Color(0.96, 0.8, 0.68, 1)
 shader_parameter/newColorBody = Color(0.96, 0.8, 0.68, 1)
 shader_parameter/oldColorEyes = Color(0.2, 0.4, 0.6, 1)
 shader_parameter/newColorEyes = Color(0.2, 0.4, 0.6, 1)
-shader_parameter/oldColor1 = Color(0.0, 0.0, 0.0, 1)
-shader_parameter/newColor1 = Color(0.0, 0.0, 0.0, 1)
-shader_parameter/oldColor2 = Color(0.0, 0.0, 0.0, 1)
-shader_parameter/newColor2 = Color(0.0, 0.0, 0.0, 1)
+shader_parameter/oldColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/oldColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/precision = 0.15
 
-[node name="CustomizationDemo" type="Node2D"]
+[node name="CustomizationDemo" type="Node2D" unique_id=660857919]
 
-[node name="CharacterSprite" type="Sprite2D" parent="."]
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=2026209685]
 material = SubResource("ShaderMaterial_demo")
 position = Vector2(960, 400)
 scale = Vector2(10, 10)
@@ -27,10 +27,10 @@ texture = ExtResource("4_sprite")
 hframes = 33
 vframes = 4
 
-[node name="CharacterCustomizer" type="Node" parent="CharacterSprite"]
+[node name="CharacterCustomizer" type="Node" parent="CharacterSprite" unique_id=1084008793]
 script = ExtResource("2_customizer")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=2009313967]
 layer = 10
 script = ExtResource("3_ui")
 customizer_path = NodePath("../CharacterSprite/CharacterCustomizer")
@@ -39,7 +39,7 @@ eye_picker = NodePath("Panel/MarginContainer/VBox/EyeRow/EyeColorPicker")
 detail1_picker = NodePath("Panel/MarginContainer/VBox/Detail1Row/Detail1ColorPicker")
 detail2_picker = NodePath("Panel/MarginContainer/VBox/Detail2Row/Detail2ColorPicker")
 
-[node name="Background" type="ColorRect" parent="UILayer"]
+[node name="Background" type="ColorRect" parent="UILayer" unique_id=1917817233]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,78 +47,74 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15, 0.15, 0.2, 1)
 
-[node name="Panel" type="PanelContainer" parent="UILayer"]
+[node name="Panel" type="PanelContainer" parent="UILayer" unique_id=1916518515]
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 500.0
 offset_bottom = 400.0
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/Panel" unique_id=1696581511]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/Panel/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/Panel/MarginContainer" unique_id=1785621567]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="UILayer/Panel/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/Panel/MarginContainer/VBox" unique_id=1504527840]
 layout_mode = 2
 text = "Character Customization"
 horizontal_alignment = 1
 
-[node name="BodyRow" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox"]
+[node name="BodyRow" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox" unique_id=388800702]
 layout_mode = 2
 
-[node name="BodyLabel" type="Label" parent="UILayer/Panel/MarginContainer/VBox/BodyRow"]
+[node name="BodyLabel" type="Label" parent="UILayer/Panel/MarginContainer/VBox/BodyRow" unique_id=700148265]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Skin / Body"
 
-[node name="BodyColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/BodyRow"]
+[node name="BodyColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/BodyRow" unique_id=1042335301]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 color = Color(0.96, 0.8, 0.68, 1)
 
-[node name="EyeRow" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox"]
+[node name="EyeRow" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox" unique_id=1209212847]
 layout_mode = 2
 
-[node name="EyeLabel" type="Label" parent="UILayer/Panel/MarginContainer/VBox/EyeRow"]
+[node name="EyeLabel" type="Label" parent="UILayer/Panel/MarginContainer/VBox/EyeRow" unique_id=326764780]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Eyes"
 
-[node name="EyeColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/EyeRow"]
+[node name="EyeColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/EyeRow" unique_id=1846756564]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 color = Color(0.2, 0.4, 0.6, 1)
 
-[node name="Detail1Row" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox"]
+[node name="Detail1Row" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox" unique_id=1710788153]
 layout_mode = 2
 
-[node name="Detail1Label" type="Label" parent="UILayer/Panel/MarginContainer/VBox/Detail1Row"]
+[node name="Detail1Label" type="Label" parent="UILayer/Panel/MarginContainer/VBox/Detail1Row" unique_id=835496440]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Detail 1 (Shirt / Hair)"
 
-[node name="Detail1ColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/Detail1Row"]
+[node name="Detail1ColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/Detail1Row" unique_id=1962751123]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
 
-[node name="Detail2Row" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox"]
+[node name="Detail2Row" type="HBoxContainer" parent="UILayer/Panel/MarginContainer/VBox" unique_id=982175911]
 layout_mode = 2
 
-[node name="Detail2Label" type="Label" parent="UILayer/Panel/MarginContainer/VBox/Detail2Row"]
+[node name="Detail2Label" type="Label" parent="UILayer/Panel/MarginContainer/VBox/Detail2Row" unique_id=691046056]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Detail 2 (Pants / Accessories)"
 
-[node name="Detail2ColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/Detail2Row"]
+[node name="Detail2ColorPicker" type="ColorPickerButton" parent="UILayer/Panel/MarginContainer/VBox/Detail2Row" unique_id=758906737]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[editable path="UILayer"]

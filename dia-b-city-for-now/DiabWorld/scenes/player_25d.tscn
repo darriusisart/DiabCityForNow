@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1c7f55wuphh0"]
 
 [ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://scripts/player_25d.gd" id="1_r3w8g"]
-[ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://graphics/characters/main/main_basic.png" id="2_mf8r1"]
+[ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://PlaceholderGraphics/characters/main/main_basic.png" id="2_mf8r1"]
 [ext_resource type="PackedScene" uid="uid://bhkt1yqnmnppa" path="res://DiabWorld/scenes/ui/pause_menu.tscn" id="3_pause"]
 [ext_resource type="PackedScene" uid="uid://svhckceu8tn6" path="res://DiabWorld/splineplayer/newestspine/spineplayer.tscn" id="4_spine_player"]
 
@@ -59,7 +59,7 @@ text = "Press E to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimDebugLabel" type="Label" parent="InteractUI"]
+[node name="AnimDebugLabel" type="Label" parent="InteractUI" unique_id=918344469]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 376.0

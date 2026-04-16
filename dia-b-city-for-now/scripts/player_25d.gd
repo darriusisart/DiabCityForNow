@@ -20,7 +20,7 @@ var active_interactable: Node = null
 @onready var fade: ColorRect = $fade
 @onready var prompt_panel: PanelContainer = $InteractUI/PromptPanel
 @onready var prompt_label: Label = $InteractUI/PromptPanel/PromptLabel
-@onready var anim_debug_label: Label = $InteractUI/AnimDebugLabel
+@onready var anim_debug_label: Label = get_node_or_null("InteractUI/AnimDebugLabel")
 @onready var sprite_3d: Sprite3D = $SpriteRoot/Sprite3D
 
 var _walk_time := 0.0
@@ -34,6 +34,7 @@ var _spine_ref_distance := 1.0
 var _jump_anim_end_msec: int = 0
 var _stretch_session_active := false
 var _stretch_anim_name := ""
+var _last_debug_anim_text := ""
 
 func _ready() -> void:
 	add_to_group("player_avatar")
@@ -216,12 +217,17 @@ func _play_spine_animation(anim_name: String, loop: bool) -> bool:
 	return played
 
 func _update_animation_debug_text(anim_name: String) -> void:
-	if anim_debug_label == null:
-		return
-	anim_debug_label.visible = show_animation_debug_text
+	var text := "Anim: %s" % anim_name
+	if anim_debug_label != null:
+		anim_debug_label.visible = show_animation_debug_text
+		if show_animation_debug_text:
+			anim_debug_label.text = text
 	if not show_animation_debug_text:
 		return
-	anim_debug_label.text = "Anim: %s" % anim_name
+	if text == _last_debug_anim_text:
+		return
+	_last_debug_anim_text = text
+	print("[player_25d] ", text)
 
 func _set_state_animation_compat(state: Object, anim_name: String, loop: bool) -> bool:
 	if state.has_method("set_animation"):

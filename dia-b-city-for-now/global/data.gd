@@ -2,10 +2,21 @@ extends Node
 
 var class_points: int = 0
 var convenience_inventory: Dictionary = {}
+var player_username: String = "Student"
+var today_learning_notes: Array[String] = []
 ## Suika-style recess garden: merged seed count (from stacking two soil clumps).
 var recess_garden_seeds: int = 0
 var nutrition_energy_score: float = 0.0
 var nutrition_speed_multiplier: float = 1.0
+
+func add_learning_note(note: String) -> void:
+	var clean := note.strip_edges()
+	if clean == "":
+		return
+	today_learning_notes.append(clean)
+
+func get_learning_notes() -> Array[String]:
+	return today_learning_notes.duplicate()
 
 const FOOD_QUALITY := {
 	"Apple": "natural",
@@ -98,12 +109,12 @@ func pillars() -> Node:
 	return tree.root.get_node_or_null("Pillars")
 
 const PLAYER_SKINS = {
-	Enums.Style.BASIC: preload("res://graphics/characters/main/main_basic.png"),
-	Enums.Style.BASEBALL: preload("res://graphics/characters/main/main_blue.png"),
-	Enums.Style.COWBOY: preload("res://graphics/characters/main/main_cowboy.png"),
-	Enums.Style.ENGLISH: preload("res://graphics/characters/main/main_grey.png"),
-	Enums.Style.STRAW: preload("res://graphics/characters/main/main_straw.png"),
-	Enums.Style.BEANIE: preload("res://graphics/characters/main/main_red.png")}
+	Enums.Style.BASIC: preload("res://PlaceholderGraphics/characters/main/main_basic.png"),
+	Enums.Style.BASEBALL: preload("res://PlaceholderGraphics/characters/main/main_blue.png"),
+	Enums.Style.COWBOY: preload("res://PlaceholderGraphics/characters/main/main_cowboy.png"),
+	Enums.Style.ENGLISH: preload("res://PlaceholderGraphics/characters/main/main_grey.png"),
+	Enums.Style.STRAW: preload("res://PlaceholderGraphics/characters/main/main_straw.png"),
+	Enums.Style.BEANIE: preload("res://PlaceholderGraphics/characters/main/main_red.png")}
 const TILE_SIZE = 16
 const PLANT_DATA = {
 	Enums.Seed.TOMATO: {
@@ -142,17 +153,17 @@ const MACHINE_UPGRADE_COST = {
 	Enums.Machine.SPRINKLER: {
 		'name': 'Sprinkler',
 		'cost' :{Enums.Item.TOMATO: 30, Enums.Item.WHEAT: 20},
-		'icon': preload("res://graphics/icons/sprinkler.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/sprinkler.png"),
 		'color': Color.SEA_GREEN},
 	Enums.Machine.FISHER: {
 		'name': 'Fisher',
 		'cost' :{Enums.Item.WOOD: 25, Enums.Item.FISH: 15},
-		'icon': preload("res://graphics/icons/fisher.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/fisher.png"),
 		'color': Color.SLATE_GRAY},
 	Enums.Machine.SCARECROW: {
 		'name': 'Scarecrow',
 		'cost' : {Enums.Item.PUMPKIN: 15, Enums.Item.CORN: 15},
-		'icon': preload("res://graphics/icons/scarecrow.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/scarecrow.png"),
 		'color': Color.BURLYWOOD}}
 const HOUSE_COST = {
 	1: {Enums.Item.WOOD: 30, Enums.Item.APPLE: 20},
@@ -161,27 +172,27 @@ const STYLE_UPGRADES = {
 	Enums.Style.COWBOY: {
 		'name': 'Cowboy',
 		'cost':{Enums.Item.WOOD: 8, Enums.Item.CORN: 6},
-		'icon': preload("res://graphics/icons/cowboy.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/cowboy.png"),
 		'color': Color.SANDY_BROWN},
 	Enums.Style.ENGLISH: {
 		'name': 'Oldie',
 		'cost':{Enums.Item.CORN: 8, Enums.Item.WHEAT: 6},
-		'icon': preload("res://graphics/icons/english.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/english.png"),
 		'color': Color.LIGHT_GRAY},
 	Enums.Style.BASEBALL: {
 		'name': 'Baseball',
 		'cost':{Enums.Item.TOMATO: 8, Enums.Item.APPLE: 6},
-		'icon': preload("res://graphics/icons/blue.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/blue.png"),
 		'color': Color.SKY_BLUE},
 	Enums.Style.BEANIE: {
 		'name': 'Beanie',
 		'cost':{Enums.Item.PUMPKIN: 8, Enums.Item.WHEAT: 6},
-		'icon': preload("res://graphics/icons/beanie.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/beanie.png"),
 		'color': Color.INDIAN_RED},
 	Enums.Style.STRAW: {
 		'name': 'Straw',
 		'cost':{Enums.Item.FISH: 8, Enums.Item.WOOD: 6},
-		'icon': preload("res://graphics/icons/straw.png"),
+		'icon': preload("res://PlaceholderGraphics/icons/straw.png"),
 		'color': Color.BURLYWOOD}}
 const TOOL_STATE_ANIMATIONS = {
 	Enums.Tool.HOE: 'Hoe',

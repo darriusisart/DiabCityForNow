@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cirwchaluxv6r"]
 
-[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://DiabWorld/scripts/stage.gd" id="1_stage"]
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_stage"]
 [ext_resource type="Texture2D" uid="uid://b4ahwht480sn" path="res://DiabWorld/scenes/video/dirtground.jpg" id="2_2xffr"]
-[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://DiabWorld/scripts/camera_rig.gd" id="2_cam"]
-[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://DiabWorld/scripts/portal.gd" id="3_portal"]
-[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://DiabWorld/scenes/player_25d.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://DiabWorld/scripts/door_to_scene.gd" id="5_door"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_cam"]
+[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_portal"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="4_player"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="5_door"]
 [ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="5_f8rqk"]
-[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://DiabWorld/scripts/interactable_area.gd" id="6_interact_area"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="6_interact_area"]
 [ext_resource type="Texture2D" uid="uid://ctwdvjwkye5mm" path="res://DiabWorld/scenes/video/oldbrick.jpg" id="7_2xffr"]
-[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://DiabWorld/scripts/location_label.gd" id="7_location_label"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="7_location_label"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="8_notebook"]
 [ext_resource type="Texture2D" uid="uid://buleyn2sr6vyp" path="res://DiabWorld/scenes/video/wall.png" id="12_y77il"]
 
@@ -154,7 +154,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8660258, 0.50000024, 0, -0.50000024, 0.866
 [node name="StoreDoor" type="Node3D" parent="." unique_id=306164079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0681124, 1.4, 0.4652319)
 script = ExtResource("5_door")
-scene_path = "res://CardMiniGameTake3/cardmain.tscn"
+scene_path = "uid://ue4xvv6lxfmw"
 complete_step_on_enter = "store"
 reward_pillar = "nutrition"
 reward_amount = 5

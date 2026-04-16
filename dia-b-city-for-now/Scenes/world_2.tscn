@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://dr3c3w0yhjrl7" path="res://materials/grass.tres" id="5_6674a"]
 [ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="5_mu5n3"]
 [ext_resource type="Material" uid="uid://b2p0wthddvqc0" path="res://materials/stone_wall.tres" id="6_mgch8"]
+[ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="10_nb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tspr8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -332,6 +333,8 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_68c7u")
 }
+
+[node name="TravelerNotebook" parent="." instance=ExtResource("10_nb")]
 
 [connection signal="body_entered" from="portal/Area3D" to="portal" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="portal2/Area3D" to="portal2" method="_on_area_3d_body_entered"]

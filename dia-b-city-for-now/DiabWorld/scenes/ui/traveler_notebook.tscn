@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ch3n5ur37hb4x" path="res://DiabWorld/scripts/ui/schedule_ui.gd" id="1_schedule"]
 
-[node name="TravelerNotebook" type="CanvasLayer"]
+[node name="TravelerNotebook" type="CanvasLayer" groups=["traveler_notebook"]]
+layer = 80
 script = ExtResource("1_schedule")
 
 [node name="Panel" type="PanelContainer" parent="."]
@@ -58,6 +59,19 @@ text = "- Lunch (11:30-12:00): check in with Maddie + balance game"
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "- Recess/After school: talk, race, or snack + evening yoga at home"
+
+[node name="LearnedTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Here's what I learned today:"
+
+[node name="LearnedBody" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "- No notes yet. Talk with students and attend class."
 
 [node name="CloseHint" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

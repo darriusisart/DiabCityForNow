@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6cxrs28imk2q"]
 
 [ext_resource type="Script" uid="uid://c4dk4rn0kqhfy" path="res://DiabWorld/scripts/intro_quiz_scene.gd" id="1_intro"]
-[ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/begin_quiz.tscn" id="2_quiz"]
+[ext_resource type="PackedScene" uid="uid://darute7h6t8jn" path="res://DiabWorld/scenes/ui/begin_quiz.tscn" id="2_quiz"]
 
 [node name="IntroQuizScene" type="Control" unique_id=945830275]
 layout_mode = 3

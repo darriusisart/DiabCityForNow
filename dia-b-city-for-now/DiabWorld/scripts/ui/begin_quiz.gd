@@ -9,6 +9,7 @@ const QUESTIONS := [
 	{"question": "What boosts your energy the most?", "answers": ["A balanced meal or snack", "Moving my body", "A good nap or bedtime"], "pillar": ["nutrition", "exercise", "sleep"]},
 	{"question": "How do you prefer to recharge?", "answers": ["Solo time to unwind", "Chatting or laughing with someone", "Light movement or stretching"], "pillar": ["wellbeing", "social", "exercise"]},
 	{"question": "What's your first move on a busy day?", "answers": ["Drink water / grab fuel", "Check in with a friend", "Take a few calm breaths"], "pillar": ["nutrition", "social", "wellbeing"]},
+	{"question": "What is your username?", "type": "username"}
 ]
 
 @onready var panel: PanelContainer = $Panel
@@ -36,6 +37,20 @@ func _render_question() -> void:
 
 	var data: Dictionary = QUESTIONS[_index]
 	question_label.text = data["question"]
+	if str(data.get("type", "")) == "username":
+		var input := LineEdit.new()
+		input.placeholder_text = "Enter username"
+		input.max_length = 24
+		input.text = String(Data.player_username)
+		answers_box.add_child(input)
+		var submit := Button.new()
+		submit.text = "Continue"
+		submit.pressed.connect(func() -> void:
+			_on_username_submitted(input.text)
+		)
+		answers_box.add_child(submit)
+		input.grab_focus()
+		return
 	var answers: Array = data["answers"]
 	for i in answers.size():
 		var button := Button.new()
@@ -49,6 +64,17 @@ func _on_answer_pressed(answer_index: int) -> void:
 	var pl: Node = Data.pillars()
 	if pl != null and pl.has_method("add_xp"):
 		pl.add_xp(pillar_key, 25, "begin_quiz")
+	_index += 1
+	if _index >= QUESTIONS.size():
+		_finish_quiz()
+	else:
+		_render_question()
+
+func _on_username_submitted(raw_name: String) -> void:
+	var cleaned := raw_name.strip_edges()
+	if cleaned == "":
+		cleaned = "Student"
+	Data.player_username = cleaned
 	_index += 1
 	if _index >= QUESTIONS.size():
 		_finish_quiz()

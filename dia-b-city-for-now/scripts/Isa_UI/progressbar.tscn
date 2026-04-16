@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://8vscbtygcul"]
+
+[sub_resource type="Theme" id="Theme_towwx"]
+
+[node name="ProgressBar" type="ProgressBar" unique_id=622141702]
+anchors_preset = -1
+anchor_left = 0.67800003
+anchor_top = 0.039
+anchor_right = 0.97400004
+anchor_bottom = 0.11000001
+offset_left = 11.23999
+offset_top = 12.879997
+offset_right = 0.9199219
+offset_bottom = -20.80001
+grow_horizontal = 0
+theme = SubResource("Theme_towwx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=349576501]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1280.0
+offset_top = 25.0
+offset_right = 1900.0
+offset_bottom = 95.0
+grow_horizontal = 0

@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://du6fnr66h2yl8" path="res://scripts/Isa_UI/brain.tscn" id="2_km7q3"]
 [ext_resource type="PackedScene" uid="uid://ck3ap1bg8iy08" path="res://scripts/Isa_UI/Nutrition.tscn" id="3_ybdfa"]
 [ext_resource type="PackedScene" uid="uid://cpe7vi1pubnih" path="res://scripts/Isa_UI/Strength.tscn" id="4_58pao"]
+[ext_resource type="PackedScene" uid="uid://8vscbtygcul" path="res://scripts/Isa_UI/progressbar.tscn" id="5_wcia6"]
+[ext_resource type="FontFile" uid="uid://c8xjkwqds35lq" path="res://graphics/fonts/dogicapixel.otf" id="6_3mhxn"]
+
+[sub_resource type="Theme" id="Theme_o2sr6"]
+default_font = ExtResource("6_3mhxn")
 
 [node name="Control" type="Control" unique_id=464768661]
 visible = false
@@ -47,3 +52,17 @@ layout_mode = 2
 
 [node name="HUD2" parent="CanvasLayer/Control/VBoxContainer" unique_id=429966527 instance=ExtResource("4_58pao")]
 layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=733120422]
+layout_mode = 0
+offset_left = 781.19995
+offset_top = -46.800003
+offset_right = 1384.2
+offset_bottom = -6.800003
+
+[node name="ProgressBar" parent="CanvasLayer/Control/VBoxContainer2" unique_id=622141702 instance=ExtResource("5_wcia6")]
+custom_minimum_size = Vector2(29.525, 0)
+layout_mode = 2
+theme = SubResource("Theme_o2sr6")
+min_value = 7.435
+value = 7.435

@@ -165,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 0.857886, 0.513841, 0, -0.513841, 0.857886, 
 [node name="SchoolDoor" type="Node3D" parent="." unique_id=306164079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24877167, 1.4486642, -5.9185286)
 script = ExtResource("4_ctxuo")
-scene_path = "res://DiabWorld/scenes/Classroom.tscn"
+scene_path = "res://DiabWorld/scenes/school_interior_world.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SchoolDoor" unique_id=1013713585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0097157955, 0, -23.285843)
@@ -189,6 +189,7 @@ shape = SubResource("BoxShape3D_door_solid")
 [node name="Area3D" type="Area3D" parent="SchoolDoor" unique_id=1090175331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.980804)
 script = ExtResource("5_x4405")
+prompt_text = "Press E to enter school hallway"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SchoolDoor/Area3D" unique_id=1334958669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53265905, 0, 0)
@@ -211,24 +212,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.980804)
 script = ExtResource("5_x4405")
 prompt_text = "Press E to enter PE class"
 
-[node name="RecessDoor" type="Node3D" parent="." unique_id=799030113]
+[node name="ClassroomDoor" type="Node3D" parent="." unique_id=799030113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 1.4486642, -5.9185286)
 script = ExtResource("4_ctxuo")
-scene_path = "res://DiabWorld/scenes/Recess_World.tscn"
+scene_path = "res://DiabWorld/scenes/Classroom.tscn"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RecessDoor" unique_id=799030114]
+[node name="StaticBody3D" type="StaticBody3D" parent="ClassroomDoor" unique_id=799030114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7280326)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RecessDoor/StaticBody3D" unique_id=799030115]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/StaticBody3D" unique_id=799030115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.253445)
 shape = SubResource("BoxShape3D_door_solid")
 
-[node name="Area3D" type="Area3D" parent="RecessDoor" unique_id=799030116]
+[node name="Area3D" type="Area3D" parent="ClassroomDoor" unique_id=799030116]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.980804)
 script = ExtResource("5_x4405")
-prompt_text = "Press E to go to recess"
+prompt_text = "Press E to enter class"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RecessDoor/Area3D" unique_id=799030117]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/Area3D" unique_id=799030117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53265905, 0, 0)
 shape = SubResource("BoxShape3D_door")
 
@@ -338,6 +339,6 @@ size = Vector3(0.5, 1, 140.19211)
 [connection signal="body_exited" from="SchoolDoor/Area3D" to="SchoolDoor/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="PEDoor/Area3D" to="PEDoor/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="PEDoor/Area3D" to="PEDoor/Area3D" method="_on_body_exited"]
-[connection signal="body_entered" from="RecessDoor/Area3D" to="RecessDoor/Area3D" method="_on_body_entered"]
-[connection signal="body_exited" from="RecessDoor/Area3D" to="RecessDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="portal/Area3D" to="portal" method="_on_area_3d_body_entered"]

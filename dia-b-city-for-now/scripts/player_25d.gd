@@ -9,6 +9,7 @@ const SPEED := 5.0
 @export var spine_jump_duration := 0.45
 @export var spine_flip_horizontal := true
 @export var keep_spine_scale_constant := true
+@export var show_animation_debug_text := true
 
 #var gravity := ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_input_dir := Vector2.ZERO
@@ -19,6 +20,7 @@ var active_interactable: Node = null
 @onready var fade: ColorRect = $fade
 @onready var prompt_panel: PanelContainer = $InteractUI/PromptPanel
 @onready var prompt_label: Label = $InteractUI/PromptPanel/PromptLabel
+@onready var anim_debug_label: Label = $InteractUI/AnimDebugLabel
 @onready var sprite_3d: Sprite3D = $SpriteRoot/Sprite3D
 
 var _walk_time := 0.0
@@ -34,7 +36,9 @@ var _stretch_session_active := false
 var _stretch_anim_name := ""
 
 func _ready() -> void:
+	add_to_group("player_avatar")
 	_try_bind_spine_visual()
+	_update_animation_debug_text("init")
 
 func lock_direction() -> void:
 	portal_locked = true
@@ -64,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		_trigger_jump_animation()
 
 	if not portal_locked and not ui_locked:
-		current_input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		current_input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	elif ui_locked:
 		current_input_dir = Vector2.ZERO
 
@@ -97,6 +101,7 @@ func _update_sprite_animation(delta: float) -> void:
 		_walk_time = 0.0
 		frame += 0
 	sprite_3d.frame = frame
+	_update_animation_debug_text("walk" if moving else "idle")
 
 func _get_facing_row(move_vec: Vector2) -> int:
 	if move_vec == Vector2.ZERO:
@@ -207,7 +212,16 @@ func _play_spine_animation(anim_name: String, loop: bool) -> bool:
 	if played:
 		_force_node_loop(loop)
 		_last_spine_anim = anim_name
+		_update_animation_debug_text(anim_name)
 	return played
+
+func _update_animation_debug_text(anim_name: String) -> void:
+	if anim_debug_label == null:
+		return
+	anim_debug_label.visible = show_animation_debug_text
+	if not show_animation_debug_text:
+		return
+	anim_debug_label.text = "Anim: %s" % anim_name
 
 func _set_state_animation_compat(state: Object, anim_name: String, loop: bool) -> bool:
 	if state.has_method("set_animation"):

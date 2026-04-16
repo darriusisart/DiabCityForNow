@@ -1,0 +1,450 @@
+[gd_scene format=3 uid="uid://bje3irv4e6267"]
+
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_stage"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://b4ahwht480sn" path="res://DiabWorld/scenes/video/dirtground.jpg" id="3_floor_tex"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="4_cam"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="5_door"]
+[ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="6_door_tex"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="7_interact"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="9_loc"]
+[ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="10_notebook"]
+[ext_resource type="Texture2D" uid="uid://cg65370naj0wc" path="res://DiabWorld/scenes/video/schoolwood.jpg" id="11_wood"]
+[ext_resource type="Script" uid="uid://b868umwj2k2l8" path="res://DiabWorld/scripts/classmate_npc.gd" id="12_npc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_int"]
+sky_horizon_color = Color(0.72, 0.76, 0.82, 1)
+ground_horizon_color = Color(0.72, 0.76, 0.82, 1)
+
+[sub_resource type="Sky" id="Sky_int"]
+sky_material = SubResource("ProceduralSkyMaterial_int")
+
+[sub_resource type="Environment" id="Environment_int"]
+background_mode = 2
+background_color = Color(0.55, 0.56, 0.58, 1)
+sky = SubResource("Sky_int")
+ambient_light_source = 2
+ambient_light_color = Color(0.95, 0.95, 1, 1)
+ambient_light_energy = 0.35
+tonemap_mode = 2
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_floor"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(32, 1, 24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_texture = ExtResource("3_floor_tex")
+uv1_scale = Vector3(8, 8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(32, 1, 24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor_tint"]
+albedo_color = Color(0.55, 0.55, 0.58, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_texture = ExtResource("11_wood")
+uv1_scale = Vector3(4, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door_face"]
+albedo_texture = ExtResource("6_door_tex")
+
+[sub_resource type="BoxMesh" id="BoxMesh_door"]
+size = Vector3(1.2, 2.8, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door_trim"]
+albedo_color = Color(0.15, 0.15, 0.16, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door_solid"]
+size = Vector3(1.2, 2.8, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door_area"]
+size = Vector3(2.4, 3.2, 2.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_npc"]
+size = Vector3(0.9, 1.6, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npc_a"]
+albedo_color = Color(0.35, 0.55, 0.95, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1.4, 2.2, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npc_b"]
+albedo_color = Color(0.95, 0.45, 0.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npc_c"]
+albedo_color = Color(0.45, 0.85, 0.5, 1)
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500.5, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_main"]
+resource_name = "main"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(500.5, -54.07), Vector2(500.5, -54.07), Vector2(500.5, 31), Vector2(500.5, 31), Vector2(500.5, -54.07)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_loc"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"main": SubResource("Animation_main")
+}
+
+[node name="school_interior" type="Node3D" unique_id=545274665 node_paths=PackedStringArray("player")]
+script = ExtResource("1_stage")
+player = NodePath("player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1197660303]
+environment = SubResource("Environment_int")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1026607460]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 4, 8, 6)
+light_energy = 0.95
+shadow_enabled = true
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1397723693]
+physics_material_override = SubResource("PhysicsMaterial_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=596764990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_floor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=76739996]
+material_override = SubResource("StandardMaterial3D_floor")
+mesh = SubResource("BoxMesh_floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_floor_tint")
+
+[node name="player" parent="." unique_id=536361691 instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+collision_layer = 3
+
+[node name="camera_rig" type="Node3D" parent="." unique_id=1193717543 node_paths=PackedStringArray("player")]
+script = ExtResource("4_cam")
+player = NodePath("../player")
+stage_dimentions = Vector2(16, 12)
+
+[node name="Camera3D" type="Camera3D" parent="camera_rig" unique_id=1137032372]
+transform = Transform3D(1, 0, 0, 0, 0.857886, 0.513841, 0, -0.513841, 0.857886, 0, 5.2, 6.5)
+
+[node name="Walls" type="Node3D" parent="." unique_id=609286452]
+
+[node name="NorthWall_L" type="CSGBox3D" parent="Walls" unique_id=516884738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 1.75, -12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(7, 3.5, 0.45)
+
+[node name="NorthWall_ML" type="CSGBox3D" parent="Walls" unique_id=1561199269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 1.75, -12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(5.5, 3.5, 0.45)
+
+[node name="NorthWall_MR" type="CSGBox3D" parent="Walls" unique_id=1891761019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 1.75, -12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(5.5, 3.5, 0.45)
+
+[node name="NorthWall_R" type="CSGBox3D" parent="Walls" unique_id=541484288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.25, 1.75, -12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(5.5, 3.5, 0.45)
+
+[node name="SouthWall_L" type="CSGBox3D" parent="Walls" unique_id=971204129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 1.75, 12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(13.5, 3.5, 0.45)
+
+[node name="SouthWall_R" type="CSGBox3D" parent="Walls" unique_id=1564877178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25, 1.75, 12)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(13.5, 3.5, 0.45)
+
+[node name="WestWall" type="CSGBox3D" parent="Walls" unique_id=1522750332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.75, 0)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(0.45, 3.5, 24)
+
+[node name="EastWall" type="CSGBox3D" parent="Walls" unique_id=968426491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.75, 0)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(0.45, 3.5, 24)
+
+[node name="Lockers_L" type="CSGBox3D" parent="Walls" unique_id=1110229524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3, 1.1, 6)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(2.8, 2.2, 1.2)
+
+[node name="Lockers_R" type="CSGBox3D" parent="Walls" unique_id=200899120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3, 1.1, 6)
+material_override = SubResource("StandardMaterial3D_wall")
+use_collision = true
+size = Vector3(2.8, 2.2, 1.2)
+
+[node name="ClassroomDoor" type="Node3D" parent="." unique_id=1077812088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -11.2)
+script = ExtResource("5_door")
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ClassroomDoor" unique_id=1773954994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ClassroomDoor" unique_id=179051388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/StaticBody3D" unique_id=1493298381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="ClassroomDoor" unique_id=2004605729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to enter class"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/Area3D" unique_id=752955466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="PEDoor" type="Node3D" parent="." unique_id=377699546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/PE_Classroom.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PEDoor" unique_id=2030801759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PEDoor" unique_id=852691216]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PEDoor/StaticBody3D" unique_id=2047843323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="PEDoor" unique_id=333152560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to enter PE"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PEDoor/Area3D" unique_id=710241076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="RecessDoor" type="Node3D" parent="." unique_id=343897412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/Recess_World.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RecessDoor" unique_id=1669927259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RecessDoor" unique_id=2115292765]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RecessDoor/StaticBody3D" unique_id=402616109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="RecessDoor" unique_id=2112102658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to go to recess"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RecessDoor/Area3D" unique_id=65480364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="LunchDoor" type="Node3D" parent="." unique_id=1553203954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/lunch.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LunchDoor" unique_id=838914386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LunchDoor" unique_id=1668567015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LunchDoor/StaticBody3D" unique_id=890085853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="LunchDoor" unique_id=407507875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to go to lunch"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LunchDoor/Area3D" unique_id=1828307277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="ExitToTown" type="Node3D" parent="." unique_id=1160747457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/world.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitToTown" unique_id=2083030757]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ExitToTown" unique_id=1162373571]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitToTown/StaticBody3D" unique_id=148070465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="ExitToTown" unique_id=1723181228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to leave school"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitToTown/Area3D" unique_id=313808344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="ClassmateTaylor" type="Node3D" parent="." unique_id=457753021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+script = ExtResource("12_npc")
+display_name = "Taylor"
+
+[node name="Body" type="MeshInstance3D" parent="ClassmateTaylor" unique_id=416542676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_npc_a")
+
+[node name="Area3D" type="Area3D" parent="ClassmateTaylor" unique_id=2054214145]
+script = ExtResource("7_interact")
+prompt_text = "Press E to talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassmateTaylor/Area3D" unique_id=784610307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_npc")
+
+[node name="ClassmateMorgan" type="Node3D" parent="." unique_id=783476727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.5)
+script = ExtResource("12_npc")
+display_name = "Morgan"
+chat_pillar = "nutrition"
+
+[node name="Body" type="MeshInstance3D" parent="ClassmateMorgan" unique_id=1472918072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_npc_b")
+
+[node name="Area3D" type="Area3D" parent="ClassmateMorgan" unique_id=1884494084]
+script = ExtResource("7_interact")
+prompt_text = "Press E to talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassmateMorgan/Area3D" unique_id=415200072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_npc")
+
+[node name="ClassmateDrew" type="Node3D" parent="." unique_id=2100539972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+script = ExtResource("12_npc")
+display_name = "Drew"
+chat_pillar = "exercise"
+
+[node name="Body" type="MeshInstance3D" parent="ClassmateDrew" unique_id=21278379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_npc_c")
+
+[node name="Area3D" type="Area3D" parent="ClassmateDrew" unique_id=1476591605]
+script = ExtResource("7_interact")
+prompt_text = "Press E to talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassmateDrew/Area3D" unique_id=1837324520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_npc")
+
+[node name="location_card" type="Node" parent="." unique_id=556314953]
+script = ExtResource("9_loc")
+
+[node name="ColorRect" type="ColorRect" parent="location_card" unique_id=1207353565]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -459.5
+offset_top = -100.0
+offset_right = -219.5
+offset_bottom = -60.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.647059)
+
+[node name="Label" type="Label" parent="location_card/ColorRect" unique_id=1007421058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "School — hallway"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="location_card" unique_id=1184245167]
+libraries/ = SubResource("AnimationLibrary_loc")
+
+[node name="TravelerNotebook" parent="." unique_id=1744653403 instance=ExtResource("10_notebook")]
+
+[connection signal="body_entered" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="PEDoor/Area3D" to="PEDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="PEDoor/Area3D" to="PEDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="RecessDoor/Area3D" to="RecessDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="RecessDoor/Area3D" to="RecessDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="LunchDoor/Area3D" to="LunchDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="LunchDoor/Area3D" to="LunchDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ExitToTown/Area3D" to="ExitToTown/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ExitToTown/Area3D" to="ExitToTown/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ClassmateTaylor/Area3D" to="ClassmateTaylor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ClassmateTaylor/Area3D" to="ClassmateTaylor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ClassmateMorgan/Area3D" to="ClassmateMorgan/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ClassmateMorgan/Area3D" to="ClassmateMorgan/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ClassmateDrew/Area3D" to="ClassmateDrew/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ClassmateDrew/Area3D" to="ClassmateDrew/Area3D" method="_on_body_exited"]

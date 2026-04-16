@@ -6,6 +6,7 @@ extends Node3D
 @export var stage_dimentions:Vector2
 @export var use_orthographic_camera := false
 @export var orthographic_size := 8.5
+@onready var debug_target: Node3D = get_node_or_null("MeshInstance3D2")
 
 func _ready() -> void:
 	if use_orthographic_camera and camera_3d != null:
@@ -19,5 +20,6 @@ func _process(delta):
 	
 	camera_3d.look_at(((player.position+position)/2)+Vector3.UP,Vector3.UP)
 	
-	$MeshInstance3D2.global_position = ((player.position+position)/2)+Vector3.UP
+	if debug_target != null:
+		debug_target.global_position = ((player.position+position)/2)+Vector3.UP
 	

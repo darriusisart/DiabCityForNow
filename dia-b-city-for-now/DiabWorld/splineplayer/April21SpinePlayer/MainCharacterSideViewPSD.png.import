@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ln61auuoufr"
-path="res://.godot/imported/MainCharacterSideViewPSD.png-d9dc7a4be227c401a3be7217f3d3f6df.ctex"
+uid="uid://di8capwvjm2yr"
+path="res://.godot/imported/MainCharacterSideViewPSD.png-a8f0c8bd0794f6829e349002659c66f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DiabWorld/splineplayer/NewestSpinee/madinew/MainCharacterSideViewPSD.png"
-dest_files=["res://.godot/imported/MainCharacterSideViewPSD.png-d9dc7a4be227c401a3be7217f3d3f6df.ctex"]
+source_file="res://DiabWorld/splineplayer/April21SpinePlayer/MainCharacterSideViewPSD.png"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD.png-a8f0c8bd0794f6829e349002659c66f4.ctex"]
 
 [params]
 

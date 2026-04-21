@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://svhckceu8tn6"]
 
-[ext_resource type="SpineAtlasResource" uid="uid://cttpi31ej1si0" path="res://DiabWorld/splineplayer/NewestSpinee/madinew/MainCharacterSideViewPSD.atlas" id="1_qd03b"]
-[ext_resource type="SpineSkeletonFileResource" uid="uid://boenwrb6d3h7s" path="res://DiabWorld/splineplayer/NewestSpinee/madinew/MainCharacterSideViewPSD.skel" id="2_vjamc"]
+[ext_resource type="SpineAtlasResource" uid="uid://d27iofjo1odin" path="res://DiabWorld/splineplayer/April21SpinePlayer/MainCharacterSideViewPSD.atlas" id="1_vjamc"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://e0xivfw7777g" path="res://DiabWorld/splineplayer/April21SpinePlayer/MainCharacterSideViewPSD.skel" id="2_6xc2s"]
+[ext_resource type="Shader" uid="uid://lf0r0d7uy1gp" path="res://DiabWorld/splineplayer/newestspine/spineplayercolor.gdshader" id="3_vjamc"]
 
 [sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_6xc2s"]
-atlas_res = ExtResource("1_qd03b")
-skeleton_file_res = ExtResource("2_vjamc")
+atlas_res = ExtResource("1_vjamc")
+skeleton_file_res = ExtResource("2_6xc2s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6xc2s"]
+shader = ExtResource("3_vjamc")
 
 [node name="Spineplayer" type="SpineSprite" unique_id=1245084732]
 skeleton_data_res = SubResource("SpineSkeletonDataResource_6xc2s")
@@ -13,3 +17,4 @@ preview_skin = "Default"
 preview_animation = "DarkMale_IdleAnimation"
 preview_frame = false
 preview_time = 0.0
+material = SubResource("ShaderMaterial_6xc2s")

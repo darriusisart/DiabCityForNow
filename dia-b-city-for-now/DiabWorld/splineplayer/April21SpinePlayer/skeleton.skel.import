@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://dbrvsfaqfedv0"
+path="res://.godot/imported/skeleton.skel-0ab3870370008b39bca71eda5bcad17d.spskel"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/April21SpinePlayer/skeleton.skel"
+dest_files=["res://.godot/imported/skeleton.skel-0ab3870370008b39bca71eda5bcad17d.spskel"]
+
+[params]
+

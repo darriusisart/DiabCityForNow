@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://drmgs71il61dj"]
+
+[ext_resource type="Script" uid="uid://cxwicl436e7x" path="res://welcomescreen.gd" id="1_ciivp"]
+[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_xih2k"]
+[ext_resource type="Texture2D" uid="uid://8oj50by8u43x" path="res://assets_Shreya/mesh bg.png" id="3_uoid7"]
+[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="4_32ceg"]
+[ext_resource type="FontFile" uid="uid://0pb8k2012a5o" path="res://Font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_ojybi"]
+[ext_resource type="FontFile" uid="uid://b0ch6b6o1ucog" path="res://Font/Poppins/Poppins-Regular.ttf" id="6_ac6j2"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="7_t2oft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbixn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iuy52"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w23wk"]
+
+[node name="Control" type="Control" unique_id=943762010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ciivp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=238108637]
+
+[node name="Background2" type="TextureRect" parent="CanvasLayer" unique_id=1624267784]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -60.0
+offset_right = 107.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xih2k")
+stretch_mode = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=824040138]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 694.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vbixn")
+
+[node name="Left Panel" type="Panel" parent="CanvasLayer/PanelContainer" unique_id=1755159069]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iuy52")
+
+[node name="MeshBG" type="TextureRect" parent="CanvasLayer/PanelContainer/Left Panel" unique_id=755329339]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -642.0
+offset_right = 692.0
+offset_bottom = 657.98047
+grow_vertical = 2
+texture = ExtResource("3_uoid7")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/Left Panel" unique_id=1179606690]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 197.0
+offset_top = -366.0
+offset_right = 897.0
+offset_bottom = 334.0
+grow_vertical = 2
+texture = ExtResource("4_32ceg")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/Left Panel" unique_id=1721604099]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 99.0
+offset_right = 58.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_ojybi")
+theme_override_font_sizes/font_size = 56
+text = "SUKI"
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1362731708]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -627.0
+offset_top = -140.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_w23wk")
+
+[node name="content2" type="Label" parent="CanvasLayer/Panel" unique_id=493946695]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5176471, 0.5529412, 0.5686275, 1)
+theme_override_fonts/font = ExtResource("6_ac6j2")
+theme_override_font_sizes/font_size = 16
+text = "Master sleep, exercise, food, bonding and mental strength to become the ultimate hero.
+"
+autowrap_mode = 2
+
+[node name="Maintext" type="Label" parent="CanvasLayer/Panel" unique_id=1125457096]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.51500005
+anchor_top = -5.0360003
+anchor_right = 0.485
+anchor_bottom = -0.57100004
+offset_left = -0.0949707
+offset_top = 0.040039063
+offset_right = -0.09500122
+offset_bottom = -0.05999756
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -51
+theme_override_fonts/font = ExtResource("7_t2oft")
+theme_override_font_sizes/font_size = 124
+text = "X-emplar School of Heroes
+"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/Maintext" unique_id=829923620]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 377.0
+offset_right = 492.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 32
+text = "Start your mission"
+
+[connection signal="pressed" from="CanvasLayer/Panel/Maintext/Button" to="." method="_on_button_pressed"]

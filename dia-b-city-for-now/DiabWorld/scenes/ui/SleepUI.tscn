@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://np6nymutgedd"]
 
-[ext_resource type="Texture2D" uid="uid://docmpd8jvrt8m" path="res://DiabWorld/scenes/ui/pictures/sheep1.jpg" id="2_qbjsw"]
 [ext_resource type="Script" uid="uid://b8i68gxbl10u8" path="res://DiabWorld/scenes/ui/SheepSleep.gd" id="3_5li6j"]
+[ext_resource type="Texture2D" uid="uid://cvcabq0x8a24u" path="res://assets_Shreya/SHEEP.png" id="3_yar0g"]
 
 [node name="Node2D" type="Node2D" unique_id=1533869325]
 
@@ -27,7 +27,8 @@ theme_override_constants/margin_bottom = 22
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/MarginContainer" unique_id=1330551240]
 position = Vector2(388.67, 328)
-texture = ExtResource("2_qbjsw")
+scale = Vector2(0.07506472, 0.07506471)
+texture = ExtResource("3_yar0g")
 script = ExtResource("3_5li6j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=359301370]

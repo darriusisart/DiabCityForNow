@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4t4qlni8mrrb"]
+
+[ext_resource type="Script" uid="uid://fglq7p35d4ol" path="res://DiabWorld/scripts/ui/intro_spine_customize.gd" id="1_script"]
+
+[node name="IntroSpineCustomize" type="CanvasLayer" unique_id=160574956]
+process_mode = 3
+layer = 3
+script = ExtResource("1_script")
+tint_slot_names = PackedStringArray("Head", "Chest", "Legs", "Shoes")

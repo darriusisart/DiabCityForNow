@@ -3,6 +3,12 @@ extends Node
 var class_points: int = 0
 var convenience_inventory: Dictionary = {}
 var player_username: String = "Student"
+## Spine outfit (skin name from skeleton data) and per-slot RGBA tints { "slot_name": Color }.
+var player_spine_skin: String = "Default"
+var player_spine_slot_tints: Dictionary = {}
+var player_spine_global_tint: Color = Color(1, 1, 1, 1)
+## Per-slot attachment selections, ex: {"Hair": "hair_long_01", "Top": "hoodie_blue"}.
+var player_spine_part_attachments: Dictionary = {}
 var today_learning_notes: Array[String] = []
 ## Suika-style recess garden: merged seed count (from stacking two soil clumps).
 var recess_garden_seeds: int = 0

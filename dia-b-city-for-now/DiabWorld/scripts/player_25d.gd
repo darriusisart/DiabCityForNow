@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const SPEED := 5.0
+enum SpineAnimState { IDLE, WALK, JUMP, STRETCH }
 const CUSTOM_ATLAS_PATH := ""
 const CUSTOM_SKELETON_PATH := "res://DiabWorld/scenes/ui/pictures/player/MainCharacterSideViewPSD.json"
 const CUSTOM_META_SKELETON_PATH := "res://DiabWorld/scenes/ui/pictures/player/skeleton.json"
@@ -12,7 +13,7 @@ const CUSTOM_META_SKELETON_PATH := "res://DiabWorld/scenes/ui/pictures/player/sk
 @export var spine_jump_duration := 0.45
 @export var spine_flip_horizontal := true
 @export var keep_spine_scale_constant := true
-## When using orthographic cameras, nudge Spine screen scale so character size stays stable if zoom (camera size) changes.
+# With ortho cameras, nudge Spine screen scale so character size stays stable if zoom (camera size) changes.
 @export var compensate_orthographic_zoom := true
 
 #var gravity := ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -35,11 +36,13 @@ var _spine_is_2d := false
 var _spine_flip_sign := 1.0
 var _spine_base_scale_2d := Vector2.ONE
 var _spine_ref_distance := 1.0
-## Wall-clock end (msec); 0 = jump overlay inactive. Avoids one physics frame eating the whole window when delta is large.
+# Wall-clock end (msec); 0 = jump overlay inactive. Avoids one physics frame eating the whole window when delta is large.
 var _jump_anim_end_msec: int = 0
 var _stretch_session_active := false
 var _stretch_anim_name := ""
 var _spine_ref_ortho_camera_size := -1.0
+var _spine_state: SpineAnimState = SpineAnimState.IDLE
+var _spine_state_entered_msec: int = 0
 
 func _ready() -> void:
 	pause_menu = get_node_or_null("PauseMenu") as CanvasLayer
@@ -118,20 +121,39 @@ func _update_sprite_animation(delta: float) -> void:
 func _update_spine_animation() -> void:
 	if _spine_visual == null:
 		return
-	if _stretch_session_active:
-		var loop_stretch := _stretch_anim_name.findn("jump") < 0
-		_play_spine_animation(_stretch_anim_name, loop_stretch)
-		return
-	if _is_jump_anim_active():
-		_play_spine_animation(spine_jump_animation, false)
-		return
 	var move_vec := Vector2(velocity.x, velocity.z)
-	var moving := move_vec.length() > 0.2
-	_update_spine_flip(move_vec)
-	var base := spine_idle_animation
-	if moving:
-		base = spine_walk_animation
-	_play_spine_animation(base, true)
+	var desired := _determine_desired_spine_state(move_vec)
+	if desired != _spine_state:
+		_transition_spine_state(desired, move_vec)
+		return
+	if desired == SpineAnimState.WALK:
+		_update_spine_flip(move_vec)
+
+func _determine_desired_spine_state(move_vec: Vector2) -> SpineAnimState:
+	if _stretch_session_active:
+		return SpineAnimState.STRETCH
+	if _is_jump_anim_active():
+		return SpineAnimState.JUMP
+	if move_vec.length() > 0.2:
+		return SpineAnimState.WALK
+	return SpineAnimState.IDLE
+
+func _transition_spine_state(next_state: SpineAnimState, move_vec: Vector2 = Vector2.ZERO) -> void:
+	_spine_state = next_state
+	_spine_state_entered_msec = Time.get_ticks_msec()
+	match next_state:
+		SpineAnimState.STRETCH:
+			var loop_stretch := _stretch_anim_name.findn("jump") < 0
+			_last_spine_anim = ""
+			_play_spine_animation(_stretch_anim_name, loop_stretch)
+		SpineAnimState.JUMP:
+			_last_spine_anim = ""
+			_play_spine_animation(spine_jump_animation, false)
+		SpineAnimState.WALK:
+			_update_spine_flip(move_vec)
+			_play_spine_animation(spine_walk_animation, true)
+		SpineAnimState.IDLE:
+			_play_spine_animation(spine_idle_animation, true)
 
 func _get_facing_row(move_vec: Vector2) -> int:
 	if move_vec == Vector2.ZERO:
@@ -212,6 +234,9 @@ func _try_bind_spine_visual() -> void:
 		_spine_flip_sign = 1.0
 		print("Player Spine: bound successfully to ", node.name, " (class=", spine_class, ", is_2d=", _spine_is_2d, ")")
 		_print_spine_animation_capabilities(node)
+		SpineAppearance.apply_saved_appearance(_spine_visual)
+		_spine_state = SpineAnimState.IDLE
+		_spine_state_entered_msec = Time.get_ticks_msec()
 	else:
 		print("Player Spine: node exists but has no supported animation API, using Sprite3D fallback")
 
@@ -448,9 +473,10 @@ func _trigger_jump_animation() -> void:
 	_jump_anim_end_msec = Time.get_ticks_msec() + dur_ms
 	# Force replay even if the previous animation name matches.
 	_last_spine_anim = ""
+	_spine_state = SpineAnimState.IDLE
 	_play_spine_animation(spine_jump_animation, false)
 
-## Looped stretch at home (tai chi / yoga). Uses [member spine_idle_animation] if Spine is off or [param anim_name] is empty.
+# Looped stretch at home (tai chi / yoga). Uses [member spine_idle_animation] if Spine is off or [param anim_name] is empty.
 func play_stretch_session(anim_name: String, duration_sec: float) -> void:
 	if duration_sec <= 0.0:
 		return

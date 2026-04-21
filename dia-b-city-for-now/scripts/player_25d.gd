@@ -163,6 +163,16 @@ func _try_bind_spine_visual() -> void:
 		else:
 			_spine_ref_distance = 6.0
 	_spine_flip_sign = 1.0
+	SpineAppearance.apply_saved_appearance(_spine_visual)
+	_play_spine_animation(spine_idle_animation, true)
+
+func refresh_spine_appearance() -> void:
+	if not _using_spine or _spine_visual == null:
+		_try_bind_spine_visual()
+	if _spine_visual == null:
+		return
+	SpineAppearance.apply_saved_appearance(_spine_visual)
+	_last_spine_anim = ""
 	_play_spine_animation(spine_idle_animation, true)
 
 func _play_spine_animation(anim_name: String, loop: bool) -> bool:

@@ -20,6 +20,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08, 0.06, 0.18, 1)
 
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1088424158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="SheepField" type="Control" parent="." unique_id=310092150]
 layout_mode = 1
 anchors_preset = 15

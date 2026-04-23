@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://np6nymutgedd"]
 
 [ext_resource type="Script" uid="uid://b8i68gxbl10u8" path="res://DiabWorld/scenes/ui/SheepSleep.gd" id="3_5li6j"]
-[ext_resource type="Texture2D" uid="uid://cvcabq0x8a24u" path="res://assets_Shreya/SHEEP.png" id="3_yar0g"]
+[ext_resource type="Texture2D" uid="uid://cvcabq0x8a24u" path="res://assets_Shreya/SHEEP_Shreya.png" id="3_yar0g"]
 
 [node name="Node2D" type="Node2D" unique_id=1533869325]
 

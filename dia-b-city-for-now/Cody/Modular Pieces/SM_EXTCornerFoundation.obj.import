@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt8uydtrfmjvn"
+path="res://.godot/imported/SM_EXTCornerFoundation.obj-c4fd806fc983f1790d3b2761ada98ade.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_EXTCornerFoundation.obj-c4fd806fc983f1790d3b2761ada98ade.mesh"]
+
+source_file="res://Cody/Modular Pieces/SM_EXTCornerFoundation.obj"
+dest_files=["res://.godot/imported/SM_EXTCornerFoundation.obj-c4fd806fc983f1790d3b2761ada98ade.mesh", "res://.godot/imported/SM_EXTCornerFoundation.obj-c4fd806fc983f1790d3b2761ada98ade.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

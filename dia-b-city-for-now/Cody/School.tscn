@@ -7,62 +7,71 @@
 [ext_resource type="ArrayMesh" uid="uid://cphy8056i7emt" path="res://Cody/Modular Pieces/SM_EXTBaseWall.obj" id="5_ee5yy"]
 [ext_resource type="ArrayMesh" uid="uid://dl8slrh75qdv6" path="res://Cody/Modular Pieces/SM_EXTBaseFoundation.obj" id="6_mfhxu"]
 [ext_resource type="ArrayMesh" uid="uid://c05m4sjfviust" path="res://Cody/Modular Pieces/SM_EXTTripleWindowWall.obj" id="7_wa2j6"]
-[ext_resource type="ArrayMesh" uid="uid://bi7vitbn58i4u" path="res://Cody/Modular Pieces/SM_EXTWallCorner.obj" id="9_4vgw7"]
-[ext_resource type="ArrayMesh" uid="uid://cp5wc02i7uevo" path="res://Cody/Modular Pieces/SM_EXTInnerWallCorner2.obj" id="9_kpw06"]
+[ext_resource type="ArrayMesh" uid="uid://c2fb8blaek7p4" path="res://Cody/Modular Pieces/SM_EXTInnerWallCorner.obj" id="9_8yhbf"]
 [ext_resource type="ArrayMesh" uid="uid://bv3e7cuggwda2" path="res://Cody/Modular Pieces/SM_EXTTrim3.obj" id="10_h2jf1"]
+[ext_resource type="ArrayMesh" uid="uid://b4e75smctafa6" path="res://Cody/Modular Pieces/SM_EXTCornerWall.obj" id="10_krp0u"]
+[ext_resource type="ArrayMesh" uid="uid://bjcv06g2s7y2j" path="res://Cody/Modular Pieces/SM_EXTTripleWindowFoundation.obj" id="11_ee5yy"]
+[ext_resource type="ArrayMesh" uid="uid://dt8uydtrfmjvn" path="res://Cody/Modular Pieces/SM_EXTCornerFoundation.obj" id="12_mfhxu"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0h528"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4frl"]
+resource_name = "Material"
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+metallic = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cbdux"]
 _surfaces = [{
-"aabb": AABB(-1.010347, 0, -0.010347, 2.2103472, 4, 2.210347),
+"aabb": AABB(-1, 0, -2.1, 2.2103472, 4, 2.3103468),
 "format": 34896613377,
-"index_count": 72,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAFAAQAAAAGAAQABQAHAAMABgAHAAUAAwAHAAEAAgAGAAAAAgAHAAYAAgAHAAAAAAAHAAEAAgABAAcAAAABAAgACAACAAAACAABAAkACgACAAgACAAJAAoAAgALAAcABwALAAEACgALAAIAAQALAAkACgAJAAsA"),
-"name": "Wall",
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcABAAIAAUACAAHAAUABgAJAAQABgAHAAkACgAIAAQABAAJAAoACgAIAAkACwAHAAgACQAHAAsACQAIAAsACgALAAgACQALAAoADAALAAgACgAMAAgACQALAA0ACQANAAoADgALAAwADQALAA4ADwAOAAwADQAOAA8ADwAMAAoACgANAA8A"),
+"name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 12,
-"vertex_data": PackedByteArray("uTD//7kwAAC5MAAAuTAAAAAA//8AAAAA//8AALkwAAD/////uTAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAALkw/////wAAuTAAAP//AAAAAP////8AAAAAAAD//wAA")
+"vertex_count": 16,
+"vertex_data": PackedByteArray("gQDXNv2uAACBANc2ZrsAAP6q1zb9rgAA97fXNma7AAAAAP////8AAAAAAAD//wAAAAD//zi7AAAAAAAAOLsAAP//AAD//wAAG7j//zi7AAD///////8AABu4AAA4uwAA//8AAAAAAAAbuP//AAAAABu4AAAAAAAA/////wAAAAA=")
 }, {
-"aabb": AABB(-1.120411, 0.856942, -0.126979, 2.3467531, 0.14582497, 2.3451648),
+"aabb": AABB(-0.995616, 0.856942, -2.105714, 1.5870581, 0.14582497, 1.698299),
 "format": 34359742465,
-"index_count": 228,
-"index_data": PackedByteArray("FwAYABkAGQAYAAIAAgAHABkAGAAaAAIAGwAHAAIAAgAaABsAGgAcABsAGwAcAAcAHQAcABoAAQAaABgAHQAaAAEAAQAYAB4AHgAYABcAAQAFAB0AHgAFAAEAAwAcAB0AHQAFAAMAAwAfABwABQAfAAMAHAAfAAcAEgAFAB4AHgAXABIAAAAFABIABwAfAAYABQAgAB8AAAAgAAUAHwAgAAYAEgAQAAAAEgAXABAAAAAQACAABgAgAAQABAAHAAYAIAAQAAQAEQAHAAQABAAQABEAEAAXABEAGQAHABEAEQAXABkAEwAhACIAIgAhAAoACgALACIAIQAjAAoAJAALAAoACgAjACQAIwAlACQAJAAlAAsAJgAlACMACAAjACEAJgAjAAgACAAhACcAJwAhABMACAAMACYAJwAMAAgACQAlACYAJgAMAAkACQAoACUADAAoAAkAJQAoAAsAFQAMACcAJwATABUADgAMABUACwAoAA8ADAApACgADgApAAwAKAApAA8AFQAWAA4AFQATABYADgAWACkADwApAA0ADQALAA8AKQAWAA0AFAALAA0ADQAWABQAFgATABQAIgALABQAFAATACIA"),
-"lods": [0.24137408, PackedByteArray("EAABAAIAAQADAAIAEQAQAAIAEgABABAAAgAHABEAAgADAAcAAQAFAAMAEgAFAAEAAwAFAAcAEgAQAAAAAAAFABIABAAQABEAAAAQAAQAEQAHAAQABQAAAAYABwAFAAYABgAAAAQABAAHAAYAEwAIAAoACAAJAAoAFAATAAoACgAJAAsACgALABQACQAMAAsACAAMAAkACwAMAA8AFQAIABMAFQAMAAgAFgATABQAFQATABYAFAALAA0ADQALAA8ADQAWABQADAAOAA8ADwAOAA0ADgAMABUADgAWAA0AFQAWAA4A"), 0.6121598, PackedByteArray("AAABAAIAAQADAAIABAAAAAIAAQAFAAMAAAAFAAEABgAAAAQABQAAAAYAAgAHAAQAAgADAAcABAAHAAYAAwAFAAcABwAFAAYACAAJAAoACgAJAAsACAAMAAkACQAMAAsADQAIAAoACgALAA0ADgAMAAgADgAIAA0ACwAMAA8ADAAOAA8ADQALAA8ADwAOAA0A")],
-"name": "Trim1",
+"index_count": 108,
+"index_data": PackedByteArray("FwABAAAAAAABAAIAAwAXAAAAAQAYAAIAAgAYAAQAGAAGAAQABAAGAAcAGAAIAAYAAQAIABgAFwAIAAEAGQAXAAMAGQAIABcABQAZAAMACQAIAAUACgAIABkABQAIAAoACgAZAAUACwAMAA0ADQAMABEADAASABEAGgALAA0ADgALABoADwAOABoAEAAOAA8ADQATABoAGgATAA8AEwAQAA8AEQATAA0AFAAQABMAEQASABsAGwATABEAEgAWABsAFQAUABMAFgAUABUAFQATABsAGwAWABUA"),
+"lods": [0.5120943, PackedByteArray("AAABAAIAAwABAAAAAgABAAQABQABAAMAAQAGAAQABAAGAAcAAQAIAAYACQAIAAUACgAIAAEABQAIAAoACgABAAUACwAMAA0ADgALAA0ADwAOAA0AEAAOAA8ADQAMABEADAASABEADQATAA8AEwAQAA8AEQATAA0AFAAQABMAEQASABUAFQATABEAFQAUABMAEgAWABUAFgAUABUA")],
+"name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 42,
-"vertex_data": PackedByteArray("JxOBv6tagD/C9g1A+MSOv1q8dD/C9g1A+MSOv1q8dD+Lw/m9oWmPv41gWz/C9g1AJxOBv6tagD/CL3W8JxOBv41gWz/C9g1AJxOBv41gWz/CL3W8oWmPv41gWz/IBgK+75COv1q8dD9rnfi9mDWPv41gWz/7cwG+xvicP1q8dD9rnfi9xvicP41gWz/7cwG+Ht+Av41gWz/zAmy8xvicP6tagD/zAmy8Ht+Av6tagD/zAmy8xvicP41gWz/zAmy8qpyKv6tagD923vQ/qpyKv6tagD8lPre9qpyKv6tagD/C9g1A491FvxuAfT/+f9y9xvicP6tagD+LGLa9oWiKv6tagD+LGLa9491Fv6tagD+LGLa9KgONvxuAfT923vQ/+MSOv1q8dD923vQ/KgONvxuAfT8ept29oWmPv13DaD923vQ/oWmPv13DaD/IBgK+oWmPv41gWz923vQ/oWmPv13DaD/C9g1AKgONvxuAfT/C9g1AJxOBv41gWz923vQ/JxOBv6tagD923vQ/491Fv1q8dD9rnfi9xvicPxuAfT/+f9y9491Fv13DaD/7cwG+xvicP13DaD/7cwG+491Fv41gWz/7cwG+mDWPv13DaD/7cwG+IM+MvxuAfT/+f9y9491Fv41gWz/zAmy8491Fv6tagD/zAmy8")
+"vertex_count": 28,
+"vertex_data": PackedByteArray("TYT9PhuAfT9NgQC/seB+v1q8dD/7BAS/E332Plq8dD/7BAS/Jo8DP6tagD++aPe+T+rzPl3DaD88TgW/K6IWP6tagD+RQtG+seB+v41gWz88TgW/cOrzPo1gWz88TgW/seB+v41gWz+RQtG+K6IWP41gWz+RQtG+seB+v6tagD+RQtG+cxH/PhuAfT9eLAC/OQr4Plq8dD8MsAO/cxH/PhuAfT8FxAbAuVUEP6tagD/gvva+vmgXP6tagD8FxAbAvmgXP6tagD+zmNC+GAr4Plq8dD8FxAbAlnf1Pl3DaD9d+QS/vmgXP41gWz8FxAbAvmgXP41gWz+zmNC+lnf1Po1gWz8FxAbAlnf1Po1gWz9d+QS/seB+vxuAfT9NgQC/seB+v13DaD88TgW/seB+v6tagD++aPe+uVUEP6tagD8FxAbAlnf1Pl3DaD8FxAbA")
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cvttp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wa2j6"]
 _surfaces = [{
-"aabb": AABB(-1.010347, 0, -0.010347, 2.2103472, 4, 2.210347),
-"attribute_data": PackedByteArray("/5////9f////n/+//1//v/+f/7//X/+//5//f/9f/3//n/9//1//f/+f/z//X/8//5//P/9f/z//nwAA/18AAP9f/3//H/9//1//P/8f/z//3/9//5//f//f/z//n/8//5////9f////n/+//1//v/+f/7//X/+//5//f/9f/3//n/9//1//f/+f/z//X/8//5//P/9f/z//nwAA/18AAP9f/3//H/9//1//P/8f/z//3/9//5//f//f/z//n/8/"),
+"aabb": AABB(-1, 0, -2.1, 2.2103472, 4, 2.3103468),
+"attribute_data": PackedByteArray("CK3/fwit/z8Irf9/CK3/P/+f////X////5//v/9f/7//n/+//1//v/+f/3//X/9//5//f/9f/3//n/8//1//P/+f/z//X/8//58AAP9fAAD/X/9//x//f/9f/z//H/8//9//f/+f/3//3/8//5//P/+f////X////5//v/9f/7//n/+//1//v/+f/3//X/9//5//f/9f/3//n/8//1//P/+f/z//X/8//58AAP9fAAD/X/9//x//f/9f/z//H/8//9//f/+f/3//3/8//5//Pw=="),
 "format": 34896613399,
-"index_count": 72,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8A"),
-"name": "Wall",
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMgAxADMA"),
+"material": SubResource("StandardMaterial3D_y4frl"),
+"name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("uTD//7kw/MW5MAAAuTD8xQAA//8AAPzFAAAAAAAA/MUAAP//AAD//wAAAAAAAP///////wAA/////wAAAAD///////8AAFTV//8AAAAAVNX/////uTBU1f//AAC5MFTV/////7kw/7///wAAuTD/v7kw//+5MP+/uTAAALkw/7///wAAAAD/vwAAAAAAAP+///8AALkw/7+5MAAAuTD/vwAA//8AAP///////wAA//+5MP//uTD///////+5MP//uTD//////7+5MAAA////vwAA//////+/AAAAAP///78AAP////9U1QAAAAD//1TVAAD//wAAVNUAAAAAAABU1QAA//8AAKrpAAAAAAAAqum5MP//uTCq6bkwAAC5MKrpuTD//7kwVNW5MAAAuTBU1bkw/////1TVuTAAAP//VNUAAAAAAABU1QAAAAD//1TVuTAAALkwVNW5MAAA//9U1QAA/////1TVAAD//wAAVNW5MP////9U1bkw//+5MFTV/+L/4v/i/+L/4v/i/+L/4v+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+//////////////////////1TVVNVU1VTVVNVU1VTVVNUENQQ1BDUENQQ1BDUENQQ1qiqqKqoqqiqqKqoqqiqqKlRVVFVUVVRVVFVUVVRVVFWqqqqqqqqqqqqqqqqqqqqq")
+"vertex_count": 52,
+"vertex_data": PackedByteArray("gQDXNv2u/7+BANc2Zrv/v/6q1zb9rv+/97fXNma7/78AAP////9U1QAAAAD//1TVAAD//zi7VNUAAAAAOLtU1QAA//84u///AAAAADi7//8buP//OLv//xu4AAA4u///G7j//zi7qukbuAAAOLuq6f///////6rp//8AAP//qun/////////v///AAD///+/AAD//////78AAAAA////vxu4AAA4u/+/AAAAADi7/7///wAA////vwAAAAD///+/AAD//zi7//8buP//OLv//wAA///////////////////////////8xf//AAD///zFG7j//zi7/MUbuAAAOLv8xRu4//84u1TVG7gAADi7VNUbuP//AABU1Ru4AAAAAFTVG7j//wAA//8buAAAAAD///////8AAP////8AAAAA////////AABU1f//AAAAAFTV////////VNX//wAA//9U1Ru4AAAAAFTVG7gAADi7VNX//wAAAABU1f//AAD//1TVG7j//zi7VNUbuP//AABU1f///////1TV/////wAAVNX///9/////f////3////9/VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//78ENQQ1BDUENQQ1BDUENQQ1/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+//+L/4v/i/+L/4v/i/+L/4lTVVNVU1VTVVNVU1VTVVNX/v/+//7//v/+//7//v/+/qiqqKqoqqiqqKqoqqiqqKlRVVFVUVVRVVFVUVVRVVFWqqqqqqqqqqqqqqqqqqqqq")
 }, {
-"aabb": AABB(-1.120411, 0.856942, -0.126979, 2.3467531, 0.14582497, 2.3451648),
-"attribute_data": PackedByteArray("Ne6lPgAAgD7Q07A+zHn+PtDTsD7Mef4+Ne6lPgAAgD7PE88+o5AMPwAAID/mCA0/zxPPPqOQDD8AACA/5ggNP9DTsD7Mef4+5ggtPwAAAD8AAMA+atxLPuYILT8AAIA+5ggtPwAAAD/mCC0/AACAPuYILT8AAAA/5ggtPwAAgD4AACA/atxLPgAAwD5q3Es+AAAgP2rcSz4AAMA+atxLPjXupT4AAIA+5ggtPwAAgD7PE88+o5AMP+YILT8AAAA/zxPPPqOQDD8AACA/5ggNP88Tzz6jkAw/AAAgP+YIDT817qU+AACAPtDTsD7Mef4+Ne6lPgAAgD7Q07A+zHn+PtDTsD7Mef4+5ggtPwAAAD8AAMA+atxLPuYILT8AAIA+5ggtPwAAAD/mCC0/AACAPuYILT8AAAA/5ggtPwAAgD4AACA/atxLPgAAwD5q3Es+AAAgP2rcSz4AAMA+atxLPjXupT4AAIA+5ggtPwAAgD7PE88+o5AMP+YILT8AAAA/Ne6lPn0k1T417qU+fSTVPjXupT59JNU+Ne6lPn0k1T417qU+fSTVPrbZqD4+kuo+Ne6lPn0k1T417qU+fSTVPjXupT59JNU+Ne6lPn0k1T417qU+fSTVPrbZqD4+kuo+0NOwPsx5/j622ag+PpLqPrbZqD4+kuo+zxPPPqOQDD8oDQk/5ggNPygNCT/mCA0/KA0JP+YIDT817qU+AACAPjXupT59JNU+KA0JP+YIDT+22ag+PpLqPigNCT/mCA0/AAAgP+YIDT8oDQk/5ggNPygNCT/mCA0/Ne6lPn0k1T622ag+PpLqPjXupT59JNU+ttmoPj6S6j622ag+PpLqPuYILT8AAAA/5ggtPwAAgD4AACA/atxLPgAAwD5q3Es+ttmoPj6S6j4oDQk/5ggNP9DTsD7Mef4+ttmoPj6S6j622ag+PpLqPs8Tzz6jkAw/KA0JP+YIDT8oDQk/5ggNPygNCT/mCA0/Ne6lPgAAgD417qU+fSTVPigNCT/mCA0/ttmoPj6S6j4oDQk/5ggNPwAAID/mCA0/KA0JP+YIDT8oDQk/5ggNPzXupT59JNU+ttmoPj6S6j417qU+fSTVPrbZqD4+kuo+ttmoPj6S6j7mCC0/AAAAP+YILT8AAIA+AAAgP2rcSz4AAMA+atxLPrbZqD4+kuo+KA0JP+YIDT8="),
+"aabb": AABB(-0.995616, 0.856942, -2.105714, 1.5870581, 0.14582497, 1.698299),
+"attribute_data": PackedByteArray("ttmoPj6S6j7Q07A+zHn+PtDTsD7Mef4+Ne6lPn0k1T417qU+AACAPjXupT4AAIA+zxPPPqOQDD/PE88+o5AMPygNCT/mCA0/AAAgP+YIDT8AACA/5ggNPzXupT4AAIA+5ggtPwAAgD7PE88+o5AMP+YILT8AAAA/ttmoPj6S6j7Q07A+zHn+PrbZqD4+kuo+0NOwPsx5/j417qU+fSTVPrbZqD4+kuo+Ne6lPgAAgD417qU+AACAPs8Tzz6jkAw/KA0JP+YIDT/PE88+o5AMPwAAID/mCA0/AAAgP+YIDT/mCC0/AAAAP+YILT8AAIA+5ggtPwAAAD/mCC0/AACAPgAAID9q3Es+AADAPmrcSz4AACA/atxLPgAAwD5q3Es+5ggtPwAAgD7mCC0/AACAPjXupT4AAIA+Ne6lPgAAgD7mCC0/AAAAP+YILT8AAIA+zxPPPqOQDD+22ag+PpLqPjXupT4AAIA+ttmoPj6S6j4oDQk/5ggNPzXupT59JNU+KA0JP+YIDT8oDQk/5ggNPzXupT59JNU+ttmoPj6S6j417qU+fSTVPrbZqD4+kuo+Ne6lPn0k1T622ag+PpLqPigNCT/mCA0/KA0JP+YIDT817qU+fSTVPigNCT/mCA0/KA0JP+YIDT817qU+fSTVPjXupT59JNU+ttmoPj6S6j4oDQk/5ggNPzXupT59JNU+"),
 "format": 34359742487,
-"index_count": 228,
-"index_data": PackedByteArray("OwA8AD0APQA8AAIAPgA8ADsAAQA8AD4APwBAAAYABgBAAEEABABAAD8AQgBAAAQAQwAwAAMAAwAwADIAAAAwAEMARAAwAAAARQAJAAgACAAJAEYARgAJADMAMwAJAAoACgAJAAsARwBIAEkASQBIAAcASgBIAEcABQBIAEoASwBMAE0ATQBMAE4AMQBMAEsATwBMADEAUABRAA4ADgBRAA8ADABRAFAADQBRAAwAUgBTABIAEgBTABMAEABTAFIAEQBTABAAFAAVADQANAAVAFQAVAAVABYAFgAVAFUAVQAVABcANQBWAFcAVwBWAB8AWABWADUAHQBWAFgAWQBaABoAGgBaAFsAGABaAFkAXABaABgAXQA4AB4AHgA4ADcAHAA4AF0AXgA4ABwAXwAhACAAIAAhAGAAYAAhADkAOQAhACIAIgAhACMAYQBiAGMAYwBiABsAZABiAGEAGQBiAGQAZQBmAGcAZwBmAGgANgBmAGUAaQBmADYAagBrACYAJgBrACcAJABrAGoAJQBrACQAbABtACoAKgBtACsAKABtAGwAKQBtACgALAAtADoAOgAtAG4AbgAtAC4ALgAtAG8AbwAtAC8A"),
-"lods": [0.24137408, PackedByteArray("MAABAAIAMQABADAAMgAwAAIAMQAwAAAAAwAwADIAAAAwAAMABAAFAAYABgAFAAcACAAJADMAMwAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVADQANAAVABYAFgAVABcANQAdAB8ANgAdADUANwA1AB8ANgA1ADgAOAA1ADcANgA4ABwAHgA4ADcAHAA4AB4AGAAZABoAGgAZABsAIAAhADkAOQAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtADoAOgAtAC4ALgAtAC8A"), 0.6121598, PackedByteArray("AAABAAIAAwAAAAIABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8A")],
-"name": "Trim1",
+"index_count": 108,
+"index_data": PackedByteArray("LQABAAAAAAABAAIABwAuAAYABgAuAAgABQAvAAQABAAvAAMAMAAJADEAMQAJAAoAMgAzADQANAAzADUACwAMADYANgAMADcANwAMAA0ADQAMADgAOAAMAA4ADwAQABEAEQAQABIAFwAYABkAGQAYADkAFgATABUAFQATADoAOwAbADwAPAAbABoAPQAUAD4APgAUAD8AHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApAEAAQAApACoAKgApACsAKwApAEEAQQApACwA"),
+"lods": [0.5120943, PackedByteArray("AAABAAIAAwABAAAABAABAAMABQABAAQABgAHAAgABwAJAAgACAAJAAoACwAMAA0ADQAMAA4ADwAQABEAEQAQABIAEwAUABEAFQATABEAFgATABUAFwAYABkAGQAYABoAGAAbABoAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsAKwApACwA")],
+"material": SubResource("StandardMaterial3D_y4frl"),
+"name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 112,
-"vertex_data": PackedByteArray("JxOBv6tagD/C9g1A+MSOv1q8dD/C9g1A+MSOv1q8dD+Lw/m9JxOBv6tagD/CL3W8+MSOv1q8dD/C9g1AoWmPv41gWz/C9g1A+MSOv1q8dD+Lw/m9oWmPv41gWz/IBgK++MSOv1q8dD+Lw/m9oWmPv41gWz/IBgK+JxOBv6tagD/CL3W8JxOBv41gWz/CL3W8oWmPv41gWz/C9g1AJxOBv41gWz/C9g1AoWmPv41gWz/IBgK+JxOBv41gWz/CL3W8JxOBv41gWz/C9g1AJxOBv6tagD/C9g1AJxOBv41gWz/CL3W8JxOBv6tagD/CL3W8JxOBv6tagD/C9g1AJxOBv41gWz/C9g1A+MSOv1q8dD/C9g1AoWmPv41gWz/C9g1A75COv1q8dD9rnfi9mDWPv41gWz/7cwG+xvicP1q8dD9rnfi9xvicP41gWz/7cwG+Ht+Av6tagD/zAmy875COv1q8dD9rnfi9xvicP6tagD/zAmy8xvicP1q8dD9rnfi9xvicP1q8dD9rnfi9xvicP41gWz/7cwG+xvicP6tagD/zAmy8xvicP41gWz/zAmy8mDWPv41gWz/7cwG+Ht+Av41gWz/zAmy8xvicP41gWz/7cwG+xvicP41gWz/zAmy8Ht+Av41gWz/zAmy8Ht+Av6tagD/zAmy8xvicP41gWz/zAmy8xvicP6tagD/zAmy8Ht+Av6tagD/zAmy8Ht+Av41gWz/zAmy875COv1q8dD9rnfi9mDWPv41gWz/7cwG+qpyKv6tagD923vQ/qpyKv6tagD/C9g1AqpyKv6tagD8lPre9qpyKv6tagD8lPre9qpyKv6tagD/C9g1A491FvxuAfT/+f9y9oWiKv6tagD+LGLa9xvicP6tagD+LGLa9491Fv6tagD+LGLa9xvicP6tagD+LGLa9oWiKv6tagD+LGLa9KgONvxuAfT923vQ/+MSOv1q8dD923vQ/KgONvxuAfT8ept29KgONvxuAfT/C9g1A+MSOv1q8dD923vQ/oWmPv13DaD923vQ/oWmPv13DaD/IBgK+oWmPv13DaD/C9g1AJxOBv6tagD923vQ/qpyKv6tagD/C9g1AoWmPv13DaD/IBgK+KgONvxuAfT8ept29oWmPv13DaD923vQ/oWmPv41gWz923vQ/oWmPv13DaD/IBgK+oWmPv13DaD/C9g1AqpyKv6tagD923vQ/KgONvxuAfT923vQ/qpyKv6tagD8lPre9KgONvxuAfT8ept29KgONvxuAfT/C9g1AoWmPv41gWz923vQ/JxOBv41gWz923vQ/JxOBv41gWz923vQ/JxOBv6tagD923vQ/KgONvxuAfT/C9g1AoWmPv13DaD/C9g1A491Fv1q8dD9rnfi9xvicPxuAfT/+f9y9IM+MvxuAfT/+f9y9491Fv1q8dD9rnfi9491Fv13DaD/7cwG+xvicP13DaD/7cwG+mDWPv13DaD/7cwG+491Fv6tagD/zAmy8oWiKv6tagD+LGLa9xvicP13DaD/7cwG+xvicPxuAfT/+f9y9491Fv13DaD/7cwG+491Fv41gWz/7cwG+xvicP13DaD/7cwG+mDWPv13DaD/7cwG+491Fv6tagD+LGLa9491FvxuAfT/+f9y9xvicP6tagD+LGLa9xvicPxuAfT/+f9y9IM+MvxuAfT/+f9y9491Fv41gWz/7cwG+491Fv41gWz/zAmy8491Fv41gWz/zAmy8491Fv6tagD/zAmy8IM+MvxuAfT/+f9y9mDWPv13DaD/7cwG+/3///////7+iJKKk////v6IkoqT///+//3///////79qDGmM////vwAA/3////+/agxpjP///78AAP9/////v////780dox9////v7qFRHr///+/GYblef///79Aj75w/38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/////v////3////+/////f////7////9/////v/9//3//fwCA/3//fwB1f4X/f/9/DpIHif9//38dWXCTlPP//////7//////////v5Tz//////+//////////7//f///////v1zb//////+//3///////79c2///////v////38Vhf5/////f/9/vXv///9//38pfv///3//f1d3/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////P/9//3////8//3//f////z//f/9/////P/8//3//fwCA/z//f/lyQYP/P/9/AI0Ajf8//39aROiO/3///////7+5TLnM////v/9///////+/////v+Z1eX3/f/9//38AgFzb//////+/RbP//////7//f///////v/9///////+/////f0eF/n//P/9//38AgKIkoqT///+/oiSipP///7+iJKKk////v6IkoqT///+/agxpjP///79qDGmM////v2oMaYz///+/agxpjP///7//f///////v/9///////+/////v4d0IX3///+/rn6rfwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/uUy5zP///7+5TLnM////v7lMucz///+/uUy5zP///7+5TLnM////v/9/AAD///+//38AAP///7////9/////v////3////+//3//f86MZob/f/9/amlJi1zb//////+/XNv//////79c2///////v5Tz//////+/lPP//////7+U8///////v5Tz//////+//3///////7//f///////v////38Ahv5/////f3+A/n//////////v/////////+//////////7//////////v0Wz//////+/RbP//////79Fs///////v0Wz//////+/RbP//////7//fwAA////v/9/AAD///+//3//f////z//f/9/////P/8//39Pjk+O/z//f3FY44k=")
+"vertex_count": 66,
+"vertex_data": PackedByteArray("TYT9PhuAfT9NgQC/seB+v1q8dD/7BAS/E332Plq8dD/7BAS/Jo8DP6tagD++aPe+K6IWP6tagD+RQtG+seB+v6tagD+RQtG+E332Plq8dD/7BAS/seB+v1q8dD/7BAS/T+rzPl3DaD88TgW/seB+v41gWz88TgW/cOrzPo1gWz88TgW/seB+v6tagD+RQtG+seB+v41gWz+RQtG+seB+v1q8dD/7BAS/seB+v41gWz88TgW/cxH/PhuAfT9eLAC/OQr4Plq8dD8MsAO/cxH/PhuAfT8FxAbAGAr4Plq8dD8FxAbAuVUEP6tagD/gvva+cxH/PhuAfT9eLAC/vmgXP6tagD8FxAbAvmgXP6tagD+zmNC+OQr4Plq8dD8MsAO/lnf1Pl3DaD9d+QS/GAr4Plq8dD8FxAbAlnf1Po1gWz8FxAbAlnf1Po1gWz9d+QS/lnf1Po1gWz9d+QS/vmgXP41gWz+zmNC+lnf1Po1gWz8FxAbAvmgXP41gWz8FxAbAvmgXP41gWz+zmNC+vmgXP6tagD+zmNC+vmgXP41gWz8FxAbAvmgXP6tagD8FxAbAK6IWP41gWz+RQtG+seB+v41gWz+RQtG+K6IWP6tagD+RQtG+seB+v6tagD+RQtG+lnf1Po1gWz8FxAbAvmgXP41gWz8FxAbAGAr4Plq8dD8FxAbAcxH/PhuAfT8FxAbAvmgXP6tagD8FxAbAseB+vxuAfT9NgQC/seB+v13DaD88TgW/seB+v6tagD++aPe+seB+v13DaD88TgW/T+rzPl3DaD88TgW/seB+v6tagD++aPe+seB+vxuAfT9NgQC/Jo8DP6tagD++aPe+TYT9PhuAfT9NgQC/seB+v6tagD++aPe+seB+vxuAfT9NgQC/seB+v13DaD88TgW/lnf1Pl3DaD8FxAbAuVUEP6tagD8FxAbAlnf1Pl3DaD9d+QS/lnf1Pl3DaD8FxAbAuVUEP6tagD/gvva+uVUEP6tagD8FxAbAcxH/PhuAfT8FxAbAlnf1Pl3DaD8FxAbAuVUEP6tagD8FxAbAXNv//////79c2///////v1zb//////+//3///////7//f///////v/9///////+/nPP//////7+V8/b/////v5Xz9v////+//////////7//////////vwAA/3//fwCAAAD/f/6KAIAAAP9//38HiQAA/3/hpgCApySXpP///z+UJJSk////v5Mkk6T///+/rySapP///z8WgOj/////v8JMwcz///+/6H/o/////7/vf97/////P4UMY4z///8/hQyEjP///7+IDIeM////vwAAD4D///+/EAAPgP///7/vfyAA////P+h/FgD///+/FoAWAP///78WgAAA////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z/u////FVmQbAAA7v8AdX96BgANAA6S9nYNAPX/2YyYee7///8PgP5/XNv//////7+i8///////v/9///////+//////////7//////////v0Wz//////+/RbP//////79Fs///////v0Wz//////+/AAD/f/9/AIAAAP9//39nhgAA/3+TlgCAZwyHjP///78WgP//////vwAAD4D///+/EAAPgP///7+5TLnM////v79Mv8z///+/s0y+zP///78QAAMAbWmvdPX/8f/1f/5/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0h528")
+shadow_mesh = SubResource("ArrayMesh_cbdux")
 
 [node name="School" type="Node3D" unique_id=2043991360]
 
@@ -72,6 +81,17 @@ mesh = ExtResource("1_kpw06")
 
 [node name="SmExtTrimmedFoundation3" type="MeshInstance3D" parent="." unique_id=958739226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+mesh = ExtResource("1_kpw06")
+
+[node name="SmExtTrimmedFoundation4" type="MeshInstance3D" parent="." unique_id=587009334]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 0, -3)
+mesh = ExtResource("1_kpw06")
+
+[node name="SmExtTrimmedFoundation6" type="MeshInstance3D" parent="." unique_id=1399444818]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -27, 0, -3)
+mesh = ExtResource("1_kpw06")
+
+[node name="SmExtTrimmedFoundation5" type="MeshInstance3D" parent="." unique_id=951124157]
 mesh = ExtResource("1_kpw06")
 
 [node name="SmExtWindowFoundation" type="MeshInstance3D" parent="." unique_id=1287598214]
@@ -86,16 +106,12 @@ mesh = ExtResource("2_cvttp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 mesh = ExtResource("3_8yhbf")
 
-[node name="SmExtInnerFoundationCorner2" type="MeshInstance3D" parent="." unique_id=1760243828]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -1)
+[node name="SmExtInnerFoundationCorner4" type="MeshInstance3D" parent="." unique_id=50897783]
+transform = Transform3D(0.0002865521, 0.00061078585, -0.99999976, 9.005749e-05, 0.9999998, 0.0006108124, 0.99999994, -9.02376e-05, 0.0002864954, -20, 0, -1)
 mesh = ExtResource("3_8yhbf")
 
 [node name="SmExtWindowWall" type="MeshInstance3D" parent="." unique_id=1723780733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0)
-mesh = ExtResource("4_krp0u")
-
-[node name="SmExtWindowWall9" type="MeshInstance3D" parent="." unique_id=148181567]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, -1)
 mesh = ExtResource("4_krp0u")
 
 [node name="SmExtWindowWall3" type="MeshInstance3D" parent="." unique_id=841489986]
@@ -122,76 +138,84 @@ mesh = ExtResource("5_ee5yy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
 mesh = ExtResource("5_ee5yy")
 
+[node name="SmExtBaseWall45" type="MeshInstance3D" parent="." unique_id=1329754461]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 1, -3)
+mesh = ExtResource("5_ee5yy")
+
+[node name="SmExtBaseWall46" type="MeshInstance3D" parent="." unique_id=933619338]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 6, -3)
+mesh = ExtResource("5_ee5yy")
+
 [node name="SmExtBaseWall9" type="MeshInstance3D" parent="." unique_id=447967905]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, -1)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall10" type="MeshInstance3D" parent="." unique_id=639136292]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, -3)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall11" type="MeshInstance3D" parent="." unique_id=202656176]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 1)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall12" type="MeshInstance3D" parent="." unique_id=722511375]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 7)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 3)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall13" type="MeshInstance3D" parent="." unique_id=1683518914]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 9)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 5)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall14" type="MeshInstance3D" parent="." unique_id=1810302865]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 11)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 7)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall15" type="MeshInstance3D" parent="." unique_id=1067827517]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 13)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 9)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall16" type="MeshInstance3D" parent="." unique_id=1658460499]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 15)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 11)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall17" type="MeshInstance3D" parent="." unique_id=1700773992]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 17)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 13)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall18" type="MeshInstance3D" parent="." unique_id=1402520891]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 19)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 15)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall19" type="MeshInstance3D" parent="." unique_id=1791052747]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 21)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 17)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall20" type="MeshInstance3D" parent="." unique_id=1938629127]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 23)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 19)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall21" type="MeshInstance3D" parent="." unique_id=587820176]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 25)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 21)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall22" type="MeshInstance3D" parent="." unique_id=2107954234]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 27)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 23)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall23" type="MeshInstance3D" parent="." unique_id=821189156]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 29)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 25)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall24" type="MeshInstance3D" parent="." unique_id=1951413873]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 31)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 27)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall25" type="MeshInstance3D" parent="." unique_id=1536988630]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 33)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 29)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall26" type="MeshInstance3D" parent="." unique_id=1025777420]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 1, 35)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 1, 31)
 mesh = ExtResource("5_ee5yy")
 
 [node name="SmExtBaseWall27" type="MeshInstance3D" parent="." unique_id=295485680]
@@ -282,30 +306,6 @@ mesh = ExtResource("6_mfhxu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 10, 0)
 mesh = ExtResource("6_mfhxu")
 
-[node name="SmExtBaseFoundation19" type="MeshInstance3D" parent="." unique_id=345226717]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation20" type="MeshInstance3D" parent="." unique_id=1809754961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation21" type="MeshInstance3D" parent="." unique_id=1251104433]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation22" type="MeshInstance3D" parent="." unique_id=143306248]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation23" type="MeshInstance3D" parent="." unique_id=209318337]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation24" type="MeshInstance3D" parent="." unique_id=1343763456]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 10, 0)
-mesh = ExtResource("6_mfhxu")
-
 [node name="SmExtBaseFoundation14" type="MeshInstance3D" parent="." unique_id=274711986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 10, 0)
 mesh = ExtResource("6_mfhxu")
@@ -342,108 +342,8 @@ mesh = ExtResource("6_mfhxu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 5, 0)
 mesh = ExtResource("6_mfhxu")
 
-[node name="SmExtTrimmedFoundation4" type="MeshInstance3D" parent="." unique_id=544154160]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
-mesh = ExtResource("1_kpw06")
-
-[node name="SmExtTrimmedFoundation5" type="MeshInstance3D" parent="." unique_id=1897568134]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
-mesh = ExtResource("1_kpw06")
-
-[node name="SmExtWindowFoundation2" type="MeshInstance3D" parent="." unique_id=1570665322]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
-mesh = ExtResource("2_cvttp")
-
-[node name="SmExtWindowFoundation4" type="MeshInstance3D" parent="." unique_id=443868581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-mesh = ExtResource("2_cvttp")
-
-[node name="SmExtWindowWall5" type="MeshInstance3D" parent="." unique_id=1514115690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 0)
-mesh = ExtResource("4_krp0u")
-
-[node name="SmExtWindowWall6" type="MeshInstance3D" parent="." unique_id=339519364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 6, 0)
-mesh = ExtResource("4_krp0u")
-
-[node name="SmExtWindowWall7" type="MeshInstance3D" parent="." unique_id=1015516691]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
-mesh = ExtResource("4_krp0u")
-
-[node name="SmExtWindowWall8" type="MeshInstance3D" parent="." unique_id=140544158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, 0)
-mesh = ExtResource("4_krp0u")
-
-[node name="SmExtBaseWall5" type="MeshInstance3D" parent="." unique_id=265916708]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 0)
-mesh = ExtResource("5_ee5yy")
-
-[node name="SmExtBaseWall6" type="MeshInstance3D" parent="." unique_id=1868547185]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
-mesh = ExtResource("5_ee5yy")
-
-[node name="SmExtBaseWall7" type="MeshInstance3D" parent="." unique_id=1498393062]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)
-mesh = ExtResource("5_ee5yy")
-
-[node name="SmExtBaseWall8" type="MeshInstance3D" parent="." unique_id=419869200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 0)
-mesh = ExtResource("5_ee5yy")
-
-[node name="SmExtBaseFoundation7" type="MeshInstance3D" parent="." unique_id=1325112292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation8" type="MeshInstance3D" parent="." unique_id=835932346]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation9" type="MeshInstance3D" parent="." unique_id=1374486121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation10" type="MeshInstance3D" parent="." unique_id=1626912048]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation11" type="MeshInstance3D" parent="." unique_id=624444709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtBaseFoundation12" type="MeshInstance3D" parent="." unique_id=495651695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 0)
-mesh = ExtResource("6_mfhxu")
-
-[node name="SmExtWallCorner8" type="MeshInstance3D" parent="." unique_id=1776424780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.29849, 6, -4)
-mesh = SubResource("ArrayMesh_cvttp")
-
 [node name="SmExtTrim3" type="MeshInstance3D" parent="." unique_id=421383914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim9" type="MeshInstance3D" parent="." unique_id=425525230]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim10" type="MeshInstance3D" parent="." unique_id=380353606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim11" type="MeshInstance3D" parent="." unique_id=14135085]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim12" type="MeshInstance3D" parent="." unique_id=1664882490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim13" type="MeshInstance3D" parent="." unique_id=246957072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 10, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim14" type="MeshInstance3D" parent="." unique_id=536141391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 10, 0)
 mesh = ExtResource("10_h2jf1")
 
 [node name="SmExtTrim4" type="MeshInstance3D" parent="." unique_id=522677165]
@@ -474,30 +374,6 @@ mesh = ExtResource("10_h2jf1")
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -7, 5.25, 0)
 mesh = ExtResource("10_h2jf1")
 
-[node name="SmExtTrim21" type="MeshInstance3D" parent="." unique_id=111326387]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 7, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim22" type="MeshInstance3D" parent="." unique_id=760831488]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 9, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim23" type="MeshInstance3D" parent="." unique_id=691256470]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 11, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim24" type="MeshInstance3D" parent="." unique_id=1220636224]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim25" type="MeshInstance3D" parent="." unique_id=1168926608]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 15, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
-[node name="SmExtTrim26" type="MeshInstance3D" parent="." unique_id=1618352501]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 17, 5.25, 0)
-mesh = ExtResource("10_h2jf1")
-
 [node name="SmExtTrim5" type="MeshInstance3D" parent="." unique_id=1396579337]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 10, 0)
 mesh = ExtResource("10_h2jf1")
@@ -514,52 +390,76 @@ mesh = ExtResource("10_h2jf1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 10, 0)
 mesh = ExtResource("10_h2jf1")
 
-[node name="SmExtTripleWindowWall9" type="MeshInstance3D" parent="." unique_id=518391966]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 0)
-mesh = ExtResource("7_wa2j6")
-
 [node name="SmExtTripleWindowWall13" type="MeshInstance3D" parent="." unique_id=939354396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
 mesh = ExtResource("7_wa2j6")
 
 [node name="SmExtTripleWindowWall15" type="MeshInstance3D" parent="." unique_id=1776276027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.460672, 1, -5.59844)
 mesh = ExtResource("7_wa2j6")
 
-[node name="SmExtTripleWindowWall16" type="MeshInstance3D" parent="." unique_id=1142752216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 6, -4)
+[node name="SmExtTripleWindowWall16" type="MeshInstance3D" parent="." unique_id=266892334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.460672, 6, -5.59844)
 mesh = ExtResource("7_wa2j6")
 
 [node name="SmExtTripleWindowWall14" type="MeshInstance3D" parent="." unique_id=110758838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 0)
 mesh = ExtResource("7_wa2j6")
 
-[node name="SmExtTripleWindowWall11" type="MeshInstance3D" parent="." unique_id=369896957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -4)
-mesh = ExtResource("7_wa2j6")
-
-[node name="SmExtTripleWindowWall12" type="MeshInstance3D" parent="." unique_id=827455754]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 6, -4)
-mesh = ExtResource("7_wa2j6")
-
-[node name="SmExtTripleWindowWall10" type="MeshInstance3D" parent="." unique_id=301239973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, 0)
-mesh = ExtResource("7_wa2j6")
-
 [node name="SmExtInnerWallCorner2" type="MeshInstance3D" parent="." unique_id=951156645]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.992355, 1.003274, -0.9980941)
 visible = false
-mesh = ExtResource("9_kpw06")
+mesh = SubResource("ArrayMesh_wa2j6")
 
 [node name="SmExtInnerFoundationCorner3" type="MeshInstance3D" parent="." unique_id=209575391]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 0, -1)
 visible = false
 mesh = ExtResource("3_8yhbf")
 
-[node name="SmExtWallCorner" type="MeshInstance3D" parent="." unique_id=862784340]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, -4.2871294)
-mesh = ExtResource("9_4vgw7")
-
-[node name="SmExtInnerWallCorner3" type="MeshInstance3D" parent="." unique_id=1016735167]
+[node name="SmExtInnerWallCorner" type="MeshInstance3D" parent="." unique_id=1363085242]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
-mesh = ExtResource("9_kpw06")
+mesh = ExtResource("9_8yhbf")
+
+[node name="SmExtInnerWallCorner6" type="MeshInstance3D" parent="." unique_id=1829039907]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 1, -1)
+mesh = ExtResource("9_8yhbf")
+
+[node name="SmExtInnerWallCorner7" type="MeshInstance3D" parent="." unique_id=444358715]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 6, -1)
+mesh = ExtResource("9_8yhbf")
+
+[node name="SmExtInnerWallCorner5" type="MeshInstance3D" parent="." unique_id=1351704334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, 0)
+mesh = ExtResource("9_8yhbf")
+
+[node name="SmExtCornerWall2" type="MeshInstance3D" parent="." unique_id=922293794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -5)
+mesh = ExtResource("10_krp0u")
+
+[node name="SmExtCornerWall3" type="MeshInstance3D" parent="." unique_id=936439063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6, -5)
+mesh = ExtResource("10_krp0u")
+
+[node name="SmExtCornerWall4" type="MeshInstance3D" parent="." unique_id=1043325675]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.446886, 6, -5.605917)
+mesh = ExtResource("10_krp0u")
+
+[node name="SmExtCornerWall5" type="MeshInstance3D" parent="." unique_id=226335981]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.446886, 1, -5.605917)
+mesh = ExtResource("10_krp0u")
+
+[node name="SmExtTripleWindowFoundation" type="MeshInstance3D" parent="." unique_id=103527459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+mesh = ExtResource("11_ee5yy")
+
+[node name="SmExtTripleWindowFoundation2" type="MeshInstance3D" parent="." unique_id=652958319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.528044, 0, -5.543889)
+mesh = ExtResource("11_ee5yy")
+
+[node name="SmExtCornerFoundation" type="MeshInstance3D" parent="." unique_id=1274106984]
+transform = Transform3D(0.9999891, -0.004351893, -0.0016890845, 0.004357315, 0.99998534, 0.0032185952, 0.0016750478, -0.0032259224, 0.9999934, -20, 0, -5)
+mesh = ExtResource("12_mfhxu")
+
+[node name="SmExtCornerFoundation2" type="MeshInstance3D" parent="." unique_id=209696118]
+transform = Transform3D(-1.2228359e-05, -0.00349063, 0.9999939, 0.0034906303, 0.99998784, 0.0034906515, -0.9999939, 0.0034906517, -4.3711122e-08, -26.474964, 0, -5.704625)
+mesh = ExtResource("12_mfhxu")

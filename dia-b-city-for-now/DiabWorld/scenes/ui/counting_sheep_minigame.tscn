@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://de6ftivtdrqey"]
 
 [ext_resource type="Script" uid="uid://ckj0kmd1hlhbj" path="res://DiabWorld/scripts/ui/counting_sheep_minigame.gd" id="1_sheep"]
+[ext_resource type="Texture2D" uid="uid://ch6bwkr7iambv" path="res://assets_Shreya/BackgroundSheep_night.png" id="2_642i8"]
 
 [node name="CountingSheepMinigame" type="Control" unique_id=752276625]
 layout_mode = 3
@@ -25,8 +26,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 12.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_642i8")
+expand_mode = 1
 
 [node name="SheepField" type="Control" parent="." unique_id=310092150]
 layout_mode = 1

@@ -3,7 +3,7 @@ extends Control
 @export var sheep_goal: int = 10
 @export_file("*.tscn") var return_scene_path: String = "res://DiabWorld/scenes/home_world.tscn"
 
-const SHEEP_TEX := preload("res://DiabWorld/scenes/ui/pictures/sheep1.jpg")
+const SHEEP_TEX := preload("res://assets_Shreya/SHEEP_Shreya.png")
 
 @onready var _count_label: Label = $VBox/CountLabel
 @onready var _hint_label: Label = $VBox/HintLabel

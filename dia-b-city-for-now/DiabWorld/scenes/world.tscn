@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bnsg1i41jvcy4"]
 
-[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://DiabWorld/scenes/player_25d.tscn" id="1_2yngs"]
-[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://DiabWorld/scripts/stage.gd" id="1_ja2bd"]
-[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://DiabWorld/scripts/camera_rig.gd" id="2_p0ucf"]
-[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://DiabWorld/scripts/portal.gd" id="3_d6anu"]
-[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://DiabWorld/scripts/door_to_scene.gd" id="3_school_door"]
-[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://DiabWorld/scripts/interactable_area.gd" id="3_school_interact"]
-[ext_resource type="Material" uid="uid://ba8jff6q7g4t8" path="res://DiabWorld/materials/dirt.tres" id="4_on35n"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="1_2yngs"]
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_ja2bd"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_p0ucf"]
+[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_d6anu"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="3_school_door"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="3_school_interact"]
+[ext_resource type="Material" uid="uid://ba8jff6q7g4t8" path="res://materials/dirt.tres" id="4_on35n"]
 [ext_resource type="Texture2D" uid="uid://b4ahwht480sn" path="res://DiabWorld/scenes/video/dirtground.jpg" id="5_4aki7"]
-[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://DiabWorld/scripts/location_label.gd" id="5_miq6h"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="5_miq6h"]
 [ext_resource type="Texture2D" uid="uid://ctwdvjwkye5mm" path="res://DiabWorld/scenes/video/oldbrick.jpg" id="6_lht8p"]
-[ext_resource type="Material" uid="uid://b2p0wthddvqc0" path="res://DiabWorld/materials/stone_wall.tres" id="6_ryc43"]
+[ext_resource type="Material" uid="uid://b2p0wthddvqc0" path="res://materials/stone_wall.tres" id="6_ryc43"]
 [ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="7_4aki7"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="7_notebook"]
 [ext_resource type="Texture2D" uid="uid://4a0gpkwj4bs3" path="res://DiabWorld/scenes/video/fence2.jpg" id="9_nekxc"]
@@ -237,6 +237,7 @@ shape = SubResource("BoxShape3D_w6bjl")
 collision_layer = 3
 
 [node name="camera_rig" type="Node3D" parent="." unique_id=1021991070 node_paths=PackedStringArray("player")]
+visible = false
 script = ExtResource("2_p0ucf")
 player = NodePath("../player")
 stage_dimentions = Vector2(10, 5)

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bwrmvt2c66nng"]
 
-[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://DiabWorld/scenes/player_25d.tscn" id="1_4taqi"]
-[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://DiabWorld/scripts/stage.gd" id="1_we5dx"]
-[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://DiabWorld/scripts/camera_rig.gd" id="2_pgpi7"]
-[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://DiabWorld/scripts/portal.gd" id="3_46d67"]
-[ext_resource type="Material" uid="uid://ba8jff6q7g4t8" path="res://DiabWorld/materials/dirt.tres" id="4_pu2se"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="1_4taqi"]
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_we5dx"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="2_pgpi7"]
+[ext_resource type="Script" uid="uid://bx5h88k5pmsjp" path="res://scripts/portal.gd" id="3_46d67"]
+[ext_resource type="Material" uid="uid://ba8jff6q7g4t8" path="res://materials/dirt.tres" id="4_pu2se"]
 [ext_resource type="Texture2D" uid="uid://b4ahwht480sn" path="res://DiabWorld/scenes/video/dirtground.jpg" id="5_5jguh"]
-[ext_resource type="Material" uid="uid://dr3c3w0yhjrl7" path="res://DiabWorld/materials/grass.tres" id="5_6674a"]
-[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://DiabWorld/scripts/location_label.gd" id="5_mu5n3"]
-[ext_resource type="Material" uid="uid://b2p0wthddvqc0" path="res://DiabWorld/materials/stone_wall.tres" id="6_mgch8"]
+[ext_resource type="Material" uid="uid://dr3c3w0yhjrl7" path="res://materials/grass.tres" id="5_6674a"]
+[ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="5_mu5n3"]
+[ext_resource type="Material" uid="uid://b2p0wthddvqc0" path="res://materials/stone_wall.tres" id="6_mgch8"]
 [ext_resource type="Texture2D" uid="uid://ctwdvjwkye5mm" path="res://DiabWorld/scenes/video/oldbrick.jpg" id="7_nrd6l"]
 [ext_resource type="Texture2D" uid="uid://c3wn1vis41y0r" path="res://DiabWorld/scenes/video/door.jpg" id="8_gcu17"]
 [ext_resource type="Texture2D" uid="uid://4a0gpkwj4bs3" path="res://DiabWorld/scenes/video/fence2.jpg" id="9_gcu17"]
@@ -370,7 +370,7 @@ shape = SubResource("BoxShape3D_310la")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93498, 0, -0.870246)
 
 [node name="portal2" type="Node3D" parent="." unique_id=323249195 node_paths=PackedStringArray("spawn_point")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67477, 0, 8.21754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67477, 0, 24.958752)
 script = ExtResource("3_46d67")
 id = 2
 stage_id = 3

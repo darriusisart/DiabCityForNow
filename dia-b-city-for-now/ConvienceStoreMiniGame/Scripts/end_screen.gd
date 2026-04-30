@@ -3,8 +3,13 @@ extends Node2D
 ## Shows a summary of the player's shopping trip —
 ## items grabbed, nutrition score, foods dropped, grade, and a comment.
 
+const EXIT_SCENE_PATH := "res://DiabWorld/scenes/convenience_world.tscn"
+
 func show_results(cart_items: Array, total_nutrition: int, foods_dropped: int,
 				  mini_games_played: int, screen_size: Vector2):
+
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	set_process_input(true)
 
 	var layer = CanvasLayer.new()
 	layer.name = "EndLayer"
@@ -56,21 +61,37 @@ func show_results(cart_items: Array, total_nutrition: int, foods_dropped: int,
 	thanks.add_theme_color_override("font_color", Color(1, 0.9, 0.35))
 	panel.add_child(thanks)
 
-	# ── Tally up items by tier ──
-	var green_count  := 0
+	# ── Tally up items by tier (minigame cart nodes) or persisted convenience inventory ──
+	var green_count := 0
 	var yellow_count := 0
-	var red_count    := 0
-	for item in cart_items:
-		match item.get_meta("tier"):
-			"green":  green_count  += 1
-			"yellow": yellow_count += 1
-			"red":    red_count    += 1
+	var red_count := 0
+	var item_count := cart_items.size()
+	var display_nutrition := total_nutrition
+
+	if cart_items.is_empty() and Data != null:
+		var inv_summary: Dictionary = Data.get_convenience_inventory_shop_summary()
+		var units: int = int(inv_summary.get("total_units", 0))
+		if units > 0:
+			item_count = units
+			display_nutrition = int(inv_summary.get("total_nutrition", 0))
+			green_count = int(inv_summary.get("green_units", 0))
+			yellow_count = int(inv_summary.get("yellow_units", 0))
+			red_count = int(inv_summary.get("red_units", 0))
+	else:
+		for item in cart_items:
+			match item.get_meta("tier"):
+				"green":
+					green_count += 1
+				"yellow":
+					yellow_count += 1
+				"red":
+					red_count += 1
 
 	# ── Stat lines ──
 	var y := 110
 	var stats := [
-		"Items in Cart:      %d" % cart_items.size(),
-		"Total Nutrition:    %d" % total_nutrition,
+		"Items in Cart:      %d" % item_count,
+		"Total Nutrition:    %d" % display_nutrition,
 		"Foods Dropped:      %d" % foods_dropped,
 		"Mini-Games Played:  %d" % mini_games_played,
 		"",
@@ -88,7 +109,7 @@ func show_results(cart_items: Array, total_nutrition: int, foods_dropped: int,
 		y += 26
 
 	# ── Grade ──
-	var grade = _calc_grade(cart_items, total_nutrition)
+	var grade = _calc_grade(item_count, display_nutrition)
 
 	y += 12
 	var grade_lbl = Label.new()
@@ -115,18 +136,43 @@ func show_results(cart_items: Array, total_nutrition: int, foods_dropped: int,
 	panel.add_child(restart)
 
 
+func _input(event: InputEvent) -> void:
+	if not event.is_pressed():
+		return
+	if event is InputEventKey and event.echo:
+		return
+	if event.is_action_pressed("interact"):
+		get_viewport().set_input_as_handled()
+		_exit_shopkeeper()
+	elif event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		_exit_shopkeeper()
+	elif event is InputEventKey and event.keycode == KEY_ESCAPE:
+		get_viewport().set_input_as_handled()
+		_exit_shopkeeper()
+	elif event is InputEventKey and event.keycode == KEY_R:
+		get_viewport().set_input_as_handled()
+		set_process_input(false)
+		get_tree().reload_current_scene()
+
+
+func _exit_shopkeeper() -> void:
+	set_process_input(false)
+	get_tree().change_scene_to_file(EXIT_SCENE_PATH)
+
+
 # ──────────────────────────────────────────────
 #  GRADING — based on average nutrition per item
 # ──────────────────────────────────────────────
-func _calc_grade(cart_items: Array, total_nutrition: int) -> Dictionary:
-	if cart_items.size() == 0:
+func _calc_grade(item_count: int, total_nutrition: int) -> Dictionary:
+	if item_count <= 0:
 		return {
 			"letter":  "F - Empty Cart",
 			"color":   Color(1, 0.2, 0.2),
 			"comment": "\"You didn't buy anything... are you okay?\""
 		}
 
-	var avg := float(total_nutrition) / cart_items.size()
+	var avg := float(total_nutrition) / float(item_count)
 
 	if avg >= 26:
 		return {

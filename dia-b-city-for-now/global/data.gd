@@ -24,22 +24,68 @@ func add_learning_note(note: String) -> void:
 func get_learning_notes() -> Array[String]:
 	return today_learning_notes.duplicate()
 
+## Convenience-store tiers — aligns green/yellow/red shelves in ConvienceStoreMiniGame Scripts.
 const FOOD_QUALITY := {
 	"Apple": "natural",
 	"Banana": "natural",
 	"Salad": "natural",
 	"Carrot Sticks": "natural",
 	"Water": "natural",
+	"Spinach Wrap": "natural",
+	"Berry Cup": "natural",
+	"Avocado Toast": "natural",
+	"Bean Bowl": "natural",
+	"Greek Yogurt": "natural",
+	"Orange Slices": "natural",
+	"Hummus Plate": "natural",
+	"Cucumber Sticks": "natural",
+	"Chicken Salad": "natural",
+	"Fruit Smoothie": "natural",
 	"Granola Bar": "moderate",
 	"Juice Box": "moderate",
 	"Crackers": "moderate",
 	"Yogurt": "moderate",
 	"Trail Mix": "moderate",
+	"Protein Bar": "moderate",
+	"Cheese Sticks": "moderate",
+	"Pretzels": "moderate",
+	"Bagel Bites": "moderate",
+	"Cereal Cup": "moderate",
+	"Flavored Milk": "moderate",
+	"Fruit Gummies": "moderate",
+	"Rice Cakes": "moderate",
+	"Pita Chips": "moderate",
+	"Snack Mix": "moderate",
 	"Chips": "bad",
 	"Candy Bar": "bad",
 	"Soda": "bad",
 	"Cookies": "bad",
-	"Donut": "bad"
+	"Donut": "bad",
+	"Frosted Cake": "bad",
+	"Energy Soda": "bad",
+	"Caramel Pop": "bad",
+	"Chocolate Bites": "bad",
+	"Sugary Cereal": "bad",
+	"Iced Pastry": "bad",
+	"Cheese Puffs": "bad",
+	"Gummy Rope": "bad",
+	"Cream Cookie": "bad",
+	"Fizzy Punch": "bad"
+}
+
+## Base nutrition per item (same as store_manager food defs) for shopkeeper scoring.
+const FOOD_NUTRITION := {
+	"Apple": 28, "Banana": 25, "Carrot Sticks": 30, "Salad": 32, "Water": 22,
+	"Spinach Wrap": 29, "Berry Cup": 27, "Avocado Toast": 26, "Bean Bowl": 31,
+	"Greek Yogurt": 28, "Orange Slices": 24, "Hummus Plate": 30, "Cucumber Sticks": 23,
+	"Chicken Salad": 33, "Fruit Smoothie": 26,
+	"Granola Bar": 16, "Juice Box": 14, "Crackers": 12, "Yogurt": 18, "Trail Mix": 15,
+	"Protein Bar": 17, "Cheese Sticks": 14, "Pretzels": 11, "Bagel Bites": 13,
+	"Cereal Cup": 15, "Flavored Milk": 14, "Fruit Gummies": 10, "Rice Cakes": 12,
+	"Pita Chips": 11, "Snack Mix": 16,
+	"Chips": 4, "Candy Bar": 3, "Soda": 2, "Cookies": 5, "Donut": 3, "Frosted Cake": 2,
+	"Energy Soda": 2, "Caramel Pop": 4, "Chocolate Bites": 3, "Sugary Cereal": 4,
+	"Iced Pastry": 3, "Cheese Puffs": 3, "Gummy Rope": 2, "Cream Cookie": 4, "Fizzy Punch": 2
 }
 
 func add_class_points(points: int) -> void:
@@ -77,6 +123,59 @@ func consume_convenience_ingredient(item_name: String, amount: int = 1) -> bool:
 
 func get_food_quality(item_name: String) -> String:
 	return str(FOOD_QUALITY.get(item_name, "moderate"))
+
+
+func food_quality_to_shelf_tier(quality: String) -> String:
+	match quality:
+		"natural":
+			return "green"
+		"moderate":
+			return "yellow"
+		_:
+			return "red"
+
+
+func estimate_nutrition_for_shop_item(item_name: String) -> int:
+	if FOOD_NUTRITION.has(item_name):
+		return int(FOOD_NUTRITION[item_name])
+	match get_food_quality(item_name):
+		"natural":
+			return 26
+		"moderate":
+			return 14
+		_:
+			return 4
+
+
+## Totals for shopkeeper UI from items added via add_convenience_ingredient (e.g. cardmain3 cart).
+func get_convenience_inventory_shop_summary() -> Dictionary:
+	var total_units := 0
+	var total_nutrition := 0
+	var green_units := 0
+	var yellow_units := 0
+	var red_units := 0
+	for item_name in convenience_inventory.keys():
+		var count: int = maxi(0, int(convenience_inventory[item_name]))
+		if count <= 0:
+			continue
+		total_units += count
+		var n: int = estimate_nutrition_for_shop_item(str(item_name))
+		total_nutrition += n * count
+		match food_quality_to_shelf_tier(get_food_quality(str(item_name))):
+			"green":
+				green_units += count
+			"yellow":
+				yellow_units += count
+			_:
+				red_units += count
+	return {
+		"total_units": total_units,
+		"total_nutrition": total_nutrition,
+		"green_units": green_units,
+		"yellow_units": yellow_units,
+		"red_units": red_units
+	}
+
 
 func get_player_speed_multiplier() -> float:
 	return nutrition_speed_multiplier

@@ -50,6 +50,9 @@ var _ing_ingredients := ""
 var _ing_revealed := false
 var _last_ingredient_bonus := 0
 
+## Set false to skip the mystery / ingredient label minigame (still in code, not selected).
+const SPAWN_INGREDIENT_CHECK := false
+
 # ──────────────────────────────────────────────
 func _ready():
 	_screen = get_viewport_rect().size
@@ -102,11 +105,13 @@ func start_random(difficulty: String, card_data: Dictionary = {}):
 	_timer = 0.0
 	_clear_panel(true)
 
-	var pool : Array
+	var pool: Array
 	if difficulty == "yellow":
 		pool = ["timing_bar", "button_spam", "balance", "ingredient_check"]
 	else:
 		pool = ["simon_says", "food_match", "ingredient_check"]
+	if not SPAWN_INGREDIENT_CHECK:
+		pool = pool.filter(func(what: String) -> bool: return str(what) != "ingredient_check")
 
 	_current_game = pool[randi() % pool.size()]
 

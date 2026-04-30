@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://20khwqkqlwwj"]
+
+[ext_resource type="Script" uid="uid://dmq7fa2e266uw" path="res://scripts/stage.gd" id="1_stage"]
+[ext_resource type="PackedScene" uid="uid://d1c7f55wuphh0" path="res://Scenes/player_25d.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://c867k82hfj34a" path="res://scripts/camera_rig.gd" id="3_camera"]
+[ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="4_interactable"]
+[ext_resource type="Script" uid="uid://bef6hdbnrbr75" path="res://DiabWorld/scripts/convenience_store_interior.gd" id="5_interior"]
+[ext_resource type="PackedScene" uid="uid://d0gqpae2g5kyj" path="res://Storecereal_shelf.tscn" id="8_bgcn7"]
+[ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="9_rptq3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
+sky_horizon_color = Color(0.2, 0.2, 0.25, 1)
+ground_horizon_color = Color(0.2, 0.2, 0.25, 1)
+
+[sub_resource type="Sky" id="Sky_1"]
+sky_material = SubResource("ProceduralSkyMaterial_1")
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 2
+sky = SubResource("Sky_1")
+ambient_light_source = 2
+ambient_light_energy = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(24, 1, 18)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.85, 0.82, 0.76, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(24, 1, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_long"]
+size = Vector3(24, 4, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_color = Color(0.92, 0.92, 0.95, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_long"]
+size = Vector3(24, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_side"]
+size = Vector3(0.5, 4, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_side"]
+size = Vector3(0.5, 4, 18)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door"]
+albedo_color = Color(0.35, 0.22, 0.12, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_door"]
+size = Vector3(1.4, 2.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door_solid"]
+size = Vector3(1.4, 2.8, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door"]
+size = Vector3(2.2, 3.2, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_green"]
+albedo_color = Color(0.35, 0.75, 0.35, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aisle"]
+size = Vector3(1.2, 2, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aisle"]
+size = Vector3(2.5, 3, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yellow"]
+albedo_color = Color(0.85, 0.75, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_red"]
+albedo_color = Color(0.8, 0.35, 0.35, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shelf_interact"]
+size = Vector3(3.4, 3.5, 3.4)
+
+[node name="convenience_store_interior_world" type="Node3D" unique_id=1212409089]
+script = ExtResource("5_interior")
+
+[node name="Stage" type="Node3D" parent="." unique_id=511083183 node_paths=PackedStringArray("player")]
+script = ExtResource("1_stage")
+player = NodePath("../player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982649297]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=871674518]
+transform = Transform3D(0.707107, 0.612373, -0.353553, 2.78059e-08, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 0, 0)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=811563732]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2021848868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_floor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1360479435]
+material_override = SubResource("StandardMaterial3D_floor")
+mesh = SubResource("BoxMesh_floor")
+
+[node name="BackWall" type="StaticBody3D" parent="." unique_id=1907993717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8.75)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall" unique_id=368143795]
+shape = SubResource("BoxShape3D_wall_long")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=139476105]
+material_override = SubResource("StandardMaterial3D_wall")
+mesh = SubResource("BoxMesh_wall_long")
+
+[node name="FrontWall" type="StaticBody3D" parent="." unique_id=581867346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8.75)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall" unique_id=1539627037]
+shape = SubResource("BoxShape3D_wall_long")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontWall" unique_id=762086143]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, -1.0590639, 0)
+material_override = SubResource("StandardMaterial3D_wall")
+mesh = SubResource("BoxMesh_wall_long")
+
+[node name="LeftWall" type="StaticBody3D" parent="." unique_id=2113173285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall" unique_id=740349540]
+shape = SubResource("BoxShape3D_wall_side")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=1314888173]
+material_override = SubResource("StandardMaterial3D_wall")
+mesh = SubResource("BoxMesh_wall_side")
+
+[node name="RightWall" type="StaticBody3D" parent="." unique_id=705274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.75, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=2007036984]
+shape = SubResource("BoxShape3D_wall_side")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=453683489]
+material_override = SubResource("StandardMaterial3D_wall")
+mesh = SubResource("BoxMesh_wall_side")
+
+[node name="player" parent="." unique_id=1255313391 instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="camera_rig" type="Node3D" parent="." unique_id=645635447 node_paths=PackedStringArray("player")]
+script = ExtResource("3_camera")
+player = NodePath("../player")
+stage_dimentions = Vector2(12, 9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="camera_rig" unique_id=1443405429]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="camera_rig" unique_id=1787878413]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="camera_rig" unique_id=1319513152]
+transform = Transform3D(1, 0, 0, 0, 0.857886, 0.513841, 0, -0.513841, 0.857886, 0, 4.5, 6.5)
+
+[node name="ExitDoor" type="Node3D" parent="." unique_id=1595629435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 8.797)
+script = ExtResource("9_rptq3")
+scene_path = "res://DiabWorld/scenes/convenience_world.tscn"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitDoor" unique_id=836919329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.41927528)
+material_override = SubResource("StandardMaterial3D_door")
+mesh = SubResource("BoxMesh_door")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ExitDoor" unique_id=1051537695]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitDoor/StaticBody3D" unique_id=1333901525]
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="ExitDoor" unique_id=440934727]
+script = ExtResource("4_interactable")
+prompt_text = "Press E to exit store"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitDoor/Area3D" unique_id=728744577]
+shape = SubResource("BoxShape3D_door")
+
+[node name="AisleGreen" type="Node3D" parent="." unique_id=1011482991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AisleGreen" unique_id=1825456361]
+material_override = SubResource("StandardMaterial3D_green")
+mesh = SubResource("BoxMesh_aisle")
+
+[node name="Area3D" type="Area3D" parent="AisleGreen" unique_id=1916359963]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AisleGreen/Area3D" unique_id=385054767]
+shape = SubResource("BoxShape3D_aisle")
+
+[node name="AisleYellow" type="Node3D" parent="." unique_id=71893694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AisleYellow" unique_id=1718669070]
+material_override = SubResource("StandardMaterial3D_yellow")
+mesh = SubResource("BoxMesh_aisle")
+
+[node name="Area3D" type="Area3D" parent="AisleYellow" unique_id=880308528]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AisleYellow/Area3D" unique_id=1945564202]
+shape = SubResource("BoxShape3D_aisle")
+
+[node name="AisleRed" type="Node3D" parent="." unique_id=1454395729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AisleRed" unique_id=112602194]
+material_override = SubResource("StandardMaterial3D_red")
+mesh = SubResource("BoxMesh_aisle")
+
+[node name="Area3D" type="Area3D" parent="AisleRed" unique_id=471031819]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AisleRed/Area3D" unique_id=593390362]
+shape = SubResource("BoxShape3D_aisle")
+
+[node name="Cereal_ShelfGreen" parent="." unique_id=813117225 instance=ExtResource("8_bgcn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.023132, 1.279419, -8.247314)
+script = ExtResource("9_rptq3")
+scene_path = "res://ConvienceStoreMiniGame/cardmain3.tscn"
+
+[node name="Area3D" type="Area3D" parent="Cereal_ShelfGreen" unique_id=201481291]
+script = ExtResource("4_interactable")
+prompt_text = "Press E at green cereal shelf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cereal_ShelfGreen/Area3D" unique_id=2064428090]
+shape = SubResource("BoxShape3D_shelf_interact")
+
+[node name="Cereal_ShelfYellow" parent="." unique_id=565301239 instance=ExtResource("8_bgcn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0543823, 1.279419, -8.247314)
+script = ExtResource("9_rptq3")
+scene_path = "res://ConvienceStoreMiniGame/cardmain3.tscn"
+
+[node name="Area3D" type="Area3D" parent="Cereal_ShelfYellow" unique_id=1471136745]
+script = ExtResource("4_interactable")
+prompt_text = "Press E at yellow cereal shelf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cereal_ShelfYellow/Area3D" unique_id=126679972]
+shape = SubResource("BoxShape3D_shelf_interact")
+
+[node name="Cereal_ShelfRed" parent="." unique_id=1328985994 instance=ExtResource("8_bgcn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.215393, 1.279419, -8.247314)
+script = ExtResource("9_rptq3")
+scene_path = "res://ConvienceStoreMiniGame/cardmain3.tscn"
+
+[node name="Area3D" type="Area3D" parent="Cereal_ShelfRed" unique_id=902641929]
+script = ExtResource("4_interactable")
+prompt_text = "Press E at red cereal shelf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cereal_ShelfRed/Area3D" unique_id=116446695]
+shape = SubResource("BoxShape3D_shelf_interact")
+
+[node name="StoreUI" type="CanvasLayer" parent="." unique_id=372719488]
+
+[node name="PanelContainer" type="PanelContainer" parent="StoreUI" unique_id=1712428096]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="StoreUI/PanelContainer" unique_id=339643965]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Inside Convenience Store: Press E at any cereal shelf to start a 20-second round."
+autowrap_mode = 3
+
+[node name="TimerLabel" type="Label" parent="StoreUI" unique_id=892437587]
+offset_left = 1520.0
+offset_top = 20.0
+offset_right = 1890.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 28
+text = "Store Time: 1:10"
+horizontal_alignment = 2
+
+[connection signal="body_entered" from="ExitDoor/Area3D" to="ExitDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ExitDoor/Area3D" to="ExitDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="Cereal_ShelfGreen/Area3D" to="Cereal_ShelfGreen/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Cereal_ShelfGreen/Area3D" to="Cereal_ShelfGreen/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="Cereal_ShelfYellow/Area3D" to="Cereal_ShelfYellow/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Cereal_ShelfYellow/Area3D" to="Cereal_ShelfYellow/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="Cereal_ShelfRed/Area3D" to="Cereal_ShelfRed/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Cereal_ShelfRed/Area3D" to="Cereal_ShelfRed/Area3D" method="_on_body_exited"]

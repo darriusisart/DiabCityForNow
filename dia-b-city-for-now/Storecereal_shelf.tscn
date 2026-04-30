@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d0gqpae2g5kyj"]
+
+[ext_resource type="PackedScene" uid="uid://cwi06vxfubvj3" path="res://Assets/Convience Store/Cereal_Shelf.fbx" id="1_y4k24"]
+
+[node name="Cereal_Shelf" unique_id=813117225 instance=ExtResource("1_y4k24")]
+
+[node name="Rack 1_001" parent="." index="0" unique_id=557379322]
+transform = Transform3D(8.1871195, 0, 0, 0, -1.9519614e-06, 8.187119, 0, -8.187119, -1.9519614e-06, 0, 0, 0)

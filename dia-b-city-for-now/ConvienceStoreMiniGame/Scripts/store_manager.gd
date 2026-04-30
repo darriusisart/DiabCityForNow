@@ -8,10 +8,10 @@ const COLLISION_MASK_FOOD = 1
 const COLLISION_MASK_CART = 2
 
 # ─── Layout Constants ───
-const GAME_TIME := 60
+const GAME_TIME := 20
 const MAX_ROUNDS := 1
-const RETURN_SCENE_PATH := "res://DiabWorld/scenes/convenience_world.tscn"
-const ROUND_TIME := 60.0
+const RETURN_SCENE_PATH := "res://DiabWorld/scenes/convenience_store_interior_world.tscn"
+const ROUND_TIME := 20.0
 
 var shelf_top_y := 125.0
 var shelf_mid_y := 375.0
@@ -721,6 +721,10 @@ func _on_mini_game_finished(success: bool):
 func _end_game():
 	game_active = false
 	card_being_dragged = null
+	# For the interior shelf flow, close cardmain3 immediately when timer ends.
+	if get_tree().current_scene != null and str(get_tree().current_scene.scene_file_path).ends_with("cardmain3.tscn"):
+		_exit_to_convenience_world()
+		return
 	_record_run_stats()
 	# Load end-screen script
 	var end_scr = preload("res://ConvienceStoreMiniGame/Scripts/end_screen.gd")

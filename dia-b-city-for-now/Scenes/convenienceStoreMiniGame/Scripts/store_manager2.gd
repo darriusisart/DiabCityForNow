@@ -8,22 +8,22 @@ const COLLISION_MASK_FOOD = 1
 const COLLISION_MASK_CART = 2
 
 # ─── Layout Constants ───
-const GAME_TIME := 180.0
+const GAME_TIME := 20
 
-const SHELF_TOP_Y := 80
-const SHELF_MID_Y := 250
-const SHELF_BOT_Y := 420
-const SHELF_WIDTH := 680
-const SHELF_HEIGHT := 130
-const SHELF_X := 30
+var shelf_top_y := 80.0
+var shelf_mid_y := 250.0
+var shelf_bot_y := 420.0
+var shelf_width := 680.0
+var shelf_height := 130.0
+var shelf_x := 30.0
 
-const CART_X := 780
-const CART_Y := 100
-const CART_W := 220
-const CART_H := 480
+var cart_x := 780.0
+var cart_y := 100.0
+var cart_w := 220.0
+var cart_h := 480.0
 
-const CARD_W := 110
-const CARD_H := 85
+const CARD_W := 220
+const CARD_H := 100
 
 # ─── Food Definitions ───
 # Green (top shelf) – healthy, high nutrition
@@ -80,12 +80,32 @@ var pending_card = null
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	randomize()
+	_setup_layout_metrics()
 	_build_background()
 	_build_shelves()
 	_build_cart()
 	_build_hud()
 	_populate_shelves()
 	_setup_mini_game_manager()
+
+func _setup_layout_metrics() -> void:
+	var margin := 30.0
+	var gap := 24.0
+	cart_w = clampf(screen_size.x * 0.28, 300.0, 520.0)
+	cart_h = screen_size.y - 180.0
+	cart_x = screen_size.x - cart_w - margin
+	cart_y = 90.0
+	shelf_x = margin
+	shelf_width = cart_x - shelf_x - gap
+	var top_y := 80.0
+	var bottom_margin := 72.0
+	var rows := 3.0
+	var row_gap := 18.0
+	shelf_height = (screen_size.y - top_y - bottom_margin - row_gap * (rows - 1.0)) / rows
+	shelf_height = clampf(shelf_height, 110.0, 260.0)
+	shelf_top_y = top_y
+	shelf_mid_y = shelf_top_y + shelf_height + row_gap
+	shelf_bot_y = shelf_mid_y + shelf_height + row_gap
 
 # ── Background ──
 func _build_background():
@@ -105,30 +125,30 @@ func _build_background():
 
 # ── Three Shelves ──
 func _build_shelves():
-	_build_one_shelf("top",    SHELF_TOP_Y, Color(0.25, 0.72, 0.25, 0.25), "Healthy  (Green)")
-	_build_one_shelf("middle", SHELF_MID_Y, Color(0.90, 0.78, 0.18, 0.25), "Moderate (Yellow)")
-	_build_one_shelf("bottom", SHELF_BOT_Y, Color(0.90, 0.28, 0.28, 0.25), "Junk Food (Red)")
+	_build_one_shelf("top", shelf_top_y, Color(0.25, 0.72, 0.25, 0.25), "Healthy  (Green)")
+	_build_one_shelf("middle", shelf_mid_y, Color(0.90, 0.78, 0.18, 0.25), "Moderate (Yellow)")
+	_build_one_shelf("bottom", shelf_bot_y, Color(0.90, 0.28, 0.28, 0.25), "Junk Food (Red)")
 
 func _build_one_shelf(id: String, y: float, tint: Color, text: String):
 	# Shelf tinted area
 	var rect = ColorRect.new()
 	rect.name = "Shelf_" + id
 	rect.color = tint
-	rect.size = Vector2(SHELF_WIDTH, SHELF_HEIGHT)
-	rect.position = Vector2(SHELF_X, y)
+	rect.size = Vector2(shelf_width, shelf_height)
+	rect.position = Vector2(shelf_x, y)
 	add_child(rect)
 
 	# Wooden platform bar
 	var bar = ColorRect.new()
 	bar.color = Color(0.50, 0.34, 0.18)
-	bar.size = Vector2(SHELF_WIDTH, 8)
-	bar.position = Vector2(SHELF_X, y + SHELF_HEIGHT - 8)
+	bar.size = Vector2(shelf_width, 8)
+	bar.position = Vector2(shelf_x, y + shelf_height - 8)
 	add_child(bar)
 
 	# Label
 	var lbl = Label.new()
 	lbl.text = text
-	lbl.position = Vector2(SHELF_X + 6, y + 4)
+	lbl.position = Vector2(shelf_x + 6, y + 4)
 	lbl.add_theme_font_size_override("font_size", 13)
 	lbl.add_theme_color_override("font_color", Color(0.35, 0.35, 0.35))
 	add_child(lbl)
@@ -139,21 +159,21 @@ func _build_cart():
 	var bg = ColorRect.new()
 	bg.name = "CartBg"
 	bg.color = Color(0.55, 0.50, 0.44, 0.35)
-	bg.size = Vector2(CART_W, CART_H)
-	bg.position = Vector2(CART_X, CART_Y)
+	bg.size = Vector2(cart_w, cart_h)
+	bg.position = Vector2(cart_x, cart_y)
 	add_child(bg)
 
 	# Top border
 	var border_top = ColorRect.new()
 	border_top.color = Color(0.38, 0.26, 0.14)
-	border_top.size = Vector2(CART_W, 6)
-	border_top.position = Vector2(CART_X, CART_Y)
+	border_top.size = Vector2(cart_w, 6)
+	border_top.position = Vector2(cart_x, cart_y)
 	add_child(border_top)
 
 	# Cart title
 	var lbl = Label.new()
 	lbl.text = "Shopping Cart"
-	lbl.position = Vector2(CART_X + 30, CART_Y + 12)
+	lbl.position = Vector2(cart_x + 30, cart_y + 12)
 	lbl.add_theme_font_size_override("font_size", 20)
 	lbl.add_theme_color_override("font_color", Color(0.22, 0.16, 0.10))
 	add_child(lbl)
@@ -162,7 +182,7 @@ func _build_cart():
 	cart_count_label = Label.new()
 	cart_count_label.name = "CartCount"
 	cart_count_label.text = "Items: 0"
-	cart_count_label.position = Vector2(CART_X + 30, CART_Y + 42)
+	cart_count_label.position = Vector2(cart_x + 30, cart_y + 42)
 	cart_count_label.add_theme_font_size_override("font_size", 14)
 	cart_count_label.add_theme_color_override("font_color", Color(0.4, 0.4, 0.4))
 	add_child(cart_count_label)
@@ -170,12 +190,12 @@ func _build_cart():
 	# Drop-zone Area2D (for raycast collision)
 	var area = Area2D.new()
 	area.name = "CartArea"
-	area.position = Vector2(CART_X + CART_W / 2, CART_Y + CART_H / 2)
+	area.position = Vector2(cart_x + cart_w / 2, cart_y + cart_h / 2)
 	area.collision_layer = COLLISION_MASK_CART
 	area.collision_mask  = COLLISION_MASK_CART
 	var shape = CollisionShape2D.new()
 	var r = RectangleShape2D.new()
-	r.size = Vector2(CART_W, CART_H)
+	r.size = Vector2(cart_w, cart_h)
 	shape.shape = r
 	area.add_child(shape)
 	add_child(area)
@@ -225,14 +245,16 @@ func _populate_shelves():
 	card_mgr.name = "CardManager"
 	add_child(card_mgr)
 
-	_spawn_row(card_mgr, green_foods,  "green",  SHELF_TOP_Y)
-	_spawn_row(card_mgr, yellow_foods, "yellow", SHELF_MID_Y)
-	_spawn_row(card_mgr, red_foods,    "red",    SHELF_BOT_Y)
+	_spawn_row(card_mgr, green_foods, "green", shelf_top_y)
+	_spawn_row(card_mgr, yellow_foods, "yellow", shelf_mid_y)
+	_spawn_row(card_mgr, red_foods, "red", shelf_bot_y)
 
 func _spawn_row(parent: Node2D, foods: Array, tier: String, shelf_y: float):
+	var row_width := maxf(1.0, shelf_width - 60.0)
+	var spacing := row_width / float(max(1, foods.size()))
 	for i in range(foods.size()):
 		var card = _create_food_card(foods[i], tier)
-		card.position = Vector2(SHELF_X + 30 + i * (CARD_W + 16), shelf_y + (SHELF_HEIGHT - CARD_H) / 2 + 10)
+		card.position = Vector2(shelf_x + 30.0 + spacing * (i + 0.5), shelf_y + (shelf_height - CARD_H) / 2.0 + 10.0)
 		parent.add_child(card)
 
 func _create_food_card(info: Dictionary, tier: String) -> Node2D:
@@ -422,8 +444,8 @@ func _add_to_cart(card):
 	var idx = cart_items.size()
 	var col = idx % 2
 	var row = idx / 2
-	var target = Vector2(CART_X + 20 + col * (CARD_W * 0.65 + 8),
-						  CART_Y + 70 + row * (CARD_H * 0.65 + 6))
+	var target = Vector2(cart_x + 20 + col * (CARD_W * 0.65 + 8),
+						  cart_y + 70 + row * (CARD_H * 0.65 + 6))
 	var tw = create_tween()
 	tw.tween_property(card, "position", target, 0.25).set_ease(Tween.EASE_OUT)
 	tw.parallel().tween_property(card, "scale", Vector2(0.65, 0.65), 0.25)
@@ -512,6 +534,10 @@ func _on_mini_game_finished(success: bool):
 func _end_game():
 	game_active = false
 	card_being_dragged = null
+	_commit_cart_to_player_inventory()
+	# For cardmain3 inside the 3D store flow, close immediately on timeout.
+	get_tree().change_scene_to_file("res://DiabWorld/scenes/convenience_store_interior_world.tscn")
+	return
 	# Load end-screen script
 	var end_scr = preload("res://ConvienceStoreMiniGame/Scripts/end_screen.gd")
 	var end_node = Node2D.new()
@@ -519,3 +545,13 @@ func _end_game():
 	end_node.set_script(end_scr)
 	add_child(end_node)
 	end_node.show_results(cart_items, total_nutrition, foods_dropped, mini_games_played, screen_size)
+
+func _commit_cart_to_player_inventory() -> void:
+	if Data == null:
+		return
+	for card in cart_items:
+		if card == null or not is_instance_valid(card):
+			continue
+		if not card.has_meta("food_name"):
+			continue
+		Data.add_convenience_ingredient(str(card.get_meta("food_name")), 1)

@@ -318,6 +318,23 @@ libraries/ = SubResource("AnimationLibrary_location")
 
 [node name="TravelerNotebook" parent="." unique_id=1611706054 instance=ExtResource("9_notebook")]
 
+[node name="LunchGuideUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="LunchGuideUI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 150.0
+
+[node name="Label" type="Label" parent="LunchGuideUI/PanelContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Lunch Minigame Guide\nServing line challenges test quick nutrition decisions.\nUse lunch to recover before moving on to the store and home."
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=528959446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09078598, 1.1335835, 13.390667)
 material_override = SubResource("StandardMaterial3D_pt1wa")

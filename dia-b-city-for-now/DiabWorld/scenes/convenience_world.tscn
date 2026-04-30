@@ -186,6 +186,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -4.894677)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1376343, 1.1992798, -1.1641235)
 shape = SubResource("BoxShape3D_counter")
 
+[node name="Aisle1" type="CSGBox3D" parent="." unique_id=2521242150]
+transform = Transform3D(1.2, 0, 0, 0, 1.6, 0, 0, 0, 4.2, -7.5, 1.0, 2.2)
+use_collision = true
+
+[node name="Aisle2" type="CSGBox3D" parent="." unique_id=2521242151]
+transform = Transform3D(1.2, 0, 0, 0, 1.6, 0, 0, 0, 4.2, -1.5, 1.0, 2.2)
+use_collision = true
+
+[node name="Aisle3" type="CSGBox3D" parent="." unique_id=2521242152]
+transform = Transform3D(1.2, 0, 0, 0, 1.6, 0, 0, 0, 4.2, 4.5, 1.0, 2.2)
+use_collision = true
+
 [node name="portal" type="Node3D" parent="." unique_id=852961340 node_paths=PackedStringArray("spawn_point")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5289054, 0, 13.164784)
 script = ExtResource("3_portal")
@@ -230,6 +242,23 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_location")
 
 [node name="TravelerNotebook" parent="." unique_id=363120911 instance=ExtResource("8_notebook")]
+
+[node name="StoreGuideUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="StoreGuideUI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 160.0
+
+[node name="Label" type="Label" parent="StoreGuideUI/PanelContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Convenience Store Guide\nPress E at the store entrance to start the 60-second cardmain challenge.\nGreen, Yellow, and Red shelves each trigger different random minigames."
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=974090981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.85869, 0.9115324, 7.1335855)

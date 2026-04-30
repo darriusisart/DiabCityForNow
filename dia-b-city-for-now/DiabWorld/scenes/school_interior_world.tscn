@@ -326,6 +326,60 @@ prompt_text = "Press E to go to lunch"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_door_area")
 
+[node name="ScienceDoor" type="Node3D" parent="." unique_id=2503203954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/Classroom.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ScienceDoor" unique_id=250838914386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ScienceDoor" unique_id=2501668567015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScienceDoor/StaticBody3D" unique_id=250890085853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="ScienceDoor" unique_id=250407507875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to enter science class"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScienceDoor/Area3D" unique_id=2501828307277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
+[node name="ArtDoor" type="Node3D" parent="." unique_id=2513203954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -11.2)
+script = ExtResource("5_door")
+scene_path = "res://DiabWorld/scenes/Classroom.tscn"
+bypass_day_flow_requirement = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ArtDoor" unique_id=251838914386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+material_override = SubResource("StandardMaterial3D_door_face")
+mesh = SubResource("BoxMesh_door")
+surface_material_override/0 = SubResource("StandardMaterial3D_door_trim")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ArtDoor" unique_id=2511668567015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ArtDoor/StaticBody3D" unique_id=251890085853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_door_solid")
+
+[node name="Area3D" type="Area3D" parent="ArtDoor" unique_id=251407507875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+script = ExtResource("7_interact")
+prompt_text = "Press E to enter art class"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ArtDoor/Area3D" unique_id=2511828307277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_door_area")
+
 [node name="ExitToTown" type="Node3D" parent="." unique_id=1160747457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.722047)
 script = ExtResource("5_door")
@@ -439,6 +493,23 @@ libraries/ = SubResource("AnimationLibrary_loc")
 
 [node name="TravelerNotebook" parent="." unique_id=1744653403 instance=ExtResource("10_notebook")]
 
+[node name="SchoolGuideUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="SchoolGuideUI"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 520.0
+offset_bottom = 155.0
+
+[node name="Label" type="Label" parent="SchoolGuideUI/PanelContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 486.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+text = "School Route Guide\n- Classes are spread across the hallway (science, classroom, art, PE).\n- Recess and lunch doors are farther right.\n- The day gets later each time you visit more places."
+
 [connection signal="body_entered" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="ClassroomDoor/Area3D" to="ClassroomDoor/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="PEDoor/Area3D" to="PEDoor/Area3D" method="_on_body_entered"]
@@ -447,6 +518,10 @@ libraries/ = SubResource("AnimationLibrary_loc")
 [connection signal="body_exited" from="RecessDoor/Area3D" to="RecessDoor/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="LunchDoor/Area3D" to="LunchDoor/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="LunchDoor/Area3D" to="LunchDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ScienceDoor/Area3D" to="ScienceDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ScienceDoor/Area3D" to="ScienceDoor/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="ArtDoor/Area3D" to="ArtDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="ArtDoor/Area3D" to="ArtDoor/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="ExitToTown/Area3D" to="ExitToTown/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitToTown/Area3D" to="ExitToTown/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="ClassmateTaylor/Area3D" to="ClassmateTaylor/Area3D" method="_on_body_entered"]

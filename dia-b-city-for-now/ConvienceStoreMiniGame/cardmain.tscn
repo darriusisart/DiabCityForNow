@@ -4,3 +4,26 @@
 
 [node name="Cardmain" type="Node2D" unique_id=2082277156]
 script = ExtResource("1_m2aoa")
+
+[node name="GuideLayer" type="CanvasLayer" parent="."]
+
+[node name="GuidePanel" type="PanelContainer" parent="GuideLayer"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 610.0
+offset_bottom = 220.0
+
+[node name="GuideMargin" type="MarginContainer" parent="GuideLayer/GuidePanel"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 584.0
+offset_bottom = 198.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GuideText" type="Label" parent="GuideLayer/GuidePanel/GuideMargin"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+text = "Convenience Store Minigame Guide\n- You have 60 seconds total.\n- Green items: harder but healthier rewards.\n- Yellow items: medium challenge.\n- Red items: no challenge, low reward.\n- Random minigames: Timing, Button Mash, Balance, Simon Says, Food Match, Ingredient Check."

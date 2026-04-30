@@ -20,28 +20,13 @@ func _process(_delta: float) -> void:
 
 func _apply_day_lighting() -> void:
 	var df: Node = Data.day_flow()
-	if df == null or not df.has_method("get_time_of_day"):
+	if df == null or not df.has_method("get_day_progress"):
 		return
-	var tod := String(df.get_time_of_day()).to_lower()
-	var env_energy := 0.85
-	var ambient := 0.22
-	var sun_energy := 1.1
-	var sun_color := Color(1.0, 0.98, 0.92, 1.0)
-	if tod.find("afternoon") >= 0:
-		env_energy = 0.72
-		ambient = 0.18
-		sun_energy = 0.95
-		sun_color = Color(1.0, 0.9, 0.74, 1.0)
-	elif tod.find("after school") >= 0:
-		env_energy = 0.56
-		ambient = 0.14
-		sun_energy = 0.78
-		sun_color = Color(0.96, 0.72, 0.56, 1.0)
-	elif tod.find("evening") >= 0:
-		env_energy = 0.42
-		ambient = 0.1
-		sun_energy = 0.62
-		sun_color = Color(0.7, 0.72, 0.92, 1.0)
+	var p := clampf(float(df.get_day_progress()), 0.0, 1.0)
+	var env_energy := lerpf(0.92, 0.34, p)
+	var ambient := lerpf(0.24, 0.08, p)
+	var sun_energy := lerpf(1.12, 0.52, p)
+	var sun_color := Color(1.0, 0.98, 0.92, 1.0).lerp(Color(0.68, 0.72, 0.92, 1.0), p)
 	if _world_environment != null and _world_environment.environment != null:
 		_world_environment.environment.background_energy_multiplier = env_energy
 		_world_environment.environment.ambient_light_energy = ambient

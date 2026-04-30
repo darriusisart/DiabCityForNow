@@ -9,9 +9,9 @@ const COLLISION_MASK_CART = 2
 
 # ─── Layout Constants ───
 const GAME_TIME := 60
-const MAX_ROUNDS := 3
+const MAX_ROUNDS := 1
 const RETURN_SCENE_PATH := "res://DiabWorld/scenes/convenience_world.tscn"
-const ROUND_TIME := 20.0
+const ROUND_TIME := 60.0
 
 var shelf_top_y := 125.0
 var shelf_mid_y := 375.0
@@ -160,6 +160,7 @@ var score_label : Label
 var cart_count_label : Label
 var hint_label : Label
 var round_label : Label
+var nearby_tier_label : Label
 var mini_game_mgr   # MiniGameManager node
 
 # - Pending grab (waiting for mini-game result) -
@@ -323,6 +324,13 @@ func _build_hud():
 	round_label.add_theme_font_size_override("font_size", 22)
 	round_label.add_theme_color_override("font_color", Color(0.15, 0.2, 0.55))
 	ui.add_child(round_label)
+
+	nearby_tier_label = Label.new()
+	nearby_tier_label.text = ""
+	nearby_tier_label.position = Vector2(30, 44)
+	nearby_tier_label.add_theme_font_size_override("font_size", 16)
+	nearby_tier_label.add_theme_color_override("font_color", Color(0.2, 0.7, 0.2))
+	ui.add_child(nearby_tier_label)
 
 	_sync_score_hud_for_round()
 
@@ -663,10 +671,25 @@ func _on_card_hover(card, entering: bool):
 			hint_label.text = "%s ingredient: %s | Base nutrition: %d" % [tier, food_name, nutrition]
 		else:
 			hint_label.text = "%s: %s" % [tier, food_name]
+		var tier_raw := str(card.get_meta("tier"))
+		var tier_text := tier_raw.capitalize()
+		var possible_games := "Timing/Spam/Balance"
+		if tier_raw == "green":
+			possible_games = "Simon/Food Match/Ingredient Check"
+		elif tier_raw == "yellow":
+			possible_games = "Timing/Spam/Balance/Ingredient Check"
+		var tier_color := Color(0.25, 0.8, 0.25)
+		if tier_raw == "yellow":
+			tier_color = Color(0.95, 0.85, 0.2)
+		elif tier_raw == "red":
+			tier_color = Color(0.9, 0.25, 0.25)
+		nearby_tier_label.add_theme_color_override("font_color", tier_color)
+		nearby_tier_label.text = "Near %s shelf -> random minigame: %s" % [tier_text, possible_games]
 	else:
 		card.scale = Vector2(1.0, 1.0)
 		card.z_index = 1
 		hint_label.text = "Drag food into your cart. Right-click any item to flip and inspect ingredients."
+		nearby_tier_label.text = ""
 
 # ──────────────────────────────────────────────
 #  MINI-GAME CALLBACK

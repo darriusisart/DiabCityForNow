@@ -401,6 +401,23 @@ libraries/ = SubResource("AnimationLibrary_location")
 
 [node name="TravelerNotebook" parent="." unique_id=2122548478 instance=ExtResource("8_notebook")]
 
+[node name="RecessGuideUI" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="RecessGuideUI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 150.0
+
+[node name="Label" type="Label" parent="RecessGuideUI/PanelContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Recess Minigame Guide\nBuild and stack the garden mounds to trigger recess activities.\nAfter enough recess progress, continue to lunch."
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=898081466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128932, 10.173361, -78.226685)
 material_override = SubResource("StandardMaterial3D_ll5uo")

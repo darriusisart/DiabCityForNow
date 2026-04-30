@@ -27,6 +27,7 @@ var allow_revisit_completed := true
 var show_begin_quiz := false
 var current_step_index := 0
 var completed_steps: PackedStringArray = []
+var visited_locations: PackedStringArray = []
 var time_of_day := "Morning"
 var _pending_location_label := ""
 var _daily_once_flags := {}
@@ -80,6 +81,14 @@ func complete_step(step_id: String) -> void:
 		current_step_index += 1
 	_update_time_of_day_from_step()
 
+func register_location_visit(location_key: String) -> void:
+	var key := location_key.strip_edges().to_lower()
+	if key == "":
+		return
+	if not visited_locations.has(key):
+		visited_locations.append(key)
+	_update_time_of_day_from_step()
+
 func can_enter(step_id: String) -> bool:
 	if not strict_mode:
 		return true
@@ -96,6 +105,7 @@ func objective_text() -> String:
 func reset_to_morning() -> void:
 	current_step_index = 0
 	completed_steps = PackedStringArray()
+	visited_locations = PackedStringArray()
 	show_begin_quiz = false
 	_daily_once_flags.clear()
 	_update_time_of_day_from_step()
@@ -127,11 +137,32 @@ func catch_up_to(target_step_id: String) -> void:
 func get_time_of_day() -> String:
 	return time_of_day
 
+func get_day_progress() -> float:
+	var total_slots := float(ORDERED_STEPS.size() + 8)
+	if total_slots <= 0.0:
+		return 0.0
+	var progress := float(completed_steps.size() + visited_locations.size()) / total_slots
+	return clampf(progress, 0.0, 1.0)
+
 func note_next_location_from_scene_path(path: String) -> void:
 	_pending_location_label = _friendly_location_name(path)
 
 func _update_time_of_day_from_step() -> void:
-	time_of_day = str(STEP_TIME_OF_DAY.get(get_current_step(), "Daytime"))
+	var p := get_day_progress()
+	if p < 0.14:
+		time_of_day = "Early Morning"
+	elif p < 0.30:
+		time_of_day = "Morning"
+	elif p < 0.46:
+		time_of_day = "Late Morning"
+	elif p < 0.62:
+		time_of_day = "Noon"
+	elif p < 0.76:
+		time_of_day = "Afternoon"
+	elif p < 0.88:
+		time_of_day = "After School"
+	else:
+		time_of_day = "Evening"
 
 func _friendly_location_name(scene_path: String) -> String:
 	var p := scene_path.get_file().get_basename().to_lower()

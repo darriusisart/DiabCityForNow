@@ -25,6 +25,8 @@ func interact(_player: Node) -> void:
 		df.complete_step(complete_step_on_enter)
 	if day_flow_step_on_enter != "" and df != null and df.has_method("complete_step"):
 		df.complete_step(day_flow_step_on_enter)
+	if df != null and df.has_method("register_location_visit"):
+		df.register_location_visit(scene_path.get_file().get_basename())
 	if df != null and df.has_method("note_next_location_from_scene_path"):
 		df.note_next_location_from_scene_path(scene_path)
 	var pl: Node = Data.pillars()

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://blwsyt38hjf57"
+path="res://.godot/imported/MainCharacterSideViewPSD.atlas-dd6e725d68efabf1485d905df67b7ddb.spatlas"
+
+[deps]
+
+source_file="res://Scenes/levels/MainCharacterSideViewPSD.atlas"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD.atlas-dd6e725d68efabf1485d905df67b7ddb.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

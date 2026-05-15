@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://boc4rxgammukd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xy6ha"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yld0j"]
+
+[node name="TestLevel" type="Node3D" unique_id=1091481400]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=629087590]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1471023540]
+transform = Transform3D(16.972345, 0, 0, 0, 0.99999976, 0, 0, 0, 16.494411, 0, 0, 0)
+mesh = SubResource("PlaneMesh_xy6ha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=188395577]
+transform = Transform3D(33.995, 0, 0, 0, 0.17094426, 0, 0, 0, 33.995, 0, 0, 0)
+shape = SubResource("BoxShape3D_yld0j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1718469263]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1170399239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.567652, 0)

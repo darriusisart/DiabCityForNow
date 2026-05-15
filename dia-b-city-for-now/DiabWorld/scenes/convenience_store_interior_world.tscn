@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="4_interactable"]
 [ext_resource type="Script" uid="uid://bef6hdbnrbr75" path="res://DiabWorld/scripts/convenience_store_interior.gd" id="5_interior"]
 [ext_resource type="PackedScene" uid="uid://d0gqpae2g5kyj" path="res://Storecereal_shelf.tscn" id="8_bgcn7"]
+[ext_resource type="Script" uid="uid://dkh31tnbx0ly7" path="res://DiabWorld/scenes/debug_camera.gd" id="8_rptq3"]
 [ext_resource type="Script" uid="uid://bc6wicj77qe47" path="res://scripts/door_to_scene.gd" id="9_rptq3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
@@ -63,11 +64,14 @@ albedo_color = Color(0.35, 0.75, 0.35, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_aisle"]
 size = Vector3(1.2, 2, 6)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aisle"]
-size = Vector3(2.5, 3, 7)
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3akb"]
+size = Vector3(1.24, 2.035, 5.95)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yellow"]
 albedo_color = Color(0.85, 0.75, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aisle"]
+size = Vector3(2.5, 3, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_red"]
 albedo_color = Color(0.8, 0.35, 0.35, 1)
@@ -93,7 +97,7 @@ shadow_enabled = true
 [node name="Floor" type="StaticBody3D" parent="." unique_id=811563732]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2021848868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924088, 0)
 shape = SubResource("BoxShape3D_floor")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1360479435]
@@ -190,7 +194,7 @@ mesh = SubResource("BoxMesh_aisle")
 [node name="Area3D" type="Area3D" parent="AisleGreen" unique_id=1916359963]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AisleGreen/Area3D" unique_id=385054767]
-shape = SubResource("BoxShape3D_aisle")
+shape = SubResource("BoxShape3D_q3akb")
 
 [node name="AisleYellow" type="Node3D" parent="." unique_id=71893694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
@@ -274,6 +278,10 @@ offset_bottom = 65.0
 theme_override_font_sizes/font_size = 28
 text = "Store Time: 1:10"
 horizontal_alignment = 2
+
+[node name="DebugCamera" type="Camera3D" parent="." unique_id=1741300308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.0700397, 0)
+script = ExtResource("8_rptq3")
 
 [connection signal="body_entered" from="ExitDoor/Area3D" to="ExitDoor/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitDoor/Area3D" to="ExitDoor/Area3D" method="_on_body_exited"]

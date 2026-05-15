@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+# References to seperate Spine rigs for multiple views
+@onready var side_view = $SideView
+@onready var front_view = $FrontView
+@onready var camera = get_viewport().get_camera_3d()
 
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.0
@@ -14,6 +18,25 @@ var input_locked = false
 
 func lock_direction():
 	input_locked = true
+
+func update_character_view():
+	var move_direction = Vector3(velocity.x, 0, velocity.z).normalized()
+
+	# don't switch when standing still
+	if move_direction.length() < 0.1:
+		return
+
+	var camera_direction = (camera.global_position - global_position).normalized()
+
+	var dot = move_direction.dot(camera_direction)
+
+	# facing camera
+	if dot > 0.5:
+		front_view.visible = true
+		side_view.visible = false
+	else:
+		front_view.visible = false
+		side_view.visible = true
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,3 +59,4 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	update_character_view()

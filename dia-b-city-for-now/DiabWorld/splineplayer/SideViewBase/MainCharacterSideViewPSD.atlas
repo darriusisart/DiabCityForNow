@@ -1,0 +1,78 @@
+MainCharacterSideViewPSD.png
+size:1979,1347
+filter:Linear,Linear
+back_blue_eyebrow
+bounds:431,1217,159,128
+offsets:1,0,160,128
+back_eye
+bounds:2,1264,81,206
+offsets:1,0,82,207
+rotate:90
+blue super back glove
+bounds:2,1028,249,197
+offsets:2,2,253,201
+blue super back lower arm
+bounds:1163,1156,248,189
+offsets:1,2,251,192
+blue super back shin
+bounds:1684,1154,191,276
+offsets:1,1,194,279
+rotate:90
+blue super back thigh
+bounds:1591,826,326,380
+offsets:1,1,328,383
+rotate:90
+blue super back upper arm
+bounds:1145,853,444,300
+offsets:1,1,446,303
+blue super front glove
+bounds:253,1018,249,197
+offsets:2,1,252,199
+blue super front lower arm
+bounds:504,983,244,202
+offsets:1,2,247,205
+blue super front shin
+bounds:1413,1155,190,269
+offsets:1,2,192,272
+rotate:90
+blue super front thigh
+bounds:750,929,229,393
+offsets:1,1,231,396
+rotate:90
+blue super front upper arm
+bounds:2,683,429,333
+offsets:1,1,431,335
+blue super torso
+bounds:1438,2,539,822
+offsets:2,1,543,824
+blue_back_shoe
+bounds:937,499,499,352
+offsets:1,1,501,354
+blue_eyebrow
+bounds:592,1187,328,158
+offsets:1,0,330,158
+blue_eyelid
+bounds:210,1227,219,118
+blue_mask
+bounds:2,101,802,486
+eye
+bounds:922,1160,185,239
+offsets:1,1,187,241
+rotate:90
+front blue shoe
+bounds:433,589,502,338
+offsets:1,1,505,341
+
+MainCharacterSideViewPSD_2.png
+size:1389,1296
+filter:Linear,Linear
+darkSkin_head
+bounds:2,2,1385,1292
+offsets:1,1,1387,1293
+
+MainCharacterSideViewPSD_3.png
+size:1848,1801
+filter:Linear,Linear
+blue dreads hair
+bounds:2,2,1844,1797
+offsets:1,1,1846,1799

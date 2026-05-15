@@ -1,0 +1,76 @@
+MainCharacterFrontView.png
+size:2041,1626
+filter:Linear,Linear
+blue -mask
+bounds:2,2,1226,482
+offsets:1,1,1228,484
+blue eyebrow left
+bounds:653,1450,396,174
+offsets:2,2,400,178
+blue eyebrow right
+bounds:1051,1450,396,174
+offsets:2,2,400,178
+blue shoe- right
+bounds:1421,1097,351,362
+offsets:1,1,353,364
+rotate:90
+blue_eyelid
+bounds:2,1506,219,118
+blueshoe_left
+bounds:2,907,351,362
+offsets:1,1,353,364
+rotate:90
+darkskin - lower arm right
+bounds:2,1274,230,206
+offsets:1,2,232,209
+rotate:90
+darkskin -hand- right
+bounds:223,1457,213,167
+offsets:1,1,215,169
+darkskin thigh left
+bounds:210,1260,195,363
+offsets:1,1,197,366
+rotate:90
+darkskin- hand left
+bounds:438,1457,213,167
+offsets:1,1,215,169
+darkskin- lowerarm_ left
+bounds:940,1242,230,206
+offsets:1,2,232,209
+darkskin- thigh right
+bounds:575,1253,195,363
+offsets:1,1,197,366
+rotate:90
+darkskin- upperarm left
+bounds:366,899,394,352
+offsets:2,1,398,354
+darkskin. calf left
+bounds:1449,1450,174,294
+offsets:2,1,177,296
+rotate:90
+darkskin_ torso
+bounds:1158,486,609,780
+offsets:1,1,611,782
+rotate:90
+darkskin_calfright
+bounds:1745,1450,174,294
+offsets:1,1,177,296
+rotate:90
+darkskin_upperm- right
+bounds:762,888,394,352
+offsets:2,1,398,354
+left eye
+bounds:1172,1239,209,247
+offsets:1,1,211,249
+rotate:90
+right eye
+bounds:1172,1239,209,247
+offsets:1,1,211,249
+rotate:90
+
+MainCharacterFrontView_2.png
+size:1609,1304
+filter:Linear,Linear
+darkskin_ head
+bounds:2,2,1605,1300
+offsets:1,1,1608,1302

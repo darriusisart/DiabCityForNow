@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1c7f55wuphh0"]
 
-[ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://DiabWorld/scripts/player_25d.gd" id="1_r3w8g"]
+[ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://scripts/player_25d.gd" id="1_r3w8g"]
 [ext_resource type="Texture2D" uid="uid://0wi3gvk4ee8n" path="res://player/main_basic.png" id="2_l3ywy"]
 [ext_resource type="PackedScene" uid="uid://bhkt1yqnmnppa" path="res://DiabWorld/scenes/ui/pause_menu.tscn" id="3_pause"]
 [ext_resource type="PackedScene" uid="uid://svhckceu8tn6" path="res://DiabWorld/splineplayer/newestspine/spineplayer.tscn" id="4_spine_player"]
@@ -18,11 +18,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_1pv86")
 
 [node name="SpriteRoot" type="Node3D" parent="." unique_id=1943845498]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0.8, 0)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="SpriteRoot" unique_id=111494650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.124396, 0)
 pixel_size = 0.05
+axis = 1
 billboard = 1
 double_sided = false
 no_depth_test = true
@@ -67,4 +68,4 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+[node name="PauseMenu" parent="." unique_id=885604588 instance=ExtResource("3_pause")]

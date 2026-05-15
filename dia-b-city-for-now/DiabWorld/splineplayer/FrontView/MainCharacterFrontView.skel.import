@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://c3fread2o0nx5"
+path="res://.godot/imported/MainCharacterFrontView.skel-71595284d2832975e6e18e46fca582db.spskel"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/FrontView/MainCharacterFrontView.skel"
+dest_files=["res://.godot/imported/MainCharacterFrontView.skel-71595284d2832975e6e18e46fca582db.spskel"]
+
+[params]
+

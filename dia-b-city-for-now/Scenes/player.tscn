@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bisx6wb2o2u4i"]
 
-[ext_resource type="Script" uid="uid://cj7hn1v5w3frh" path="res://DiabWorld/scripts/player.gd" id="1_iet5u"]
+[ext_resource type="Script" uid="uid://cj7hn1v5w3frh" path="res://scripts/player.gd" id="1_iet5u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tt3pr"]
 
@@ -10,18 +10,18 @@ albedo_color = Color(0.352941, 0.65098, 0.878431, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_isonk"]
 material = SubResource("StandardMaterial3D_cop54")
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" unique_id=1853449112]
 script = ExtResource("1_iet5u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1371186684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_tt3pr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=824116383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_isonk")
 
-[node name="fade" type="ColorRect" parent="."]
+[node name="fade" type="ColorRect" parent="." unique_id=1043146384]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

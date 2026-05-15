@@ -38,6 +38,11 @@ var _last_debug_anim_text := ""
 
 func _ready() -> void:
 	add_to_group("player_avatar")
+	
+	if fade:
+		fade.visible = false
+		fade.color = Color(0, 0, 0, 0)
+	
 	_try_bind_spine_visual()
 	_update_animation_debug_text("init")
 
@@ -63,8 +68,6 @@ func clear_interactable(interactable: Node) -> void:
 	prompt_panel.visible = false
 
 func _physics_process(delta: float) -> void:
-#	if not is_on_floor():
-#		velocity.y -= gravity * delta
 	if _can_process_jump_input() and Input.is_action_just_pressed("jump"):
 		_trigger_jump_animation()
 
@@ -73,8 +76,9 @@ func _physics_process(delta: float) -> void:
 	elif ui_locked:
 		current_input_dir = Vector2.ZERO
 
-	var direction := (transform.basis * Vector3(current_input_dir.x, 0, current_input_dir.y)).normalized()
+	var direction := (transform.basis * Vector3(-current_input_dir.x, 0, -current_input_dir.y)).normalized()
 	var move_speed := _current_move_speed()
+
 	if direction != Vector3.ZERO:
 		velocity.x = direction.x * move_speed
 		velocity.z = direction.z * move_speed
@@ -292,7 +296,7 @@ func _update_spine_flip(move_vec: Vector2) -> void:
 		return
 	if absf(move_vec.x) < 0.05:
 		return
-	_spine_flip_sign = -1.0 if move_vec.x < 0.0 else 1.0
+	_spine_flip_sign = 1.0 if move_vec.x < 0.0 else -1.0
 	if _spine_visual is Node3D:
 		var n3d := _spine_visual as Node3D
 		var s3: Vector3 = n3d.scale

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://dheibtnyohxns"
+path="res://.godot/imported/MainCharacterFrontView.atlas-1e82f306765cad3772f530ff61a33d09.spatlas"
+
+[deps]
+
+source_file="res://DiabWorld/splineplayer/FrontView/MainCharacterFrontView.atlas"
+dest_files=["res://.godot/imported/MainCharacterFrontView.atlas-1e82f306765cad3772f530ff61a33d09.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

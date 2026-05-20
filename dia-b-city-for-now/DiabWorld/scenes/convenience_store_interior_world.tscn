@@ -67,6 +67,9 @@ size = Vector3(1.2, 2, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_q3akb"]
 size = Vector3(1.24, 2.035, 5.95)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgcn7"]
+size = Vector3(1.1584473, 1.9096069, 6.056885)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yellow"]
 albedo_color = Color(0.85, 0.75, 0.3, 1)
 
@@ -146,7 +149,7 @@ material_override = SubResource("StandardMaterial3D_wall")
 mesh = SubResource("BoxMesh_wall_side")
 
 [node name="player" parent="." unique_id=1255313391 instance=ExtResource("2_player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.36058527, 0)
 
 [node name="camera_rig" type="Node3D" parent="." unique_id=645635447 node_paths=PackedStringArray("player")]
 script = ExtResource("3_camera")
@@ -195,6 +198,12 @@ mesh = SubResource("BoxMesh_aisle")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AisleGreen/Area3D" unique_id=385054767]
 shape = SubResource("BoxShape3D_q3akb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AisleGreen" unique_id=785586162]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AisleGreen/StaticBody3D" unique_id=1324168584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022735596, 0)
+shape = SubResource("BoxShape3D_bgcn7")
 
 [node name="AisleYellow" type="Node3D" parent="." unique_id=71893694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)

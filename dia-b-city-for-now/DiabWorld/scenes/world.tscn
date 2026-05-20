@@ -237,7 +237,6 @@ shape = SubResource("BoxShape3D_w6bjl")
 collision_layer = 3
 
 [node name="camera_rig" type="Node3D" parent="." unique_id=1021991070 node_paths=PackedStringArray("player")]
-visible = false
 script = ExtResource("2_p0ucf")
 player = NodePath("../player")
 stage_dimentions = Vector2(10, 5)

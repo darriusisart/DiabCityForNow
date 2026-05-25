@@ -9,7 +9,7 @@ extends CharacterBody3D
 @export var gravity := 21.0
 
 func _ready():
-	play_anim("idle")
+	play_anim("idle_side")
 
 func _physics_process(delta):
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
@@ -36,17 +36,17 @@ func update_animation(input_dir: Vector2):
 	var horizontal_speed := Vector2(velocity.x, velocity.z).length()
 
 	if not is_on_floor():
-		play_anim("jump")
+		play_anim("jump_side")
 		sprite.speed_scale = 1.0
 		return
 
 	if horizontal_speed < 0.15:
-		play_anim("idle")
+		play_anim("idle_side")
 		sprite.speed_scale = 1.0
 	else:
 		play_anim("walk_side")
 
-		# slower walk animation when starting/stopping, faster at full speed
+		# slower walk animation when starting/stopping to "blend", faster at full speed
 		sprite.speed_scale = clamp(horizontal_speed / move_speed, 0.4, 1.0)
 
 	if input_dir.x < 0:

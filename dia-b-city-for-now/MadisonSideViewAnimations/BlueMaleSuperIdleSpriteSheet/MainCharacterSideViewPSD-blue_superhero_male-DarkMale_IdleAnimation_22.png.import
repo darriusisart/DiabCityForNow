@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbtmkysy5nj23"
-path.s3tc="res://.godot/imported/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_04.png-a0fd07b6bb686d61ce3a1b27d787f1c9.s3tc.ctex"
+uid="uid://cd2ugl8linmj6"
+path.s3tc="res://.godot/imported/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_22.png-eae82b70e4d575d03333e6c357c9b8ef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/BlueMaleSuperSideJumpPNGS/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_04.png"
-dest_files=["res://.godot/imported/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_04.png-a0fd07b6bb686d61ce3a1b27d787f1c9.s3tc.ctex"]
+source_file="res://MadisonSideViewAnimations/BlueMaleSuperIdleSpriteSheet/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_22.png"
+dest_files=["res://.godot/imported/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_22.png-eae82b70e4d575d03333e6c357c9b8ef.s3tc.ctex"]
 
 [params]
 

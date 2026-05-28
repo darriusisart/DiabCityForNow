@@ -1,47 +1,7 @@
 [gd_scene format=3 uid="uid://d1c7f55wuphh0"]
 
 [ext_resource type="Script" uid="uid://bnhpgy0mrqsj5" path="res://scripts/player_25d.gd" id="1_r3w8g"]
-[ext_resource type="Texture2D" uid="uid://c803sw7n28os2" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_00.png" id="3_0nx57"]
 [ext_resource type="PackedScene" uid="uid://bhkt1yqnmnppa" path="res://DiabWorld/scenes/ui/pause_menu.tscn" id="3_pause"]
-[ext_resource type="Texture2D" uid="uid://cchqks0patok1" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_01.png" id="4_21el7"]
-[ext_resource type="Texture2D" uid="uid://dfkdeg4hnyu4w" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_02.png" id="5_jj5wc"]
-[ext_resource type="Texture2D" uid="uid://buoq8gwmjl808" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_03.png" id="6_0iawd"]
-[ext_resource type="Texture2D" uid="uid://poem8w2vjwwg" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_04.png" id="7_rcu1r"]
-[ext_resource type="Texture2D" uid="uid://c45n0or6bhsgu" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_05.png" id="8_7llc7"]
-[ext_resource type="Texture2D" uid="uid://depkunyxitk8w" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_06.png" id="9_ft7gk"]
-[ext_resource type="Texture2D" uid="uid://4otmrkhbydov" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_07.png" id="10_68jqg"]
-[ext_resource type="Texture2D" uid="uid://ls81l2h3gm37" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_08.png" id="11_7g7rb"]
-[ext_resource type="Texture2D" uid="uid://3jyk3cidfs8v" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_09.png" id="12_rwq5c"]
-[ext_resource type="Texture2D" uid="uid://i1xheox0m54x" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_10.png" id="13_o7kdt"]
-[ext_resource type="Texture2D" uid="uid://daywwpiiryiq6" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_11.png" id="14_oodhi"]
-[ext_resource type="Texture2D" uid="uid://c8uoa8s11sc85" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_12.png" id="15_0q1mn"]
-[ext_resource type="Texture2D" uid="uid://dyqpsfk4wlnv5" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_13.png" id="16_b2myt"]
-[ext_resource type="Texture2D" uid="uid://2qqkiilhhxh5" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_14.png" id="17_n0oxo"]
-[ext_resource type="Texture2D" uid="uid://rp6p2161fppv" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_15.png" id="18_28jpo"]
-[ext_resource type="Texture2D" uid="uid://cr7434bnoyav8" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_16.png" id="19_5ysc6"]
-[ext_resource type="Texture2D" uid="uid://dame4en76ya3f" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_17.png" id="20_bh6xb"]
-[ext_resource type="Texture2D" uid="uid://b8m0yc8gvdmdp" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_18.png" id="21_hxotn"]
-[ext_resource type="Texture2D" uid="uid://bn33hli1dhx0b" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_19.png" id="22_j3wxj"]
-[ext_resource type="Texture2D" uid="uid://crmrlvlx6bd2a" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_20.png" id="23_0q80i"]
-[ext_resource type="Texture2D" uid="uid://bmxh3g3mtv2kn" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_21.png" id="24_ub0rv"]
-[ext_resource type="Texture2D" uid="uid://bajp3lpr7k0vf" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_22.png" id="25_34ldm"]
-[ext_resource type="Texture2D" uid="uid://dncn2i2a1cq5j" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_23.png" id="26_8o1su"]
-[ext_resource type="Texture2D" uid="uid://dji02k4tbvq8g" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_24.png" id="27_hd0nk"]
-[ext_resource type="Texture2D" uid="uid://c7bymwwyd5sr8" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_25.png" id="28_yeavs"]
-[ext_resource type="Texture2D" uid="uid://d2gjvhoxqfgti" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_26.png" id="29_6psby"]
-[ext_resource type="Texture2D" uid="uid://dcg3xp01dodq0" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_27.png" id="30_8fnwd"]
-[ext_resource type="Texture2D" uid="uid://hs8h2l61c5qy" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_28.png" id="31_whxnr"]
-[ext_resource type="Texture2D" uid="uid://b4m5ctcoklnvo" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_29.png" id="32_btbar"]
-[ext_resource type="Texture2D" uid="uid://ccnyeg47eq40n" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_30.png" id="33_kb7n0"]
-[ext_resource type="Texture2D" uid="uid://cmxvi2wr02u2a" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_31.png" id="34_5clip"]
-[ext_resource type="Texture2D" uid="uid://1qswg723cdj" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_32.png" id="35_x72jr"]
-[ext_resource type="Texture2D" uid="uid://b8rqjd7yv4v5q" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_33.png" id="36_0cyr0"]
-[ext_resource type="Texture2D" uid="uid://cs33ws537k7nj" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_34.png" id="37_qedlf"]
-[ext_resource type="Texture2D" uid="uid://bbi61goqkbtqg" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_35.png" id="38_p8wni"]
-[ext_resource type="Texture2D" uid="uid://decld0mo8aqfs" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_36.png" id="39_dfqof"]
-[ext_resource type="Texture2D" uid="uid://do7fnheffyxj8" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_37.png" id="40_d00mi"]
-[ext_resource type="Texture2D" uid="uid://dnscvs7oljo41" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_38.png" id="41_parg3"]
-[ext_resource type="Texture2D" uid="uid://bvxn8a7wdrda0" path="res://MadisonSideViewAnimations/BlueMaleSuperSideIdlePNGs/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_IdleAnimation_39.png" id="42_whbie"]
 [ext_resource type="Texture2D" uid="uid://bf4pfa8fd7w1m" path="res://MadisonSideViewAnimations/BlueMaleSuperSideJumpPNGS/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_02.png" id="43_ic6sw"]
 [ext_resource type="Texture2D" uid="uid://dm2ulb5spn544" path="res://MadisonSideViewAnimations/BlueMaleSuperSideJumpPNGS/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_03.png" id="44_ca4qe"]
 [ext_resource type="Texture2D" uid="uid://cbtmkysy5nj23" path="res://MadisonSideViewAnimations/BlueMaleSuperSideJumpPNGS/MainCharacterSideViewPSD-blue_superhero_male-DarkMale_ShortJump_04.png" id="45_mf4gd"]
@@ -110,127 +70,7 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_0nx57")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_21el7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_jj5wc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_0iawd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_rcu1r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_7llc7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ft7gk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_68jqg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_7g7rb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_rwq5c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_o7kdt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_oodhi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_0q1mn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_b2myt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_n0oxo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_28jpo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_5ysc6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_bh6xb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_hxotn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_j3wxj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_0q80i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_ub0rv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_34ldm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_8o1su")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_hd0nk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_yeavs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_6psby")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_8fnwd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_whxnr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_btbar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_kb7n0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_5clip")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_x72jr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_0cyr0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_qedlf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_p8wni")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_dfqof")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_d00mi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_parg3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_whbie")
-}],
+"frames": [],
 "loop": true,
 "name": &"idle",
 "speed": 24.0
@@ -462,4 +302,4 @@ cast_shadow = 2
 billboard = 1
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_ahs2k")
-animation = &"jump"
+animation = &"idle"

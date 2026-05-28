@@ -8,8 +8,10 @@ extends CharacterBody3D
 @export var jump_velocity := 7.5
 @export var gravity := 21.0
 
+var last_view := "front"
+
 func _ready():
-	play_anim("idle_side")
+	play_anim("idle_front")
 
 func _physics_process(delta):
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
@@ -35,23 +37,35 @@ func _physics_process(delta):
 func update_animation(input_dir: Vector2):
 	var horizontal_speed := Vector2(velocity.x, velocity.z).length()
 
+	# View Direction & Animation are based on the player's input
+	if input_dir.y < 0:
+		last_view = "back"
+	elif input_dir.y > 0:
+		last_view = "front"
+	elif input_dir.x != 0:
+		last_view = "side"
+
+	# I'm still using the side_jump since I don't have the jump animations 
+	# yet for the other views
 	if not is_on_floor():
 		play_anim("jump_side")
 		sprite.speed_scale = 1.0
 		return
 
 	if horizontal_speed < 0.15:
-		play_anim("idle_side")
+		play_anim("idle_" + last_view)
 		sprite.speed_scale = 1.0
 	else:
-		play_anim("walk_side")
-
-		# slower walk animation when starting/stopping to "blend", faster at full speed
+		play_anim("walk_" + last_view)
 		sprite.speed_scale = clamp(horizontal_speed / move_speed, 0.4, 1.0)
 
-	if input_dir.x < 0:
-		sprite.flip_h = true
-	elif input_dir.x > 0:
+	# Only flip the side view
+	if last_view == "side":
+		if input_dir.x < 0:
+			sprite.flip_h = true
+		elif input_dir.x > 0:
+			sprite.flip_h = false
+	else:
 		sprite.flip_h = false
 
 

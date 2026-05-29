@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2ivs5v3pw6vw"
-path="res://.godot/imported/ToonShaderTutorial.glb-693c19757419d736927f9e69029759a6.scn"
+uid="uid://bsbekiapdwgm7"
+path="res://.godot/imported/stylized_bush.glb-8fb1e519f2d9e7d0e020074d0135677a.scn"
 
 [deps]
 
-source_file="res://models/ToonShaderTutorial.glb"
-dest_files=["res://.godot/imported/ToonShaderTutorial.glb-693c19757419d736927f9e69029759a6.scn"]
+source_file="res://Cody/Modular Pieces/stylized_bush.glb"
+dest_files=["res://.godot/imported/stylized_bush.glb-8fb1e519f2d9e7d0e020074d0135677a.scn"]
 
 [params]
 

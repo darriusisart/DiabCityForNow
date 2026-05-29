@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqf86scqlq66"
-path="res://.godot/imported/SM_EXTWindowWall.glb-8b18fc16b1d4310464b63a7d954f3fa6.scn"
+uid="uid://btcbtnixitd47"
+path="res://.godot/imported/Concrete.glb-aeb5c3a2d41854ac7820d24b7beb84c1.scn"
 
 [deps]
 
-source_file="res://models/SM_EXTWindowWall.glb"
-dest_files=["res://.godot/imported/SM_EXTWindowWall.glb-8b18fc16b1d4310464b63a7d954f3fa6.scn"]
+source_file="res://Cody/Modular Pieces/Concrete.glb"
+dest_files=["res://.godot/imported/Concrete.glb-aeb5c3a2d41854ac7820d24b7beb84c1.scn"]
 
 [params]
 

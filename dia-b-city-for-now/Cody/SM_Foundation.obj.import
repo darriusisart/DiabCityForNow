@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://birenrfqnviy6"
+path="res://.godot/imported/SM_Foundation.obj-4e739d1b8aaf7e096a12d0de9e8403fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Foundation.obj-4e739d1b8aaf7e096a12d0de9e8403fc.mesh"]
+
+source_file="res://Cody/SM_Foundation.obj"
+dest_files=["res://.godot/imported/SM_Foundation.obj-4e739d1b8aaf7e096a12d0de9e8403fc.mesh", "res://.godot/imported/SM_Foundation.obj-4e739d1b8aaf7e096a12d0de9e8403fc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqf86scqlq66"
-path="res://.godot/imported/SM_EXTWindowWall.glb-8b18fc16b1d4310464b63a7d954f3fa6.scn"
+uid="uid://ceja4wty0te3h"
+path="res://.godot/imported/SM_TrophyFountain.glb-84ed37753567a79fbabf13dcffe6e1d9.scn"
 
 [deps]
 
-source_file="res://models/SM_EXTWindowWall.glb"
-dest_files=["res://.godot/imported/SM_EXTWindowWall.glb-8b18fc16b1d4310464b63a7d954f3fa6.scn"]
+source_file="res://Cody/3d Props/SM_TrophyFountain.glb"
+dest_files=["res://.godot/imported/SM_TrophyFountain.glb-84ed37753567a79fbabf13dcffe6e1d9.scn"]
 
 [params]
 

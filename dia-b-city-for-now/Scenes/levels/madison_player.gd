@@ -48,7 +48,10 @@ func update_animation(input_dir: Vector2):
 	# I'm still using the side_jump since I don't have the jump animations 
 	# yet for the other views
 	if not is_on_floor():
-		play_anim("jump_side")
+		if velocity.y > 0:
+			play_anim("jump_side")
+		else:
+			play_anim("fall_side")
 		sprite.speed_scale = 1.0
 		return
 

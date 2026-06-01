@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://oqsgmbnxneym" path="res://MadisonSideViewAnimations/S-BlueMaleSuperJumpSpritesheet/jump_side_spritesheet.png" id="3_28n1v"]
 [ext_resource type="Texture2D" uid="uid://c2e5qnwlfmyla" path="res://MadisonFrontViewAnimations/F-BlueMaleSuperWalkSpriteSheet/walk_front_spritesheet.png" id="5_7im13"]
 [ext_resource type="Texture2D" uid="uid://dmkxgy020x6ky" path="res://MadisonBackViewAnimations/B-BlueMaleSuperWalkSpriteSheet/walk_back_spritesheet.png" id="6_3ddn7"]
+[ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
 [ext_resource type="Texture2D" uid="uid://cdrjhoo22o06y" path="res://MadisonSideViewAnimations/S-BlueMaleSuperWalkSpriteSheet/walk_side_spritesheet.png" id="16_0viit"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://Scenes/levels/camera_pivot.gd" id="99_ebni6"]
 
@@ -36,9 +37,44 @@ _surfaces = [{
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3ddn7"]
 data = PackedVector3Array(-3.55, -0.5, -3.55, -3.55, -0.5, -2.6950998, -2.3999999, -0.5, -3.145, -3.55, -0.5, -3.55, -3.55, 0.5, -2.6950998, -3.55, -0.5, -2.6950998, -3.55, -0.5, -3.55, -2.3999999, -0.5, -3.145, 3.55, -0.5, -3.55, -3.55, -0.5, -3.55, 3.55, -0.5, -3.55, -3.55, 0.5, -3.55, -3.55, -0.5, 3.55, -2.3999999, -0.5, 3.145, -3.55, -0.5, 2.6950998, -3.55, -0.5, 3.55, -3.55, -0.5, 2.6950998, -3.55, 0.5, 3.55, -3.55, -0.5, 3.55, 3.55, -0.5, 3.55, -2.3999999, -0.5, 3.145, -3.55, -0.5, -3.55, -3.55, 0.5, -3.55, -3.55, 0.5, -2.6950998, -3.55, 0.5, -3.55, -2.3999999, 0.5, -3.145, -3.55, 0.5, -2.6950998, -3.55, 0.5, -3.55, 3.55, 0.5, -3.55, -2.3999999, 0.5, -3.145, -3.55, 0.5, 3.55, -3.55, -0.5, 2.6950998, -3.55, 0.5, 2.6950998, -3.55, 0.5, 3.55, -3.55, 0.5, 2.6950998, -2.3999999, 0.5, 3.145, -3.55, -0.5, 3.55, -3.55, 0.5, 3.55, 3.55, 0.5, 3.55, -3.55, 0.5, 3.55, -2.3999999, 0.5, 3.145, 3.55, 0.5, 3.55, 3.55, -0.5, -3.55, -2.3999999, -0.5, -3.145, -0.0453, -0.5, -2.2238998, 3.55, -0.5, -3.55, -0.0453, -0.5, -2.2238998, 0.92999995, -0.5, 0, 3.55, -0.5, 3.55, -0.0453, -0.5, 2.2238998, -2.3999999, -0.5, 3.145, 3.55, -0.5, 3.55, 0.92999995, -0.5, 0, -0.0453, -0.5, 2.2238998, -3.55, -0.5, 3.55, 3.55, 0.5, 3.55, 3.55, -0.5, 3.55, 3.55, -0.5, -3.55, 0.92999995, -0.5, 0, 3.55, -0.5, 3.55, 3.55, -0.5, -3.55, 3.55, -0.5, 3.55, 3.55, 0.5, 3.55, -3.55, 0.5, -3.55, 3.55, -0.5, -3.55, 3.55, 0.5, -3.55, 3.55, 0.5, -3.55, -0.0453, 0.5, -2.2238998, -2.3999999, 0.5, -3.145, 3.55, 0.5, -3.55, 0.92999995, 0.5, 0, -0.0453, 0.5, -2.2238998, 3.55, -0.5, -3.55, 3.55, 0.5, 3.55, 3.55, 0.5, -3.55, 3.55, 0.5, 3.55, -2.3999999, 0.5, 3.145, -0.0453, 0.5, 2.2238998, 3.55, 0.5, 3.55, -0.0453, 0.5, 2.2238998, 0.92999995, 0.5, 0, 3.55, 0.5, -3.55, 3.55, 0.5, 3.55, 0.92999995, 0.5, 0, -3.55, -0.5, -2.6950998, -3.55, 0.5, -2.6950998, -2.3999999, -0.5, -3.145, -2.3999999, -0.5, -3.145, -0.0453, 0.5, -2.2238998, -0.0453, -0.5, -2.2238998, -2.3999999, -0.5, 3.145, -2.3999999, 0.5, 3.145, -3.55, -0.5, 2.6950998, -2.3999999, -0.5, 3.145, -0.0453, -0.5, 2.2238998, -2.3999999, 0.5, 3.145, -2.3999999, 0.5, -3.145, -2.3999999, -0.5, -3.145, -3.55, 0.5, -2.6950998, -2.3999999, -0.5, -3.145, -2.3999999, 0.5, -3.145, -0.0453, 0.5, -2.2238998, -3.55, 0.5, 2.6950998, -3.55, -0.5, 2.6950998, -2.3999999, 0.5, 3.145, -2.3999999, 0.5, 3.145, -0.0453, -0.5, 2.2238998, -0.0453, 0.5, 2.2238998, -0.0453, -0.5, -2.2238998, 0.92999995, 0.5, 0, 0.92999995, -0.5, 0, -0.0453, 0.5, 2.2238998, -0.0453, -0.5, 2.2238998, 0.92999995, -0.5, 0, -0.0453, -0.5, -2.2238998, -0.0453, 0.5, -2.2238998, 0.92999995, 0.5, 0, -0.0453, 0.5, 2.2238998, 0.92999995, -0.5, 0, 0.92999995, 0.5, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gdme"]
+albedo_color = Color(0.23529412, 0.38039216, 0.11764706, 0.60784316)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_54eke"]
 radius = 0.75
 height = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj2cw"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(0, 1656, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa2xx"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(467, 1656, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xmf6"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(934, 1656, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf4r2"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(1401, 1656, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsjkl"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(0, 2208, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkhuv"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(467, 2208, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v41i"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(934, 2208, 467, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oivl0"]
+atlas = ExtResource("3_28n1v")
+region = Rect2(1401, 2208, 467, 552)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qkpn"]
 atlas = ExtResource("2_3ddn7")
@@ -1077,6 +1113,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dj2cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa2xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xmf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf4r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsjkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkhuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v41i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oivl0")
+}],
+"loop": false,
+"name": &"fall_side",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0qkpn")
 }, {
 "duration": 1.0,
@@ -1890,6 +1955,16 @@ _data = {
 &"idle": SubResource("Animation_t721i")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3y6q"]
+albedo_color = Color(0.21176471, 0.3647059, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6gdme"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_61mhm"]
+height = 1.2
+radius = 0.7
+
 [node name="MadisonTesting" type="Node3D" unique_id=1155567079]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619963544]
@@ -1912,6 +1987,7 @@ shape = SubResource("ConcavePolygonShape3D_3ddn7")
 transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.6, 0, 0, 0)
 use_collision = true
 size = Vector3(16.2, 1, 12.900001)
+material = SubResource("StandardMaterial3D_6gdme")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1193552416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1000004, 0, 0)
@@ -1926,7 +2002,7 @@ size = Vector3(1.9, 3.5, 4.6)
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2078368875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, 7.4)
 
-[node name="MadisonPlayer" type="CharacterBody3D" parent="." unique_id=748848967]
+[node name="MadisonPlayer" type="CharacterBody3D" parent="." unique_id=748848967 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 script = ExtResource("1_470n0")
 
@@ -1942,7 +2018,7 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oui78")
-animation = &"idle_side"
+animation = &"idle_front"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022711530]
 libraries/ = SubResource("AnimationLibrary_ieech")
@@ -1955,3 +2031,36 @@ camera_height = 5.0
 camera_distance = 9.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=808034852]
+
+[node name="Interactable" type="Node3D" parent="." unique_id=795628492]
+transform = Transform3D(2.06, 0, 0, 0, 2.06, 0, 0, 0, 2.06, 10.900001, 1.7999998, 0.20000029)
+script = ExtResource("10_p3y6q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactable" unique_id=269776573]
+material_override = SubResource("StandardMaterial3D_p3y6q")
+mesh = SubResource("CylinderMesh_6gdme")
+
+[node name="Area3D" type="Area3D" parent="Interactable" unique_id=625413361]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/Area3D" unique_id=1700762619]
+shape = SubResource("CylinderShape3D_61mhm")
+
+[node name="Label3D" type="Label3D" parent="Interactable" unique_id=29768589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9000001, 0)
+modulate = Color(0.20392157, 0.39215687, 1, 1)
+outline_modulate = Color(0, 0, 0.28536868, 1)
+text = "INTERACTION TEST
+"
+font_size = 46
+outline_size = 8
+
+[node name="Label3D" type="Label3D" parent="." unique_id=907797538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 4.3, 0.2)
+modulate = Color(0.20392157, 0.39215687, 1, 1)
+outline_modulate = Color(0, 0, 0.28536868, 1)
+text = "Press E to Interact"
+font_size = 77
+outline_size = 13
+
+[connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]

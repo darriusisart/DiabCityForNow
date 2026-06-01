@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c2e5qnwlfmyla" path="res://MadisonFrontViewAnimations/F-BlueMaleSuperWalkSpriteSheet/walk_front_spritesheet.png" id="5_7im13"]
 [ext_resource type="Texture2D" uid="uid://dmkxgy020x6ky" path="res://MadisonBackViewAnimations/B-BlueMaleSuperWalkSpriteSheet/walk_back_spritesheet.png" id="6_3ddn7"]
 [ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
+[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="11_6gdme"]
+[ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
 [ext_resource type="Texture2D" uid="uid://cdrjhoo22o06y" path="res://MadisonSideViewAnimations/S-BlueMaleSuperWalkSpriteSheet/walk_side_spritesheet.png" id="16_0viit"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://Scenes/levels/camera_pivot.gd" id="99_ebni6"]
 
@@ -1965,13 +1967,17 @@ height = 1.0
 height = 1.2
 radius = 0.7
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_61mhm"]
+size = Vector3(4.54, 3, 3.96)
+
 [node name="MadisonTesting" type="Node3D" unique_id=1155567079]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619963544]
 environment = SubResource("Environment_gpb5v")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1814006415]
-transform = Transform3D(-0.625, -0.77900636, -0.050240517, 0.43301272, -0.399519, 0.80801266, -0.64951897, 0.483253, 0.587019, 0, 7.1000004, 0)
+transform = Transform3D(0.00857401, 0.9880642, -0.15380442, -0.60095024, 0.12802717, 0.78896654, 0.7992407, 0.08566418, 0.5948751, 0, 11, 16.5)
+light_energy = 0.8
 shadow_enabled = true
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=503587438]
@@ -1986,7 +1992,7 @@ shape = SubResource("ConcavePolygonShape3D_3ddn7")
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1248531890]
 transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.6, 0, 0, 0)
 use_collision = true
-size = Vector3(16.2, 1, 12.900001)
+size = Vector3(23.83, 1, 17.135)
 material = SubResource("StandardMaterial3D_6gdme")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1193552416]
@@ -2011,7 +2017,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.368, -0.2)
 shape = SubResource("CapsuleShape3D_54eke")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="MadisonPlayer" unique_id=1950319720]
-transform = Transform3D(0.78, 0, 0, 0, 0.78, 0, 0, 0, 0.78, 0.075, 1.3, 0)
+transform = Transform3D(0.78, 0, 0, 0, 0.78, 0, 0, 0, 0.78, 0.075, 1.22, 0)
 cast_shadow = 2
 billboard = 1
 double_sided = false
@@ -2061,6 +2067,27 @@ outline_modulate = Color(0, 0, 0.28536868, 1)
 text = "Press E to Interact"
 font_size = 77
 outline_size = 13
+
+[node name="NPC" type="Node3D" parent="." unique_id=210731924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 1.9, 0.9)
+script = ExtResource("11_61mhm")
+
+[node name="Sprite3D" type="Sprite3D" parent="NPC" unique_id=302695627]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+billboard = 1
+alpha_cut = 1
+texture = ExtResource("11_6gdme")
+
+[node name="Label3D" type="Label3D" parent="NPC" unique_id=118508094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+font_size = 77
+outline_size = 10
+
+[node name="Area3D" type="Area3D" parent="NPC" unique_id=1587548499]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Area3D" unique_id=660571701]
+shape = SubResource("BoxShape3D_61mhm")
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]

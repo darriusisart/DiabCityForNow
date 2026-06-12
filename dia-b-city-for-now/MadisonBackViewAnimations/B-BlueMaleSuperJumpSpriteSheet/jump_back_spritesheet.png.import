@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnb1yp2ouci8j"
-path.s3tc="res://.godot/imported/jump_front_spritesheet.png-0042208689b6c808557e47d51efb1dc0.s3tc.ctex"
+uid="uid://hvf17uswm6i3"
+path.s3tc="res://.godot/imported/jump_back_spritesheet.png-2185105c6dfe0a4f3fbc0daf2bf84279.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://MadisonFrontViewAnimations/F-BlueMaleSuperJumpAnimations/jump_front_spritesheet.png"
-dest_files=["res://.godot/imported/jump_front_spritesheet.png-0042208689b6c808557e47d51efb1dc0.s3tc.ctex"]
+source_file="res://MadisonBackViewAnimations/B-BlueMaleSuperJumpSpriteSheet/jump_back_spritesheet.png"
+dest_files=["res://.godot/imported/jump_back_spritesheet.png-2185105c6dfe0a4f3fbc0daf2bf84279.s3tc.ctex"]
 
 [params]
 

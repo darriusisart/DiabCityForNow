@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://q1y7s3d5xtf5" path="res://Assets/MadisonPNGs/TEMPTESTSukiHappy.png" id="15_8vcoy"]
 [ext_resource type="Texture2D" uid="uid://cdrjhoo22o06y" path="res://MadisonSideViewAnimations/S-BlueMaleSuperWalkSpriteSheet/walk_side_spritesheet.png" id="16_0viit"]
 [ext_resource type="PackedScene" uid="uid://da0g2pal51or7" path="res://UI/MadisonDialogueBox.tscn" id="17_h1t3c"]
+[ext_resource type="PackedScene" uid="uid://c7uexn7l103af" path="res://UI/PlayerJournal.tscn" id="18_8vcoy"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://Scenes/levels/camera_pivot.gd" id="99_ebni6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3eot6"]
@@ -2565,14 +2566,14 @@ animation = &"jump_front"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022711530]
 libraries/ = SubResource("AnimationLibrary_ieech")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=929998231 node_paths=PackedStringArray("player")]
+[node name="CameraRig" type="Node3D" parent="." unique_id=929998231 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.97778326, -0.20961857, 0, 0.20961857, 0.97778326, 0, 5, 10)
 script = ExtResource("99_ebni6")
 player = NodePath("../MadisonPlayer")
 camera_height = 5.0
 camera_distance = 9.0
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=808034852]
+[node name="Camera" type="Camera3D" parent="CameraRig" unique_id=808034852]
 
 [node name="Interactable" type="Node3D" parent="." unique_id=795628492]
 transform = Transform3D(2.06, 0, 0, 0, 2.06, 0, 0, 0, 2.06, 10.900001, 1.7999998, 0.20000029)
@@ -2628,6 +2629,8 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 shape = SubResource("BoxShape3D_61mhm")
 
 [node name="DialogueBox" parent="." unique_id=536704838 instance=ExtResource("17_h1t3c")]
+
+[node name="PlayerJournal" parent="." unique_id=601475039 instance=ExtResource("18_8vcoy")]
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cswi1dho7uj80" path="res://UI/madison_dialogue_box.gd" id="1_15bq7"]
 [ext_resource type="Script" uid="uid://buhn8xhq2j3eh" path="res://UI/name_box.gd" id="1_bw6yb"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="2_oj51l"]
+[ext_resource type="AudioStream" uid="uid://ci125l0glancr" path="res://audio/blipTextSound.wav" id="4_aymk2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj51l"]
 bg_color = Color(0.0073179062, 0.0073179062, 0.0073179062, 1)
@@ -110,7 +111,7 @@ theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 scroll_active = false
 
-[node name="ContinueSignal" type="Label" parent="Panel" unique_id=1648587493]
+[node name="ContinueLabel" type="Label" parent="Panel" unique_id=1648587493]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -125,3 +126,8 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 28
 text = "[E]"
+
+[node name="BlipSound" type="AudioStreamPlayer" parent="Panel" unique_id=1510454479]
+stream = ExtResource("4_aymk2")
+volume_db = -3.5
+pitch_scale = 0.98

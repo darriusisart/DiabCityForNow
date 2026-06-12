@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c7uexn7l103af"]
+
+[ext_resource type="Script" uid="uid://1k1xekynln03" path="res://UI/player_journal.gd" id="1_pg34i"]
+[ext_resource type="Texture2D" uid="uid://vmje2aqjfeff" path="res://Assets/MadisonPNGs/JournalTapSmallImage.png" id="2_4qfj3"]
+
+[node name="PlayerJournal" type="Control" unique_id=601475039]
+texture_filter = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pg34i")
+
+[node name="JournalPanel" type="Panel" parent="." unique_id=1950678885]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="JournalBar" type="TabBar" parent="JournalPanel" unique_id=1953719363]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="JournalPanel" unique_id=391226634]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 21.0
+
+[node name="PillarContainers" type="Container" parent="JournalPanel" unique_id=1642565833]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoodContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=1119935237]
+layout_mode = 2
+
+[node name="FoodBar" type="ProgressBar" parent="JournalPanel/PillarContainers/FoodContainer" unique_id=358492209]
+layout_mode = 2
+
+[node name="FoodLabel" type="Label" parent="JournalPanel/PillarContainers/FoodContainer" unique_id=2013008728]
+layout_mode = 2
+
+[node name="ExerciseContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=968399764]
+layout_mode = 2
+
+[node name="ExerciseBar" type="ProgressBar" parent="JournalPanel/PillarContainers/ExerciseContainer" unique_id=652449164]
+layout_mode = 2
+
+[node name="ExerciseLabel" type="Label" parent="JournalPanel/PillarContainers/ExerciseContainer" unique_id=917732661]
+layout_mode = 2
+
+[node name="WellbeingContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=1260915575]
+layout_mode = 2
+
+[node name="WellbeingBar" type="ProgressBar" parent="JournalPanel/PillarContainers/WellbeingContainer" unique_id=1872867450]
+layout_mode = 2
+
+[node name="WellbeingLabel" type="Label" parent="JournalPanel/PillarContainers/WellbeingContainer" unique_id=1983980788]
+layout_mode = 2
+
+[node name="SleepContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=230886399]
+layout_mode = 2
+
+[node name="SleepBar" type="ProgressBar" parent="JournalPanel/PillarContainers/SleepContainer" unique_id=1718388851]
+layout_mode = 2
+
+[node name="SleepLabel" type="Label" parent="JournalPanel/PillarContainers/SleepContainer" unique_id=1594895749]
+layout_mode = 2
+
+[node name="SocialContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=503690199]
+layout_mode = 2
+
+[node name="SocialBar" type="ProgressBar" parent="JournalPanel/PillarContainers/SocialContainer" unique_id=1096515200]
+layout_mode = 2
+
+[node name="SocialLabel" type="Label" parent="JournalPanel/PillarContainers/SocialContainer" unique_id=402562742]
+layout_mode = 2
+
+[node name="MapButton" type="Button" parent="JournalPanel" unique_id=765514074]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 32.0
+
+[node name="SettingsButton" type="Button" parent="JournalPanel" unique_id=1637224153]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 32.0
+
+[node name="CloseLabel" type="Label" parent="JournalPanel" unique_id=247118969]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 21.0
+
+[node name="CluesButton" type="Button" parent="JournalPanel" unique_id=1352983344]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 32.0
+
+[node name="JournalTab" type="TextureRect" parent="." unique_id=850125838]
+texture_filter = 2
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("2_4qfj3")
+expand_mode = 1
+stretch_mode = 6

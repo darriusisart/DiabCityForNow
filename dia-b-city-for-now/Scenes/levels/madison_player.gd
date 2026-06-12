@@ -49,9 +49,22 @@ func update_animation(input_dir: Vector2):
 	# yet for the other views
 	if not is_on_floor():
 		if velocity.y > 0:
-			play_anim("jump_side")
+			match last_view:
+				"front":
+					play_anim("jump_front")
+				"back":
+					play_anim("jump_side") # temporary until I add a back-view jump
+				"side":
+					play_anim("jump_side")
 		else:
-			play_anim("fall_side")
+			match last_view:
+				"front":
+					play_anim("fall_front")
+				"back":
+					play_anim("fall_side") # also temp
+				"side":
+					play_anim("fall_side")
+
 		sprite.speed_scale = 1.0
 		return
 

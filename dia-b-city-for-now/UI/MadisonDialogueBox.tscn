@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://da0g2pal51or7"]
+
+[ext_resource type="Script" uid="uid://cswi1dho7uj80" path="res://UI/madison_dialogue_box.gd" id="1_15bq7"]
+[ext_resource type="Script" uid="uid://buhn8xhq2j3eh" path="res://UI/name_box.gd" id="1_bw6yb"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="2_oj51l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj51l"]
+bg_color = Color(0.0073179062, 0.0073179062, 0.0073179062, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15bq7"]
+bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.70585454, 0.70585454, 0.70585454, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw6yb"]
+bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+
+[node name="DialogueBox" type="Control" unique_id=536704838]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15bq7")
+
+[node name="Panel" type="Panel" parent="." unique_id=809259466]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 853.18
+offset_right = -19.0
+offset_bottom = -15.819336
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj51l")
+
+[node name="NameBox" type="Panel" parent="Panel" unique_id=701328582]
+layout_mode = 0
+offset_top = -80.48
+offset_right = 130.0
+offset_bottom = -30.480003
+theme_override_styles/panel = SubResource("StyleBoxFlat_15bq7")
+script = ExtResource("1_bw6yb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/NameBox" unique_id=540829742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 8
+
+[node name="NameLabel" type="Label" parent="Panel/NameBox/MarginContainer" unique_id=1714373788]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PortraitFrame" type="Panel" parent="Panel" unique_id=1124997620]
+layout_mode = 0
+offset_left = 1681.585
+offset_top = -214.41
+offset_right = 1881.585
+offset_bottom = -14.410004
+theme_override_styles/panel = SubResource("StyleBoxFlat_bw6yb")
+
+[node name="Portrait" type="TextureRect" parent="Panel/PortraitFrame" unique_id=75629304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -4.8099976
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel" unique_id=1879646021]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 23.820007
+offset_right = 1785.0
+offset_bottom = 184.82
+theme_override_fonts/normal_font = ExtResource("2_oj51l")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+scroll_active = false
+
+[node name="ContinueSignal" type="Label" parent="Panel" unique_id=1648587493]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -52.180664
+offset_right = -18.0
+offset_bottom = -16.180664
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "[E]"

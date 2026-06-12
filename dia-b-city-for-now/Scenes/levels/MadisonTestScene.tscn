@@ -12,7 +12,10 @@
 [ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="11_6gdme"]
 [ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
+[ext_resource type="Texture2D" uid="uid://b8phrn201iqqb" path="res://Assets/MadisonPNGs/TEMPTESTSukiNeutral.png" id="14_0viit"]
+[ext_resource type="Texture2D" uid="uid://q1y7s3d5xtf5" path="res://Assets/MadisonPNGs/TEMPTESTSukiHappy.png" id="15_8vcoy"]
 [ext_resource type="Texture2D" uid="uid://cdrjhoo22o06y" path="res://MadisonSideViewAnimations/S-BlueMaleSuperWalkSpriteSheet/walk_side_spritesheet.png" id="16_0viit"]
+[ext_resource type="PackedScene" uid="uid://da0g2pal51or7" path="res://UI/MadisonDialogueBox.tscn" id="17_h1t3c"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://Scenes/levels/camera_pivot.gd" id="99_ebni6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3eot6"]
@@ -2557,7 +2560,7 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oui78")
-animation = &"fall_back"
+animation = &"jump_front"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022711530]
 libraries/ = SubResource("AnimationLibrary_ieech")
@@ -2604,9 +2607,11 @@ outline_size = 13
 [node name="NPC" type="Node3D" parent="." unique_id=210731924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 1.9, 0.9)
 script = ExtResource("11_61mhm")
+suki_neutral = ExtResource("14_0viit")
+suki_happy = ExtResource("15_8vcoy")
 
 [node name="Sprite3D" type="Sprite3D" parent="NPC" unique_id=302695627]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0, 0)
 billboard = 1
 alpha_cut = 1
 texture = ExtResource("11_6gdme")
@@ -2621,6 +2626,8 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Area3D" unique_id=660571701]
 shape = SubResource("BoxShape3D_61mhm")
+
+[node name="DialogueBox" parent="." unique_id=536704838 instance=ExtResource("17_h1t3c")]
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]

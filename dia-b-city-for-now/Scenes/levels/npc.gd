@@ -1,55 +1,67 @@
 extends Node3D
 
 @onready var area = $Area3D
-@onready var dialogue = $Label3D
+@onready var prompt = $Label3D
+@onready var dialogue_box = get_tree().current_scene.get_node("DialogueBox")
 
-var player_in_range = false
+@export var suki_neutral: Texture2D
+@export var suki_happy: Texture2D
 
-var temp_dialogue_lines = [
-	"Hi! I'm Suki!\n[E]",
-	"I'm being used for NPC testing!\n[E]",
-	"You can press E to continue talking.\n[E]",
-	"Madi wrote this :)\n[E]",
-	"That's all I have to say!"
-]
+var player_in_range := false
 
-var dialogue_index = 0
-var dialogue_active = false
+var dialogue_lines := []
 
 func _ready():
-	dialogue.visible = false
+	prompt.visible = false
+
+	dialogue_lines = [
+		{
+			"name": "Suki",
+			"text": "Hi! I'm Suki!",
+			"portrait": suki_happy
+		},
+		{
+			"name": "Suki",
+			"text": "I'm being used for NPC testing! These are temporary portrait images...",
+			"portrait": suki_neutral
+		},
+		{
+			"name": "Suki",
+			"text": "You can press E to continue talking.",
+			"portrait": suki_neutral
+		},
+		{
+			"name": "Suki",
+			"text": "Madi wrote this :)",
+			"portrait": suki_happy
+		},
+		{
+			"name": "Suki",
+			"text": "That's all I have to say!",
+			"portrait": suki_neutral
+		}
+	]
 
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
-	
+
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
+		prompt.visible = false
 
-		if !dialogue_active:
-			dialogue_active = true
-			dialogue_index = 0
-			dialogue.visible = true
-			dialogue.text = temp_dialogue_lines[dialogue_index]
-
+		if !dialogue_box.active:
+			dialogue_box.start_dialogue(dialogue_lines)
 		else:
-			dialogue_index += 1
-
-			if dialogue_index < temp_dialogue_lines.size():
-				dialogue.text = temp_dialogue_lines[dialogue_index]
-			else:
-				dialogue.visible = false
-				dialogue_active = false
+			dialogue_box.advance_dialogue()
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player_in_range = true
-		dialogue.visible = true
-		dialogue.text = "[E]"
+		prompt.visible = true
+		prompt.text = "[E]"
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
-		dialogue.visible = false
-
-		dialogue_active = false
-		dialogue_index = 0
+		prompt.visible = false
+		dialogue_box.end_dialogue()

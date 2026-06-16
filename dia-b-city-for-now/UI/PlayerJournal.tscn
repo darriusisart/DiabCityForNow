@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://1k1xekynln03" path="res://UI/player_journal.gd" id="1_pg34i"]
 [ext_resource type="Texture2D" uid="uid://vmje2aqjfeff" path="res://Assets/MadisonPNGs/JournalTapSmallImage.png" id="2_4qfj3"]
+[ext_resource type="Texture2D" uid="uid://cbv1yundp4wjj" path="res://Assets/MadisonPNGs/JournalTabMenu.png" id="2_kjtuj"]
+[ext_resource type="Texture2D" uid="uid://c5try02y56m1t" path="res://Assets/MadisonPNGs/JournalTabProgress.png" id="3_0bt18"]
+[ext_resource type="Texture2D" uid="uid://ddve4gj1kfntx" path="res://Assets/MadisonPNGs/JournalTabMap.png" id="4_0tgbt"]
+[ext_resource type="Texture2D" uid="uid://cltp0trhs37y8" path="res://Assets/MadisonPNGs/JournalTabClues.png" id="5_7skne"]
 
 [node name="PlayerJournal" type="Control" unique_id=601475039]
 texture_filter = 6
@@ -14,91 +18,152 @@ grow_vertical = 2
 script = ExtResource("1_pg34i")
 
 [node name="JournalPanel" type="Panel" parent="." unique_id=1950678885]
+clip_contents = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="JournalBar" type="TabBar" parent="JournalPanel" unique_id=1953719363]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="NavBar" type="HBoxContainer" parent="JournalPanel" unique_id=1354655206]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+offset_top = -14.9
+offset_right = 2012.0
+offset_bottom = 105.1
 
-[node name="TitleLabel" type="Label" parent="JournalPanel" unique_id=391226634]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 21.0
-
-[node name="PillarContainers" type="Container" parent="JournalPanel" unique_id=1642565833]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="FoodContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=1119935237]
+[node name="MenuButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=599762631]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
+texture_normal = ExtResource("2_kjtuj")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="FoodBar" type="ProgressBar" parent="JournalPanel/PillarContainers/FoodContainer" unique_id=358492209]
+[node name="MenuLabel" type="Label" parent="JournalPanel/NavBar/MenuButton" unique_id=1745178199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1114137190]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
+texture_normal = ExtResource("3_0bt18")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="FoodLabel" type="Label" parent="JournalPanel/PillarContainers/FoodContainer" unique_id=2013008728]
+[node name="MapButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1976205040]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
+texture_normal = ExtResource("4_0tgbt")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="ExerciseContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=968399764]
+[node name="CluesButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1252043670]
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
+texture_normal = ExtResource("5_7skne")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="ExerciseBar" type="ProgressBar" parent="JournalPanel/PillarContainers/ExerciseContainer" unique_id=652449164]
-layout_mode = 2
+[node name="Pages" type="Control" parent="JournalPanel" unique_id=1214372511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.635
+offset_bottom = 150.63512
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ExerciseLabel" type="Label" parent="JournalPanel/PillarContainers/ExerciseContainer" unique_id=917732661]
-layout_mode = 2
+[node name="MenuPage" type="Control" parent="JournalPanel/Pages" unique_id=1744921198]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="WellbeingContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=1260915575]
-layout_mode = 2
+[node name="PageTitle" type="Label" parent="JournalPanel/Pages/MenuPage" unique_id=1682863420]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Menu"
 
-[node name="WellbeingBar" type="ProgressBar" parent="JournalPanel/PillarContainers/WellbeingContainer" unique_id=1872867450]
-layout_mode = 2
+[node name="ProgressPage" type="Control" parent="JournalPanel/Pages" unique_id=166079491]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="WellbeingLabel" type="Label" parent="JournalPanel/PillarContainers/WellbeingContainer" unique_id=1983980788]
-layout_mode = 2
+[node name="PageTitle" type="Label" parent="JournalPanel/Pages/ProgressPage" unique_id=1967995333]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.5
+offset_right = 59.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Progress"
 
-[node name="SleepContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=230886399]
-layout_mode = 2
+[node name="MapPage" type="Control" parent="JournalPanel/Pages" unique_id=849752866]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="SleepBar" type="ProgressBar" parent="JournalPanel/PillarContainers/SleepContainer" unique_id=1718388851]
-layout_mode = 2
+[node name="PageTitle" type="Label" parent="JournalPanel/Pages/MapPage" unique_id=868100123]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_right = 30.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Map"
 
-[node name="SleepLabel" type="Label" parent="JournalPanel/PillarContainers/SleepContainer" unique_id=1594895749]
-layout_mode = 2
+[node name="CluesPage" type="Control" parent="JournalPanel/Pages" unique_id=694475331]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="SocialContainer" type="Container" parent="JournalPanel/PillarContainers" unique_id=503690199]
-layout_mode = 2
-
-[node name="SocialBar" type="ProgressBar" parent="JournalPanel/PillarContainers/SocialContainer" unique_id=1096515200]
-layout_mode = 2
-
-[node name="SocialLabel" type="Label" parent="JournalPanel/PillarContainers/SocialContainer" unique_id=402562742]
-layout_mode = 2
-
-[node name="MapButton" type="Button" parent="JournalPanel" unique_id=765514074]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 32.0
-
-[node name="SettingsButton" type="Button" parent="JournalPanel" unique_id=1637224153]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 32.0
-
-[node name="CloseLabel" type="Label" parent="JournalPanel" unique_id=247118969]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 21.0
-
-[node name="CluesButton" type="Button" parent="JournalPanel" unique_id=1352983344]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 32.0
+[node name="PageTitle" type="Label" parent="JournalPanel/Pages/CluesPage" unique_id=1367981605]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Clues"
 
 [node name="JournalTab" type="TextureRect" parent="." unique_id=850125838]
+visible = false
 texture_filter = 2
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 0

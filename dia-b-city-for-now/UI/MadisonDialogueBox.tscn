@@ -12,6 +12,10 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15bq7"]
 bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
@@ -20,6 +24,10 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.70585454, 0.70585454, 0.70585454, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw6yb"]
 bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
@@ -28,6 +36,10 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="DialogueBox" type="Control" unique_id=536704838]
 layout_mode = 3

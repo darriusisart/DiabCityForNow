@@ -4,8 +4,45 @@
 [ext_resource type="Texture2D" uid="uid://vmje2aqjfeff" path="res://Assets/MadisonPNGs/JournalTapSmallImage.png" id="2_4qfj3"]
 [ext_resource type="Texture2D" uid="uid://cbv1yundp4wjj" path="res://Assets/MadisonPNGs/JournalTabMenu.png" id="2_kjtuj"]
 [ext_resource type="Texture2D" uid="uid://c5try02y56m1t" path="res://Assets/MadisonPNGs/JournalTabProgress.png" id="3_0bt18"]
+[ext_resource type="Script" uid="uid://qjtrgcc3qk62" path="res://UI/menu_button.gd" id="3_4736o"]
 [ext_resource type="Texture2D" uid="uid://ddve4gj1kfntx" path="res://Assets/MadisonPNGs/JournalTabMap.png" id="4_0tgbt"]
 [ext_resource type="Texture2D" uid="uid://cltp0trhs37y8" path="res://Assets/MadisonPNGs/JournalTabClues.png" id="5_7skne"]
+[ext_resource type="Script" uid="uid://di10oodmpg8g4" path="res://UI/progress_button.gd" id="5_jvuah"]
+[ext_resource type="Script" uid="uid://4dfsfl6g28lu" path="res://UI/map_button.gd" id="7_mmx44"]
+[ext_resource type="Script" uid="uid://b170p55nis1gs" path="res://UI/clues_button.gd" id="9_mnk1p"]
+[ext_resource type="Texture2D" uid="uid://dbvxs2acqo5kq" path="res://Assets/MadisonPNGs/JournalSpiral.png" id="10_jvuah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjtuj"]
+bg_color = Color(0.8980392, 0.8627451, 0.8117647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bt18"]
+bg_color = Color(0.8980392, 0.8627451, 0.8117647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tgbt"]
+bg_color = Color(0.8980392, 0.8627451, 0.8117647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7skne"]
+bg_color = Color(0.8980392, 0.8627451, 0.8117647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
 
 [node name="PlayerJournal" type="Control" unique_id=601475039]
 texture_filter = 6
@@ -36,17 +73,22 @@ layout_mode = 2
 texture_normal = ExtResource("2_kjtuj")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("3_4736o")
 
 [node name="MenuLabel" type="Label" parent="JournalPanel/NavBar/MenuButton" unique_id=1745178199]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.95
+offset_top = 64.0
+offset_right = -48.949997
+offset_bottom = 102.00002
 grow_horizontal = 2
-grow_vertical = 2
-text = "Menu"
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "MENU"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ProgressButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1114137190]
 custom_minimum_size = Vector2(500, 120)
@@ -54,6 +96,17 @@ layout_mode = 2
 texture_normal = ExtResource("3_0bt18")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("5_jvuah")
+
+[node name="ProgressLabel" type="Label" parent="JournalPanel/NavBar/ProgressButton" unique_id=594412947]
+layout_mode = 0
+offset_left = 62.04
+offset_top = 64.0
+offset_right = 246.04001
+offset_bottom = 121.375
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "PROGRESS"
 
 [node name="MapButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1976205040]
 custom_minimum_size = Vector2(500, 120)
@@ -61,6 +114,17 @@ layout_mode = 2
 texture_normal = ExtResource("4_0tgbt")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("7_mmx44")
+
+[node name="MapLabel" type="Label" parent="JournalPanel/NavBar/MapButton" unique_id=1965414605]
+layout_mode = 0
+offset_left = 113.74
+offset_top = 64.0
+offset_right = 190.74002
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "MAP"
 
 [node name="CluesButton" type="TextureButton" parent="JournalPanel/NavBar" unique_id=1252043670]
 custom_minimum_size = Vector2(500, 120)
@@ -68,14 +132,25 @@ layout_mode = 2
 texture_normal = ExtResource("5_7skne")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("9_mnk1p")
+
+[node name="CluesLabel" type="Label" parent="JournalPanel/NavBar/CluesButton" unique_id=167327614]
+layout_mode = 0
+offset_left = 97.585
+offset_top = 64.0
+offset_right = 207.58502
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "CLUES"
 
 [node name="Pages" type="Control" parent="JournalPanel" unique_id=1214372511]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 150.635
-offset_bottom = 150.63512
+offset_top = 103.625
+offset_bottom = 103.62509
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -87,17 +162,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MenuPanel" type="Panel" parent="JournalPanel/Pages/MenuPage" unique_id=2040531134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjtuj")
+
 [node name="PageTitle" type="Label" parent="JournalPanel/Pages/MenuPage" unique_id=1682863420]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -38.0
-offset_right = 38.0
-offset_bottom = 36.0
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 38.000015
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Menu"
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+MENU"
+horizontal_alignment = 1
 
 [node name="ProgressPage" type="Control" parent="JournalPanel/Pages" unique_id=166079491]
 visible = false
@@ -108,6 +196,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ProgressPanel" type="Panel" parent="JournalPanel/Pages/ProgressPage" unique_id=923732374]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0bt18")
+
 [node name="PageTitle" type="Label" parent="JournalPanel/Pages/ProgressPage" unique_id=1967995333]
 layout_mode = 1
 anchors_preset = 5
@@ -117,8 +215,10 @@ offset_left = -59.5
 offset_right = 59.5
 offset_bottom = 36.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Progress"
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+PROGRESS"
 
 [node name="MapPage" type="Control" parent="JournalPanel/Pages" unique_id=849752866]
 visible = false
@@ -129,6 +229,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MapPanel" type="Panel" parent="JournalPanel/Pages/MapPage" unique_id=1544018586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tgbt")
+
 [node name="PageTitle" type="Label" parent="JournalPanel/Pages/MapPage" unique_id=868100123]
 layout_mode = 1
 anchors_preset = 5
@@ -138,8 +248,10 @@ offset_left = -30.5
 offset_right = 30.5
 offset_bottom = 36.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Map"
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+MAP"
 
 [node name="CluesPage" type="Control" parent="JournalPanel/Pages" unique_id=694475331]
 visible = false
@@ -150,6 +262,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CluesPanel" type="Panel" parent="JournalPanel/Pages/CluesPage" unique_id=1325367091]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7skne")
+
 [node name="PageTitle" type="Label" parent="JournalPanel/Pages/CluesPage" unique_id=1367981605]
 layout_mode = 1
 anchors_preset = 5
@@ -159,8 +281,50 @@ offset_left = -38.0
 offset_right = 38.0
 offset_bottom = 36.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Clues"
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+CLUES"
+
+[node name="JournalSpiral1" type="TextureRect" parent="JournalPanel" unique_id=680263114]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 225.0
+offset_right = 772.0
+offset_bottom = 584.00006
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_jvuah")
+expand_mode = 5
+
+[node name="JournalSpiral2" type="TextureRect" parent="JournalPanel" unique_id=1367462995]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 445.0
+offset_right = 772.0
+offset_bottom = 804.00037
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_jvuah")
+expand_mode = 5
+
+[node name="JournalSpiral3" type="TextureRect" parent="JournalPanel" unique_id=934452898]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 650.0
+offset_right = 772.0
+offset_bottom = 1009.00006
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_jvuah")
+expand_mode = 5
+
+[node name="JournalSpiral4" type="TextureRect" parent="JournalPanel" unique_id=498906180]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 860.0
+offset_right = 772.0
+offset_bottom = 1219.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_jvuah")
+expand_mode = 5
 
 [node name="JournalTab" type="TextureRect" parent="." unique_id=850125838]
 visible = false

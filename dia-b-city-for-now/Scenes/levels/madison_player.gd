@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @export var move_speed := 6.2
 @export var acceleration := 14.0
-@export var deceleration := 20.0
+@export var deceleration := 25.0
 @export var jump_velocity := 7.5
 @export var gravity := 21.0
 

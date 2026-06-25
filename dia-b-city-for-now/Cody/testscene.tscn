@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dnrtdbesuonbc" path="res://Cody/Modular Pieces/SM_toplayer.glb" id="12_vky0q"]
 [ext_resource type="PackedScene" uid="uid://ydj5i7tuwknm" path="res://Cody/Modular Pieces/roof4.glb" id="13_ab80y"]
 [ext_resource type="PackedScene" uid="uid://bsbekiapdwgm7" path="res://Cody/Modular Pieces/stylized_bush.glb" id="14_ab80y"]
+[ext_resource type="ArrayMesh" uid="uid://birenrfqnviy6" path="res://Cody/SM_Foundation.obj" id="15_dicp5"]
 
 [sub_resource type="Environment" id="Environment_3ywa3"]
 background_mode = 2
@@ -21,6 +22,9 @@ ambient_light_source = 2
 ambient_light_color = Color(0.95899445, 0.9595575, 0.95391184, 1)
 ambient_light_energy = 0.22
 sdfgi_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qv7c8"]
+points = PackedVector3Array(29.887266, 1.0518321, 18.337345, -6.5707517, -0.21996641, -10.484446, -29.887266, -0.21996641, -6.2441216, 29.887266, -0.21996641, 18.337345, -29.887266, 1.0518321, 18.337345, 27.451159, 1, -5.803812, -27.451159, 1, -5.803812, -29.887266, -0.21996641, 18.337345, 29.887266, -0.21996641, -6.2441216, 6.0351706, 1, -9.309815, 6.5707517, -0.21996641, -10.484446, -6.0351706, 1, -9.309815, 28.590895, 0.61862576, -6.2078, -28.590895, 0.61862576, -6.2078)
 
 [node name="Testscene" type="Node3D" unique_id=480058668]
 
@@ -33,6 +37,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 [node name="SM_BlankWalls" parent="." unique_id=1039804529 instance=ExtResource("9_vky0q")]
 
 [node name="SM_Foundation" parent="." unique_id=601925140 instance=ExtResource("7_7idbb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_Foundation" unique_id=1696830722]
 
 [node name="SM_Window2" parent="." unique_id=387740498 instance=ExtResource("4_7idbb")]
 
@@ -145,3 +151,11 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.3750954, 0, -5.539518
 
 [node name="Sketchfab_Scene10" parent="." unique_id=1581079397 instance=ExtResource("14_ab80y")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16.770712, 0, -1.8634548)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1024522074]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1838879678]
+mesh = ExtResource("15_dicp5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=202060903]
+shape = SubResource("ConvexPolygonShape3D_qv7c8")

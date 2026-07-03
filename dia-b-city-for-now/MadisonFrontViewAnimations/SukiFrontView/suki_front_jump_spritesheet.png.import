@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnb1yp2ouci8j"
-path.s3tc="res://.godot/imported/jump_front_spritesheet.png-0042208689b6c808557e47d51efb1dc0.s3tc.ctex"
+uid="uid://cbo0814h2ymek"
+path="res://.godot/imported/suki_front_jump_spritesheet.png-e3b7bd4b0d8a558d44bcb48b6323af4a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonFrontViewAnimations/F-BlueMaleSuperJumpAnimations/jump_front_spritesheet.png"
-dest_files=["res://.godot/imported/jump_front_spritesheet.png-0042208689b6c808557e47d51efb1dc0.s3tc.ctex"]
+source_file="res://MadisonFrontViewAnimations/SukiFrontView/suki_front_jump_spritesheet.png"
+dest_files=["res://.godot/imported/suki_front_jump_spritesheet.png-e3b7bd4b0d8a558d44bcb48b6323af4a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

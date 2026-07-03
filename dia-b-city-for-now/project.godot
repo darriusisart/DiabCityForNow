@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DiaBCityForNow"
-run/main_scene="uid://c8115pmysx2l3"
+run/main_scene="uid://dxgilo1cpius6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ Enums="*uid://brb7nes73ibj2"
 CardGame="*uid://bc6exyl0lrp48"
 Pillars="*uid://b4f8l4bb8jodo"
 DayFlow="*uid://diw7h3ndnjurg"
+Global="*uid://df8ylr060tbr7"
 
 [display]
 

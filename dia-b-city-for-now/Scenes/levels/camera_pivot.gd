@@ -17,7 +17,11 @@ func _ready():
 	camera.current = true
 	camera.fov = normal_fov
 	camera.position = Vector3(0, camera_height, camera_distance)
-	camera.look_at(global_position + Vector3.UP * 1.5, Vector3.UP)
+
+	player = get_tree().get_first_node_in_group("player")
+
+	if player:
+		camera.look_at(player.global_position + Vector3.UP * 1.5, Vector3.UP)
 
 func _process(delta):
 	if player == null:

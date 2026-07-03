@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ip0okcchlbhg"
-path.s3tc="res://.godot/imported/SIDE_blue_male_super_IDLE.png-a0b5167df5a3b484b908923a6e019dd0.s3tc.ctex"
+uid="uid://cxkl2g6vrhmky"
+path.s3tc="res://.godot/imported/suki_side_jump_spritesheet.png-c4c778f3723218107f54cc52cd05bc88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/S-BlueMaleSuperIdleSpriteSheet/SIDE_blue_male_super_IDLE.png"
-dest_files=["res://.godot/imported/SIDE_blue_male_super_IDLE.png-a0b5167df5a3b484b908923a6e019dd0.s3tc.ctex"]
+source_file="res://MadisonSideViewAnimations/SukiSideView/suki_side_jump_spritesheet.png"
+dest_files=["res://.godot/imported/suki_side_jump_spritesheet.png-c4c778f3723218107f54cc52cd05bc88.s3tc.ctex"]
 
 [params]
 

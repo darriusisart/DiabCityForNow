@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lcomcqose6na"
-path="res://.godot/imported/walk_front_spritesheet.png-0f80cffdbd9e4e629ee248ac8d6df978.ctex"
+path="res://.godot/imported/walk_front_spritesheet.png-a8443022e709a31463be88245803cc20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonFrontViewAnimations/F-BlueMaleSuperWalkSpriteSheet/walk_front_spritesheet.png"
-dest_files=["res://.godot/imported/walk_front_spritesheet.png-0f80cffdbd9e4e629ee248ac8d6df978.ctex"]
+source_file="res://MadisonFrontViewAnimations/WestFrontView/walk_front_spritesheet.png"
+dest_files=["res://.godot/imported/walk_front_spritesheet.png-a8443022e709a31463be88245803cc20.ctex"]
 
 [params]
 

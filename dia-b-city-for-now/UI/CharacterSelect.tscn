@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dxgilo1cpius6"]
+
+[ext_resource type="Script" uid="uid://lfrs5k11ahjg" path="res://UI/character_select.gd" id="1_y3c88"]
+[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
+
+[node name="CharacterSelect" type="Control" unique_id=972338302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y3c88")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1027908581]
+
+[node name="Background2" type="TextureRect" parent="CanvasLayer" unique_id=1663214988]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u51ui")
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=279715734]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=643569813]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -341.5
+offset_top = -450.0
+offset_right = 341.5
+offset_bottom = -351.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 65
+text = "Choose Your Hero"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=539711419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -82.0
+offset_right = 81.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectedLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=448715897]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=196544387]
+layout_mode = 2
+
+[node name="WestButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1375311940]
+layout_mode = 2
+text = "WEST"
+
+[node name="SukiButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1695501150]
+layout_mode = 2
+text = "SUKI"
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1630866573]
+layout_mode = 2
+text = "Start Game"

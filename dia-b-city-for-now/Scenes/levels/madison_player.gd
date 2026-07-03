@@ -9,8 +9,10 @@ extends CharacterBody3D
 @export var gravity := 21.0
 
 var last_view := "front"
+var character_prefix := "west"
 
 func _ready():
+	character_prefix = Global.selected_character
 	play_anim("idle_front")
 
 func _physics_process(delta):
@@ -72,5 +74,7 @@ func update_animation(input_dir: Vector2):
 
 
 func play_anim(anim_name: String):
-	if sprite.animation != anim_name:
-		sprite.play(anim_name)
+	var full_anim_name = character_prefix + "_" + anim_name
+
+	if sprite.animation != full_anim_name:
+		sprite.play(full_anim_name)

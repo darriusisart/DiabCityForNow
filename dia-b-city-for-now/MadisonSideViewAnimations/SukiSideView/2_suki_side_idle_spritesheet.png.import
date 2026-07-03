@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bskdh13a138td"
-path.s3tc="res://.godot/imported/idle_back_spritesheet.png-0911b4c1df07bb88130c736385030f6b.s3tc.ctex"
+uid="uid://bsn3jvhfvlnh"
+path="res://.godot/imported/2_suki_side_idle_spritesheet.png-3bb77f1d94183ed1e1cf1714caa8f80a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonBackViewAnimations/B-BlueMaleSuperIdleSpriteSheet/idle_back_spritesheet.png"
-dest_files=["res://.godot/imported/idle_back_spritesheet.png-0911b4c1df07bb88130c736385030f6b.s3tc.ctex"]
+source_file="res://MadisonSideViewAnimations/SukiSideView/2_suki_side_idle_spritesheet.png"
+dest_files=["res://.godot/imported/2_suki_side_idle_spritesheet.png-3bb77f1d94183ed1e1cf1714caa8f80a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

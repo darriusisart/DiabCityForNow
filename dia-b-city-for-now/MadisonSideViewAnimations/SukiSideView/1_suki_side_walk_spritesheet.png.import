@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oqsgmbnxneym"
-path="res://.godot/imported/OLDBlueMaleSuperJumpSpritesheet.png-23d2402dbcb3082ed32abe299c1d26bf.ctex"
+uid="uid://gvekoqxiiqp8"
+path="res://.godot/imported/1_suki_side_walk_spritesheet.png-48c49c229647ab8b666fbf744ae098bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/S-BlueMaleSuperJumpSpritesheet/OLDBlueMaleSuperJumpSpritesheet.png"
-dest_files=["res://.godot/imported/OLDBlueMaleSuperJumpSpritesheet.png-23d2402dbcb3082ed32abe299c1d26bf.ctex"]
+source_file="res://MadisonSideViewAnimations/SukiSideView/1_suki_side_walk_spritesheet.png"
+dest_files=["res://.godot/imported/1_suki_side_walk_spritesheet.png-48c49c229647ab8b666fbf744ae098bb.ctex"]
 
 [params]
 

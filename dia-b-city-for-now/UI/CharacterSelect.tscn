@@ -60,10 +60,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -82.0
-offset_right = 81.0
-offset_bottom = 82.0
+offset_left = -319.755
+offset_top = -95.41
+offset_right = 321.245
+offset_bottom = 304.59
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -80,6 +80,26 @@ text = "WEST"
 [node name="SukiButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1695501150]
 layout_mode = 2
 text = "SUKI"
+
+[node name="BeauButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=42154162]
+layout_mode = 2
+text = "BEAU"
+
+[node name="JodieButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1059264196]
+layout_mode = 2
+text = "JODIE"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=639566840]
+layout_mode = 2
+text = "PLAYER"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1573055196]
+layout_mode = 2
+text = "PLAYER"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1012796007]
+layout_mode = 2
+text = "PLAYER"
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1630866573]
 layout_mode = 2

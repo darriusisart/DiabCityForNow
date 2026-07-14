@@ -72,8 +72,7 @@ size = Vector3(4.54, 3, 3.96)
 environment = SubResource("Environment_gpb5v")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1814006415]
-transform = Transform3D(0.00857401, 0.9880642, -0.15380442, -0.60095024, 0.12802717, 0.78896654, 0.7992407, 0.08566418, 0.5948751, 0, 11, 16.5)
-light_energy = 0.8
+transform = Transform3D(0.008574008, 0.9880641, -0.1538044, -0.6009501, 0.12802716, 0.7889664, 0.7992405, 0.08566417, 0.59487504, 0, 17.9, 16.5)
 shadow_enabled = true
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=503587438]

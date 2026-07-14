@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ck3ap1bg8iy08" path="res://scripts/Isa_UI/Nutrition.tscn" id="3_ybdfa"]
 [ext_resource type="PackedScene" uid="uid://cpe7vi1pubnih" path="res://scripts/Isa_UI/Strength.tscn" id="4_58pao"]
 [ext_resource type="PackedScene" uid="uid://8vscbtygcul" path="res://scripts/Isa_UI/progressbar.tscn" id="5_wcia6"]
-[ext_resource type="FontFile" uid="uid://c8xjkwqds35lq" path="res://graphics/fonts/dogicapixel.otf" id="6_3mhxn"]
+[ext_resource type="FontFile" uid="uid://c8xjkwqds35lq" path="res://Font/MoreFonts/dogicapixel.otf" id="6_3mhxn"]
 
 [sub_resource type="Theme" id="Theme_o2sr6"]
 default_font = ExtResource("6_3mhxn")

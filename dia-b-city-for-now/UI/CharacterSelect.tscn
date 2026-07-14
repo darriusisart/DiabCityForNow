@@ -2,6 +2,42 @@
 
 [ext_resource type="Script" uid="uid://lfrs5k11ahjg" path="res://UI/character_select.gd" id="1_y3c88"]
 [ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="3_q2peg"]
+[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="4_jfsxs"]
+[ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/WestDynamicPose.png" id="5_ghh4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
+bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plxha"]
+bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7yor"]
+bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="CharacterSelect" type="Control" unique_id=972338302]
 layout_mode = 3
@@ -44,13 +80,24 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -341.5
-offset_top = -450.0
-offset_right = 341.5
-offset_bottom = -351.0
+offset_left = -384.5
+offset_top = -384.0
+offset_right = 377.65997
+offset_bottom = -285.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 76
 text = "Choose Your Hero"
+horizontal_alignment = 1
+
+[node name="TEMP" type="Label" parent="CanvasLayer/Control" unique_id=636816547]
+layout_mode = 0
+offset_left = -195.33502
+offset_top = -286.83997
+offset_right = 235.66498
+offset_bottom = -231.83997
+theme_override_font_sizes/font_size = 20
+text = "This is a temporary screen to test functionality
+IMAGES NEED TO BE RESIZED"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=539711419]
@@ -60,47 +107,214 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.755
-offset_top = -95.41
-offset_right = 321.245
-offset_bottom = 304.59
+offset_left = -578.255
+offset_top = -170.5
+offset_right = 567.745
+offset_bottom = 386.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SelectedLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=448715897]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=2067685544]
+layout_mode = 2
+text = "
+"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=196544387]
 layout_mode = 2
 
-[node name="WestButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1375311940]
-layout_mode = 2
-text = "WEST"
-
 [node name="SukiButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1695501150]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-text = "SUKI"
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
 
-[node name="BeauButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=42154162]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton" unique_id=2134100673]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.877502
+offset_top = -25.5
+offset_right = 56.877502
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton/MarginContainer" unique_id=135392344]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton/MarginContainer/HBoxContainer" unique_id=867272930]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=338538441]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("4_jfsxs")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1880700488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SUKI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WestButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1375311940]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton" unique_id=258041297]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton/MarginContainer" unique_id=1047537973]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton/MarginContainer/HBoxContainer" unique_id=1602786627]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1388911815]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+texture = ExtResource("5_ghh4p")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1071668602]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "WEST"
+horizontal_alignment = 1
+
+[node name="BeauButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=771279703]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton" unique_id=459244390]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer" unique_id=667223682]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer" unique_id=887300709]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1910299049]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=595002004]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "BEAU"
 
-[node name="JodieButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1059264196]
+[node name="JodieButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=657824017]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" unique_id=1882990647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer" unique_id=7004619]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer" unique_id=1795681436]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=683524397]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=988749171]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "JODIE"
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=639566840]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=82849311]
 layout_mode = 2
-text = "PLAYER"
-
-[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1573055196]
-layout_mode = 2
-text = "PLAYER"
-
-[node name="Button3" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1012796007]
-layout_mode = 2
-text = "PLAYER"
+text = "
+"
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1630866573]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7yor")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
 text = "Start Game"
+
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton" to="." method="_on_suki_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton" to="." method="_on_suki_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton" to="." method="_on_west_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton" to="." method="_on_west_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton" to="." method="_on_beau_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton" to="." method="_on_beau_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_exited"]

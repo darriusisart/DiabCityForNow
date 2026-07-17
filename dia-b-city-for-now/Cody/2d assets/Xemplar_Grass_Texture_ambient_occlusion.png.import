@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqpb78b1ca83"
-path.s3tc="res://.godot/imported/basegrasstexture.jpg-396ee4ee7909769c292583a1f82b33f4.s3tc.ctex"
+uid="uid://cngsbwwsw5r1h"
+path.s3tc="res://.godot/imported/Xemplar_Grass_Texture_ambient_occlusion.png-0dcaa6607c8d95559ea8a68234491b17.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Cody/2d assets/basegrasstexture.jpg"
-dest_files=["res://.godot/imported/basegrasstexture.jpg-396ee4ee7909769c292583a1f82b33f4.s3tc.ctex"]
+source_file="res://Cody/2d assets/Xemplar_Grass_Texture_ambient_occlusion.png"
+dest_files=["res://.godot/imported/Xemplar_Grass_Texture_ambient_occlusion.png-0dcaa6607c8d95559ea8a68234491b17.s3tc.ctex"]
 
 [params]
 

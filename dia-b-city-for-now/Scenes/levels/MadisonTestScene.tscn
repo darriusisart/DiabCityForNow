@@ -1,7 +1,10 @@
 [gd_scene format=4 uid="uid://c8115pmysx2l3"]
 
-[ext_resource type="Texture2D" uid="uid://7lklohtgso3t" path="res://Cody/2d assets/basegrasstexture_patterned.png" id="1_82fs3"]
+[ext_resource type="Texture2D" uid="uid://di7dqjka2rcqi" path="res://Cody/2d assets/Xemplar_Grass_Texture_base_color.png" id="1_pxnaa"]
+[ext_resource type="Texture2D" uid="uid://cngsbwwsw5r1h" path="res://Cody/2d assets/Xemplar_Grass_Texture_ambient_occlusion.png" id="2_bq5bp"]
 [ext_resource type="PackedScene" uid="uid://bcs3gni8xyg8a" path="res://player/UPDATED_player.tscn" id="2_p3y6q"]
+[ext_resource type="Texture2D" uid="uid://bwxgg48wnochw" path="res://Cody/2d assets/Xemplar_Grass_Texture_height.png" id="3_dqfpf"]
+[ext_resource type="Texture2D" uid="uid://b536p1264nj8w" path="res://Cody/2d assets/Xemplar_Grass_Texture_normal.png" id="4_38kbm"]
 [ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="11_6gdme"]
 [ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
@@ -38,12 +41,19 @@ _surfaces = [{
 data = PackedVector3Array(-3.55, -0.5, -3.55, -3.55, -0.5, -2.6950998, -2.3999999, -0.5, -3.145, -3.55, -0.5, -3.55, -3.55, 0.5, -2.6950998, -3.55, -0.5, -2.6950998, -3.55, -0.5, -3.55, -2.3999999, -0.5, -3.145, 3.55, -0.5, -3.55, -3.55, -0.5, -3.55, 3.55, -0.5, -3.55, -3.55, 0.5, -3.55, -3.55, -0.5, 3.55, -2.3999999, -0.5, 3.145, -3.55, -0.5, 2.6950998, -3.55, -0.5, 3.55, -3.55, -0.5, 2.6950998, -3.55, 0.5, 3.55, -3.55, -0.5, 3.55, 3.55, -0.5, 3.55, -2.3999999, -0.5, 3.145, -3.55, -0.5, -3.55, -3.55, 0.5, -3.55, -3.55, 0.5, -2.6950998, -3.55, 0.5, -3.55, -2.3999999, 0.5, -3.145, -3.55, 0.5, -2.6950998, -3.55, 0.5, -3.55, 3.55, 0.5, -3.55, -2.3999999, 0.5, -3.145, -3.55, 0.5, 3.55, -3.55, -0.5, 2.6950998, -3.55, 0.5, 2.6950998, -3.55, 0.5, 3.55, -3.55, 0.5, 2.6950998, -2.3999999, 0.5, 3.145, -3.55, -0.5, 3.55, -3.55, 0.5, 3.55, 3.55, 0.5, 3.55, -3.55, 0.5, 3.55, -2.3999999, 0.5, 3.145, 3.55, 0.5, 3.55, 3.55, -0.5, -3.55, -2.3999999, -0.5, -3.145, -0.0453, -0.5, -2.2238998, 3.55, -0.5, -3.55, -0.0453, -0.5, -2.2238998, 0.92999995, -0.5, 0, 3.55, -0.5, 3.55, -0.0453, -0.5, 2.2238998, -2.3999999, -0.5, 3.145, 3.55, -0.5, 3.55, 0.92999995, -0.5, 0, -0.0453, -0.5, 2.2238998, -3.55, -0.5, 3.55, 3.55, 0.5, 3.55, 3.55, -0.5, 3.55, 3.55, -0.5, -3.55, 0.92999995, -0.5, 0, 3.55, -0.5, 3.55, 3.55, -0.5, -3.55, 3.55, -0.5, 3.55, 3.55, 0.5, 3.55, -3.55, 0.5, -3.55, 3.55, -0.5, -3.55, 3.55, 0.5, -3.55, 3.55, 0.5, -3.55, -0.0453, 0.5, -2.2238998, -2.3999999, 0.5, -3.145, 3.55, 0.5, -3.55, 0.92999995, 0.5, 0, -0.0453, 0.5, -2.2238998, 3.55, -0.5, -3.55, 3.55, 0.5, 3.55, 3.55, 0.5, -3.55, 3.55, 0.5, 3.55, -2.3999999, 0.5, 3.145, -0.0453, 0.5, 2.2238998, 3.55, 0.5, 3.55, -0.0453, 0.5, 2.2238998, 0.92999995, 0.5, 0, 3.55, 0.5, -3.55, 3.55, 0.5, 3.55, 0.92999995, 0.5, 0, -3.55, -0.5, -2.6950998, -3.55, 0.5, -2.6950998, -2.3999999, -0.5, -3.145, -2.3999999, -0.5, -3.145, -0.0453, 0.5, -2.2238998, -0.0453, -0.5, -2.2238998, -2.3999999, -0.5, 3.145, -2.3999999, 0.5, 3.145, -3.55, -0.5, 2.6950998, -2.3999999, -0.5, 3.145, -0.0453, -0.5, 2.2238998, -2.3999999, 0.5, 3.145, -2.3999999, 0.5, -3.145, -2.3999999, -0.5, -3.145, -3.55, 0.5, -2.6950998, -2.3999999, -0.5, -3.145, -2.3999999, 0.5, -3.145, -0.0453, 0.5, -2.2238998, -3.55, 0.5, 2.6950998, -3.55, -0.5, 2.6950998, -2.3999999, 0.5, 3.145, -2.3999999, 0.5, 3.145, -0.0453, -0.5, 2.2238998, -0.0453, 0.5, 2.2238998, -0.0453, -0.5, -2.2238998, 0.92999995, 0.5, 0, 0.92999995, -0.5, 0, -0.0453, 0.5, 2.2238998, -0.0453, -0.5, 2.2238998, 0.92999995, -0.5, 0, -0.0453, -0.5, -2.2238998, -0.0453, 0.5, -2.2238998, 0.92999995, 0.5, 0, -0.0453, 0.5, 2.2238998, 0.92999995, -0.5, 0, 0.92999995, 0.5, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsmjj"]
-albedo_texture = ExtResource("1_82fs3")
-metallic = 1.0
+albedo_texture = ExtResource("1_pxnaa")
+metallic = 0.13
 metallic_specular = 0.0
-roughness = 0.81
+normal_enabled = true
+normal_texture = ExtResource("4_38kbm")
+ao_enabled = true
+ao_texture = ExtResource("2_bq5bp")
 ao_texture_channel = 3
-uv1_scale = Vector3(14, 14, 14)
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_dqfpf")
+uv1_scale = Vector3(8.5, 8.5, 8.5)
+uv2_scale = Vector3(0.685, 0.685, 0.685)
+uv2_offset = Vector3(0.88, 0, 0)
 
 [sub_resource type="Animation" id="Animation_t721i"]
 resource_name = "idle"
@@ -86,6 +96,7 @@ shape = SubResource("ConcavePolygonShape3D_3ddn7")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1248531890]
 transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.6, -0.4013853, 0, -1.8331494)
+calculate_tangents = false
 use_collision = true
 size = Vector3(23.83, 1, 17.135)
 material = SubResource("StandardMaterial3D_wsmjj")

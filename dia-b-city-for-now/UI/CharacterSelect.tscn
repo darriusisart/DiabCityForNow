@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="3_q2peg"]
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="4_jfsxs"]
-[ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/WestDynamicPose.png" id="5_ghh4p"]
+[ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/WestCharacterCard.png" id="5_ghh4p"]
+[ext_resource type="Texture2D" uid="uid://dnj2gf6kyr6b" path="res://Assets/MadisonPNGs/BeauCharacterCard.png" id="6_plxha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
@@ -214,7 +215,7 @@ text = "WEST"
 horizontal_alignment = 1
 
 [node name="BeauButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=771279703]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q2peg")
 theme_override_font_sizes/font_size = 34
@@ -245,12 +246,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1910299049]
+custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
+texture = ExtResource("6_plxha")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=595002004]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1532690772]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "BEAU"
+horizontal_alignment = 1
 
 [node name="JodieButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=657824017]
 custom_minimum_size = Vector2(150, 150)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cympnugt81qiu"
-path="res://.godot/imported/suki_back_jump_spritesheet.png-b45abd87886b6ca88ef3d48627eb9a39.ctex"
+uid="uid://basc472ito3xn"
+path="res://.godot/imported/2_suki_front_idle.png-1f694006f1190f0038646127dbdcc67e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonBackViewAnimations/SukiBackView/suki_back_jump_spritesheet.png"
-dest_files=["res://.godot/imported/suki_back_jump_spritesheet.png-b45abd87886b6ca88ef3d48627eb9a39.ctex"]
+source_file="res://MadisonFrontViewAnimations/SukiFrontView/2_suki_front_idle.png"
+dest_files=["res://.godot/imported/2_suki_front_idle.png-1f694006f1190f0038646127dbdcc67e.ctex"]
 
 [params]
 

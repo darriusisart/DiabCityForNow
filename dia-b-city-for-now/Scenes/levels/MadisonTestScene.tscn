@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bcs3gni8xyg8a" path="res://player/UPDATED_player.tscn" id="2_p3y6q"]
 [ext_resource type="Texture2D" uid="uid://bwxgg48wnochw" path="res://Cody/2d assets/Xemplar_Grass_Texture_height.png" id="3_dqfpf"]
 [ext_resource type="Texture2D" uid="uid://b536p1264nj8w" path="res://Cody/2d assets/Xemplar_Grass_Texture_normal.png" id="4_38kbm"]
+[ext_resource type="Script" uid="uid://toaljed1v5lp" path="res://Scenes/levels/infiniteboundary_camera.gd" id="7_bq5bp"]
+[ext_resource type="Shader" uid="uid://ba1h1gdsyflvo" path="res://Scenes/levels/blackoutline.gdshader" id="7_dqfpf"]
 [ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="11_6gdme"]
 [ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
@@ -62,6 +64,17 @@ resource_name = "idle"
 _data = {
 &"idle": SubResource("Animation_t721i")
 }
+
+[sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
+size = Vector2(1.534654, 1.534654)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
+render_priority = 10
+shader = ExtResource("7_dqfpf")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 2.5210001197475
+shader_parameter/depth_threshold = 0.0509999987097
+shader_parameter/slope_bias = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3y6q"]
 albedo_color = Color(0.21176471, 0.3647059, 1, 1)
@@ -127,6 +140,12 @@ camera_height = 5.0
 camera_distance = 9.0
 
 [node name="Camera" type="Camera3D" parent="CameraRig" unique_id=808034852]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRig/Camera" unique_id=249729686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("QuadMesh_dqfpf")
+surface_material_override/0 = SubResource("ShaderMaterial_38kbm")
+script = ExtResource("7_bq5bp")
 
 [node name="Interactable" type="Node3D" parent="." unique_id=795628492]
 transform = Transform3D(2.06, 0, 0, 0, 2.06, 0, 0, 0, 2.06, 10.900001, 1.7999998, 0.20000029)

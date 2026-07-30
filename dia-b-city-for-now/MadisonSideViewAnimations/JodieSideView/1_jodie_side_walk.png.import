@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwnerqvpu2ol"
-path="res://.godot/imported/SukiCharacterCard.webp-d2bdb85b8c86316f61ba5e94f3322596.ctex"
+uid="uid://hs4kncu7fcbi"
+path="res://.godot/imported/1_jodie_side_walk.png-485efb37e7202b31827e329ac6931c03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/SukiCharacterCard.webp"
-dest_files=["res://.godot/imported/SukiCharacterCard.webp-d2bdb85b8c86316f61ba5e94f3322596.ctex"]
+source_file="res://MadisonSideViewAnimations/JodieSideView/1_jodie_side_walk.png"
+dest_files=["res://.godot/imported/1_jodie_side_walk.png-485efb37e7202b31827e329ac6931c03.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

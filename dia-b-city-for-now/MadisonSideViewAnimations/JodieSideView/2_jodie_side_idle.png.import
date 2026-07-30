@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnj2gf6kyr6b"
-path="res://.godot/imported/BeauCharacterCard.png-133ebf0fa9486679cf5ae497f10ff465.ctex"
+uid="uid://cyjt5t2fh87xx"
+path="res://.godot/imported/2_jodie_side_idle.png-d05f31aabdc0ba71d48c648c308bb7eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/BeauCharacterCard.png"
-dest_files=["res://.godot/imported/BeauCharacterCard.png-133ebf0fa9486679cf5ae497f10ff465.ctex"]
+source_file="res://MadisonSideViewAnimations/JodieSideView/2_jodie_side_idle.png"
+dest_files=["res://.godot/imported/2_jodie_side_idle.png-d05f31aabdc0ba71d48c648c308bb7eb.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

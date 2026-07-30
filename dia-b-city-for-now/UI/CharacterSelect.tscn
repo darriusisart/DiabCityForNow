@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="3_q2peg"]
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="4_jfsxs"]
-[ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/WestCharacterCard.png" id="5_ghh4p"]
-[ext_resource type="Texture2D" uid="uid://dnj2gf6kyr6b" path="res://Assets/MadisonPNGs/BeauCharacterCard.png" id="6_plxha"]
+[ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/CharacterCards/WestCharacterCard.png" id="5_ghh4p"]
+[ext_resource type="Texture2D" uid="uid://dnj2gf6kyr6b" path="res://Assets/MadisonPNGs/CharacterCards/BeauCharacterCard.png" id="6_plxha"]
+[ext_resource type="Texture2D" uid="uid://bpq5uu6cab571" path="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png" id="7_s7yor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
@@ -295,6 +296,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "JODIE"
+
+[node name="NiaButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=405176563]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" unique_id=1438218996]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer" unique_id=1599982115]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer" unique_id=1725096198]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1253231986]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+texture = ExtResource("7_s7yor")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=335470930]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "NIA"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=82849311]
 layout_mode = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dle1gftrqjm00"
-path="res://.godot/imported/WestCharacterCard.png-e29f2a63f515b277c945f95d0c5617e6.ctex"
+uid="uid://b4r64yvvlgnau"
+path="res://.godot/imported/1_jodie_side_idle.png-b587ccf905b995bde30da6e4df576f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/WestCharacterCard.png"
-dest_files=["res://.godot/imported/WestCharacterCard.png-e29f2a63f515b277c945f95d0c5617e6.ctex"]
+source_file="res://MadisonSideViewAnimations/JodieSideView/1_jodie_side_idle.png"
+dest_files=["res://.godot/imported/1_jodie_side_idle.png-b587ccf905b995bde30da6e4df576f44.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

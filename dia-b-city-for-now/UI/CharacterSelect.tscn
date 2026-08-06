@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="4_jfsxs"]
 [ext_resource type="Texture2D" uid="uid://dle1gftrqjm00" path="res://Assets/MadisonPNGs/CharacterCards/WestCharacterCard.png" id="5_ghh4p"]
 [ext_resource type="Texture2D" uid="uid://dnj2gf6kyr6b" path="res://Assets/MadisonPNGs/CharacterCards/BeauCharacterCard.png" id="6_plxha"]
+[ext_resource type="Texture2D" uid="uid://rue5mwat25xt" path="res://Assets/MadisonPNGs/CharacterCards/JodieCharacterCard.png" id="7_7rves"]
 [ext_resource type="Texture2D" uid="uid://bpq5uu6cab571" path="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png" id="7_s7yor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
@@ -259,7 +260,7 @@ text = "BEAU"
 horizontal_alignment = 1
 
 [node name="JodieButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=657824017]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q2peg")
 theme_override_font_sizes/font_size = 34
@@ -290,12 +291,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=683524397]
+custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
+texture = ExtResource("7_7rves")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=988749171]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=523577764]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "JODIE"
+horizontal_alignment = 1
 
 [node name="NiaButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=405176563]
 custom_minimum_size = Vector2(300, 300)
@@ -365,5 +370,7 @@ text = "Start Game"
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton" to="." method="_on_beau_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" to="." method="_on_nia_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" to="." method="_on_nia_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_exited"]

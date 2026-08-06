@@ -5,6 +5,8 @@ var selected_character := "west"
 @onready var west_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton
 @onready var suki_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton
 @onready var beau_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton
+@onready var jodie_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton
+@onready var nia_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton
 @onready var start_button = $CanvasLayer/Control/VBoxContainer/StartButton
 @onready var selected_label = $CanvasLayer/Control/VBoxContainer/SelectedLabel
 
@@ -17,11 +19,13 @@ func _ready():
 	west_button.pressed.connect(_on_west_pressed)
 	suki_button.pressed.connect(_on_suki_pressed)
 	beau_button.pressed.connect(_on_beau_pressed)
+	jodie_button.pressed.connect(_on_jodie_pressed)
+	nia_button.pressed.connect(_on_nia_pressed)
 	start_button.pressed.connect(_on_start_pressed)
 
 	await get_tree().process_frame
 
-	for button in [west_button, suki_button, beau_button, start_button]:
+	for button in [west_button, suki_button, beau_button, jodie_button, nia_button, start_button]:
 		button.pivot_offset = button.size / 2.0
 
 	selected_label.text = "Selected: "
@@ -54,7 +58,17 @@ func _on_beau_pressed():
 	selected_character = "beau"
 	selected_label.text = "Selected: Beau"
 	print("Selected Beau")
-
+	
+func _on_jodie_pressed():
+	selected_character = "jodie"
+	selected_label.text = "Selected: Jodie"
+	print("Selected Jodie")
+	
+func _on_nia_pressed():
+	selected_character = "nia"
+	selected_label.text = "Selected: Nia"
+	print("Selected Nia")
+	
 func _on_start_pressed():
 	Global.selected_character = selected_character
 	get_tree().change_scene_to_file("res://Scenes/levels/MadisonTestScene.tscn")
@@ -85,11 +99,11 @@ func _on_beau_button_mouse_exited() -> void:
 
 
 func _on_jodie_button_mouse_entered() -> void:
-	pass # Replace with function body.
+	animate_button(jodie_button, HOVER_SCALE)
 
 
 func _on_jodie_button_mouse_exited() -> void:
-	pass # Replace with function body.
+	animate_button(jodie_button, Vector2.ONE)
 
 
 func _on_start_button_mouse_entered() -> void:
@@ -98,3 +112,11 @@ func _on_start_button_mouse_entered() -> void:
 
 func _on_start_button_mouse_exited() -> void:
 	animate_button(start_button, Vector2.ONE)
+
+
+func _on_nia_button_mouse_entered() -> void:
+	animate_button(nia_button, HOVER_SCALE)
+
+
+func _on_nia_button_mouse_exited() -> void:
+	animate_button(nia_button, Vector2.ONE)

@@ -66,7 +66,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(1.534654, 1.534654)
+size = Vector2(2.5923543, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -137,7 +137,7 @@ libraries/ = SubResource("AnimationLibrary_ieech")
 transform = Transform3D(1, 0, 0, 0, 0.97778326, -0.20961857, 0, 0.20961857, 0.97778326, 0, 5, 10)
 script = ExtResource("99_ebni6")
 camera_height = 5.0
-camera_distance = 9.0
+camera_distance = 7.2
 
 [node name="Camera" type="Camera3D" parent="CameraRig" unique_id=808034852]
 

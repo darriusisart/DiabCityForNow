@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsn3jvhfvlnh"
-path="res://.godot/imported/2_suki_side_idle_spritesheet.png-3bb77f1d94183ed1e1cf1714caa8f80a.ctex"
+uid="uid://8yeschrxmabc"
+path="res://.godot/imported/2_nia_side_idle.png-d3f510740d2a65b91190536138d9a504.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/SukiSideView/2_suki_side_idle_spritesheet.png"
-dest_files=["res://.godot/imported/2_suki_side_idle_spritesheet.png-3bb77f1d94183ed1e1cf1714caa8f80a.ctex"]
+source_file="res://MadisonSideViewAnimations/NiaSideView/2_nia_side_idle.png"
+dest_files=["res://.godot/imported/2_nia_side_idle.png-d3f510740d2a65b91190536138d9a504.ctex"]
 
 [params]
 

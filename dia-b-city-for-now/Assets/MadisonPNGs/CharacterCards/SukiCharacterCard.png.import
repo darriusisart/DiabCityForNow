@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i035nwumbu2r"
-path.s3tc="res://.godot/imported/2_suki_side_walk_spritesheet.png-25c22b9b08933f2a1ffb3adf1f4f5b20.s3tc.ctex"
+uid="uid://b8kexh0pu4vj2"
+path="res://.godot/imported/SukiCharacterCard.png-e2b1f27b4b04e5264e4abf3ad27ce426.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/SukiSideView/2_suki_side_walk_spritesheet.png"
-dest_files=["res://.godot/imported/2_suki_side_walk_spritesheet.png-25c22b9b08933f2a1ffb3adf1f4f5b20.s3tc.ctex"]
+source_file="res://Assets/MadisonPNGs/CharacterCards/SukiCharacterCard.png"
+dest_files=["res://.godot/imported/SukiCharacterCard.png-e2b1f27b4b04e5264e4abf3ad27ce426.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

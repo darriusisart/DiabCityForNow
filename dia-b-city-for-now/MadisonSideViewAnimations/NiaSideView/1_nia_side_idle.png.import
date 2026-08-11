@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3caf8m7eec85"
-path="res://.godot/imported/NiaCharacterCard.png-08f6c8f3cfb18c07180032aca31581ee.ctex"
+uid="uid://t0v7qg55rfte"
+path="res://.godot/imported/1_nia_side_idle.png-dc6ddc24e911c65d376db5bc8b4affbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png"
-dest_files=["res://.godot/imported/NiaCharacterCard.png-08f6c8f3cfb18c07180032aca31581ee.ctex"]
+source_file="res://MadisonSideViewAnimations/NiaSideView/1_nia_side_idle.png"
+dest_files=["res://.godot/imported/1_nia_side_idle.png-dc6ddc24e911c65d376db5bc8b4affbf.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

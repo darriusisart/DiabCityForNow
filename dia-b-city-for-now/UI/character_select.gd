@@ -6,7 +6,7 @@ var selected_character := "west"
 @onready var suki_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton
 @onready var beau_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton
 @onready var jodie_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton
-@onready var nia_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton
+@onready var nia_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton
 @onready var start_button = $CanvasLayer/Control/VBoxContainer/StartButton
 @onready var selected_label = $CanvasLayer/Control/VBoxContainer/SelectedLabel
 

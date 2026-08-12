@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygiop8h03xjg"
-path="res://.godot/imported/WestCharacterCard.png-753fb2081c1e89a010b5cf815df0680e.ctex"
+uid="uid://du77xlvpglvnq"
+path="res://.godot/imported/ZayneCharacterCard.png-a9667c5af2f6a339077b54d082d67704.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/CharacterCards/WestCharacterCard.png"
-dest_files=["res://.godot/imported/WestCharacterCard.png-753fb2081c1e89a010b5cf815df0680e.ctex"]
+source_file="res://Assets/MadisonPNGs/CharacterCards/ZayneCharacterCard.png"
+dest_files=["res://.godot/imported/ZayneCharacterCard.png-a9667c5af2f6a339077b54d082d67704.ctex"]
 
 [params]
 

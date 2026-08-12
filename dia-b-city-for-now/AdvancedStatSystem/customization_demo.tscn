@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cu6jtdqmle1kr"]
 
-[ext_resource type="Shader" uid="uid://blmxfta847ayk" path="res://AdvancedStatSystem/character_color_advanced.gdshader" id="1_shader"]
+[ext_resource type="Shader" uid="uid://blmxfta847ayk" path="res://AdvancedStatSystem/character_select.gdshader" id="1_shader"]
 [ext_resource type="Script" uid="uid://bsev46qy8xvee" path="res://AdvancedStatSystem/character_customizer.gd" id="2_customizer"]
 [ext_resource type="Script" uid="uid://dga4x5uh5x0ht" path="res://AdvancedStatSystem/customization_ui.gd" id="3_ui"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://PlaceholderGraphics/characters/main/main_basic.png" id="4_sprite"]

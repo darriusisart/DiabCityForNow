@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://lfrs5k11ahjg" path="res://UI/character_select.gd" id="1_y3c88"]
 [ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="3_q2peg"]
-[ext_resource type="Texture2D" uid="uid://b8kexh0pu4vj2" path="res://Assets/MadisonPNGs/CharacterCards/SukiCharacterCard.png" id="4_7rves"]
-[ext_resource type="Texture2D" uid="uid://hs70re02obx" path="res://Assets/MadisonPNGs/CharacterCards/WestCharacterCard.png" id="5_ghh4p"]
-[ext_resource type="Texture2D" uid="uid://gfidfcy4to8u" path="res://Assets/MadisonPNGs/CharacterCards/BeauCharacterCard.png" id="6_plxha"]
-[ext_resource type="Texture2D" uid="uid://bc7jbfphavmoy" path="res://Assets/MadisonPNGs/CharacterCards/JodieCharacterCard.png" id="7_7rves"]
-[ext_resource type="Texture2D" uid="uid://d3caf8m7eec85" path="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png" id="7_s7yor"]
+[ext_resource type="Shader" uid="uid://t8sys574r2ad" path="res://UI/CharacterSelectOutline.gdshader" id="4_4axbt"]
+[ext_resource type="Texture2D" uid="uid://j7kw41lwwtd" path="res://Assets/MadisonPNGs/CharacterCards/SukiCharacterCard.png" id="4_7rves"]
+[ext_resource type="Texture2D" uid="uid://bygiop8h03xjg" path="res://Assets/MadisonPNGs/CharacterCards/WestCharacterCard.png" id="5_ghh4p"]
+[ext_resource type="Texture2D" uid="uid://canp17h5gyxbb" path="res://Assets/MadisonPNGs/CharacterCards/BeauCharacterCard.png" id="6_plxha"]
+[ext_resource type="Texture2D" uid="uid://bv5clr74aism1" path="res://Assets/MadisonPNGs/CharacterCards/JodieCharacterCard.png" id="7_7rves"]
+[ext_resource type="Texture2D" uid="uid://c68hq3hm18kxa" path="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png" id="7_s7yor"]
+[ext_resource type="Texture2D" uid="uid://du77xlvpglvnq" path="res://Assets/MadisonPNGs/CharacterCards/ZayneCharacterCard.png" id="9_vbyo3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
@@ -20,6 +22,11 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4bdb"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plxha"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
 border_width_left = 5
@@ -30,6 +37,31 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqhx5"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1sio"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf7r8"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsyu2"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0lp0"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7yor"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
@@ -83,10 +115,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -384.5
-offset_top = -384.0
-offset_right = 377.65997
-offset_bottom = -285.0
+offset_left = -384.0
+offset_top = -446.0
+offset_right = 378.15997
+offset_bottom = -347.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 76
 text = "Choose Your Hero"
@@ -94,10 +126,10 @@ horizontal_alignment = 1
 
 [node name="TEMP" type="Label" parent="CanvasLayer/Control" unique_id=636816547]
 layout_mode = 0
-offset_left = -195.33502
-offset_top = -286.83997
-offset_right = 235.66498
-offset_bottom = -231.83997
+offset_left = -194.83502
+offset_top = -348.83997
+offset_right = 236.16498
+offset_bottom = -293.83997
 theme_override_font_sizes/font_size = 20
 text = "This is a temporary screen to test functionality
 IMAGES NEED TO BE RESIZED"
@@ -110,10 +142,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -578.255
-offset_top = -170.5
-offset_right = 567.745
-offset_bottom = 386.5
+offset_left = -582.0
+offset_top = -338.0
+offset_right = 630.0
+offset_bottom = 474.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -161,6 +193,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/SukiButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=338538441]
+material = SubResource("ShaderMaterial_l4bdb")
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 texture = ExtResource("4_7rves")
@@ -205,6 +238,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/WestButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1388911815]
+material = SubResource("ShaderMaterial_uqhx5")
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 texture = ExtResource("5_ghh4p")
@@ -248,6 +282,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1910299049]
+material = SubResource("ShaderMaterial_f1sio")
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 texture = ExtResource("6_plxha")
@@ -291,6 +326,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=683524397]
+material = SubResource("ShaderMaterial_cf7r8")
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 texture = ExtResource("7_7rves")
@@ -302,50 +338,55 @@ theme_override_font_sizes/font_size = 40
 text = "JODIE"
 horizontal_alignment = 1
 
-[node name="NiaButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=405176563]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=765644439]
+layout_mode = 2
+
+[node name="ZayneButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=1935008569]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q2peg")
 theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" unique_id=1438218996]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ZayneButton" unique_id=1285528583]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
+offset_left = -56.877502
 offset_top = -25.5
-offset_right = 65.5
+offset_right = 56.877502
 offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer" unique_id=1599982115]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ZayneButton/MarginContainer" unique_id=1110481470]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer" unique_id=1725096198]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ZayneButton/MarginContainer/HBoxContainer" unique_id=366808217]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1253231986]
-custom_minimum_size = Vector2(210, 210)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ZayneButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2015179250]
+material = SubResource("ShaderMaterial_qsyu2")
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-texture = ExtResource("7_s7yor")
-expand_mode = 1
+texture = ExtResource("9_vbyo3")
+expand_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=335470930]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ZayneButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1284993287]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "NIA"
+text = "ZAYNE"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="NiaButton2" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=708262295]
+[node name="LeenaButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=708262295]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q2peg")
@@ -356,7 +397,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton2" unique_id=1019917534]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton" unique_id=1019917534]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -370,27 +411,66 @@ offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton2/MarginContainer" unique_id=1891388802]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer" unique_id=1891388802]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton2/MarginContainer/HBoxContainer" unique_id=902487295]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer/HBoxContainer" unique_id=902487295]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1194119248]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1194119248]
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1437316078]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1437316078]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LEENA"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=82849311]
+[node name="NiaButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=405176563]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-text = "
-"
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton" unique_id=1438218996]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton/MarginContainer" unique_id=1599982115]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton/MarginContainer/HBoxContainer" unique_id=1725096198]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1253231986]
+material = SubResource("ShaderMaterial_p0lp0")
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+texture = ExtResource("7_s7yor")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=335470930]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "NIA"
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1630866573]
 custom_minimum_size = Vector2(0, 100)
@@ -412,7 +492,7 @@ text = "Start Game"
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton" to="." method="_on_beau_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton" to="." method="_on_jodie_button_mouse_exited"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" to="." method="_on_nia_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/NiaButton" to="." method="_on_nia_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton" to="." method="_on_nia_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton" to="." method="_on_nia_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_exited"]

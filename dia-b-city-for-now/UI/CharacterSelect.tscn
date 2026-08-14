@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bv5clr74aism1" path="res://Assets/MadisonPNGs/CharacterCards/JodieCharacterCard.png" id="7_7rves"]
 [ext_resource type="Texture2D" uid="uid://c68hq3hm18kxa" path="res://Assets/MadisonPNGs/CharacterCards/NiaCharacterCard.png" id="7_s7yor"]
 [ext_resource type="Texture2D" uid="uid://du77xlvpglvnq" path="res://Assets/MadisonPNGs/CharacterCards/ZayneCharacterCard.png" id="9_vbyo3"]
+[ext_resource type="Texture2D" uid="uid://d4d55qp8t7yhg" path="res://Assets/MadisonPNGs/CharacterCards/LeenaCharacterCard.png" id="10_l4bdb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghh4p"]
 bg_color = Color(0, 0.039215688, 0.03137255, 0.43529412)
@@ -54,6 +55,11 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_size = 20.00000095
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qsyu2"]
+shader = ExtResource("4_4axbt")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 20.00000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_231yx"]
 shader = ExtResource("4_4axbt")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_size = 20.00000095
@@ -418,8 +424,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1194119248]
+material = SubResource("ShaderMaterial_231yx")
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
+texture = ExtResource("10_l4bdb")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1437316078]
@@ -470,6 +478,49 @@ expand_mode = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "NIA"
+horizontal_alignment = 1
+
+[node name="ButtonTemp" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=371396875]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q2peg")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_plxha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp" unique_id=1078852791]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -25.5
+offset_right = 65.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer" unique_id=664478745]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer" unique_id=1609647332]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer/VBoxContainer" unique_id=368338239]
+material = SubResource("ShaderMaterial_231yx")
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1678436843]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "NAME"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1630866573]

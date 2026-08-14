@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
 [ext_resource type="Texture2D" uid="uid://b8phrn201iqqb" path="res://Assets/MadisonPNGs/TEMPTESTSukiNeutral.png" id="14_0viit"]
 [ext_resource type="Texture2D" uid="uid://q1y7s3d5xtf5" path="res://Assets/MadisonPNGs/TEMPTESTSukiHappy.png" id="15_8vcoy"]
+[ext_resource type="PackedScene" uid="uid://cmcn1bjfrnyd3" path="res://Cody/testscene.tscn" id="16_38kbm"]
 [ext_resource type="PackedScene" uid="uid://da0g2pal51or7" path="res://UI/MadisonDialogueBox.tscn" id="17_h1t3c"]
 [ext_resource type="PackedScene" uid="uid://c7uexn7l103af" path="res://UI/PlayerJournal.tscn" id="18_8vcoy"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://Scenes/levels/camera_pivot.gd" id="99_ebni6"]
@@ -53,9 +54,10 @@ ao_texture = ExtResource("2_bq5bp")
 ao_texture_channel = 3
 heightmap_enabled = true
 heightmap_texture = ExtResource("3_dqfpf")
-uv1_scale = Vector3(8.5, 8.5, 8.5)
-uv2_scale = Vector3(0.685, 0.685, 0.685)
-uv2_offset = Vector3(0.88, 0, 0)
+uv1_scale = Vector3(24.215, 24.215, 24.215)
+uv1_offset = Vector3(0.565, 1.11, -0.185)
+uv2_scale = Vector3(1.41, 1.41, 1.41)
+uv2_offset = Vector3(0.22, 0, 0)
 
 [sub_resource type="Animation" id="Animation_t721i"]
 resource_name = "idle"
@@ -66,7 +68,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(2.5923543, 1.534654)
+size = Vector2(1.534654, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -108,7 +110,7 @@ mesh = SubResource("ArrayMesh_ycka3")
 shape = SubResource("ConcavePolygonShape3D_3ddn7")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1248531890]
-transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.6, -0.4013853, 0, -1.8331494)
+transform = Transform3D(12.94, 0, 0, 0, 7.612, 0, 0, 0, 12.178, -0.4013853, -3.1407065, -1.8331494)
 calculate_tangents = false
 use_collision = true
 size = Vector3(23.83, 1, 17.135)
@@ -203,6 +205,9 @@ shape = SubResource("BoxShape3D_61mhm")
 [node name="DialogueBox" parent="." unique_id=536704838 instance=ExtResource("17_h1t3c")]
 
 [node name="PlayerJournal" parent="." unique_id=601475039 instance=ExtResource("18_8vcoy")]
+
+[node name="Testscene" parent="." unique_id=480058668 instance=ExtResource("16_38kbm")]
+transform = Transform3D(-0.9983004, 0, 0.058278352, 0, 1, 0, -0.058278352, 0, -0.9983004, 0.13205338, 0.6405792, -44.15916)
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]

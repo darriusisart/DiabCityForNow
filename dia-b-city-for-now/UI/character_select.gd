@@ -7,6 +7,7 @@ var selected_character := "west"
 @onready var beau_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/BeauButton
 @onready var jodie_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/JodieButton
 @onready var nia_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton
+@onready var leena_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton
 @onready var start_button = $CanvasLayer/Control/VBoxContainer/StartButton
 @onready var selected_label = $CanvasLayer/Control/VBoxContainer/SelectedLabel
 
@@ -21,11 +22,12 @@ func _ready():
 	beau_button.pressed.connect(_on_beau_pressed)
 	jodie_button.pressed.connect(_on_jodie_pressed)
 	nia_button.pressed.connect(_on_nia_pressed)
+	leena_button.pressed.connect(_on_leena_pressed)
 	start_button.pressed.connect(_on_start_pressed)
 
 	await get_tree().process_frame
 
-	for button in [west_button, suki_button, beau_button, jodie_button, nia_button, start_button]:
+	for button in [west_button, suki_button, beau_button, jodie_button, nia_button, leena_button, start_button]:
 		button.pivot_offset = button.size / 2.0
 
 	selected_label.text = "Selected: "
@@ -68,6 +70,11 @@ func _on_nia_pressed():
 	selected_character = "nia"
 	selected_label.text = "Selected: Nia"
 	print("Selected Nia")
+	
+func _on_leena_pressed():
+	selected_character = "leena"
+	selected_label.text = "Selected: Leena"
+	print("Selected Leena")
 	
 func _on_start_pressed():
 	Global.selected_character = selected_character
@@ -120,3 +127,10 @@ func _on_nia_button_mouse_entered() -> void:
 
 func _on_nia_button_mouse_exited() -> void:
 	animate_button(nia_button, Vector2.ONE)
+
+
+func _on_leena_button_mouse_entered() -> void:
+	animate_button(leena_button, HOVER_SCALE)
+
+func _on_leena_button_mouse_exited() -> void:
+	animate_button(leena_button, Vector2.ONE)

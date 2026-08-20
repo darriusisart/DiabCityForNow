@@ -78,3 +78,8 @@ func play_anim(anim_name: String):
 
 	if sprite.animation != full_anim_name:
 		sprite.play(full_anim_name)
+
+
+func _on_minigame_portal_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		get_tree().change_scene_to_file("res://MinigameScenes/LunchlineChaosPrototype.tscn")

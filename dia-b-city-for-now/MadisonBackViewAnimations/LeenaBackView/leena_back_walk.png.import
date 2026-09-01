@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnb1yp2ouci8j"
-path="res://.godot/imported/jump_front_spritesheet.png-8501d4e7aa074ef112d8f4983ca6b19d.ctex"
+uid="uid://dtap5tynpwrbp"
+path="res://.godot/imported/leena_back_walk.png-dd7e9f4c99a78b2b8525389cd2fb50ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonFrontViewAnimations/WestFrontView/jump_front_spritesheet.png"
-dest_files=["res://.godot/imported/jump_front_spritesheet.png-8501d4e7aa074ef112d8f4983ca6b19d.ctex"]
+source_file="res://MadisonBackViewAnimations/LeenaBackView/leena_back_walk.png"
+dest_files=["res://.godot/imported/leena_back_walk.png-dd7e9f4c99a78b2b8525389cd2fb50ce.ctex"]
 
 [params]
 

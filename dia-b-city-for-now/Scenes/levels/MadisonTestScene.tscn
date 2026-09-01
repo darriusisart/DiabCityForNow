@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(2.9136186, 1.534654)
+size = Vector2(1.994881, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -213,11 +213,11 @@ mesh = SubResource("ArrayMesh_38kbm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch1/StaticBody3D" unique_id=1991807442]
 shape = SubResource("ConcavePolygonShape3D_0viit")
 
-[node name="MinigamePortal" type="Area3D" parent="MinigameTestArch1" unique_id=1268060423]
+[node name="MinigamePortalLunchLine" type="Area3D" parent="MinigameTestArch1" unique_id=1268060423]
 script = ExtResource("17_0viit")
 destination_scene = "uid://b5l13cqywml6c"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch1/MinigamePortal" unique_id=1477801139]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch1/MinigamePortalLunchLine" unique_id=1477801139]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07499981, 0.19999981, 0.8500004)
 shape = SubResource("BoxShape3D_38kbm")
 
@@ -232,4 +232,4 @@ shape = SubResource("ConcavePolygonShape3D_0viit")
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="MinigameTestArch1/MinigamePortal" to="MadisonPlayer" method="_on_minigame_portal_body_entered"]
+[connection signal="body_entered" from="MinigameTestArch1/MinigamePortalLunchLine" to="MadisonPlayer" method="_on_minigame_portal_body_entered"]

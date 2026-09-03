@@ -486,7 +486,7 @@ theme_override_font_sizes/font_size = 40
 text = "NIA"
 horizontal_alignment = 1
 
-[node name="ButtonTemp" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=371396875]
+[node name="CasButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2" unique_id=371396875]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q2peg")
@@ -497,7 +497,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ghh4p")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ghh4p")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp" unique_id=1078852791]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton" unique_id=1078852791]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -511,20 +511,20 @@ offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer" unique_id=664478745]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton/MarginContainer" unique_id=664478745]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer" unique_id=1609647332]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton/MarginContainer/HBoxContainer" unique_id=1609647332]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2078347540]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2078347540]
 material = SubResource("ShaderMaterial_mhq3i")
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 texture = ExtResource("12_uqhx5")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/ButtonTemp/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1678436843]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1678436843]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "CAS"
@@ -554,5 +554,7 @@ text = "Start Game"
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/LeenaButton" to="." method="_on_leena_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton" to="." method="_on_nia_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/NiaButton" to="." method="_on_nia_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton" to="." method="_on_cas_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/HBoxContainer2/CasButton" to="." method="_on_cas_button_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_exited"]

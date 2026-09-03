@@ -133,7 +133,6 @@ libraries/ = SubResource("AnimationLibrary_ieech")
 [node name="CameraRig" type="Node3D" parent="." unique_id=929998231]
 transform = Transform3D(1, 0, 0, 0, 0.97778326, -0.20961857, 0, 0.20961857, 0.97778326, 0, 5, 10)
 script = ExtResource("99_ebni6")
-camera_height = 5.0
 camera_distance = 7.2
 
 [node name="Camera" type="Camera3D" parent="CameraRig" unique_id=808034852]

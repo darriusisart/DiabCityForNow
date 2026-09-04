@@ -32,4 +32,6 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_v1tfg")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7n7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7n7l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s7n7l")
 text = "X"

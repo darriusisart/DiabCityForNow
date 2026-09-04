@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(1.534654, 1.534654)
+size = Vector2(1.8882843, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -232,4 +232,4 @@ shape = SubResource("ConcavePolygonShape3D_0viit")
 
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="MinigameTestArch1/MinigamePortalLunchLine" to="MadisonPlayer" method="_on_minigame_portal_body_entered"]
+[connection signal="body_entered" from="MinigameTestArch1/MinigamePortalLunchLine" to="MinigameTestArch1/MinigamePortalLunchLine" method="_on_body_entered"]

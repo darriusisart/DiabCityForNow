@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0wi3gvk4ee8n"
-path.s3tc="res://.godot/imported/main_basic.png-a6259dfcdcb88a0b74015f669f4bdb32.s3tc.ctex"
+uid="uid://bily23t3qbvh5"
+path="res://.godot/imported/2_cas_front_idle.png-e7df88cab75ce1ec47c258d5ff327d97.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/main_basic.png"
-dest_files=["res://.godot/imported/main_basic.png-a6259dfcdcb88a0b74015f669f4bdb32.s3tc.ctex"]
+source_file="res://MadisonFrontViewAnimations/CasFrontView/2_cas_front_idle.png"
+dest_files=["res://.godot/imported/2_cas_front_idle.png-e7df88cab75ce1ec47c258d5ff327d97.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4s8wne3ulnxe"
-path.s3tc="res://.godot/imported/chibi_main_character.png-ff293499c655fe10737d766a6fd077a5.s3tc.ctex"
+uid="uid://dm1l753ov5nm3"
+path="res://.godot/imported/1_cas_front_idle.png-9336d66f189cf49cf3c1f22f3c21c864.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://videos/chibi_main_character.png"
-dest_files=["res://.godot/imported/chibi_main_character.png-ff293499c655fe10737d766a6fd077a5.s3tc.ctex"]
+source_file="res://MadisonFrontViewAnimations/CasFrontView/1_cas_front_idle.png"
+dest_files=["res://.godot/imported/1_cas_front_idle.png-9336d66f189cf49cf3c1f22f3c21c864.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

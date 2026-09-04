@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbthwnjjgit3q"
-path="res://.godot/imported/tanSkin_red_super_male_walk(FIRSTHALF).png-9acf09745b68d6e9128e3a9f48809cd8.ctex"
+path="res://.godot/imported/tanSkin_red_super_male_walk(FIRSTHALF).png-ef379428732c79f06f8476f8d685d591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MadisonSideViewAnimations/tanSkin_red_super_male_walk(FIRSTHALF).png"
-dest_files=["res://.godot/imported/tanSkin_red_super_male_walk(FIRSTHALF).png-9acf09745b68d6e9128e3a9f48809cd8.ctex"]
+source_file="res://MadisonSideViewAnimations/BeauSideView/tanSkin_red_super_male_walk(FIRSTHALF).png"
+dest_files=["res://.godot/imported/tanSkin_red_super_male_walk(FIRSTHALF).png-ef379428732c79f06f8476f8d685d591.ctex"]
 
 [params]
 

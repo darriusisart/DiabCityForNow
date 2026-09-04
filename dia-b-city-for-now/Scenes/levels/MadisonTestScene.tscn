@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(1.994881, 1.534654)
+size = Vector2(1.534654, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -96,6 +96,7 @@ data = PackedVector3Array(-3.2742999, -0.6055, -3.7786999, -2.7347, -0.6055, -3.
 size = Vector3(9.55, 0.6, 6.9)
 
 [node name="MadisonTesting" type="Node3D" unique_id=1155567079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.2, -0.8)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619963544]
 environment = SubResource("Environment_gpb5v")

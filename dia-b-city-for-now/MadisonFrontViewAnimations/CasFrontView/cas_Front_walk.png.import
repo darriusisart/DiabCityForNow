@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xcjmfapjto10"
-path="res://.godot/imported/MainCharacterSideViewPSD.png-c1482529f60deab382300c5f2fe739ab.ctex"
+uid="uid://bokoeqjmqu0up"
+path="res://.godot/imported/cas_Front_walk.png-91e993477a6cb43fb9e31a2f28965264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/levels/MainCharacterSideViewPSD.png"
-dest_files=["res://.godot/imported/MainCharacterSideViewPSD.png-c1482529f60deab382300c5f2fe739ab.ctex"]
+source_file="res://MadisonFrontViewAnimations/CasFrontView/cas_Front_walk.png"
+dest_files=["res://.godot/imported/cas_Front_walk.png-91e993477a6cb43fb9e31a2f28965264.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

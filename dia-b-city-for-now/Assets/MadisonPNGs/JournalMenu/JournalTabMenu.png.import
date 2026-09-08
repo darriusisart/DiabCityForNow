@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddve4gj1kfntx"
-path="res://.godot/imported/JournalTabMap.png-74b412d9d2a44111e8cb43363cb6c5a2.ctex"
+uid="uid://cbv1yundp4wjj"
+path="res://.godot/imported/JournalTabMenu.png-02a1447bde24123ed58130e15978780f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/JournalTabMap.png"
-dest_files=["res://.godot/imported/JournalTabMap.png-74b412d9d2a44111e8cb43363cb6c5a2.ctex"]
+source_file="res://Assets/MadisonPNGs/JournalMenu/JournalTabMenu.png"
+dest_files=["res://.godot/imported/JournalTabMenu.png-02a1447bde24123ed58130e15978780f.ctex"]
 
 [params]
 

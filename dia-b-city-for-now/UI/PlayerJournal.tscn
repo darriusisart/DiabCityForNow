@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://c7uexn7l103af"]
 
 [ext_resource type="Script" uid="uid://1k1xekynln03" path="res://UI/player_journal.gd" id="1_pg34i"]
-[ext_resource type="Texture2D" uid="uid://vmje2aqjfeff" path="res://Assets/MadisonPNGs/JournalTapSmallImage.png" id="2_4qfj3"]
-[ext_resource type="Texture2D" uid="uid://cbv1yundp4wjj" path="res://Assets/MadisonPNGs/JournalTabMenu.png" id="2_kjtuj"]
-[ext_resource type="Texture2D" uid="uid://c5try02y56m1t" path="res://Assets/MadisonPNGs/JournalTabProgress.png" id="3_0bt18"]
+[ext_resource type="Texture2D" uid="uid://vmje2aqjfeff" path="res://Assets/MadisonPNGs/JournalMenu/JournalTapSmallImage.png" id="2_4qfj3"]
+[ext_resource type="Texture2D" uid="uid://cbv1yundp4wjj" path="res://Assets/MadisonPNGs/JournalMenu/JournalTabMenu.png" id="2_kjtuj"]
+[ext_resource type="Texture2D" uid="uid://c5try02y56m1t" path="res://Assets/MadisonPNGs/JournalMenu/JournalTabProgress.png" id="3_0bt18"]
 [ext_resource type="Script" uid="uid://qjtrgcc3qk62" path="res://UI/menu_button.gd" id="3_4736o"]
-[ext_resource type="Texture2D" uid="uid://ddve4gj1kfntx" path="res://Assets/MadisonPNGs/JournalTabMap.png" id="4_0tgbt"]
-[ext_resource type="Texture2D" uid="uid://cltp0trhs37y8" path="res://Assets/MadisonPNGs/JournalTabClues.png" id="5_7skne"]
+[ext_resource type="Texture2D" uid="uid://ddve4gj1kfntx" path="res://Assets/MadisonPNGs/JournalMenu/JournalTabMap.png" id="4_0tgbt"]
+[ext_resource type="Texture2D" uid="uid://cltp0trhs37y8" path="res://Assets/MadisonPNGs/JournalMenu/JournalTabClues.png" id="5_7skne"]
 [ext_resource type="Script" uid="uid://di10oodmpg8g4" path="res://UI/progress_button.gd" id="5_jvuah"]
 [ext_resource type="Script" uid="uid://4dfsfl6g28lu" path="res://UI/map_button.gd" id="7_mmx44"]
 [ext_resource type="Script" uid="uid://b170p55nis1gs" path="res://UI/clues_button.gd" id="9_mnk1p"]
-[ext_resource type="Texture2D" uid="uid://dbvxs2acqo5kq" path="res://Assets/MadisonPNGs/JournalSpiral.png" id="10_jvuah"]
+[ext_resource type="Texture2D" uid="uid://dbvxs2acqo5kq" path="res://Assets/MadisonPNGs/JournalMenu/JournalSpiral.png" id="10_jvuah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjtuj"]
 bg_color = Color(0.8980392, 0.8627451, 0.8117647, 1)

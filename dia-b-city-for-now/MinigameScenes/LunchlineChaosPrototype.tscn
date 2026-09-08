@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dhntiq32exaud" path="res://MinigameScenes/lunchline_chaos_prototype.gd" id="1_s7n7l"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="1_v1tfg"]
+[ext_resource type="Script" uid="uid://casvtj1ht2px1" path="res://MinigameScenes/lunchline_player.gd" id="3_o5n2m"]
+[ext_resource type="Texture2D" uid="uid://cf2vbh0m10flw" path="res://Assets/MadisonPNGs/LunchlineChaosMinigame/TempLunchlineChaosPlayer.png" id="4_dt0pm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7n7l"]
 bg_color = Color(0, 0, 0, 1)
@@ -35,3 +37,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_s7n7l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7n7l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s7n7l")
 text = "X"
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=853628148]
+position = Vector2(960, 940)
+script = ExtResource("3_o5n2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=533570199]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_dt0pm")
+
+[node name="CatchArea" type="Area2D" parent="Player" unique_id=1086801243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CatchArea" unique_id=736033331]

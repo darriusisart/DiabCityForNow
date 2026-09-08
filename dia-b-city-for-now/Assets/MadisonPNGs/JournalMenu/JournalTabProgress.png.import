@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbvxs2acqo5kq"
-path="res://.godot/imported/JournalSpiral.png-951b9839a2097607bdd7bb2e4bc1fc97.ctex"
+uid="uid://c5try02y56m1t"
+path="res://.godot/imported/JournalTabProgress.png-c7f7e9df86c8d64b1680bd5142c5b272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MadisonPNGs/JournalSpiral.png"
-dest_files=["res://.godot/imported/JournalSpiral.png-951b9839a2097607bdd7bb2e4bc1fc97.ctex"]
+source_file="res://Assets/MadisonPNGs/JournalMenu/JournalTabProgress.png"
+dest_files=["res://.godot/imported/JournalTabProgress.png-c7f7e9df86c8d64b1680bd5142c5b272.ctex"]
 
 [params]
 

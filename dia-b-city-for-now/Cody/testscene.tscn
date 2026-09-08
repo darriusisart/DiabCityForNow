@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dnrtdbesuonbc" path="res://Cody/Modular Pieces/SM_toplayer.glb" id="12_vky0q"]
 [ext_resource type="PackedScene" uid="uid://ydj5i7tuwknm" path="res://Cody/Modular Pieces/roof4.glb" id="13_ab80y"]
 [ext_resource type="PackedScene" uid="uid://bsbekiapdwgm7" path="res://Cody/Modular Pieces/stylized_bush.glb" id="14_ab80y"]
-[ext_resource type="ArrayMesh" uid="uid://birenrfqnviy6" path="res://Cody/SM_Foundation.obj" id="15_dicp5"]
+[ext_resource type="ArrayMesh" uid="uid://birenrfqnviy6" path="res://Cody/Modular Pieces/SM_Foundation.obj" id="15_dicp5"]
 
 [sub_resource type="Environment" id="Environment_3ywa3"]
 background_mode = 2

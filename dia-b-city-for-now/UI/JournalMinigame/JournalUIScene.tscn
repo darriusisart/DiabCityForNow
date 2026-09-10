@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://qbnqrgqcwk5r"]
+
+[ext_resource type="Texture2D" uid="uid://be8sdu260xqia" path="res://UI/JournalMinigame/paper.png" id="1_qnoa5"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="2_lg5qr"]
+[ext_resource type="FontFile" uid="uid://0pb8k2012a5o" path="res://Font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_whdxu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
+bg_color = Color(0.45490196, 0.7607843, 0.26666668, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+shadow_offset = Vector2(7.17, 16.67)
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg5qr"]
+bg_color = Color(0.7607843, 0.26666668, 0.26666668, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="FontVariation" id="FontVariation_yepxf"]
+base_font = ExtResource("3_whdxu")
+spacing_glyph = 10
+spacing_space = 7
+
+[node name="JournalUiScene" type="Control" unique_id=774930790]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=499675945]
+
+[node name="PaperBackground" type="MarginContainer" parent="." unique_id=1938435309]
+custom_minimum_size = Vector2(1903.8, 781.35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PaperBackground" unique_id=1139072493]
+layout_mode = 2
+texture = ExtResource("1_qnoa5")
+
+[node name="MarginContainer" type="MarginContainer" parent="PaperBackground" unique_id=1855960306]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PaperBackground/MarginContainer" unique_id=1522848082]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 289
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PaperBackground/MarginContainer/VBoxContainer" unique_id=1918512753]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 235
+
+[node name="MarginContainer" type="MarginContainer" parent="PaperBackground/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1444425490]
+custom_minimum_size = Vector2(528.61, 190.49)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="YesButton" type="Button" parent="PaperBackground/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=954673311]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lg5qr")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_qnoa5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnoa5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qnoa5")
+text = "Yes"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PaperBackground/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2098592700]
+custom_minimum_size = Vector2(528.61, 190.49)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NoButton" type="Button" parent="PaperBackground/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1916167574]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lg5qr")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_lg5qr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lg5qr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lg5qr")
+text = "No"
+
+[node name="separator" type="Control" parent="PaperBackground/MarginContainer/VBoxContainer" unique_id=1797004387]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PaperBackground/MarginContainer" unique_id=909623261]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 283
+
+[node name="Label" type="Label" parent="PaperBackground/MarginContainer/VBoxContainer2" unique_id=672221444]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
+theme_override_fonts/font = SubResource("FontVariation_yepxf")
+theme_override_font_sizes/font_size = 95
+text = "Would you like to go to sleep?"
+
+[node name="Control" type="Control" parent="PaperBackground/MarginContainer/VBoxContainer2" unique_id=21676845]
+layout_mode = 2

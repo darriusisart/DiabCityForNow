@@ -1,6 +1,9 @@
 extends Node2D
 
 @onready var exit_button: Button = $UI/ExitButton
+@onready var spawn_timer: Timer = $FallingFood2/SpawnTimer
+@onready var food_spawner: Node2D = $FallingFood2/FoodSpawner
+@export var falling_food_scene: PackedScene
 
 var normal_scale := Vector2(1.0, 1.0)
 var hover_scale := Vector2(1.15, 1.15)
@@ -18,6 +21,29 @@ func _ready():
 	exit_button.button_up.connect(_on_exit_button_button_up)
 
 	exit_button.pivot_offset = exit_button.size / 2.0
+
+	# Food spawning
+	spawn_timer.timeout.connect(_spawn_food)
+
+
+func _spawn_food():
+	print("SPAWN TIMER FIRED")
+
+	if falling_food_scene == null:
+		print("FALLING FOOD SCENE IS NULL")
+		return
+
+	var food = falling_food_scene.instantiate()
+
+	food.position = Vector2(
+		randf_range(100.0, 1820.0),
+		-50.0
+	)
+
+	food_spawner.add_child(food)
+
+	print("FOOD SPAWNED AT: ", food.position)
+
 
 
 func _on_exit_button_mouse_entered():

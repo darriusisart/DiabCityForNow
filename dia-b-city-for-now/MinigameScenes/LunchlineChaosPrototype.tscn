@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dhntiq32exaud" path="res://MinigameScenes/lunchline_chaos_prototype.gd" id="1_s7n7l"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="1_v1tfg"]
+[ext_resource type="PackedScene" uid="uid://cdc0gwf70w42i" path="res://MinigameScenes/FallingFood.tscn" id="2_dt0pm"]
 [ext_resource type="Script" uid="uid://casvtj1ht2px1" path="res://MinigameScenes/lunchline_player.gd" id="3_o5n2m"]
 [ext_resource type="Texture2D" uid="uid://cf2vbh0m10flw" path="res://Assets/MadisonPNGs/LunchlineChaosMinigame/TempLunchlineChaosPlayer.png" id="4_dt0pm"]
+[ext_resource type="Script" uid="uid://dkhjxkg1cyhp6" path="res://MinigameScenes/food_spawner.gd" id="5_dt0pm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7n7l"]
 bg_color = Color(0, 0, 0, 1)
@@ -17,8 +19,12 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esax0"]
+size = Vector2(534, 23)
+
 [node name="Node2D" type="Node2D" unique_id=2125960530]
 script = ExtResource("1_s7n7l")
+falling_food_scene = ExtResource("2_dt0pm")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1016107722]
 
@@ -49,3 +55,17 @@ texture = ExtResource("4_dt0pm")
 [node name="CatchArea" type="Area2D" parent="Player" unique_id=1086801243]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CatchArea" unique_id=736033331]
+position = Vector2(0, -101)
+scale = Vector2(1, 1.3599975)
+shape = SubResource("RectangleShape2D_esax0")
+
+[node name="FallingFood2" type="Container" parent="." unique_id=1669858878]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpawnTimer" type="Timer" parent="FallingFood2" unique_id=2077923550]
+wait_time = 0.8
+autostart = true
+
+[node name="FoodSpawner" type="Node2D" parent="FallingFood2" unique_id=1629042540]
+script = ExtResource("5_dt0pm")

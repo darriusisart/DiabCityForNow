@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://toaljed1v5lp" path="res://Scenes/levels/infiniteboundary_camera.gd" id="7_bq5bp"]
 [ext_resource type="Shader" uid="uid://ba1h1gdsyflvo" path="res://Scenes/levels/blackoutline.gdshader" id="7_dqfpf"]
 [ext_resource type="Script" uid="uid://vbcfudjolqid" path="res://Scenes/levels/interactable.gd" id="10_p3y6q"]
-[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="11_6gdme"]
+[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://Assets/ShreyaPNGs/suki_character.png" id="11_6gdme"]
 [ext_resource type="Script" uid="uid://pc2blnd307ox" path="res://Scenes/levels/npc.gd" id="11_61mhm"]
 [ext_resource type="Texture2D" uid="uid://b8phrn201iqqb" path="res://Assets/MadisonPNGs/TEMPTESTSukiNeutral.png" id="14_0viit"]
 [ext_resource type="Texture2D" uid="uid://q1y7s3d5xtf5" path="res://Assets/MadisonPNGs/TEMPTESTSukiHappy.png" id="15_8vcoy"]
@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(2.1177125, 1.534654)
+size = Vector2(2.003341, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10

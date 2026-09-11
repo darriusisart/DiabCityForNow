@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://w5c057p168ld"]
 
-[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="1_e6fyy"]
-[ext_resource type="Texture2D" uid="uid://8oj50by8u43x" path="res://assets_Shreya/mesh bg.png" id="2_j6a7c"]
-[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://assets_Shreya/suki_character.png" id="3_scoti"]
+[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://Assets/ShreyaPNGs/Background.png" id="1_e6fyy"]
+[ext_resource type="Texture2D" uid="uid://8oj50by8u43x" path="res://Assets/ShreyaPNGs/mesh bg.png" id="2_j6a7c"]
+[ext_resource type="Texture2D" uid="uid://cpe86h0fh70e1" path="res://Assets/ShreyaPNGs/suki_character.png" id="3_scoti"]
 [ext_resource type="FontFile" uid="uid://0pb8k2012a5o" path="res://Font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_a42b6"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="5_46p8p"]
 [ext_resource type="Theme" uid="uid://8bti3o6p2sdu" path="res://SHREYA_tHEME.tres" id="6_v4ygg"]

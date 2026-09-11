@@ -11,9 +11,9 @@
 [ext_resource type="Script" uid="uid://blvtg6vkummlk" path="res://scripts/interactable_area.gd" id="6_interact_area"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/schedule_ui.tscn" id="7_schedule_ui"]
 [ext_resource type="Script" uid="uid://djs46pqlo505e" path="res://scripts/location_label.gd" id="8_location_label"]
-[ext_resource type="Script" uid="uid://brinyjsgc4qwo" path="res://MinigameScenes/bed_interactable.gd" id="9_bed"]
+[ext_resource type="Script" uid="uid://brinyjsgc4qwo" path="res://Minigames/CountingSheep/bed_interactable.gd" id="9_bed"]
 [ext_resource type="PackedScene" path="res://DiabWorld/scenes/ui/traveler_notebook.tscn" id="10_notebook"]
-[ext_resource type="Script" uid="uid://dlhhv667yhtbt" path="res://DiabWorld/scripts/home_stretch_zone.gd" id="11_stretch"]
+[ext_resource type="Script" path="res://DiabWorld/scripts/home_stretch_zone.gd" id="11_stretch"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jm2qk"]
 sky_horizon_color = Color(0.65, 0.69, 0.73, 1)

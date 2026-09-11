@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxgilo1cpius6"]
 
 [ext_resource type="Script" uid="uid://lfrs5k11ahjg" path="res://UI/character_select.gd" id="1_y3c88"]
-[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://assets_Shreya/Background.png" id="2_u51ui"]
+[ext_resource type="Texture2D" uid="uid://dpe3bv7tl42bp" path="res://Assets/ShreyaPNGs/Background.png" id="2_u51ui"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="3_q2peg"]
 [ext_resource type="Shader" uid="uid://t8sys574r2ad" path="res://UI/CharacterSelectOutline.gdshader" id="4_4axbt"]
 [ext_resource type="Texture2D" uid="uid://j7kw41lwwtd" path="res://Assets/MadisonPNGs/CharacterCards/SukiCharacterCard.png" id="4_7rves"]

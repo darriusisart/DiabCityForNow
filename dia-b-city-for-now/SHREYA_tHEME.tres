@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://8bti3o6p2sdu"]
 
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="1_atbkg"]
-[ext_resource type="Texture2D" uid="uid://b0srkf78scsa5" path="res://assets_Shreya/bg.png" id="1_t8ygn"]
+[ext_resource type="Texture2D" uid="uid://b0srkf78scsa5" path="res://Assets/ShreyaPNGs/bg.png" id="1_t8ygn"]
 [ext_resource type="FontFile" uid="uid://b0ch6b6o1ucog" path="res://Font/Poppins/Poppins-Regular.ttf" id="3_xdusv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8ygn"]

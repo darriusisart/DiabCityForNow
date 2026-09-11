@@ -1,11 +1,7 @@
 extends Node
 
 var stages = [
-	preload("res://DiabWorld/scenes/world.tscn"),
-	preload("res://DiabWorld/scenes/world_2.tscn"),
-	preload("res://DiabWorld/scenes/world_3.tscn"),
-	preload("res://DiabWorld/scenes/home_world.tscn"),
-	preload("res://DiabWorld/scenes/convenience_world.tscn")
+	
 ]
 
 var current_stage_id = 0

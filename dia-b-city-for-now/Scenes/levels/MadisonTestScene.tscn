@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(2.8197105, 1.534654)
+size = Vector2(2.1177125, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10

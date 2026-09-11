@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de6ftivtdrqey"]
 
-[ext_resource type="Script" uid="uid://ckj0kmd1hlhbj" path="res://DiabWorld/scripts/ui/counting_sheep_minigame.gd" id="1_sheep"]
+[ext_resource type="Script" uid="uid://ckj0kmd1hlhbj" path="res://MinigameScenes/counting_sheep_minigame.gd" id="1_sheep"]
 [ext_resource type="Texture2D" uid="uid://ch6bwkr7iambv" path="res://assets_Shreya/BackgroundSheep_night.png" id="2_642i8"]
 
 [node name="CountingSheepMinigame" type="Control" unique_id=752276625]

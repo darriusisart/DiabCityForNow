@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcs3gni8xyg8a"]
 
-[ext_resource type="Script" uid="uid://cwkp1kbmlewpf" path="res://Scenes/levels/madison_player.gd" id="1_cep8a"]
+[ext_resource type="Script" uid="uid://cwkp1kbmlewpf" path="res://OverworldScenes/Player&Camera/madison_player.gd" id="1_cep8a"]
 [ext_resource type="Texture2D" uid="uid://bskdh13a138td" path="res://MadisonBackViewAnimations/WestBackView/idle_back_spritesheet.png" id="2_5pwvi"]
 [ext_resource type="Texture2D" uid="uid://cncq3k8j46r3" path="res://MadisonBackViewAnimations/SukiBackView/1_suki_back_idle_spritesheet.png" id="2_65hya"]
 [ext_resource type="Texture2D" uid="uid://c2feuge4qxikd" path="res://MadisonBackViewAnimations/BeauBackView/1_beau_back_idle.png" id="2_hav65"]

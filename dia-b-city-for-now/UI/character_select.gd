@@ -85,7 +85,7 @@ func _on_cas_pressed():
 	
 func _on_start_pressed():
 	Global.selected_character = selected_character
-	get_tree().change_scene_to_file("res://Scenes/levels/MadisonTestScene.tscn")
+	get_tree().change_scene_to_file("res://OverworldScenes/Scenes/MadisonTestScene.tscn")
 
 
 func _on_suki_button_mouse_entered() -> void:

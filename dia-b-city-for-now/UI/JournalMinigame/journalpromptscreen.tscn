@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://du1tigiok6bce"]
 
 [ext_resource type="FontFile" uid="uid://b188udjy7ac7n" path="res://Font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_4y1aj"]
+[ext_resource type="Script" uid="uid://c7tpjodppfewo" path="res://UI/JournalMinigame/journalpromptscreen.gd" id="1_b0l1b"]
 [ext_resource type="Texture2D" uid="uid://ccdxjnwc5pbtp" path="res://UI/JournalMinigame/paper with blue lines.png" id="2_rel5o"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="4_slxtg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rel5o"]
 bg_color = Color(0.94509804, 0.91764706, 0.84705883, 1)
@@ -20,6 +22,18 @@ base_font = ExtResource("1_4y1aj")
 spacing_glyph = 3
 spacing_space = 7
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhpbu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="JournalUI" type="Control" unique_id=1362009187]
 custom_minimum_size = Vector2(650, 1004)
 layout_mode = 3
@@ -28,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b0l1b")
 
 [node name="JournalCenter" type="CenterContainer" parent="." unique_id=229686734]
 custom_minimum_size = Vector2(650, 1004)
@@ -101,3 +116,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_rel5o")
 expand_mode = 1
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1896837604]
+
+[node name="ExitButton" type="Button" parent="UI" unique_id=1417372688]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 35.0
+offset_right = -25.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_slxtg")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhpbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yhpbu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yhpbu")
+text = "X"
+metadata/_edit_use_anchors_ = true

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c7uexn7l103af" path="res://UI/PlayerJournal.tscn" id="15_ewyex"]
 [ext_resource type="PackedScene" uid="uid://cmcn1bjfrnyd3" path="res://Cody/testscene.tscn" id="16_41fun"]
 [ext_resource type="Script" uid="uid://c6344qwvynyqw" path="res://AdditionalScripts/minigame_portal.gd" id="17_at7sf"]
+[ext_resource type="Script" uid="uid://bp3rtf00u7bae" path="res://OverworldScenes/Scenes/minigame_portal_gratitude_journal.gd" id="18_vgmwn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3eot6"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,7 +56,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(1.9340156, 1.534654)
+size = Vector2(2.1776183, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -127,6 +128,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, 7.4)
 
 [node name="MadisonPlayer" parent="." unique_id=1134779537 instance=ExtResource("5_tkm1g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+move_speed = null
+acceleration = null
+deceleration = null
+jump_velocity = null
+gravity = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022711530]
 libraries/ = SubResource("AnimationLibrary_ieech")
@@ -230,6 +236,15 @@ mesh = SubResource("ArrayMesh_38kbm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch2/StaticBody3D" unique_id=1356444707]
 shape = SubResource("ConcavePolygonShape3D_0viit")
 
+[node name="MinigamePortalGratitudeJournal" type="Area3D" parent="MinigameTestArch2" unique_id=2044105938]
+script = ExtResource("18_vgmwn")
+destination_scene = "uid://du1tigiok6bce"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch2/MinigamePortalGratitudeJournal" unique_id=1304293249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07499981, 0.19999981, 0.8500004)
+shape = SubResource("BoxShape3D_38kbm")
+
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="MinigameTestArch1/MinigamePortalLunchLine" to="MinigameTestArch1/MinigamePortalLunchLine" method="_on_body_entered"]
+[connection signal="body_entered" from="MinigameTestArch2/MinigamePortalGratitudeJournal" to="MadisonPlayer" method="_on_minigame_portal_gratitude_journal_body_entered"]

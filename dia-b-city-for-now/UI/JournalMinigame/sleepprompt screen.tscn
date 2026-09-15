@@ -4,6 +4,13 @@
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="2_lg5qr"]
 [ext_resource type="FontFile" uid="uid://0pb8k2012a5o" path="res://Font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_whdxu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td8hu"]
+bg_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
 bg_color = Color(0.45490196, 0.7607843, 0.26666668, 1)
 border_width_left = 8
@@ -16,8 +23,6 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
-shadow_size = 15
-shadow_offset = Vector2(8, 10)
 anti_aliasing = false
 anti_aliasing_size = 0.01
 
@@ -47,6 +52,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=499675945]
+
+[node name="Panel" type="Panel" parent="." unique_id=1826467394]
+custom_minimum_size = Vector2(1903.8, 781.35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -944.0
+offset_top = -381.0
+offset_right = 959.80005
+offset_bottom = 400.34998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_td8hu")
 
 [node name="PaperBackground" type="MarginContainer" parent="." unique_id=1938435309]
 custom_minimum_size = Vector2(1903.8, 781.35)

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://casvtj1ht2px1" path="res://Minigames/LunchlineChaos/lunchline_player.gd" id="3_o5n2m"]
 [ext_resource type="Texture2D" uid="uid://cf2vbh0m10flw" path="res://Assets/MadisonPNGs/LunchlineChaosMinigame/TempLunchlineChaosPlayer.png" id="4_dt0pm"]
 [ext_resource type="Script" uid="uid://dkhjxkg1cyhp6" path="res://Minigames/LunchlineChaos/food_spawner.gd" id="5_dt0pm"]
+[ext_resource type="Script" uid="uid://3252knakayeh" path="res://Minigames/LunchlineChaos/tray.gd" id="6_62dkg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7n7l"]
 bg_color = Color(0, 0, 0, 1)
@@ -20,12 +21,16 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7l5i"]
-size = Vector2(26.449997, 2.1499996)
+size = Vector2(26.449997, 0.19999981)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esax0"]
 size = Vector2(534, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgoi0"]
+size = Vector2(20, 20.300003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkab8"]
+size = Vector2(532, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62dkg"]
 
@@ -60,7 +65,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_dt0pm")
 
 [node name="TrayCollision" type="CollisionShape2D" parent="Player" unique_id=1487071161]
-position = Vector2(0.5, -132.5)
+position = Vector2(0.5, -113)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_m7l5i")
 
@@ -71,19 +76,27 @@ position = Vector2(0, -101)
 scale = Vector2(1, 1.3599975)
 shape = SubResource("RectangleShape2D_esax0")
 
-[node name="PlayerBody" type="StaticBody2D" parent="Player" unique_id=348553685]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerBody" unique_id=1967088887]
-position = Vector2(0, 13.999999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1967088887]
+position = Vector2(0, 15.5)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_dgoi0")
+
+[node name="Tray" type="AnimatableBody2D" parent="Player" unique_id=1198466852 node_paths=PackedStringArray("player")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("6_62dkg")
+player = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Tray" unique_id=1371180168]
+position = Vector2(-2, -118)
+shape = SubResource("RectangleShape2D_hkab8")
 
 [node name="FallingFood2" type="Container" parent="." unique_id=1669858878]
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SpawnTimer" type="Timer" parent="FallingFood2" unique_id=2077923550]
-wait_time = 0.8
+wait_time = 2.0
 autostart = true
 
 [node name="FoodSpawner" type="Node2D" parent="FallingFood2" unique_id=1629042540]

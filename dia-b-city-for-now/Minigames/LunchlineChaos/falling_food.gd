@@ -1,7 +1,14 @@
 extends RigidBody2D
 
 var shape_type: int = 0
-var size: float = 40.0
+var size: float = 70.0
+
+var settle_timer: float = 0.0
+var settle_time: float = 0.2
+
+var locked := false
+var tray: AnimatableBody2D
+var tray_offset := Vector2.ZERO
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -11,10 +18,40 @@ func _ready():
 	add_to_group("food")
 	randomize_shape()
 
+	# Allows to touch another physics body (like the tray)
+	contact_monitor = true
+	max_contacts_reported = 4
 
+
+func _physics_process(delta):
+	if locked:
+		global_position = tray.global_position + tray_offset
+		return
+
+	# If we're touching something and have almost stopped moving...
+	if get_contact_count() > 0:
+		if linear_velocity.length() < 25.0 and abs(angular_velocity) < 0.5:
+			settle_timer += delta
+
+			if settle_timer >= settle_time:
+				lock_food()
+		else:
+			settle_timer = 0.0
+	else:
+		settle_timer = 0.0
+		
+func lock_food():
+	freeze = true
+	locked = true
+
+	tray = get_tree().current_scene.get_node("Player/Tray")
+
+	tray_offset = global_position - tray.global_position
+
+# I'm going to change the shapes to actual graphics, this is for testing
 func randomize_shape():
 	shape_type = randi_range(0, 2)
-	size = randf_range(10.0, 50.0)
+	size = randf_range(50.0, 100.0)
 
 	match shape_type:
 		0:
@@ -60,7 +97,6 @@ func make_circle():
 
 	for i in range(point_count):
 		var angle = TAU * float(i) / point_count
-
 		points.append(
 			Vector2(cos(angle), sin(angle)) * size / 2.0
 		)

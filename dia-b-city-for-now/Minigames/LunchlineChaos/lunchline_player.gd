@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var move_speed: float = 750.0
-@export var acceleration: float = 1500.0
-@export var deceleration: float = 1900.0
+@export var acceleration: float = 2500.0
+@export var deceleration: float = 2500.0
 
 @export var left_limit: float = 280.0
 @export var right_limit: float = 1630.0

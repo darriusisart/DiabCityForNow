@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://cshybefigb1l6" path="res://Minigames/LunchlineChaos/falling_food.gd" id="1_00tpr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4hi4o"]
+friction = 4.0
 rough = true
 
 [node name="Control" type="Node2D" unique_id=9785286]
 
 [node name="FallingFood" type="RigidBody2D" parent="." unique_id=454762573]
+collision_layer = 2
+collision_mask = 6
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_4hi4o")
 gravity_scale = 0.3
 linear_damp = 0.2

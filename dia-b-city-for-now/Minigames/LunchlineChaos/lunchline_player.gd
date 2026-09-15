@@ -7,6 +7,10 @@ extends CharacterBody2D
 @export var left_limit: float = 280.0
 @export var right_limit: float = 1630.0
 
+
+func _ready():
+	$CatchArea.area_entered.connect(_on_catch_area_body_entered)
+
 func _physics_process(delta):
 	var direction = Input.get_axis("Left", "Right")
 
@@ -28,3 +32,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	position.x = clamp(position.x, left_limit, right_limit)
+
+
+func _on_catch_area_body_entered(body):
+	if body.is_in_group("food"):
+		print("ON TRAY!")

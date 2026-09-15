@@ -19,8 +19,15 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7l5i"]
+size = Vector2(26.449997, 2.1499996)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esax0"]
 size = Vector2(534, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgoi0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62dkg"]
 
 [node name="Node2D" type="Node2D" unique_id=2125960530]
 script = ExtResource("1_s7n7l")
@@ -52,12 +59,24 @@ script = ExtResource("3_o5n2m")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_dt0pm")
 
+[node name="TrayCollision" type="CollisionShape2D" parent="Player" unique_id=1487071161]
+position = Vector2(0.5, -132.5)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_m7l5i")
+
 [node name="CatchArea" type="Area2D" parent="Player" unique_id=1086801243]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CatchArea" unique_id=736033331]
 position = Vector2(0, -101)
 scale = Vector2(1, 1.3599975)
 shape = SubResource("RectangleShape2D_esax0")
+
+[node name="PlayerBody" type="StaticBody2D" parent="Player" unique_id=348553685]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerBody" unique_id=1967088887]
+position = Vector2(0, 13.999999)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_dgoi0")
 
 [node name="FallingFood2" type="Container" parent="." unique_id=1669858878]
 offset_right = 40.0
@@ -69,3 +88,11 @@ autostart = true
 
 [node name="FoodSpawner" type="Node2D" parent="FallingFood2" unique_id=1629042540]
 script = ExtResource("5_dt0pm")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=886113879]
+position = Vector2(950, 1159.375)
+scale = Vector2(20, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=65978228]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_62dkg")

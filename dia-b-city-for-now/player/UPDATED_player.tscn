@@ -91,6 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://vx03n6ns2uc" path="res://MadisonFrontViewAnimations/ZayneFrontView/zayne_frontView_IDLE(FIRST_HALF).png" id="89_5didm"]
 [ext_resource type="Texture2D" uid="uid://rea8q1klgc6f" path="res://MadisonFrontViewAnimations/ZayneFrontView/zayne_frontView_IDLE(SECOND_HALF).png" id="90_o8bio"]
 [ext_resource type="Texture2D" uid="uid://dovpsih42weqq" path="res://MadisonFrontViewAnimations/ZayneFrontView/zayne_front_JUMP.png" id="91_o8bio"]
+[ext_resource type="Texture2D" uid="uid://druc0x3ds2s47" path="res://MadisonFrontViewAnimations/ZayneFrontView/zayne_frontView_WALK.png" id="92_kycxi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_54eke"]
 radius = 0.75
@@ -10380,6 +10381,102 @@ region = Rect2(756, 1592, 252, 398)
 atlas = ExtResource("91_o8bio")
 region = Rect2(1008, 1592, 252, 398)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_admxy"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(0, 0, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gjut"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(218, 0, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6fpr"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(436, 0, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd65l"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(654, 0, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc3h4"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(872, 0, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebbnu"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(0, 376, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omjbx"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(218, 376, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js6pw"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(436, 376, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioa6p"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(654, 376, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnhod"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(0, 752, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0vck"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(218, 752, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxmp4"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(436, 752, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6p04"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(654, 752, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyedk"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(872, 752, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dupm6"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(0, 1128, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5crxe"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(218, 1128, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asbp2"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(436, 1128, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stoa0"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(654, 1128, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqgil"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(872, 1128, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hw4j"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(0, 1504, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x61m"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(218, 1504, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t73bh"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(436, 1504, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xh23"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(654, 1504, 218, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icr5m"]
+atlas = ExtResource("92_kycxi")
+region = Rect2(872, 1504, 218, 376)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oui78"]
 animations = [{
 "frames": [{
@@ -18424,6 +18521,83 @@ animations = [{
 "loop": false,
 "name": &"zayne_jump_front",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_admxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gjut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6fpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd65l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc3h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebbnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omjbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js6pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioa6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnhod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0vck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxmp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6p04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyedk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dupm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5crxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asbp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stoa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqgil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hw4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x61m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t73bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xh23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icr5m")
+}],
+"loop": true,
+"name": &"zayne_walk_front",
+"speed": 30.0
 }]
 
 [node name="MadisonPlayer" type="CharacterBody3D" unique_id=1134779537 groups=["player"]]
@@ -18441,6 +18615,6 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oui78")
-animation = &"zayne_jump_front"
-frame = 20
-frame_progress = 1.0
+animation = &"zayne_walk_front"
+frame = 5
+frame_progress = 0.002296414

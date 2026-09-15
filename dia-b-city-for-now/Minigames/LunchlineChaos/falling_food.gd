@@ -1,6 +1,4 @@
-extends Area2D
-
-@export var fall_speed: float = 250.0
+extends RigidBody2D
 
 var shape_type: int = 0
 var size: float = 40.0
@@ -8,24 +6,15 @@ var size: float = 40.0
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
+
 func _ready():
+	add_to_group("food")
 	randomize_shape()
 
-func _process(delta):
-	position.y += fall_speed * delta
-
-	if position.y > 1200:
-		queue_free()
 
 func randomize_shape():
 	shape_type = randi_range(0, 2)
-	size = randf_range(25.0, 70.0)
-
-	polygon.color = Color(
-		randf_range(0.2, 1.0),
-		randf_range(0.2, 1.0),
-		randf_range(0.2, 1.0)
-	)
+	size = randf_range(10.0, 50.0)
 
 	match shape_type:
 		0:
@@ -34,6 +23,7 @@ func randomize_shape():
 			make_triangle()
 		2:
 			make_circle()
+
 
 func make_square():
 	var half = size / 2.0
@@ -49,6 +39,7 @@ func make_square():
 	rect.size = Vector2(size, size)
 	collision.shape = rect
 
+
 func make_triangle():
 	var half = size / 2.0
 
@@ -58,9 +49,10 @@ func make_triangle():
 		Vector2(-half, half)
 	])
 
-	var circle = CircleShape2D.new()
-	circle.radius = half
-	collision.shape = circle
+	var triangle = ConvexPolygonShape2D.new()
+	triangle.points = polygon.polygon
+	collision.shape = triangle
+
 
 func make_circle():
 	var points := PackedVector2Array()
@@ -68,11 +60,9 @@ func make_circle():
 
 	for i in range(point_count):
 		var angle = TAU * float(i) / point_count
+
 		points.append(
-			Vector2(
-				cos(angle),
-				sin(angle)
-			) * size / 2.0
+			Vector2(cos(angle), sin(angle)) * size / 2.0
 		)
 
 	polygon.polygon = points

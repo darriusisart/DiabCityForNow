@@ -83,3 +83,8 @@ func play_anim(anim_name: String):
 func _on_minigame_portal_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		get_tree().change_scene_to_file("res://MinigameScenes/LunchlineChaosPrototype.tscn")
+
+
+func _on_minigame_portal_gratitude_journal_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		get_tree().change_scene_to_file("res://UI/JournalMinigame/journalpromptscreen.tscn")

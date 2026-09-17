@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du1tigiok6bce"]
 
 [ext_resource type="FontFile" uid="uid://b188udjy7ac7n" path="res://Font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_4y1aj"]
+[ext_resource type="Script" uid="uid://c7tpjodppfewo" path="res://UI/JournalMinigame/journalpromptscreen.gd" id="1_dhbpj"]
 [ext_resource type="Texture2D" uid="uid://ccdxjnwc5pbtp" path="res://UI/JournalMinigame/paper with blue lines.png" id="2_rel5o"]
 [ext_resource type="Texture2D" uid="uid://m7fg273mhngh" path="res://UI/JournalMinigame/page holes.png" id="4_evsr0"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="4_slxtg"]
@@ -29,8 +30,12 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_2beys"]
 base_font = ExtResource("1_4y1aj")
-spacing_glyph = 3
-spacing_space = 7
+spacing_space = 8
+spacing_top = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70icq"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 
 [sub_resource type="FontVariation" id="FontVariation_evsr0"]
 base_font = ExtResource("4_slxtg")
@@ -39,7 +44,8 @@ spacing_space = 6
 spacing_top = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhbpj"]
-content_margin_left = 10.0
+content_margin_left = 15.0
+content_margin_top = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhpbu"]
 bg_color = Color(0, 0, 0, 1)
@@ -61,6 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dhbpj")
 
 [node name="JournalCenter" type="CenterContainer" parent="." unique_id=229686734]
 custom_minimum_size = Vector2(650, 1004)
@@ -100,36 +107,41 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rel5o")
 
 [node name="Prompt of the Day" type="Label" parent="JournalCenter/JournalPage" unique_id=1211292825]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_top = 49.0
-offset_right = 205.0
-offset_bottom = 91.0
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.043
+anchor_right = 0.892
+anchor_bottom = 0.095000006
+offset_left = -0.1000061
+offset_top = -0.17200089
+offset_right = 0.2000122
+offset_bottom = -0.38000488
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
 theme_override_fonts/font = SubResource("FontVariation_2beys")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 48
 text = "Prompt of the Day:"
+horizontal_alignment = 1
 
 [node name="PromptText" type="Label" parent="JournalCenter/JournalPage" unique_id=931113202]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -234.0
-offset_top = -374.0
-offset_right = 291.0
-offset_bottom = -149.0
+anchors_preset = -1
+anchor_left = 0.149
+anchor_top = 0.15
+anchor_right = 0.94900006
+anchor_bottom = 0.252
+offset_left = -4.850006
+offset_top = -13.600006
+offset_right = 0.14996338
+offset_bottom = 108.99199
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
 theme_override_fonts/font = ExtResource("1_4y1aj")
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_70icq")
 text = "What was something that happened today that made you happy?"
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="JournalCenter/JournalPage" unique_id=148050883]
@@ -184,6 +196,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="JournalCenter/JournalPage/BottomMargin" unique_id=129960005]
 layout_mode = 2
@@ -234,6 +247,6 @@ scale = Vector2(0.61538464, 0.5339196)
 texture = ExtResource("4_evsr0")
 
 [node name="FxemojiPencil" type="Sprite2D" parent="." unique_id=1742275757]
-position = Vector2(1209, 305.00003)
+position = Vector2(1194.0001, 321.00003)
 scale = Vector2(0.49374977, 0.53625005)
 texture = ExtResource("5_dhbpj")

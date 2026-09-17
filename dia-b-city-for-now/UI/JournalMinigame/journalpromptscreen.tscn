@@ -2,7 +2,18 @@
 
 [ext_resource type="FontFile" uid="uid://b188udjy7ac7n" path="res://Font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_4y1aj"]
 [ext_resource type="Texture2D" uid="uid://ccdxjnwc5pbtp" path="res://UI/JournalMinigame/paper with blue lines.png" id="2_rel5o"]
+[ext_resource type="Texture2D" uid="uid://m7fg273mhngh" path="res://UI/JournalMinigame/page holes.png" id="4_evsr0"]
 [ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="4_slxtg"]
+[ext_resource type="Texture2D" uid="uid://ck7m48hhhy36" path="res://UI/JournalMinigame/fxemoji_pencil.png" id="5_dhbpj"]
+[ext_resource type="Texture2D" uid="uid://bjm2r0vf8thio" path="res://UI/JournalMinigame/backbutton_texture.png" id="6_70icq"]
+[ext_resource type="Texture2D" uid="uid://rbnqgohpot8r" path="res://UI/JournalMinigame/forwardbutton texture.png" id="7_6fasj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evsr0"]
+bg_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rel5o"]
 bg_color = Color(0.94509804, 0.91764706, 0.84705883, 1)
@@ -20,6 +31,15 @@ corner_radius_bottom_left = 15
 base_font = ExtResource("1_4y1aj")
 spacing_glyph = 3
 spacing_space = 7
+
+[sub_resource type="FontVariation" id="FontVariation_evsr0"]
+base_font = ExtResource("4_slxtg")
+variation_embolden = 0.13
+spacing_space = 6
+spacing_top = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhbpj"]
+content_margin_left = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhpbu"]
 bg_color = Color(0, 0, 0, 1)
@@ -61,6 +81,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 23.0
+offset_right = 10.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evsr0")
+
+[node name="Panel2" type="Panel" parent="JournalCenter/JournalPage" unique_id=1348402710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rel5o")
@@ -70,9 +103,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -187.0
+offset_left = -175.0
 offset_top = 49.0
-offset_right = 193.0
+offset_right = 205.0
 offset_bottom = 91.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
@@ -87,10 +120,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -388.0
-offset_right = 267.0
-offset_bottom = -163.0
+offset_left = -234.0
+offset_top = -374.0
+offset_right = 291.0
+offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
@@ -107,13 +140,69 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -219.0
-offset_top = -295.0
+offset_top = -201.0
 offset_right = 277.0
-offset_bottom = 455.25
+offset_bottom = 403.25
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_rel5o")
 expand_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="JournalCenter/JournalPage" unique_id=1413914510]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16600001
+anchor_top = 0.3
+anchor_right = 0.92600006
+anchor_bottom = 0.896
+offset_left = 0.099990845
+offset_top = -0.2000122
+offset_right = 0.099975586
+offset_bottom = 0.4159546
+theme_override_colors/font_color = Color(0.27058825, 0.25882354, 0.23137255, 1)
+theme_override_colors/font_placeholder_color = Color(0.45368713, 0.43685058, 0.3975498, 1)
+theme_override_constants/line_spacing = 11
+theme_override_fonts/font = SubResource("FontVariation_evsr0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dhbpj")
+placeholder_text = "Type your answer here:"
+wrap_mode = 1
+autowrap_mode = 2
+
+[node name="BottomMargin" type="MarginContainer" parent="JournalCenter/JournalPage" unique_id=92782240]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 80.5
+offset_top = 397.5
+offset_right = -28.5
+offset_bottom = 477.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="JournalCenter/JournalPage/BottomMargin" unique_id=129960005]
+layout_mode = 2
+theme_override_constants/separation = 133
+
+[node name="backbutton" type="TextureButton" parent="JournalCenter/JournalPage/BottomMargin/HBoxContainer" unique_id=1063514916]
+layout_mode = 2
+texture_normal = ExtResource("6_70icq")
+texture_pressed = ExtResource("6_70icq")
+texture_hover = ExtResource("6_70icq")
+
+[node name="Control" type="Control" parent="JournalCenter/JournalPage/BottomMargin/HBoxContainer" unique_id=1263748223]
+layout_mode = 2
+
+[node name="forwardbutton" type="TextureButton" parent="JournalCenter/JournalPage/BottomMargin/HBoxContainer" unique_id=1625966701]
+layout_mode = 2
+texture_normal = ExtResource("7_6fasj")
+texture_pressed = ExtResource("7_6fasj")
+texture_hover = ExtResource("7_6fasj")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1896837604]
 
@@ -133,3 +222,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yhpbu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yhpbu")
 text = "X"
 metadata/_edit_use_anchors_ = true
+
+[node name="PageHoles" type="Sprite2D" parent="." unique_id=917746898]
+position = Vector2(683, 774.49994)
+scale = Vector2(0.61538464, 0.5339196)
+texture = ExtResource("4_evsr0")
+
+[node name="PageHoles2" type="Sprite2D" parent="." unique_id=42549832]
+position = Vector2(683, 305.99997)
+scale = Vector2(0.61538464, 0.5339196)
+texture = ExtResource("4_evsr0")
+
+[node name="FxemojiPencil" type="Sprite2D" parent="." unique_id=1742275757]
+position = Vector2(1209, 305.00003)
+scale = Vector2(0.49374977, 0.53625005)
+texture = ExtResource("5_dhbpj")

@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal food_locked(points: int)
+
 var shape_type: int = 0
 var size: float = 70.0
 
@@ -10,6 +12,15 @@ var locked := false
 var tray: AnimatableBody2D
 var tray_offset := Vector2.ZERO
 
+enum NutritionTier {
+	GREEN,
+	YELLOW,
+	RED
+}
+
+var nutrition_tier: NutritionTier
+var nutrition_points: int
+
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
@@ -19,6 +30,14 @@ func _ready():
 	randomize_shape()
 
 	# Allows to touch another physics body (like the tray)
+	contact_monitor = true
+	max_contacts_reported = 4
+	
+	# Calling for nutrition points and category
+	add_to_group("food")
+	randomize_shape()
+	assign_nutrition()
+
 	contact_monitor = true
 	max_contacts_reported = 4
 
@@ -47,6 +66,29 @@ func lock_food():
 	tray = get_tree().current_scene.get_node("Player/Tray")
 
 	tray_offset = global_position - tray.global_position
+	
+	food_locked.emit(nutrition_points)
+
+#This is where we can designate how many points each type of food is worth
+#Traffic light system!
+func assign_nutrition():
+	var roll = randi_range(0, 2)
+
+	match roll:
+		0:
+			nutrition_tier = NutritionTier.GREEN
+			nutrition_points = 3
+			polygon.color = Color(0.3, 0.8, 0.3)
+
+		1:
+			nutrition_tier = NutritionTier.YELLOW
+			nutrition_points = 1
+			polygon.color = Color(0.95, 0.8, 0.2)
+
+		2:
+			nutrition_tier = NutritionTier.RED
+			nutrition_points = -2
+			polygon.color = Color(0.9, 0.25, 0.25)
 
 # I'm going to change the shapes to actual graphics, this is for testing
 func randomize_shape():

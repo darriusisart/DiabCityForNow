@@ -3,14 +3,16 @@ extends Node2D
 @onready var exit_button: Button = $UI/ExitButton
 @onready var spawn_timer: Timer = $FallingFood2/SpawnTimer
 @onready var food_spawner: Node2D = $FallingFood2/FoodSpawner
+@onready var score_label: Label = $UI/ScoreLabel
 @export var falling_food_scene: PackedScene
 
 var normal_scale := Vector2(1.0, 1.0)
 var hover_scale := Vector2(1.15, 1.15)
 var pressed_scale := Vector2(1.08, 1.08)
 
-var scale_tween: Tween
+var score: int = 0
 
+var scale_tween: Tween
 
 func _ready():
 	exit_button.pressed.connect(_on_exit_button_pressed)
@@ -35,6 +37,9 @@ func _spawn_food():
 
 	var food = falling_food_scene.instantiate()
 
+	var food_body = food.get_node("FallingFood")
+	food_body.food_locked.connect(_on_food_locked)
+
 	food.position = Vector2(
 		randf_range(100.0, 1820.0),
 		-50.0
@@ -44,6 +49,11 @@ func _spawn_food():
 
 	print("FOOD SPAWNED AT: ", food.position)
 
+	
+func _on_food_locked(points: int):
+	score += points
+	
+	score_label.text = "SCORE: " + str(score)
 
 
 func _on_exit_button_mouse_entered():

@@ -56,6 +56,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s7n7l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s7n7l")
 text = "X"
 
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=448420019]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 359.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("1_v1tfg")
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=853628148]
 position = Vector2(960, 940)
 script = ExtResource("3_o5n2m")

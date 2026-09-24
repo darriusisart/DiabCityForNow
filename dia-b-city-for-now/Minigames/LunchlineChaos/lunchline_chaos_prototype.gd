@@ -4,14 +4,16 @@ extends Node2D
 @onready var spawn_timer: Timer = $FallingFood2/SpawnTimer
 @onready var food_spawner: Node2D = $FallingFood2/FoodSpawner
 @onready var score_label: Label = $UI/ScoreLabel
+@onready var game_timer: Timer = $GameTimer
+@onready var time_label: Label = $UI/TimeLabel
 @export var falling_food_scene: PackedScene
 
+var time_left: int = 60
+var game_over: bool = false
 var normal_scale := Vector2(1.0, 1.0)
 var hover_scale := Vector2(1.15, 1.15)
 var pressed_scale := Vector2(1.08, 1.08)
-
 var score: int = 0
-
 var scale_tween: Tween
 
 func _ready():
@@ -27,6 +29,8 @@ func _ready():
 	# Food spawning
 	spawn_timer.timeout.connect(_spawn_food)
 
+	game_timer.timeout.connect(_on_game_timer_timeout)
+	time_label.text = "TIME: 60"
 
 func _spawn_food():
 	print("SPAWN TIMER FIRED")
@@ -48,6 +52,12 @@ func _spawn_food():
 	food_spawner.add_child(food)
 
 	print("FOOD SPAWNED AT: ", food.position)
+	
+	# If the timer runs out
+	if game_over:
+		return
+
+	print("SPAWN TIMER FIRED")
 
 	
 func _on_food_locked(points: int):
@@ -88,3 +98,20 @@ func _scale_button(new_scale: Vector2):
 func _on_exit_button_pressed():
 	print("EXIT BUTTON PRESSED")
 	SceneManager.return_to_previous_scene()
+	
+func _on_game_timer_timeout():
+	time_left -= 1
+
+	time_label.text = "TIME: " + str(time_left)
+
+	if time_left <= 0:
+		end_game()
+		
+func end_game():
+	game_over = true
+
+	game_timer.stop()
+	spawn_timer.stop()
+
+	print("TIME'S UP!")
+	print("FINAL SCORE: ", score)

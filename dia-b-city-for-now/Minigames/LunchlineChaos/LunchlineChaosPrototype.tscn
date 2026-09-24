@@ -65,6 +65,15 @@ theme_override_fonts/font = ExtResource("1_v1tfg")
 theme_override_font_sizes/font_size = 50
 text = "SCORE: 0"
 
+[node name="TimeLabel" type="Label" parent="UI" unique_id=1260841200]
+offset_left = 50.0
+offset_top = 125.0
+offset_right = 281.0
+offset_bottom = 188.00003
+theme_override_fonts/font = ExtResource("1_v1tfg")
+theme_override_font_sizes/font_size = 50
+text = "TIME: 60"
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=853628148]
 position = Vector2(960, 940)
 script = ExtResource("3_o5n2m")
@@ -118,3 +127,6 @@ scale = Vector2(20, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=65978228]
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_62dkg")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=582512955]
+autostart = true

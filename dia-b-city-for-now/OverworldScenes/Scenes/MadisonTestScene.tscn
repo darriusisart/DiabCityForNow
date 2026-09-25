@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c7uexn7l103af" path="res://UI/PlayerJournal.tscn" id="15_ewyex"]
 [ext_resource type="PackedScene" uid="uid://cmcn1bjfrnyd3" path="res://Cody/testscene.tscn" id="16_41fun"]
 [ext_resource type="Script" uid="uid://c6344qwvynyqw" path="res://AdditionalScripts/minigame_portal.gd" id="17_at7sf"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="18_t6yog"]
 [ext_resource type="Script" uid="uid://bp3rtf00u7bae" path="res://OverworldScenes/Scenes/minigame_portal_gratitude_journal.gd" id="18_vgmwn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3eot6"]
@@ -56,7 +57,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(1.8981247, 1.534654)
+size = Vector2(2.3614967, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
@@ -96,6 +97,8 @@ data = PackedVector3Array(-3.2742999, -0.6055, -3.7786999, -2.7347, -0.6055, -3.
 [sub_resource type="BoxShape3D" id="BoxShape3D_38kbm"]
 size = Vector3(9.55, 0.6, 6.9)
 
+[sub_resource type="BoxMesh" id="BoxMesh_5pcdj"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7p4u"]
 size = Vector3(9, 1, 7)
 
@@ -110,19 +113,19 @@ transform = Transform3D(0.008574008, 0.9880641, -0.1538044, -0.6009501, 0.128027
 shadow_enabled = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1248531890]
-transform = Transform3D(12.94, 0, 0, 0, 7.612, 0, 0, 0, 12.178, -0.4013853, -3.1407065, -1.8331494)
+transform = Transform3D(12.94, 0, 0, 0, 7.612, 0, 0, 0, 12.178, -0.4013853, -3.1407065, -24.88088)
 calculate_tangents = false
 use_collision = true
 size = Vector3(23.83, 1, 17.135)
 material = SubResource("StandardMaterial3D_wsmjj")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1193552416]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.994228, 0, -16.13584)
 use_collision = true
 size = Vector3(1.9, 3.5, 4.6)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1188522473]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.826923, 0, -19.018755)
 use_collision = true
 size = Vector3(1.9, 3.5, 4.6)
 
@@ -130,7 +133,7 @@ size = Vector3(1.9, 3.5, 4.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, 7.4)
 
 [node name="MadisonPlayer" parent="." unique_id=1134779537 instance=ExtResource("5_tkm1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -10.579425)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022711530]
 libraries/ = SubResource("AnimationLibrary_ieech")
@@ -150,6 +153,7 @@ script = ExtResource("8_vjrq5")
 
 [node name="Interactable" type="Node3D" parent="." unique_id=795628492]
 transform = Transform3D(2.06, 0, 0, 0, 2.06, 0, 0, 0, 2.06, 10.900001, 1.7999998, 0.20000029)
+visible = false
 script = ExtResource("9_hodyy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactable" unique_id=269776573]
@@ -170,8 +174,9 @@ text = "INTERACTION TEST
 font_size = 46
 outline_size = 8
 
-[node name="Label3D" type="Label3D" parent="." unique_id=907797538]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 4.3, 0.2)
+[node name="Label3D2" type="Label3D" parent="Interactable" unique_id=907797538]
+transform = Transform3D(0.48543692, 0, 0, 0, 0.48543692, 0, 0, 0, 0.48543692, -4.7683716e-07, 1.2135926, -1.1920929e-07)
+visible = false
 modulate = Color(0.20392157, 0.39215687, 1, 1)
 outline_modulate = Color(0, 0, 0.28536868, 1)
 text = "Press E to Interact"
@@ -179,7 +184,7 @@ font_size = 77
 outline_size = 13
 
 [node name="NPC" type="Node3D" parent="." unique_id=210731924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 1.9, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.147516, 1.9, -11.617881)
 script = ExtResource("10_kjvec")
 suki_neutral = ExtResource("11_f0to0")
 suki_happy = ExtResource("12_miyhk")
@@ -209,7 +214,7 @@ shape = SubResource("BoxShape3D_61mhm")
 transform = Transform3D(-0.9983004, 0, 0.058278352, 0, 1, 0, -0.058278352, 0, -0.9983004, 0.13205338, 0.6405792, -44.15916)
 
 [node name="MinigameTestArch1" type="MeshInstance3D" parent="." unique_id=1195896419]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.3, 2.8, -7.1000004)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -17.867342, 2.8, -25.875443)
 mesh = SubResource("ArrayMesh_38kbm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MinigameTestArch1" unique_id=305892463]
@@ -225,8 +230,20 @@ destination_scene = "uid://b5l13cqywml6c"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07499981, 0.19999981, 0.8500004)
 shape = SubResource("BoxShape3D_38kbm")
 
+[node name="Label3D" type="Label3D" parent="MinigameTestArch1" unique_id=702621794]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.87621975, 4.3857155)
+modulate = Color(0.17984036, 0.2154158, 0.4704988, 1)
+outline_modulate = Color(0.18039216, 0.21568628, 0.47058824, 1)
+text = "LUNCHLINE CHAOS"
+font = ExtResource("18_t6yog")
+font_size = 70
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MinigameTestArch1" unique_id=914542715]
+transform = Transform3D(4.420843, 0, 0, 0, 0.2405715, 0, 0, 0, 1.1999162, 0, -0.75454044, 4.396021)
+mesh = SubResource("BoxMesh_5pcdj")
+
 [node name="MinigameTestArch2" type="MeshInstance3D" parent="." unique_id=116742353]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.3, 2.8, -7.1000004)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 15.411485, 2.8, -25.516453)
 mesh = SubResource("ArrayMesh_38kbm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MinigameTestArch2" unique_id=717108482]
@@ -242,7 +259,49 @@ destination_scene = "uid://du1tigiok6bce"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch2/MinigamePortalGratitudeJournal" unique_id=2133148766]
 shape = SubResource("BoxShape3D_e7p4u")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MinigameTestArch2" unique_id=879407020]
+transform = Transform3D(4.420843, 0, 0, 0, 0.2405715, 0, 0, 0, 1.1999162, 0, -0.75454044, 4.396021)
+mesh = SubResource("BoxMesh_5pcdj")
+
+[node name="Label3D" type="Label3D" parent="MinigameTestArch2" unique_id=1135003497]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.87621975, 4.3857155)
+modulate = Color(0.18039216, 0.21568628, 0.47058824, 1)
+outline_modulate = Color(0.18039216, 0.21568628, 0.47058824, 1)
+text = "GRATITUDE JOURNAL"
+font = ExtResource("18_t6yog")
+font_size = 70
+
+[node name="MinigameTestArch3" type="MeshInstance3D" parent="." unique_id=982731926]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.40062404, 2.8, -25.516453)
+mesh = SubResource("ArrayMesh_38kbm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MinigameTestArch3" unique_id=2012574728]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch3/StaticBody3D" unique_id=593191477]
+shape = SubResource("ConcavePolygonShape3D_0viit")
+
+[node name="MinigamePortalFocusTraining" type="Area3D" parent="MinigameTestArch3" unique_id=2047747238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.79999995)
+script = ExtResource("18_vgmwn")
+destination_scene = "uid://brnk754hm5osh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MinigameTestArch3/MinigamePortalFocusTraining" unique_id=514103099]
+shape = SubResource("BoxShape3D_e7p4u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MinigameTestArch3" unique_id=1733323167]
+transform = Transform3D(4.420843, 0, 0, 0, 0.2405715, 0, 0, 0, 1.1999162, 0, -0.75454044, 4.396021)
+mesh = SubResource("BoxMesh_5pcdj")
+
+[node name="Label3D" type="Label3D" parent="MinigameTestArch3" unique_id=626220448]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.87621975, 4.3857155)
+modulate = Color(0.18039216, 0.21568628, 0.47058824, 1)
+outline_modulate = Color(0.18039216, 0.21568628, 0.47058824, 1)
+text = "FOCUS TRAINING"
+font = ExtResource("18_t6yog")
+font_size = 70
+
 [connection signal="body_entered" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Interactable/Area3D" to="Interactable" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="MinigameTestArch1/MinigamePortalLunchLine" to="MinigameTestArch1/MinigamePortalLunchLine" method="_on_body_entered"]
 [connection signal="body_entered" from="MinigameTestArch2/MinigamePortalGratitudeJournal" to="MinigameTestArch2/MinigamePortalGratitudeJournal" method="_on_body_entered"]
+[connection signal="body_entered" from="MinigameTestArch3/MinigamePortalFocusTraining" to="MinigameTestArch3/MinigamePortalFocusTraining" method="_on_body_entered"]

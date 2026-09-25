@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://brnk754hm5osh"]
+
+[ext_resource type="Script" uid="uid://i5wo4ydto72n" path="res://Minigames/FocusTraining/focus_training.gd" id="1_4o2er"]
+[ext_resource type="Script" uid="uid://pko2bm6n8bh8" path="res://Minigames/FocusTraining/arena.gd" id="2_1l2ok"]
+[ext_resource type="FontFile" uid="uid://urwk0s27erx0" path="res://Font/OriginalSurfer-Regular.ttf" id="2_5kctj"]
+[ext_resource type="Texture2D" uid="uid://dg0qu0wp61k7v" path="res://Minigames/FocusTraining/testCircle.png" id="3_iits3"]
+[ext_resource type="Script" uid="uid://cr2di7xig6foj" path="res://Minigames/FocusTraining/orb.gd" id="5_7qxc6"]
+[ext_resource type="Texture2D" uid="uid://47nphmpgfewq" path="res://Minigames/FocusTraining/tempOrb.png" id="5_iits3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qxc6"]
+radius = 91.04944
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acjum"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="FocusMinigame" type="Node2D" unique_id=1755880287]
+script = ExtResource("1_4o2er")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2036781707]
+
+[node name="Arena" type="Node2D" parent="." unique_id=930202662]
+position = Vector2(960, 540)
+script = ExtResource("2_1l2ok")
+
+[node name="CircleVisual" type="TextureRect" parent="Arena" unique_id=1164737792]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Circle" type="Sprite2D" parent="Arena" unique_id=319622210]
+position = Vector2(0.9999862, 0.99998474)
+scale = Vector2(3.1072693, 2.8940253)
+texture = ExtResource("3_iits3")
+
+[node name="Orb" type="CharacterBody2D" parent="Arena" unique_id=1695328963]
+script = ExtResource("5_7qxc6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arena/Orb" unique_id=308926977]
+position = Vector2(0.9999695, 1.0000305)
+scale = Vector2(0.20507813, 0.20507813)
+texture = ExtResource("5_iits3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Orb" unique_id=1816250502]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_7qxc6")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=511540456]
+
+[node name="ExitButton" type="Button" parent="UI" unique_id=1985932304]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 35.0
+offset_right = -25.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_5kctj")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_acjum")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_acjum")
+theme_override_styles/hover = SubResource("StyleBoxFlat_acjum")
+text = "X"
+
+[node name="MouseReticle" type="Sprite2D" parent="." unique_id=1992401132]

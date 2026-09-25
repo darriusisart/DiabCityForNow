@@ -8,6 +8,12 @@ extends Node2D
 @onready var time_label: Label = $UI/TimeLabel
 @export var falling_food_scene: PackedScene
 
+#UI refs
+@onready var game_over_panel: Panel = $UI/GameOverPanel
+@onready var final_score_label: Label = $UI/GameOverPanel/FinalScoreLabel
+@onready var play_again_button: Button = $UI/GameOverPanel/PlayAgainButton
+@onready var game_over_exit_button: Button = $UI/GameOverPanel/ExitButton
+
 var time_left: int = 60
 var game_over: bool = false
 var normal_scale := Vector2(1.0, 1.0)
@@ -31,6 +37,11 @@ func _ready():
 
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	time_label.text = "TIME: 60"
+
+	play_again_button.pressed.connect(_on_play_again_pressed)
+	game_over_exit_button.pressed.connect(_on_game_over_exit_pressed)
+
+	game_over_panel.visible = false
 
 func _spawn_food():
 	print("SPAWN TIMER FIRED")
@@ -107,11 +118,23 @@ func _on_game_timer_timeout():
 	if time_left <= 0:
 		end_game()
 		
+func _on_play_again_pressed():
+	get_tree().reload_current_scene()
+		
+func _on_game_over_exit_pressed():
+	SceneManager.return_to_previous_scene()
+	
 func end_game():
 	game_over = true
 
 	game_timer.stop()
 	spawn_timer.stop()
+	
+	$Player.game_over = true
+
+	final_score_label.text = "FINAL SCORE: " + str(score)
+
+	game_over_panel.visible = true
 
 	print("TIME'S UP!")
 	print("FINAL SCORE: ", score)

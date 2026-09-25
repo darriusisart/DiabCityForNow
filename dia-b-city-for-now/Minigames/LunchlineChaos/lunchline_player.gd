@@ -7,11 +7,19 @@ extends CharacterBody2D
 @export var left_limit: float = 280.0
 @export var right_limit: float = 1630.0
 
+var game_over := false
+
 
 func _ready():
 	$CatchArea.area_entered.connect(_on_catch_area_body_entered)
 
 func _physics_process(delta):
+	# Stop movement when the game is over
+	if game_over:
+		velocity.x = 0.0
+		velocity.y = 0.0
+		return
+
 	var direction = Input.get_axis("Left", "Right")
 
 	if direction != 0:

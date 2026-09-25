@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cngsbwwsw5r1h" path="res://Cody/2d assets/Xemplar_Grass_Texture_ambient_occlusion.png" id="2_twr1q"]
 [ext_resource type="Texture2D" uid="uid://bwxgg48wnochw" path="res://Cody/2d assets/Xemplar_Grass_Texture_height.png" id="3_658xd"]
 [ext_resource type="Texture2D" uid="uid://b536p1264nj8w" path="res://Cody/2d assets/Xemplar_Grass_Texture_normal.png" id="4_38htn"]
-[ext_resource type="PackedScene" uid="uid://bcs3gni8xyg8a" path="res://Player/UPDATED_player.tscn" id="5_tkm1g"]
+[ext_resource type="PackedScene" uid="uid://bcs3gni8xyg8a" path="res://player/UPDATED_player.tscn" id="5_tkm1g"]
 [ext_resource type="Script" uid="uid://ckk0dhrg4pkoq" path="res://OverworldScenes/Player&Camera/camera_pivot.gd" id="6_1o02w"]
 [ext_resource type="Shader" uid="uid://ba1h1gdsyflvo" path="res://Shaders/blackoutline.gdshader" id="7_aiacv"]
 [ext_resource type="Script" uid="uid://toaljed1v5lp" path="res://Shaders/infiniteboundary_camera.gd" id="8_vjrq5"]
@@ -56,7 +56,7 @@ _data = {
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqfpf"]
-size = Vector2(2.0625613, 1.534654)
+size = Vector2(1.8981247, 1.534654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38kbm"]
 render_priority = 10
